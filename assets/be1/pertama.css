@@ -1,0 +1,38 @@
+.table {
+  margin-top: 40px;
+}
+
+.edit_label{
+  margin-top: 20px;
+}
+.tabel_berita {
+  margin-top: 5px;
+}
+
+.tabel-berita tr:nth-child(even) {
+  background: rgb(216, 219, 238);
+}
+.tabel_berita tr:nth-child(odd) {
+  background: rgb(147, 183, 229) !important;
+}
+.tabel-prokan tr:nth-child(even) {
+  background: rgb(216, 219, 238);
+}
+.tabel_prokan tr:nth-child(odd) {
+  background: rgb(147, 183, 229) !important;
+}
+
+th {
+  background-color: rgb(50, 122, 216);
+  color: white;
+  font-size: 11pt;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+td {
+  font-size: 11pt;
+  padding: 4px 12px 4px 12px !important;
+}
+tr {
+  height: 15px !important;
+}

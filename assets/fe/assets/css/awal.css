@@ -1,0 +1,49 @@
+/* *{
+  box-sizing: border-box;
+} */
+/* .logo {
+  margin-top: 0px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  display: block;
+  max-width: 100%;
+} */
+/* div {
+  display: block;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+} */
+
+#back-Video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.9;
+	z-index: -1;
+}
+
+.tabel-kades {
+	font-family: sans-serif;
+	margin-top: 40px;
+  color: #708090;
+}
+
+.tabel-desa {
+  font-family: sans-serif;
+  color: #708090;
+}
+
+.tabel-kades, td {
+  padding-left: 20px;
+}
+.tabel-desa, td {
+  padding-left: 20px;
+}
