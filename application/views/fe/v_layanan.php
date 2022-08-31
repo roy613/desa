@@ -6,7 +6,7 @@
           <!-- <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p> -->
         </div>
 
-        <div class="row gy-5">
+        <div class="row gy-5 jenis">
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
@@ -27,9 +27,9 @@
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
-              <div class="img">
+              <!-- <div class="img">
                 <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
-              </div>
+              </div> -->
               <div class="details position-relative">
                 <div class="icon">
                   <i class="bi bi-broadcast"></i>
@@ -44,9 +44,9 @@
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
-              <div class="img">
+              <!-- <div class="img">
                 <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
-              </div>
+              </div> -->
               <div class="details position-relative">
                 <div class="icon">
                   <i class="bi bi-easel"></i>

@@ -71,19 +71,4 @@
   ?>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top" data-scrollto-offset="0">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-
-      <a href="<?php echo base_url(); ?>" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="<?php echo base_url(); ?>assets/img/logokutim.png" alt="">
-
-      </a>
-
-      
-      
-
-      <a class="btn-getstarted scrollto" href="<?php echo base_url('login'); ?>">Login</a>
-
-    </div>
-  </header><!-- End Header -->
+  
