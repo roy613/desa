@@ -1,7 +1,7 @@
  <!-- ======= Footer ======= -->
- <footer id="footer" class="footer">
+ <!-- <footer id="footer" class="footer"> -->
 
-   <div class="footer-legal text-center">
+   <!-- <div class="footer-legal text-center">
      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
        <div class="d-flex flex-column align-items-center align-items-lg-start">
@@ -14,9 +14,10 @@
 
 
      </div>
-   </div>
+   </div> -->
 
- </footer><!-- End Footer -->
+ <!-- </footer> -->
+ <!-- End Footer -->
 
  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

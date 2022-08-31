@@ -24,4 +24,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('fe/v_index2');
 		$this->load->view('fe/v_footer');
 	}
+	public function layanan()
+	{
+		$this->load->view('fe/v_header');
+		$this->load->view('fe/v_layanan');
+		$this->load->view('fe/v_footer');
+	}
 }

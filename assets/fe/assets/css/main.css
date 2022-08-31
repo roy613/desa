@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections & Section Header
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 70px 0;
   overflow: hidden;
 }
 
@@ -1669,9 +1669,17 @@ section {
 /*--------------------------------------------------------------
 # F.A.Q Section
 --------------------------------------------------------------*/
+.faq {
+  background: url("../img/hero-bg.png") center center;
+  background-size: cover;
+  position: relative;
+}
 @media (max-width: 991px) {
   .faq {
     padding: 0;
+    background: url("../img/hero-bg.png") center center;
+  background-size: cover;
+  position: relative;
   }
 }
 .faq .content h3 {

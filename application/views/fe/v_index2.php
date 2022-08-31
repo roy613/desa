@@ -1,6 +1,7 @@
 <main id="main">
-  <section id="hero-animated" class="hero-animated d-flex align-items-center">
-  </section>
+  <!-- <section id="hero-animated" class="hero-animated d-flex align-items-center">
+  
+  </section> -->
 
   <!-- ======= F.A.Q Section ======= -->
   <section id="faq" class="faq">
