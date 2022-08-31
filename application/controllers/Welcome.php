@@ -28,6 +28,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('fe/v_header');
 		$this->load->view('fe/v_layanan');
+		$this->load->view('fe/v_layanan_modal');
 		$this->load->view('fe/v_footer');
+		$this->load->view('fe/f_layanan');
 	}
 }
