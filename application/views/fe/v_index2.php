@@ -69,7 +69,7 @@
               fdgefg efqgfegfe efgeegef efgefgfeg efgeegfefvdfgfevefg dfbddvffd dfvffdvdd dfvvfdfv dfddfdff dddfddv ddf dffdff dffdfdfv dffddf dfv dddfvddv ddvddf ddf dddffssvdddfdfv dff dddfdddfvddv dffddv dddfff
             </p>
             <div class="d-flex">
-              <a href="<?php echo base_url(); ?>assets/img/1.mp4" class="btn-get-started scrollto">Pilih Pelayanan</a>
+              <a href="<?php echo base_url('layanan'); ?>" class="btn-get-started scrollto">Pilih Pelayanan</a>
             </div>
           </div>
         </div>
@@ -81,13 +81,13 @@
 
   </section><!-- End F.A.Q Section -->
 
-  <a href="<?php echo base_url('input'); ?>">
+  <a href="<?php echo base_url('login'); ?>">
     <button class="btn-floating back">
       <img src="<?php echo base_url(); ?>assets/img/laki.png" alt="input" style="height: 30px;">
-      <span>Input</span>
+      <span>Login</span>
     </button>
   </a>
-  <a href="<?php echo base_url('input'); ?>">
+  <a href="javascript:;" onclick="ceksurat()">
     <button class="btn-floating home">
       <img src="<?php echo base_url(); ?>assets/img/laki.png" alt="input" style="height: 30px;">
       <span>Cek Surat</span>
