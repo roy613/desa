@@ -1861,7 +1861,7 @@ a.dropdown-item {
     .dropdown-list .dropdown-header a {
       font-weight: 600; }
   .dropdown-list .dropdown-list-content {
-    height: 350px;
+    height: 250px;
     overflow: hidden; }
     .dropdown-list .dropdown-list-content:not(.is-end):after {
       content: ' ';

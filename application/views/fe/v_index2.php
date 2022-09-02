@@ -42,7 +42,7 @@
     display: inline-block;
   }
 
-  .btn-floating:hover img {
+  .btn-floating:hover i {
     margin-bottom: -2px;
     height: 30px;
   }
@@ -83,13 +83,13 @@
 
   <a href="<?php echo base_url('login'); ?>">
     <button class="btn-floating back">
-      <img src="<?php echo base_url(); ?>assets/img/laki.png" alt="input" style="height: 30px;">
+    <i class="bi bi-person-circle"></i>
       <span>Login</span>
     </button>
   </a>
   <a href="javascript:;" onclick="ceksurat()">
     <button class="btn-floating home">
-      <img src="<?php echo base_url(); ?>assets/img/laki.png" alt="input" style="height: 30px;">
+    <i class="bi bi-search"></i>
       <span>Cek Surat</span>
     </button>
   </a>
