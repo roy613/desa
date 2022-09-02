@@ -1,7 +1,7 @@
 <style>
   .btn-floating {
     position: fixed;
-    right: 25px;
+    right: 18px;
     overflow: hidden;
     width: 50px;
     height: 50px;
@@ -34,7 +34,7 @@
     height: 30px;
   }
   .btn-floating.kembali {
-    bottom: 30px;
+    bottom: 60px;
     background-color: rgb(47, 195, 1);
     border: 2px solid rgb(28, 117, 36);
   }
@@ -63,12 +63,12 @@
               </div> -->
           <div class="details position-relative">
             <div class="icon">
-              <i class="bi bi-activity"></i>
+            <i class="bi bi-briefcase"></i>
             </div>
             <a href="javascript:;" onclick="ijin()" class="stretched-link">
-              <h3>Nesciunt Mete</h3>
+              <h3>Surat Rekomendasi <br> Kerja</h3>
             </a>
-            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
+            
           </div>
         </div>
       </div><!-- End Service Item -->
@@ -80,12 +80,62 @@
               </div> -->
           <div class="details position-relative">
             <div class="icon">
-              <i class="bi bi-broadcast"></i>
+            <i class="bi bi-bookmark-star"></i>
             </div>
             <a href="#" class="stretched-link">
-              <h3>Eosle Commodi</h3>
+              <h3>Surat Rekomendasi <br> Proposal</h3>
             </a>
-            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+          
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-person-hearts"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Surat Pengantar <br> Nikah</h3>
+            </a>
+            
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-binoculars-fill"></i>
+            </div>
+            <a href="javascript:;" onclick="ijin()" class="stretched-link">
+              <h3>Surat Pengantar <br> Kehilangan</h3>
+            </a>
+            
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-check2-square"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Surat Pengantar <br> SKCK</h3>
+            </a>
+        
           </div>
         </div>
       </div><!-- End Service Item -->
@@ -100,9 +150,90 @@
               <i class="bi bi-easel"></i>
             </div>
             <a href="#" class="stretched-link">
-              <h3>Formulir</h3>
+              <h3>Surat Keterangan<br> Usaha</h3>
             </a>
-            <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+           
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <a href="javascript:;" onclick="ijin()" class="stretched-link">
+              <h3>Surat Keterangan<br> Domisili</h3>
+            </a>
+         
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-geo"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Surat Keterangan <br> Pindah Penduduk</h3>
+            </a>
+           
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-list-nested"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Surat Keterangan <br> Kematian</h3>
+            </a>
+            
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+              <i class="bi bi-activity"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Surat Keterangan<br> Kelahiran</h3>
+            </a>
+            
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-wallet2"></i>
+            </div>
+            <a href="#" class="stretched-link">
+              <h3>Surat Keterangan<br> Tidak Mampu</h3>
+            </a>
           </div>
         </div>
       </div><!-- End Service Item -->
