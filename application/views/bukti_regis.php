@@ -4,22 +4,10 @@
     }
 </style>
 
-
+<?php $this->load->view('kop_surat'); ?>
 <html>
 <font face="arial">
-    <table border=0 style="margin-top:-20px; margin-left:20px">
-        <tr>
-            <td width="15%"><img src="<?php echo base_url(); ?>assets/logo.jpg" style="height:65px"></td>
-            <td width="85%" style="padding-left:40px; text-align:center">
-                <h4>PEMERINTAH KABUPATEN KUTAI TIMUR</h4>
-                <h4>DESA KARANGAN HILIR</h4>
-                <h4>KECAMATAN KARANGAN</h4>
-                <h6 style="font-weight:normal">Alamat : Jl. A. Yani RT 12 Desa Karangan Hilir Kode Pos 75684 Website:karanganhilir.desa.id</h6>
-            </td>
-        </tr>
-    </table>
-    <hr style="margin-top:-1px; height:4px; width:95%; color:black">
-    <hr style="margin-top:-10px; height:2px; width:95%; color:black">
+    
     <table border=0 style="margin-top:10px; margin-left:20px; width:100%">
     <tr>
         <td colspan="3" style="text-align: center;">
