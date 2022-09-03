@@ -29,8 +29,24 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('fe/v_header');
 		$this->load->view('fe/v_layanan');
-		$this->load->view('fe/v_layanan_modal');
+		$this->load->view('fe/v_layanan_kerja');
+		$this->load->view('fe/v_layanan_kdomisili');
+		$this->load->view('fe/v_layanan_kkelahiran');
+		$this->load->view('fe/v_layanan_kkematian');
+		$this->load->view('fe/v_layanan_kpindah');
+		$this->load->view('fe/v_layanan_kusaha');
+		$this->load->view('fe/v_layanan_pkehilangan');
+		$this->load->view('fe/v_layanan_pnikah');
+		$this->load->view('fe/v_layanan_proposal');
+		$this->load->view('fe/v_layanan_pskck');
+		$this->load->view('fe/v_layanan_ktmampu');
 		$this->load->view('fe/v_footer');
 		$this->load->view('fe/f_layanan');
+	}
+	public function sukses()
+	{
+		$this->load->view('fe/v_header');
+		$this->load->view('fe/v_sukses');
+		$this->load->view('fe/v_footer');
 	}
 }

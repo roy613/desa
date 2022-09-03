@@ -1096,7 +1096,7 @@ section {
 # Call To Action Section
 --------------------------------------------------------------*/
 .cta {
-  padding: 0;
+  padding: 40px;
   margin-bottom: 60px;
 }
 .cta .container {
@@ -1111,7 +1111,7 @@ section {
 }
 .cta .content h3 {
   color: var(--color-secondary);
-  font-size: 48px;
+  font-size: 35px;
   font-weight: 700;
 }
 .cta .content h3 em {

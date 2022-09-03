@@ -8,13 +8,13 @@
         color :black !important;
     }
 </style>
-<section>
-    <div class="modal fade" id="rekomkerja" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal fade" id="r_kerja" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
                     <img src="<?php echo base_url(); ?>assets/img/logokutim.png" width="auto" alt="" height="30px" class="mr-2">
-                    <h5 class="modal-title" style="color: white; margin-left:10px"> Desa xxxxxx</h5>
+                    <h5 class="modal-title" style="color: white; margin-left:10px"> SURAT REKOMENDASI KERJA</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -22,17 +22,17 @@
 
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1" style="cursor: pointer;">Persyaratan</a>
+                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#kerja-1" style="cursor: pointer;">Persyaratan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" style="cursor: pointer;">Formulir</a>
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#kerja-2" style="cursor: pointer;">Formulir</a>
                         </li>
                     </ul>
                     <section id="features" class="features" style="padding-top: 5px;">
                         <div class="container" data-aos="fade-up">
                             <div class="tab-content">
 
-                                <div class="tab-pane active show" id="tab-1">
+                                <div class="tab-pane active show" id="kerja-1">
                                     <div class="row gy-4">
                                         <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                                             <h3>Persyaratan</h3>
@@ -53,7 +53,7 @@
                                     </div>
                                 </div><!-- End Tab Content 1 -->
 
-                                <div class="tab-pane" id="tab-2">
+                                <div class="tab-pane" id="kerja-2">
                                     <div class="row gy-4">
                                         <div class="col-lg-12 order-2 order-lg-1">
                                             <h3>Formulir</h3>
@@ -85,6 +85,7 @@
             </div>
         </div>
     </div>
+
     <!-- <div class="modal fade" id="rekomkerja" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -227,4 +228,3 @@
             </div>
         </div>
     </div> -->
-</section>

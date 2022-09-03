@@ -34,7 +34,7 @@
     height: 30px;
   }
   .btn-floating.kembali {
-    bottom: 60px;
+    bottom: 30px;
     background-color: rgb(47, 195, 1);
     border: 2px solid rgb(28, 117, 36);
   }
@@ -65,7 +65,7 @@
             <div class="icon">
             <i class="bi bi-briefcase"></i>
             </div>
-            <a href="javascript:;" onclick="ijin()" class="stretched-link">
+            <a href="javascript:;" onclick="kerja()" class="stretched-link">
               <h3>Surat Rekomendasi <br> Kerja</h3>
             </a>
             
@@ -82,7 +82,7 @@
             <div class="icon">
             <i class="bi bi-bookmark-star"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="proposal()" class="stretched-link">
               <h3>Surat Rekomendasi <br> Proposal</h3>
             </a>
           
@@ -99,7 +99,7 @@
             <div class="icon">
             <i class="bi bi-person-hearts"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="nikah()" class="stretched-link">
               <h3>Surat Pengantar <br> Nikah</h3>
             </a>
             
@@ -115,7 +115,7 @@
             <div class="icon">
             <i class="bi bi-binoculars-fill"></i>
             </div>
-            <a href="javascript:;" onclick="ijin()" class="stretched-link">
+            <a href="javascript:;" onclick="hilang()" class="stretched-link">
               <h3>Surat Pengantar <br> Kehilangan</h3>
             </a>
             
@@ -132,7 +132,7 @@
             <div class="icon">
             <i class="bi bi-check2-square"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="skck()" class="stretched-link">
               <h3>Surat Pengantar <br> SKCK</h3>
             </a>
         
@@ -149,7 +149,7 @@
             <div class="icon">
               <i class="bi bi-easel"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="usaha()" class="stretched-link">
               <h3>Surat Keterangan<br> Usaha</h3>
             </a>
            
@@ -165,7 +165,7 @@
             <div class="icon">
             <i class="bi bi-geo-alt-fill"></i>
             </div>
-            <a href="javascript:;" onclick="ijin()" class="stretched-link">
+            <a href="javascript:;" onclick="domisili()" class="stretched-link">
               <h3>Surat Keterangan<br> Domisili</h3>
             </a>
          
@@ -182,7 +182,7 @@
             <div class="icon">
             <i class="bi bi-geo"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="pindah()" class="stretched-link">
               <h3>Surat Keterangan <br> Pindah Penduduk</h3>
             </a>
            
@@ -199,7 +199,7 @@
             <div class="icon">
             <i class="bi bi-list-nested"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="kematian()" class="stretched-link">
               <h3>Surat Keterangan <br> Kematian</h3>
             </a>
             
@@ -215,7 +215,7 @@
             <div class="icon">
               <i class="bi bi-activity"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="kelahiran()" class="stretched-link">
               <h3>Surat Keterangan<br> Kelahiran</h3>
             </a>
             
@@ -231,7 +231,7 @@
             <div class="icon">
             <i class="bi bi-wallet2"></i>
             </div>
-            <a href="#" class="stretched-link">
+            <a href="javascript:;" onclick="tidakmampu()" class="stretched-link">
               <h3>Surat Keterangan<br> Tidak Mampu</h3>
             </a>
           </div>

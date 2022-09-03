@@ -54,4 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = 'login';
+$route['proses'] = 'login/aksi';
+$route['logout'] = 'login/keluar';
+$route['manual'] = 'cetak/permohonan';
+$route['dashboard'] = 'be/home';
 $route['layanan'] = 'welcome/layanan';

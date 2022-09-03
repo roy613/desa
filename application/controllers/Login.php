@@ -8,7 +8,7 @@ class Login extends CI_Controller
         if ($this->session->userdata('status') != "telah_login") {
             $this->load->view('v_login1');
         } else {
-            redirect(base_url('cms'));
+            redirect(base_url('dashboard'));
         }
     }
 
@@ -37,7 +37,7 @@ class Login extends CI_Controller
             
                 $this->session->set_userdata($data_session);
                 // var_dump($data_session);
-                redirect(base_url('cms'));
+                redirect(base_url('dashboard'));
             } else {
                 redirect(base_url() . 'login?alert=gagal');
             }
