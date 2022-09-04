@@ -1,36 +1,43 @@
 <script>
-    function kerja(){
+    function kerja() {
         $('#r_kerja').modal('show');
     }
 
-    function proposal(){
+    function proposal() {
         $('#r_proposal').modal('show');
     }
-    function nikah(){
-        $('#p_nikah').modal('show');
-    }
-    function hilang(){
+
+
+
+    function hilang() {
         $('#p_hilang').modal('show');
     }
-    function skck(){
+
+    function skck() {
         $('#p_skck').modal('show');
     }
-    function usaha(){
+
+    function usaha() {
         $('#k_usaha').modal('show');
     }
-    function domisili(){
+
+    function domisili() {
         $('#k_domisili').modal('show');
     }
-    function pindah(){
+
+    function pindah() {
         $('#k_pindah').modal('show');
     }
-    function kematian(){
+
+    function kematian() {
         $('#k_kematian').modal('show');
     }
-    function kelahiran(){
+
+    function kelahiran() {
         $('#k_kelahiran').modal('show');
     }
-    function tidakmampu(){
+
+    function tidakmampu() {
         $('#k_tidakmampu').modal('show');
     }
 </script>

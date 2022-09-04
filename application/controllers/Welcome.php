@@ -42,6 +42,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('fe/v_layanan_ktmampu');
 		$this->load->view('fe/v_footer');
 		$this->load->view('fe/f_layanan');
+		$this->load->view('fe/f_layanan_nikah');
 	}
 	public function sukses()
 	{
