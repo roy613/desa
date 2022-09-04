@@ -78,7 +78,7 @@
                         <div class="row gy-4">
                             <div class="col-lg-12 order-2 order-lg-1">
                                 <h3>Formulir</h3>
-                                <form method="post" action="<?php echo base_url('knik/simpan') ?>" enctype="multipart/form-data">
+                                <form method="post" action="<?php echo base_url('simpan_fe/nikah') ?>" enctype="multipart/form-data">
 
                                     <ul class="nav nav-tabs">
                                         <li class="nav-item">
@@ -546,7 +546,7 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <h6 style="color: red;">
-                                                        <b><u>KETERANGAN DAN TANDA TANGAN</u></b>
+                                                        <b><u>KETERANGAN LAIN-LAIN</u></b>
                                                     </h6>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -561,12 +561,12 @@
                                                         <input type="datetime-local" class="form-control" id="nikah_waktu" name="nikah_waktu" required>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6">
+                                                <!-- <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label for="nikah_tglsrt">Tanggal Penerbitan Surat</label>
                                                         <input type="date" class="form-control" id="nikah_tglsrt" name="nikah_tglsrt" required>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-sm-6">
 
                                                 </div>

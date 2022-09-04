@@ -34,16 +34,9 @@
 
  <!-- Template Main JS File -->
  <script src="<?php echo base_url(); ?>assets/fe/assets/js/main.js"></script>
- <script>
+ 
 
- </script>
 
- <script>
-   var myModal = new bootstrap.Modal(document.getElementById("modalSaya"), {});
-   document.onreadystatechange = setTimeout(function() {
-     myModal.show();
-   }, 3500);
- </script>
 
 
  </body>

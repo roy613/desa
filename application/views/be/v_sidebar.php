@@ -36,7 +36,7 @@
          <li class="nav-item">
            <a href="<?php echo base_url('pengguna'); ?>" class="nav-link">
              <i class="nav-icon fas fa-users text-info"></i>
-             <p>Pengguna & Pejabat</p>
+             <p>Pengguna</p>
            </a>
          </li>
 

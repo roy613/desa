@@ -57,5 +57,12 @@ $route['login'] = 'login';
 $route['proses'] = 'login/aksi';
 $route['logout'] = 'login/keluar';
 $route['manual'] = 'cetak/permohonan';
+
+
 $route['dashboard'] = 'be/home';
+$route['pengguna'] = 'be/home/pengguna';
+
+
 $route['layanan'] = 'welcome/layanan';
+$route['sukses'] = 'welcome/sukses';
+$route['periksa/(:any)'] = 'welcome/periksa/$1';

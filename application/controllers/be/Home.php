@@ -19,5 +19,14 @@ class Home extends CI_Controller
         $this->load->view('be/v_body');
         $this->load->view('be/v_footer');
     }
+    public function pengguna()
+    {
+        $data['guna'] = $this->db->query('SELECT * FROM pengguna')->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_pengguna', $data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_pengguna');
+    }
     
 }
