@@ -21,7 +21,7 @@
                     2. Silahkan Pilih <b>Surat Untuk Pengantin Pria</b> Apabila Anda <b>Pria</b> Berasal Dari Desa Karangan Hilir Sedangkan Pasangan Anda Berasal Dari Desa Lain <br>
                     3. Silahkan Pilih <b>Surat Untuk Pengantin Wanita</b> Apabila Anda <b>Wanita</b> Berasal Dari Desa Karangan Hilir Sedangkan Pasangan Anda Berasal Dari Desa Lain
                 </p>
-                <button onclick="pilih_nikah()" type="submit" data-bs-dismiss="modal" id="tombol_nikah" class="btn btn-primary" style="float: right;" disabled>Pilih</button>
+                <button onclick="pilih_nikah()" data-bs-dismiss="modal" id="tombol_nikah" class="btn btn-primary" style="float: right;" disabled>Pilih</button>
             </div>
         </div>
     </div>

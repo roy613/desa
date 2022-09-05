@@ -68,8 +68,15 @@
                                                     <label for="proposal_nohp">Nomor Whatsapp Pemohon</label>
                                                     <input type="number" class="form-control" id="proposal_nohp" name="proposal_nohp" required>
                                                 </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="custom-file">
+                                                        <label for="proposal_filegambar">Upload Foto Identitas (KTP atau KK)</label>
+                                                        <input type="file" class="custom-file-input form-control" name="proposal_filegambar" id="proposal_filegambar" required onchange="proposal_validasi()">
+                                                        <div id="proposal_notif"></div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <button type="submit" data-bs-dismiss="modal" onclick="proposal_keluar()" class="btn btn-primary" style="float: right;">Simpan</button>
+                                            <button type="submit" class="btn btn-primary" style="float: right;">Proses</button>
                                         </form>
                                     </div>
                                 </div><!-- End Tab Content 2 -->

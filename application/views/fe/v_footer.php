@@ -34,7 +34,12 @@
 
  <!-- Template Main JS File -->
  <script src="<?php echo base_url(); ?>assets/fe/assets/js/main.js"></script>
- 
+ <script src="<?php echo base_url(); ?>assets/back/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script>
+    $(function() {
+        bsCustomFileInput.init();
+    });
+</script>
 
 
 

@@ -262,28 +262,28 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_proposal' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_proposal' . $nomor3;
 
-        //save di tabel surat
         $s1 = $this->input->post('proposal_nama');
         $s2 = $this->input->post('proposal_perusahaan');
         $s3 = $this->input->post('proposal_nosuratpemohon');
         $s4 = $this->input->post('proposal_halpermohonan');
-
+        
+        $jenis = "Surat Rekomendasi Proposal";
         $no_hp = $this->input->post('proposal_nohp');
         $tglmohon = date('Y-m-d H-i-s');
         $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 pemohon masyarakat dan sudah diproses, status 3 surat dibuat admin lewat be.
 
-        $data = array(
-            's_1' => $s1,
-            's_2' => $s2,
-            's_3' => $s3,
-            's_4' => $s4,
-            's_kodeproses' => $kode_proses,
-            's_kodepelayanan' => $koderegistrasi,
-        );
-
-        $this->m_data->save_data($data, 'surat');
-
         //save ditabel permohonan
+        $config['upload_path'] = './syarat/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('proposal_filegambar')) {
+
+            $gambar = $this->upload->data();
+
+            $syarat = $gambar['file_name'];
+        }
+
         include "phpqrcode/qrlib.php";
         $tempdir = "permohonan/";
         if (!file_exists($tempdir))
@@ -292,10 +292,9 @@ class Simpan_fe extends CI_Controller
         $bu = base_url();
         $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
 
-       
 
-        $ab = base64_encode($nomor3);
-        $ac = base_url() . 'sukses';
+        $ab = base64_encode($koderegistrasi);
+        $ac = base_url() . 'periksa';
         $codeContents = "$ac/$ab";
         // $codeContents = "dfgdfgfdgdf df gfd hdfgh gdfh ";
 
@@ -327,9 +326,24 @@ class Simpan_fe extends CI_Controller
             'pe_qr' => $namaqr,
             'pe_tgl' => $tglmohon,
             'pe_handphone' => $no_hp,
+            'pe_jenispermohonan' => $jenis,
+            'pe_syarat' => $syarat,
         );
 
         $this->m_data->save_data($data1, 'permohonan');
+        
+        //save di tabel surat
+        $data = array(
+            's_1' => $s1,
+            's_2' => $s2,
+            's_3' => $s3,
+            's_4' => $s4,
+            's_kodeproses' => $kode_proses,
+            's_kodepelayanan' => $koderegistrasi,
+        );
+
+        $this->m_data->save_data($data, 'surat');
+
         //cetak registrasi
         
         // require_once './vendor/autoload.php';
@@ -346,6 +360,6 @@ class Simpan_fe extends CI_Controller
         // $mpdf->WriteHTML($html);
         // //  $mpdf->Output('spt.pdf', 'I');//inline
         // $mpdf->Output('bukti_registrasi.pdf', 'D'); //download
-        redirect(base_url("sukses/$koderegistrasi"));
+        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
     }
 }

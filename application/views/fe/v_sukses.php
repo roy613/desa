@@ -23,7 +23,7 @@
           <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
             <h3>PERMOHONAN ANDA TELAH DITERIMA!</h3>
             <p style="text-align: justify;">
-            Terima kasih sudah menggunakan layanan kami. Dokumen tanda terima dapat anda download dengan klik <a href="<?php echo base_url('manual/'.$a->pe_kode); ?>"><u>disini</u></a>. <br><br>
+            Terima kasih sudah menggunakan layanan kami. Dokumen tanda terima dapat anda download dengan klik <a href="<?php echo base_url('manual/'.base64_encode($a->pe_kode)); ?>"><u>disini</u></a>. <br><br>
             Simpan dokumen tanda terima yang anda peroleh untuk menjadi bukti permohonan anda dengan cara mencetaknya atau screenshot. Apabila anda ingin melakukan permohonan layanan lainnya klik <a href="<?php echo base_url('layanan'); ?>"><u>disini</u></a>.
         </p>
             <a class="cta-btn align-self-start" href="<?php echo base_url(); ?>">Home</a>

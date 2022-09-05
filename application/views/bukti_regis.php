@@ -41,6 +41,7 @@
         <?php echo ucwords($a->pe_nama); ?>
         </td>
     </tr>
+    <?php if ($a->pe_alamat !== null){ ?>
     <tr>
         <td>
             Alamat Pemohon
@@ -49,9 +50,10 @@
             :
         </td>
         <td>
-            hkjgudyt
+        <?php echo $a->pe_alamat; ?>
         </td>
     </tr>
+    <?php } ?>
     <tr>
         <td>
            No. Handphone
@@ -60,7 +62,7 @@
             :
         </td>
         <td>
-        <?php echo ucwords($a->pe_handphone); ?>
+        <?php echo $a->pe_handphone; ?>
         </td>
     </tr>
     <tr>
@@ -71,7 +73,7 @@
             :
         </td>
         <td>
-            <b>jhvgjfyufhhghhgiygihbkibiigui</b>
+            <b><?php echo strtoupper($a->pe_jenispermohonan); ?></b>
         </td>
     </tr>
     <tr>
@@ -86,7 +88,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="3" style="font-size: 9pt;">
+        <td colspan="3" style="font-size: 8pt;padding-top:15px">
         Keterangan :<br>
             - Permohonan anda telah diterima dan akan segera diproses; <br>
             - Simpan Tanda Terima ini sebagai bukti permohonan anda (bisa di cetak atau di screenshot);<br>
@@ -96,10 +98,7 @@
     </tr>
     <tr>
         <td colspan="3" style="text-align: right;">
-bkjbijboojbkjbk<br>
-jhvuyfuvuhvvjhv<br>
-guyvuyvyyhhvhhv<br> 
-hgcjvjgvjvuvhhv
+<img src="<?php echo base_url(); ?>permohonan/<?php echo $a->pe_qr; ?>" style="height:110px">
         </td>
 
     </tr>
