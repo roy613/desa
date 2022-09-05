@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2022 at 05:16 AM
+-- Generation Time: Sep 05, 2022 at 03:28 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -162,26 +162,131 @@ INSERT INTO `pengguna` (`p_id`, `username`, `pass`, `ket`, `status`) VALUES
 
 CREATE TABLE `permohonan` (
   `pe_id` int(11) NOT NULL,
-  `pe_kode` varchar(11) DEFAULT NULL,
+  `pe_kode` varchar(40) DEFAULT NULL,
   `pe_nama` varchar(30) DEFAULT NULL,
   `pe_alamat` varchar(30) DEFAULT NULL,
   `pe_handphone` varchar(30) DEFAULT NULL,
   `pe_tgl` datetime DEFAULT NULL,
-  `pe_qr` varchar(50) DEFAULT NULL
+  `pe_qr` varchar(50) DEFAULT NULL,
+  `pe_ket` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `permohonan`
 --
 
-INSERT INTO `permohonan` (`pe_id`, `pe_kode`, `pe_nama`, `pe_alamat`, `pe_handphone`, `pe_tgl`, `pe_qr`) VALUES
-(1, 'DKI_nikah5', 'dsfsdf', NULL, NULL, NULL, 'DKI_nikah5.png'),
-(2, 'DKI_nikah6', 'dsfsdf', NULL, NULL, NULL, 'DKI_nikah6.png'),
-(3, 'DKI_nikah7', 'sdvfsfdv', NULL, NULL, '2022-09-04 16:22:11', 'DKI_nikah7.png'),
-(4, 'DKI_nikah8', 'sdvfsfdv', NULL, NULL, '2022-09-04 16:22:59', 'DKI_nikah8.png'),
-(5, 'DKI_nikah9', 'dsfcdsf', NULL, NULL, '2022-09-04 16:24:59', 'DKI_nikah9.png'),
-(6, 'DKI_nikah10', 'dsfcdsf', NULL, NULL, '2022-09-04 16:25:20', 'DKI_nikah10.png'),
-(7, 'DKI_nikah11', 'sdsdfdf', NULL, NULL, '2022-09-04 16:26:34', 'DKI_nikah11.png');
+INSERT INTO `permohonan` (`pe_id`, `pe_kode`, `pe_nama`, `pe_alamat`, `pe_handphone`, `pe_tgl`, `pe_qr`, `pe_ket`) VALUES
+(1, 'DKI_nikah5', 'dsfsdf', NULL, NULL, NULL, 'DKI_nikah5.png', NULL),
+(2, 'DKI_nikah6', 'dsfsdf', NULL, NULL, NULL, 'DKI_nikah6.png', NULL),
+(3, 'DKI_nikah7', 'sdvfsfdv', NULL, NULL, '2022-09-04 16:22:11', 'DKI_nikah7.png', NULL),
+(4, 'DKI_nikah8', 'sdvfsfdv', NULL, NULL, '2022-09-04 16:22:59', 'DKI_nikah8.png', NULL),
+(5, 'DKI_nikah9', 'dsfcdsf', NULL, NULL, '2022-09-04 16:24:59', 'DKI_nikah9.png', NULL),
+(6, 'DKI_nikah10', 'dsfcdsf', NULL, NULL, '2022-09-04 16:25:20', 'DKI_nikah10.png', 'tolak'),
+(7, 'DKI_nikah11', 'sdsdfdf', NULL, NULL, '2022-09-04 16:26:34', 'DKI_nikah11.png', 'proses'),
+(8, 'DKI_proposa', 'jundan', NULL, NULL, '2022-09-05 18:00:38', 'DKI_proposal8.png', NULL),
+(9, 'DKI_proposal9', 'jundan', NULL, '0811595952', '2022-09-05 18:06:42', 'DKI_proposal9.png', NULL),
+(10, 'DKI_proposal10', 'jundan', NULL, '0811595952', '2022-09-05 18:06:53', 'DKI_proposal10.png', NULL),
+(11, 'DKI_proposal11', 'jundan', NULL, '0811595952', '2022-09-05 18:06:59', 'DKI_proposal11.png', NULL),
+(12, 'DKI_proposal12', 'udin', NULL, '0811595952', '2022-09-05 18:41:57', 'DKI_proposal12.png', NULL),
+(13, 'DKI_proposal13', 'udin', NULL, '0811595952', '2022-09-05 18:43:40', 'DKI_proposal13.png', NULL),
+(14, 'DKI_proposal14', 'dfgfd', NULL, '365', '2022-09-05 18:44:27', 'DKI_proposal14.png', NULL),
+(15, 'DKI_proposal15', 'yfjh', NULL, '4554', '2022-09-05 18:45:12', 'DKI_proposal15.png', NULL),
+(16, 'DKI_proposal16', 'asasa', NULL, '0811595952', '2022-09-05 18:50:50', 'DKI_proposal16.png', NULL),
+(17, 'DKI_proposal17', 'dtgdfgh', NULL, '34534', '2022-09-05 18:51:24', 'DKI_proposal17.png', NULL),
+(18, 'DKI_proposal18', 'dgdfg', NULL, '34', '2022-09-05 18:51:43', 'DKI_proposal18.png', NULL),
+(19, 'DKI_proposal19', 'dsfdsf', NULL, '4443', '2022-09-05 18:52:15', 'DKI_proposal19.png', NULL),
+(20, 'DKI_proposal20', 'dfsdf', NULL, '32', '2022-09-05 18:52:48', 'DKI_proposal20.png', NULL),
+(21, 'DKI_proposal21', 'dasfdsf', NULL, '32', '2022-09-05 18:53:29', 'DKI_proposal21.png', NULL),
+(22, 'DKI_proposal22', 'drfg', NULL, '4343', '2022-09-05 19:00:33', 'DKI_proposal22.png', NULL),
+(23, 'DKI_proposal23', 'drfg', NULL, '4343', '2022-09-05 19:00:41', 'DKI_proposal23.png', NULL),
+(24, 'DKI_proposal24', 'rfg', NULL, '4', '2022-09-05 19:02:47', 'DKI_proposal24.png', NULL),
+(25, 'DKI_proposal25', 'rfg', NULL, '4', '2022-09-05 19:04:13', 'DKI_proposal25.png', NULL),
+(26, 'DKI_proposal26', 'rfg', NULL, '4', '2022-09-05 19:04:53', 'DKI_proposal26.png', NULL),
+(27, 'DKI_proposal27', 'dfgfd', NULL, '434', '2022-09-05 19:06:52', 'DKI_proposal27.png', NULL),
+(28, 'DKI_proposal28', 'test', NULL, '434', '2022-09-05 19:15:40', 'DKI_proposal28.png', NULL),
+(29, 'DKI_proposal29', 'werewr', NULL, '34', '2022-09-05 19:20:03', 'DKI_proposal29.png', NULL),
+(30, 'DKI_proposal30', 'werewr', NULL, '34', '2022-09-05 19:25:56', 'DKI_proposal30.png', NULL),
+(31, 'DKI_proposal31', 'dfg', NULL, '54', '2022-09-05 19:29:31', 'DKI_proposal31.png', NULL),
+(32, 'DKI_proposal32', 'ttdfghfdg', NULL, '43', '2022-09-05 21:26:08', 'DKI_proposal32.png', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `surat`
+--
+
+CREATE TABLE `surat` (
+  `s_id` int(11) NOT NULL,
+  `s_1` varchar(40) DEFAULT NULL,
+  `s_2` varchar(40) DEFAULT NULL,
+  `s_3` varchar(40) DEFAULT NULL,
+  `s_4` varchar(40) DEFAULT NULL,
+  `s_5` varchar(40) DEFAULT NULL,
+  `s_6` varchar(40) DEFAULT NULL,
+  `s_7` varchar(40) DEFAULT NULL,
+  `s_8` varchar(40) DEFAULT NULL,
+  `s_9` varchar(40) DEFAULT NULL,
+  `s_10` varchar(40) DEFAULT NULL,
+  `s_11` varchar(40) DEFAULT NULL,
+  `s_12` varchar(40) DEFAULT NULL,
+  `s_13` varchar(40) DEFAULT NULL,
+  `s_14` varchar(40) DEFAULT NULL,
+  `s_15` varchar(40) DEFAULT NULL,
+  `s_16` varchar(40) DEFAULT NULL,
+  `s_17` varchar(40) DEFAULT NULL,
+  `sd_1` date DEFAULT NULL,
+  `sd_2` date DEFAULT NULL,
+  `sd_3` date DEFAULT NULL,
+  `sd_4` date DEFAULT NULL,
+  `s_nosurat` varchar(40) DEFAULT NULL,
+  `s_jabatan` varchar(30) DEFAULT NULL,
+  `s_ttd` varchar(30) DEFAULT NULL,
+  `s_kodettd` int(1) DEFAULT NULL,
+  `s_qr` varchar(30) DEFAULT NULL,
+  `s_kodepelayanan` varchar(30) DEFAULT NULL,
+  `s_tglsurat` datetime DEFAULT NULL,
+  `s_tglbuat` datetime DEFAULT NULL,
+  `s_tgledit` datetime DEFAULT NULL,
+  `s_tglhapus` datetime DEFAULT NULL,
+  `s_proses` varchar(30) DEFAULT NULL,
+  `s_edit` varchar(30) DEFAULT NULL,
+  `s_hapus` varchar(30) DEFAULT NULL,
+  `s_ket` int(1) DEFAULT NULL,
+  `s_kodeproses` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `surat`
+--
+
+INSERT INTO `surat` (`s_id`, `s_1`, `s_2`, `s_3`, `s_4`, `s_5`, `s_6`, `s_7`, `s_8`, `s_9`, `s_10`, `s_11`, `s_12`, `s_13`, `s_14`, `s_15`, `s_16`, `s_17`, `sd_1`, `sd_2`, `sd_3`, `sd_4`, `s_nosurat`, `s_jabatan`, `s_ttd`, `s_kodettd`, `s_qr`, `s_kodepelayanan`, `s_tglsurat`, `s_tglbuat`, `s_tgledit`, `s_tglhapus`, `s_proses`, `s_edit`, `s_hapus`, `s_ket`, `s_kodeproses`) VALUES
+(1, 'jundan', 'kpc', 'wertdrgfsdfgfsdg', 'asfsafdsad', '0811595952', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(2, 'jundan', 'kpc', 'wertdrgfsdfgfsdg', 'asfsafdsad', '0811595952', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(3, 'jundan', 'kpc', 'wertdrgfsdfgfsdg', 'asfsafdsad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(4, 'jundan', 'kpc', 'wertdrgfsdfgfsdg', 'asfsafdsad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(5, 'jundan', 'kpc', 'wertdrgfsdfgfsdg', 'asfsafdsad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(6, 'jundan', 'kpc', 'wertdrgfsdfgfsdg', 'asfsafdsad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(7, 'udin', 'dsfds', 'dsfdsf', 'sdfdsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(8, 'udin', 'dsfds', 'dsfdsf', 'sdfdsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(9, 'dfgfd', 'fdgfdg', 'fdg', 'fgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(10, 'yfjh', 'gfhgfh', 'gfh', 'gfh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(11, 'asasa', 'sdgfdg', 'fdgfdg', 'fdgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(12, 'dtgdfgh', 'fgdfdg', 'fdgfd', 'gfdgfd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(13, 'dgdfg', 'ertret', 'retret', 'retret', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(14, 'dsfdsf', 'dsfds', 'dsf', 'dsfds', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(15, 'dfsdf', 'dsfdsf', 'dsf', 'dsfdsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(16, 'dasfdsf', 'dsfdsf', 'dsfdf', 'dsfds', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(17, 'drfg', 'dfgfd', 'fdg', 'fdgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(18, 'drfg', 'dfgfd', 'fdg', 'fdgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(19, 'rfg', 'fdgfdg', 'fdg', 'fdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(20, 'rfg', 'fdgfdg', 'fdg', 'fdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(21, 'rfg', 'fdgfdg', 'fdg', 'fdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(22, 'dfgfd', 'fdgdfg', 'fdggfd', 'fdgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(23, 'test', 'fdgdfg', 'fdggfd', 'fdgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal28', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(24, 'werewr', 'ewrewr', 'ewrewr', 'ewrewr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal29', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(25, 'werewr', 'ewrewr', 'ewrewr', 'ewrewr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(26, 'dfg', 'dfgfdg', 'fdgfdg', 'dfgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal31', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(27, 'ttdfghfdg', 'fdgfdg', 'fdg', 'fdgfdg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal32', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 --
 -- Indexes for dumped tables
@@ -212,6 +317,12 @@ ALTER TABLE `permohonan`
   ADD PRIMARY KEY (`pe_id`);
 
 --
+-- Indexes for table `surat`
+--
+ALTER TABLE `surat`
+  ADD PRIMARY KEY (`s_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -237,7 +348,13 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `permohonan`
 --
 ALTER TABLE `permohonan`
-  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `surat`
+--
+ALTER TABLE `surat`
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
