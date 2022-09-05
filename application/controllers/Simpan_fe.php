@@ -12,58 +12,6 @@ class Simpan_fe extends CI_Controller
 
     public function nikah()
     {
-        // include "phpqrcode/qrlib.php";
-        // $tempdir = "temp/"; //Nama folder tempat menyimpan file qrcode
-        // if (!file_exists($tempdir)) //Buat folder bername temp
-        //     mkdir($tempdir);
-
-        // $bu = base_url();
-        // $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
-
-        // $nomor2 = $this->db->query("SELECT * FROM nikah")->num_rows();
-        // $nomor3 = $nomor2 + 1;
-        // $namaqr = 'qrkpn' . $nomor3 . '.png';
-
-        // $maxid = $this->db->query("SELECT MAX(n_id) FROM nikah")->result_array();
-        // $ab = intval($maxid[0]["MAX(n_id)"]) + 1;
-        // $ac = base_url() . 'kcod';
-        // // $codeContents = "$ac/arsippeng/$ab";
-        // $codeContents = "dfgdfgfdgdf df gfd hdfgh gdfh ";
-
-        // QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
-
-        // $QR = imagecreatefrompng($tempdir . $namaqr);
-
-        // $logo = imagecreatefromstring(file_get_contents($logopath));
-
-        // imagecolortransparent($logo, imagecolorallocatealpha($logo, 127, 127, 127, 127));
-        // imagealphablending($logo, true);
-        // imagesavealpha($logo, true);
-
-        // $QR_width = imagesx($QR);
-        // $QR_height = imagesy($QR);
-
-        // $logo_width = imagesx($logo);
-        // $logo_height = imagesy($logo);
-
-        // $logo_qr_width = $QR_width / 4;
-        // $scale = $logo_width / $logo_qr_width;
-        // $logo_qr_height = $logo_height / $scale;
-        // imagecopyresampled($QR, $logo, $QR_width / 2.7, $QR_height / 2.9, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
-        // imagepng($QR, $tempdir . $namaqr);
-
-        //simpan
-        // $buat = $this->session->userdata('username');
-        // $nomor =  $this->db->query("SELECT * FROM nomor WHERE n_id=7")->result_array();
-        // $nomor1 = $this->db->query("SELECT * FROM nikah WHERE YEAR (n_tglsurat) = YEAR(NOW())")->num_rows();
-
-        // if ($nomor[0]["n_2"] == "") {
-        //     $nosurat = $nomor[0]["n_1"] . str_pad($nomor1 + 1, 3, '0', STR_PAD_LEFT) . $nomor[0]["n_3"];
-        //     $no_jenis = 1;
-        // } else {
-        //     $nosurat = $nomor[0]["n_1"] . $nomor[0]["n_2"] . $nomor[0]["n_3"];
-        //     $no_jenis = 0;
-        // }
         $nama1 = $this->input->post('nikah_nama1');
         $nik1 = $this->input->post('nikah_nik1');
         $job1 = $this->input->post('nikah_job1');
@@ -305,5 +253,99 @@ class Simpan_fe extends CI_Controller
         force_download('spt.pdf', NULL);
 
         redirect(base_url('sukses'));
+    }
+
+    public function proposal()
+    {
+        $nomor2 = $this->db->query("SELECT * FROM permohonan")->num_rows();
+        $nomor3 = $nomor2 + 1;
+        $namaqr = 'DKI_proposal' . $nomor3 . '.png';
+        $koderegistrasi = 'DKI_proposal' . $nomor3;
+
+        //save di tabel surat
+        $s1 = $this->input->post('proposal_nama');
+        $s2 = $this->input->post('proposal_perusahaan');
+        $s3 = $this->input->post('proposal_nosuratpemohon');
+        $s4 = $this->input->post('proposal_halpermohonan');
+
+        $no_hp = $this->input->post('proposal_nohp');
+        $tglmohon = date('Y-m-d H-i-s');
+        $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 pemohon masyarakat dan sudah diproses, status 3 surat dibuat admin lewat be.
+
+        $data = array(
+            's_1' => $s1,
+            's_2' => $s2,
+            's_3' => $s3,
+            's_4' => $s4,
+            's_kodeproses' => $kode_proses,
+            's_kodepelayanan' => $koderegistrasi,
+        );
+
+        $this->m_data->save_data($data, 'surat');
+
+        //save ditabel permohonan
+        include "phpqrcode/qrlib.php";
+        $tempdir = "permohonan/";
+        if (!file_exists($tempdir))
+            mkdir($tempdir);
+
+        $bu = base_url();
+        $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
+
+       
+
+        $ab = base64_encode($nomor3);
+        $ac = base_url() . 'sukses';
+        $codeContents = "$ac/$ab";
+        // $codeContents = "dfgdfgfdgdf df gfd hdfgh gdfh ";
+
+        QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
+
+        $QR = imagecreatefrompng($tempdir . $namaqr);
+
+        $logo = imagecreatefromstring(file_get_contents($logopath));
+
+        imagecolortransparent($logo, imagecolorallocatealpha($logo, 127, 127, 127, 127));
+        imagealphablending($logo, true);
+        imagesavealpha($logo, true);
+
+        $QR_width = imagesx($QR);
+        $QR_height = imagesy($QR);
+
+        $logo_width = imagesx($logo);
+        $logo_height = imagesy($logo);
+
+        $logo_qr_width = $QR_width / 4;
+        $scale = $logo_width / $logo_qr_width;
+        $logo_qr_height = $logo_height / $scale;
+        imagecopyresampled($QR, $logo, $QR_width / 2.7, $QR_height / 2.9, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+        imagepng($QR, $tempdir . $namaqr);
+
+        $data1 = array(
+            'pe_kode' => $koderegistrasi,
+            'pe_nama' => $s1,
+            'pe_qr' => $namaqr,
+            'pe_tgl' => $tglmohon,
+            'pe_handphone' => $no_hp,
+        );
+
+        $this->m_data->save_data($data1, 'permohonan');
+        //cetak registrasi
+        
+        // require_once './vendor/autoload.php';
+        // $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,165]]);
+        // $data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$koderegistrasi'")->result();
+        // $html = $this->load->view('bukti_regis', "$data", true);
+        // $mpdf->AddPage('P','','','','',
+        // 12,//ml
+        // 13,//mr
+        // 10,//mt
+        // 15,//mb
+        // 1,//mh
+        // 4);//mf
+        // $mpdf->WriteHTML($html);
+        // //  $mpdf->Output('spt.pdf', 'I');//inline
+        // $mpdf->Output('bukti_registrasi.pdf', 'D'); //download
+        redirect(base_url("sukses/$koderegistrasi"));
     }
 }

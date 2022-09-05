@@ -43,11 +43,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('fe/v_footer');
 		$this->load->view('fe/f_layanan');
 		$this->load->view('fe/f_layanan_nikah');
+		// $this->load->view('fe/f_layanan_proposal');
 	}
-	public function sukses()
+	public function sukses($a)
 	{
+		$data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$a'")->result();
 		$this->load->view('fe/v_header');
-		$this->load->view('fe/v_sukses');
+		$this->load->view('fe/v_sukses', $data);
 		$this->load->view('fe/v_footer');
 	}
 	public function periksa()

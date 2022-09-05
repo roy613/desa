@@ -7,7 +7,7 @@
 <?php $this->load->view('kop_surat'); ?>
 <html>
 <font face="arial">
-    
+<?php foreach ($aaa as $a) { ?>
     <table border=0 style="margin-top:10px; margin-left:20px; width:100%">
     <tr>
         <td colspan="3" style="text-align: center;">
@@ -27,7 +27,7 @@
             :
         </td>
         <td>
-            <b>jhvgjfyufhhghhgiygihbkibiigui</b>
+            <b><?php echo $a->pe_kode; ?></b>
         </td>
     </tr>
     <tr>
@@ -38,7 +38,7 @@
             :
         </td>
         <td>
-            muhammad muhammad muhammad muhammad muhammad
+        <?php echo ucwords($a->pe_nama); ?>
         </td>
     </tr>
     <tr>
@@ -60,7 +60,7 @@
             :
         </td>
         <td>
-            766578744786
+        <?php echo ucwords($a->pe_handphone); ?>
         </td>
     </tr>
     <tr>
@@ -82,7 +82,7 @@
             :
         </td>
         <td>
-           kugyfjyvhh jjbjjbkjb khbkhbhkb
+        <?php echo ucwords($a->pe_tgl); ?>
         </td>
     </tr>
     <tr>
@@ -104,5 +104,6 @@ hgcjvjgvjvuvhhv
 
     </tr>
     </table>
+    <?php } ?>
 </font>
 </html>

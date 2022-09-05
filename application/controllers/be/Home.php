@@ -28,5 +28,13 @@ class Home extends CI_Controller
         $this->load->view('be/v_footer');
         $this->load->view('be/f_pengguna');
     }
+    public function lihat_surat()
+    {
+        // $data['guna'] = $this->db->query('SELECT * FROM pengguna')->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_proses1');
+        $this->load->view('be/v_footer');
+    }
     
 }

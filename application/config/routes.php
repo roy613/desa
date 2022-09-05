@@ -56,7 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'login';
 $route['proses'] = 'login/aksi';
 $route['logout'] = 'login/keluar';
-$route['manual'] = 'cetak/permohonan';
+$route['manual/(:any)'] = 'cetak/permohonan/$1';
 
 
 $route['dashboard'] = 'be/home';
@@ -64,5 +64,5 @@ $route['pengguna'] = 'be/home/pengguna';
 
 
 $route['layanan'] = 'welcome/layanan';
-$route['sukses'] = 'welcome/sukses';
+$route['sukses/(:any)'] = 'welcome/sukses/$1';
 $route['periksa/(:any)'] = 'welcome/periksa/$1';

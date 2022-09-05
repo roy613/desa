@@ -24,22 +24,22 @@
 
                                 <div class="tab-pane active show" id="pindah-1">
                                     <div class="row gy-4">
-                                        <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                                             <h3>Persyaratan</h3>
                                             <p class="fst-italic">
                                                 Silahkan lengkapi dokumen persyaratan dibawah ini untuk melakukan permohonan :
                                             </p>
                                             <ul>
-                                                <li><i class="bi bi-check-circle-fill"></i> Fotokopi KTP</li>
-                                                <li><i class="bi bi-check-circle-fill"></i> Surat Pengantar RT</li>
+                                                <li><i class="bi bi-check-circle-fill"></i> Foto KTP / Kartu Keluarga (Format jpeg/jpg/png)</li>
+                                                <!-- <li><i class="bi bi-check-circle-fill"></i> Surat Pengantar RT</li> -->
                                             </ul>
-                                            <p>
+                                            <p style="text-align: justify;">
                                                 Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                             </p>
-                                        </div>
-                                        <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                                            <img src="assets/img/features-1.svg" alt="" class="img-fluid">
-                                        </div>
+                                            <p style="text-align: justify;">
+                                                Pastikan isi semua form yang ada dengan data yang sebenarnya. Apabila anda <b>tidak bisa</b> menekan tombol proses berarti ada form yang belum diisi.
+                                            </p>
+                                        </div>  
                                     </div>
                                 </div><!-- End Tab Content 1 -->
 
@@ -62,9 +62,6 @@
                                                 <li><i class="bi bi-check-circle-fill"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
                                                 <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
                                             </ul>
-                                        </div>
-                                        <div class="col-lg-4 order-1 order-lg-2 text-center">
-                                            <img src="assets/img/features-2.svg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div><!-- End Tab Content 2 -->

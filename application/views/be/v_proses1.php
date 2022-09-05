@@ -6,21 +6,10 @@
 
         </div><!-- /.container-fluid -->
     </section>
-    <?php foreach ($surat as $k) { ?>
+ 
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <?php
-                if (isset($_GET['alert'])) {
-                    if ($_GET['alert'] == "sukses") {
-                        echo "<div class='alert alert-success'>Surat Berhasil di Proses</div>";
-                    } else if ($_GET['alert'] == "gagal") {
-                        echo "<div class='alert alert-danger'>Data Berhasil DiHapus</div>";
-                    } else if ($_GET['alert'] == "sukses1") {
-                        echo "<div class='alert alert-success'>Surat Berhasil di Buat</div>";
-                    }
-                }
-                ?>
                 <div class="row">
                     <div class="col-md-4">
 
@@ -31,28 +20,26 @@
                                     <img class="profile-user-img img-fluid" src="<?php echo base_url(); ?>assets/logo.png" alt="">
                                 </div>
 
-                                <h3 class="profile-username text-center"><?php echo $k->s_namadesa; ?></h3>
+                                <h3 class="profile-username text-center">Desa Karangan Hilir</h3>
 
-                                <p class="text-muted text-center"><?php echo $k->s_nounik; ?></p>
+                                <p class="text-muted text-center">no pelayanan</p>
 
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>Pemohon</b> <a class="float-right"><?php echo $k->s_namapemohon; ?></a>
+                                        <b>Pemohon</b> <a class="float-right"><xxxxxxxxxxxxx</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Jenis Surat</b> <a class="float-right"><?php echo $k->s_jenis; ?></a>
+                                        <b>Jenis Surat</b> <a class="float-right">xxxxxxxxxxxxxxxx</a>
                                     </li>
                                 </ul>
 
-                                <?php if ($k->s_tglkec == '0000-00-00') { ?>
-                                    <a href="javascript:;" onclick="rekomkerja('<?php echo $k->s_id; ?>')" class="btn btn-primary btn-block"><b>Buat Surat</b></a>
-                                <?php } ?>
-                                <?php if ($k->s_tglkec !== '0000-00-00') { ?>
-                                    <a target="_blank" href="<?php echo base_url() . 'proses/c_rekomkerja/' . $k->s_id; ?>" class="btn btn-info btn-block"><b>Cetak</b></a>
-                                <?php } ?>
-
-                                <a target="_blank" href="https://kirimwa.id/petok/<?php echo $k->s_nohp ?>:(uji_coba)_Mohon_Maaf_Syarat_Anda_tidak_lengkap,_Silahkan_lengkapi_lagi!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" class="btn btn-danger btn-block"><b>Syarat Tidak Lengkap</b></a>
-                                <a target="_blank" href="https://kirimwa.id/petok/<?php echo $k->s_nohp ?>:(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Camat!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" class="btn btn-success btn-block"><b>Surat Selesai</b></a>
+                               
+                                    <a href="javascript:;" onclick="rekomkerja('')" class="btn btn-primary btn-block"><b>Buat Surat</b></a>
+                              
+                                    <a target="_blank" href="<?php echo base_url() . 'proses/c_rekomkerja/' ?>" class="btn btn-info btn-block"><b>Cetak</b></a>
+           
+                                <a target="_blank" href="https://kirimwa.id/petok/no_hp:(uji_coba)_Mohon_Maaf_Syarat_Anda_tidak_lengkap,_Silahkan_lengkapi_lagi!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" class="btn btn-danger btn-block"><b>Syarat Tidak Lengkap</b></a>
+                                <a target="_blank" href="https://kirimwa.id/petok/no_hp:(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Camat!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" class="btn btn-success btn-block"><b>Surat Selesai</b></a>
 
                             </div>
                             <!-- /.card-body -->
@@ -86,7 +73,7 @@
                                                 <!-- /.col -->
                                                 <div class="col-sm-6">
                                                     <div class="row">
-                                                        <?php if ($k->s_ktp != null) { ?>
+                                                        <!-- <?php if ($k->s_ktp != null) { ?>
                                                             <div class="col-sm-6">
                                                                 <a href="<?php echo base_url(); ?>dasar/<?php echo $k->s_ktp; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>dasar/<?php echo $k->s_ktp; ?>" alt=""></a>
                                                             </div><?php } ?>
@@ -106,7 +93,7 @@
                                                             <div class="col-sm-6">
                                                                 <a href="<?php echo base_url(); ?>dasar/<?php echo $k->s_s2; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>dasar/<?php echo $k->s_s2; ?>" alt=""></a>
                                                             </div><?php } ?>
-
+ -->
 
                                                     </div>
                                                     <!-- /.row -->
@@ -125,7 +112,7 @@
                                             <!-- timeline time label -->
                                             <div class="time-label">
                                                 <span class="bg-danger">
-                                                    <?php echo tgl_indo($k->s_tglpermohonan); ?>
+                                                    tanggal
                                                 </span>
                                             </div>
                                             <!-- /.timeline-label -->
@@ -146,7 +133,7 @@
                                             <?php if ($k->s_tglkec !== '0000-00-00') { ?>
                                                 <div class="time-label">
                                                     <span class="bg-danger">
-                                                        <?php echo tgl_indo($k->s_tglkec); ?>
+                                                        tanggal proses
                                                     </span>
                                                 </div>
 
@@ -155,7 +142,7 @@
 
                                                     <div class="timeline-item">
 
-                                                        <h3 class="timeline-header">Proses di Kecamatan</h3>
+                                                        <h3 class="timeline-header">Proses di Desa</h3>
 
                                                     </div>
                                                 </div>
@@ -183,7 +170,7 @@
                 <!-- /.row -->
             </div><!-- /.container-fluid -->
         </section>
-    <?php } ?>
+
     <!-- /.content -->
 </div>
 <script>
