@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2022 at 12:52 AM
+-- Generation Time: Sep 07, 2022 at 01:16 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -96,7 +96,7 @@ CREATE TABLE `nikah` (
   `n_binti_22` varchar(30) DEFAULT NULL,
   `n_lokasi` varchar(40) DEFAULT NULL,
   `n_waktu` datetime DEFAULT NULL,
-  `n_kodeunik` varchar(5) DEFAULT NULL,
+  `n_kodepelayanan` varchar(10) DEFAULT NULL,
   `n_nojenis` int(1) DEFAULT NULL,
   `n_arsip` varchar(80) DEFAULT NULL,
   `n_buat` varchar(30) DEFAULT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE `nikah` (
 -- Dumping data for table `nikah`
 --
 
-INSERT INTO `nikah` (`n_id`, `n_nama_1`, `n_nik_1`, `n_tptlahir_1`, `n_tgllahir_1`, `n_kwn_1`, `n_agama_1`, `n_job_1`, `n_alamat_1`, `n_status_1`, `n_nama_11`, `n_nik_11`, `n_tptlahir_11`, `n_tgllahir_11`, `n_kwn_11`, `n_agama_11`, `n_job_11`, `n_alamat_11`, `n_nama_12`, `n_nik_12`, `n_tptlahir_12`, `n_tgllahir_12`, `n_kwn_12`, `n_agama_12`, `n_job_12`, `n_alamat_12`, `n_nama_2`, `n_nik_2`, `n_tptlahir_2`, `n_tgllahir_2`, `n_kwn_2`, `n_agama_2`, `n_job_2`, `n_alamat_2`, `n_status_2`, `n_nama_21`, `n_nik_21`, `n_tptlahir_21`, `n_tgllahir_21`, `n_kwn_21`, `n_agama_21`, `n_job_21`, `n_alamat_21`, `n_nama_22`, `n_nik_22`, `n_tptlahir_22`, `n_tgllahir_22`, `n_kwn_22`, `n_agama_22`, `n_job_22`, `n_alamat_22`, `n_bin_11`, `n_binti_12`, `n_bin_21`, `n_binti_22`, `n_lokasi`, `n_waktu`, `n_kodeunik`, `n_nojenis`, `n_arsip`, `n_buat`, `n_edit`, `n_hapus`, `n_tglmohon`, `n_tglbuat`, `n_tgledit`, `n_tglhapus`, `n_qr`, `n_nomor`, `n_tglsurat`, `n_ttd`, `n_jabttd`, `n_nipttd`, `n_golttd`, `n_mpket`, `n_status`) VALUES
+INSERT INTO `nikah` (`n_id`, `n_nama_1`, `n_nik_1`, `n_tptlahir_1`, `n_tgllahir_1`, `n_kwn_1`, `n_agama_1`, `n_job_1`, `n_alamat_1`, `n_status_1`, `n_nama_11`, `n_nik_11`, `n_tptlahir_11`, `n_tgllahir_11`, `n_kwn_11`, `n_agama_11`, `n_job_11`, `n_alamat_11`, `n_nama_12`, `n_nik_12`, `n_tptlahir_12`, `n_tgllahir_12`, `n_kwn_12`, `n_agama_12`, `n_job_12`, `n_alamat_12`, `n_nama_2`, `n_nik_2`, `n_tptlahir_2`, `n_tgllahir_2`, `n_kwn_2`, `n_agama_2`, `n_job_2`, `n_alamat_2`, `n_status_2`, `n_nama_21`, `n_nik_21`, `n_tptlahir_21`, `n_tgllahir_21`, `n_kwn_21`, `n_agama_21`, `n_job_21`, `n_alamat_21`, `n_nama_22`, `n_nik_22`, `n_tptlahir_22`, `n_tgllahir_22`, `n_kwn_22`, `n_agama_22`, `n_job_22`, `n_alamat_22`, `n_bin_11`, `n_binti_12`, `n_bin_21`, `n_binti_22`, `n_lokasi`, `n_waktu`, `n_kodepelayanan`, `n_nojenis`, `n_arsip`, `n_buat`, `n_edit`, `n_hapus`, `n_tglmohon`, `n_tglbuat`, `n_tgledit`, `n_tglhapus`, `n_qr`, `n_nomor`, `n_tglsurat`, `n_ttd`, `n_jabttd`, `n_nipttd`, `n_golttd`, `n_mpket`, `n_status`) VALUES
 (1, 'ftyyhtr', '5465465465654655', 'fghfgh', '2022-09-07', 'fghfg', 'Kristen', 'gfhfgh', 'fghfgh', 1, 'rtytry', '4565465466545545', 'dfg', '2022-10-02', 'Indonesia', 'Islam', 'dfgfgd', 'sangkulirang', 'dfgdf', '5465465465465465', 'dfg', '2022-09-20', 'Indonesia', 'Kristen', 'dfgdfgdfg', 'sangkulirang', 'dfgdfg', '3556545454545555', 'fghhgfh', '2022-09-13', 'Indonesia', 'Islam', 'ghgh', 'sangkulirang', 1, 'gfhgfhgh', '1565465465465465', 'fgh', '2022-08-30', 'fgh', 'Islam', 'gfh', 'fghfg', 'fhg', '4567544554554545', 'fgh', '2022-09-14', 'fgh', 'Islam', 'gfh', 'gfh', 'dfg', 'dfgdfg', 'fgh', 'fgh', 'fghfghhgf', '2022-09-20 17:49:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-04 13:45:19', NULL, NULL, 'qrkpn1.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (2, 'ftyyhtr', '5465465465654655', 'fghfgh', '2022-09-07', 'fghfg', 'Kristen', 'gfhfgh', 'fghfgh', 1, 'rtytry', '4565465466545545', 'dfg', '2022-10-02', 'Indonesia', 'Islam', 'dfgfgd', 'sangkulirang', 'dfgdf', '5465465465465465', 'dfg', '2022-09-20', 'Indonesia', 'Kristen', 'dfgdfgdfg', 'sangkulirang', 'dfgdfg', '3556545454545555', 'fghhgfh', '2022-09-13', 'Indonesia', 'Islam', 'ghgh', 'sangkulirang', 1, 'gfhgfhgh', '1565465465465465', 'fgh', '2022-08-30', 'fgh', 'Islam', 'gfh', 'fghfg', 'fhg', '4567544554554545', 'fgh', '2022-09-14', 'fgh', 'Islam', 'gfh', 'gfh', 'dfg', 'dfgdfg', 'fgh', 'fgh', 'fghfghhgf', '2022-09-20 17:49:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-04 13:46:33', NULL, NULL, 'qrkpn2.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 'ftyyhtr', '5465465465654655', 'fghfgh', '2022-09-07', 'fghfg', 'Kristen', 'gfhfgh', 'fghfgh', 1, 'rtytry', '4565465466545545', 'dfg', '2022-10-02', 'Indonesia', 'Islam', 'dfgfgd', 'sangkulirang', 'dfgdf', '5465465465465465', 'dfg', '2022-09-20', 'Indonesia', 'Kristen', 'dfgdfgdfg', 'sangkulirang', 'dfgdfg', '3556545454545555', 'fghhgfh', '2022-09-13', 'Indonesia', 'Islam', 'ghgh', 'sangkulirang', 1, 'gfhgfhgh', '1565465465465465', 'fgh', '2022-08-30', 'fgh', 'Islam', 'gfh', 'fghfg', 'fhg', '4567544554554545', 'fgh', '2022-09-14', 'fgh', 'Islam', 'gfh', 'gfh', 'dfg', 'dfgdfg', 'fgh', 'fgh', 'fghfghhgf', '2022-09-20 17:49:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-04 13:47:38', NULL, NULL, 'qrkpn3.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -172,6 +172,13 @@ CREATE TABLE `permohonan` (
   `pe_syarat` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `permohonan`
+--
+
+INSERT INTO `permohonan` (`pe_id`, `pe_kode`, `pe_nama`, `pe_alamat`, `pe_handphone`, `pe_tgl`, `pe_qr`, `pe_jenispermohonan`, `pe_syarat`) VALUES
+(1, 'DKI_proposal1', 'jundan', NULL, '435345435453', '2022-09-06 19:02:20', 'DKI_proposal1.png', 'Surat Rekomendasi Proposal', 'karangan.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -217,6 +224,13 @@ CREATE TABLE `surat` (
   `s_ket` int(1) DEFAULT NULL,
   `s_kodeproses` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `surat`
+--
+
+INSERT INTO `surat` (`s_id`, `s_1`, `s_2`, `s_3`, `s_4`, `s_5`, `s_6`, `s_7`, `s_8`, `s_9`, `s_10`, `s_11`, `s_12`, `s_13`, `s_14`, `s_15`, `s_16`, `s_17`, `sd_1`, `sd_2`, `sd_3`, `sd_4`, `s_nosurat`, `s_jabatan`, `s_ttd`, `s_kodettd`, `s_qr`, `s_kodepelayanan`, `s_tglsurat`, `s_tglbuat`, `s_tgledit`, `s_tglhapus`, `s_proses`, `s_edit`, `s_hapus`, `s_ket`, `s_kodeproses`) VALUES
+(1, 'jundan', 'kpc', 'kjdsfhosdfhoewo', 'kjkhsdhdouh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'kades', NULL, NULL, 'DKI_proposal1', '2022-09-07 00:00:00', '2022-09-07 07:10:46', NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 --
 -- Indexes for dumped tables
@@ -278,13 +292,13 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `permohonan`
 --
 ALTER TABLE `permohonan`
-  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

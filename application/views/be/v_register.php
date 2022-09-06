@@ -27,7 +27,7 @@
 
               <!-- <a href="<?php echo base_url() . 'cetak/register'; ?>" target="_blank" class="btn btn-sm btn-primary" style="float:right">Cetak Buku</a> -->
               <h6 style="color: dimgrey;">
-               Daftar Permohonan Yang Belum di Proses
+                Daftar Permohonan Yang Belum di Proses
               </h6>
 
               <!-- /.col -->
@@ -35,7 +35,7 @@
 
             <div class="card-body" style="overflow-x:auto">
 
-              <table class="table table-bordered table-striped" style="font-size: 10pt">
+              <table class="table table-bordered table-striped table-hover" style="font-size: 10pt">
                 <thead>
                   <tr style="background-color: skyblue; text-align:center">
                     <th style="width: 2%">NO</th>
@@ -49,14 +49,15 @@
                   <?php
                   $no = 1;
                   foreach ($daftar as $k) { ?>
-                    <tr style="font-size: 10pt;">
-                      <td><?php echo $no++; ?></td>
-                      <td><?php echo $k->pe_nama; ?></td>
-                      <td><?php echo $k->pe_jenispermohonan; ?></td>
-                      <td><?php echo $k->pe_kode; ?></td>
-                      <td><?php echo tgl_indo($k->pe_tgl); ?></td>
-                    </tr>
-
+                   
+                      <tr class='clickable-row' data-href="<?php echo base_url('lihat_surat/'.base64_encode($k->pe_kode)); ?>" style="cursor:pointer">
+                        <td><?php echo $no++; ?></td>
+                        <td><?php echo $k->pe_nama; ?></td>
+                        <td><?php echo $k->pe_jenispermohonan; ?></td>
+                        <td><?php echo $k->pe_kode; ?></td>
+                        <td><?php echo tgl_indojam1($k->pe_tgl); ?></td>
+                      </tr>
+                
                   <?php } ?>
                 </tbody>
               </table>

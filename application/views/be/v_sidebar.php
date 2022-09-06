@@ -14,7 +14,7 @@
        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->        
-         <li class="nav-item">
+         <!-- <li class="nav-item">
            <a href="<?php echo base_url('arsip'); ?>" class="nav-link">
            <i class="nav-icon fas fa-file-medical text-info"></i>             
              <p>Input Arsip</p>
@@ -32,7 +32,7 @@
              <i class="nav-icon fas fa-server text-info"></i>
              <p>Jenis Arsip</p>
            </a>
-         </li>         
+         </li>          -->
          <li class="nav-item">
            <a href="<?php echo base_url('pengguna'); ?>" class="nav-link">
              <i class="nav-icon fas fa-users text-info"></i>

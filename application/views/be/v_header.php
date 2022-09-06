@@ -63,6 +63,22 @@
 
     return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
   }
+
+  function tgl_indojam1($string)
+  {
+    $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+    $date = explode(" ", $string)[0];
+    $time = explode(" ", $string)[1];
+
+    $tanggal = explode("-", $date)[2];
+    $bulan = explode("-", $date)[1];
+    $tahun = explode("-", $date)[0];
+
+
+
+    return $tanggal . " " . $bulanIndo[abs($bulan)] . " " . $tahun . " Pukul " . $time . " ";
+  }
   ?>
 </head>
 
@@ -85,7 +101,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
             <span class="badge badge-danger navbar-badge">3</span>
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">

@@ -4,7 +4,7 @@
     }
 </style>
 
-<?php $this->load->view('kop_surat'); ?>
+<?php $this->load->view('cetak/kop_surat'); ?>
 <html>
 <font face="arial">
 

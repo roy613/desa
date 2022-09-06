@@ -259,7 +259,7 @@
             'Tidak Survei',
         ],
         datasets: [{
-            data: [700, 500, 400,],
+            data: [700, 500, 400, ],
             backgroundColor: ['#279F4B', '#BD473C', '#BD473'],
         }]
     }
@@ -275,7 +275,13 @@
         options: pieOptions
     })
 </script>
-
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
 </body>
 
 </html>

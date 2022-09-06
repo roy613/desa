@@ -77,8 +77,8 @@ class Simpan_fe extends CI_Controller
         $binti12 = $this->input->post('nikah_binti12');
         $binti22 = $this->input->post('nikah_binti22');
 
-        $status = 1; //status 1 pemohon masyarakat belum diproses, status 2 pemohon masyarakat dan sudah diproses, status 3 surat dibuat admin lewat be.
-
+        $status = 1; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $jenis = "surat pengantar menikah";
         // $tglsurat = $this->input->post('tglsrt');
         // $ttd = $this->input->post('ttd');
         // $jabttd = $this->input->post('jabttd');
@@ -267,7 +267,7 @@ class Simpan_fe extends CI_Controller
         $s3 = $this->input->post('proposal_nosuratpemohon');
         $s4 = $this->input->post('proposal_halpermohonan');
         
-        $jenis = "Surat Rekomendasi Proposal";
+        $jenis = "surat rekomendasi proposal";
         $no_hp = $this->input->post('proposal_nohp');
         $tglmohon = date('Y-m-d H-i-s');
         $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 pemohon masyarakat dan sudah diproses, status 3 surat dibuat admin lewat be.
