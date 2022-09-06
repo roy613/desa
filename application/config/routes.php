@@ -61,6 +61,7 @@ $route['manual/(:any)'] = 'cetak/permohonan/$1';
 
 $route['dashboard'] = 'be/home';
 $route['pengguna'] = 'be/home/pengguna';
+$route['cek_permohonan'] = 'be/home/daftar_permohonan';
 
 
 $route['layanan'] = 'welcome/layanan';

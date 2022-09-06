@@ -28,6 +28,14 @@ class Home extends CI_Controller
         $this->load->view('be/v_footer');
         $this->load->view('be/f_pengguna');
     }
+    public function daftar_permohonan()
+    {
+        $data['daftar'] = $this->db->query('SELECT * FROM permohonan')->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_register', $data);
+        $this->load->view('be/v_footer');
+    }
     public function lihat_surat()
     {
         // $data['guna'] = $this->db->query('SELECT * FROM pengguna')->result();

@@ -137,7 +137,7 @@
               <!-- Message End -->
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+            <a href="<?php echo base_url('cek_permohonan'); ?>" class="dropdown-item dropdown-footer">Lihat Semua Permohonan</a>
           </div>
         </li>
         <!-- Notifications Dropdown Menu -->
