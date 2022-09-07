@@ -1,4 +1,12 @@
 <script>
+    function ambil_nomor(a, b, c) {
+        $('#id').val(a);
+        $('#kode').val(b);
+        $('#jenis').val(c);
+        $('#m_nomor').modal('show');
+
+    }
+
     function tolak_berkas(a,b) {
         var a= a;
 
@@ -12,7 +20,7 @@
         Swal.fire({
             title: 'Berkas di Tolak Persyaratan Tidak Lengkap!',
             text: "Apakah Anda Ingin Mengirim Pemberitahuan Via Whatsapp kepada Pemohon ?",
-            icon: 'info',
+            icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: 'green',
             cancelButtonColor: '#3085d6',
@@ -48,6 +56,24 @@
             if (result.isConfirmed) {
                 window.open("https://kirimwa.id/petok/"+b+":(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Camat!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!", '_blank');
                 // window.location.href="https://kirimwa.id/petok/"+a+":(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Camat!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" ;
+            }
+        });
+    }
+    function ttd_fungsi() {
+        var peg = document.getElementById("ttd").value;
+
+        $.ajax({
+            url: "<?php echo base_url('be/proses/ttd_periksa') ?>",
+            method: "POST",
+            data: {
+                peg: peg
+            },
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                // alert(data[0].mp_nip);
+                document.getElementById("jabttd").value = data[0].tt_jabatan;
+                document.getElementById("kodettd").value = data[0].tt_ket;
             }
         });
     }

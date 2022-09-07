@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2022 at 01:16 AM
+-- Generation Time: Sep 08, 2022 at 12:50 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `admin`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftar_pelayanan`
+--
+
+CREATE TABLE `daftar_pelayanan` (
+  `da_id` int(30) NOT NULL,
+  `da_pelayanan` varchar(100) DEFAULT NULL,
+  `n_1` varchar(30) DEFAULT NULL,
+  `n_2` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `daftar_pelayanan`
+--
+
+INSERT INTO `daftar_pelayanan` (`da_id`, `da_pelayanan`, `n_1`, `n_2`) VALUES
+(1, 'surat rekomendasi proposal', '100/', '/pem/'),
+(2, ' surat pengantar rekomendasi kerja', NULL, NULL),
+(3, 'surat rekomendasi kerja', NULL, NULL),
+(4, 'Surat Keterangan Usaha', NULL, NULL),
+(5, 'Surat Keterangan Domisili', NULL, NULL),
+(6, 'Surat Keterangan Kematian', NULL, NULL),
+(7, 'Surat Keterangan Kelahiran', NULL, NULL),
+(8, 'Surat keterangan Pindah Penduduk', NULL, NULL),
+(9, 'Surat keterangan Usaha', NULL, NULL),
+(10, 'Surat Pengantar Kehilangan', NULL, NULL),
+(11, 'Surat Pengantar Pembuatan SKCK', NULL, NULL),
+(12, 'Surat Pengantar Menikah', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -168,7 +199,7 @@ CREATE TABLE `permohonan` (
   `pe_handphone` varchar(30) DEFAULT NULL,
   `pe_tgl` datetime DEFAULT NULL,
   `pe_qr` varchar(50) DEFAULT NULL,
-  `pe_jenispermohonan` varchar(50) DEFAULT NULL,
+  `pe_jenispermohonan` varchar(70) DEFAULT NULL,
   `pe_syarat` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -177,7 +208,11 @@ CREATE TABLE `permohonan` (
 --
 
 INSERT INTO `permohonan` (`pe_id`, `pe_kode`, `pe_nama`, `pe_alamat`, `pe_handphone`, `pe_tgl`, `pe_qr`, `pe_jenispermohonan`, `pe_syarat`) VALUES
-(1, 'DKI_proposal1', 'jundan', NULL, '435345435453', '2022-09-06 19:02:20', 'DKI_proposal1.png', 'Surat Rekomendasi Proposal', 'karangan.jpg');
+(1, 'DKI_proposal1', 'jundan', NULL, '435345435453', '2022-09-06 19:02:20', 'DKI_proposal1.png', 'surat rekomendasi proposal', 'karangan.jpg'),
+(2, 'DKI_proposal2', 'jundan', NULL, '0811595952', '2022-09-07 16:03:03', 'DKI_proposal2.png', 'surat rekomendasi proposal', 'ktp1.jpeg'),
+(3, 'DKI_proposal3', 'testing', NULL, '0811595952', '2022-09-07 16:06:52', 'DKI_proposal3.png', 'surat rekomendasi proposal', 'ktp11.jpeg'),
+(4, 'DKI_proposal4', 'sdfdsf', NULL, '0811595952', '2022-09-07 16:44:45', 'DKI_proposal4.png', 'surat rekomendasi proposal', 'ktp12.jpeg'),
+(5, 'DKI_proposal5', 'sadsad', NULL, '0811595952', '2022-09-07 16:57:32', 'DKI_proposal5.png', 'surat rekomendasi proposal', 'ktp13.jpeg');
 
 -- --------------------------------------------------------
 
@@ -214,10 +249,11 @@ CREATE TABLE `surat` (
   `s_kodettd` int(1) DEFAULT NULL,
   `s_qr` varchar(30) DEFAULT NULL,
   `s_kodepelayanan` varchar(30) DEFAULT NULL,
-  `s_tglsurat` datetime DEFAULT NULL,
+  `s_tglsurat` date DEFAULT NULL,
   `s_tglbuat` datetime DEFAULT NULL,
   `s_tgledit` datetime DEFAULT NULL,
   `s_tglhapus` datetime DEFAULT NULL,
+  `s_tglselesai` datetime DEFAULT NULL,
   `s_proses` varchar(30) DEFAULT NULL,
   `s_edit` varchar(30) DEFAULT NULL,
   `s_hapus` varchar(30) DEFAULT NULL,
@@ -229,12 +265,43 @@ CREATE TABLE `surat` (
 -- Dumping data for table `surat`
 --
 
-INSERT INTO `surat` (`s_id`, `s_1`, `s_2`, `s_3`, `s_4`, `s_5`, `s_6`, `s_7`, `s_8`, `s_9`, `s_10`, `s_11`, `s_12`, `s_13`, `s_14`, `s_15`, `s_16`, `s_17`, `sd_1`, `sd_2`, `sd_3`, `sd_4`, `s_nosurat`, `s_jabatan`, `s_ttd`, `s_kodettd`, `s_qr`, `s_kodepelayanan`, `s_tglsurat`, `s_tglbuat`, `s_tgledit`, `s_tglhapus`, `s_proses`, `s_edit`, `s_hapus`, `s_ket`, `s_kodeproses`) VALUES
-(1, 'jundan', 'kpc', 'kjdsfhosdfhoewo', 'kjkhsdhdouh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'kades', NULL, NULL, 'DKI_proposal1', '2022-09-07 00:00:00', '2022-09-07 07:10:46', NULL, NULL, NULL, NULL, NULL, NULL, 1);
+INSERT INTO `surat` (`s_id`, `s_1`, `s_2`, `s_3`, `s_4`, `s_5`, `s_6`, `s_7`, `s_8`, `s_9`, `s_10`, `s_11`, `s_12`, `s_13`, `s_14`, `s_15`, `s_16`, `s_17`, `sd_1`, `sd_2`, `sd_3`, `sd_4`, `s_nosurat`, `s_jabatan`, `s_ttd`, `s_kodettd`, `s_qr`, `s_kodepelayanan`, `s_tglsurat`, `s_tglbuat`, `s_tgledit`, `s_tglhapus`, `s_tglselesai`, `s_proses`, `s_edit`, `s_hapus`, `s_ket`, `s_kodeproses`) VALUES
+(1, 'jundan', 'kpc', 'kjdsfhosdfhoewo', 'kjkhsdhdouh', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'kades', 'jabir', 1, NULL, 'DKI_proposal1', '2022-09-07', '2022-09-07 07:10:46', NULL, NULL, '2022-09-13 10:27:42', NULL, NULL, NULL, NULL, 1),
+(2, 'jundan', 'PT. KPC', 'DSAFDSF', 'dasfdsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'kades', NULL, NULL, 'DKI_proposal2', '2022-09-07', '0000-00-00 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(3, 'testing', 'PT.KPC', 'dsfiodfjl', 'hkljbnkljbnhlo', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'kades', NULL, 'tets.png', 'DKI_proposal3', '2022-09-07', '2022-09-07 16:07:18', NULL, NULL, '2022-09-07 16:24:58', NULL, NULL, NULL, NULL, 1),
+(4, 'sdfdsf', 'dsfdsf', 'dsfsdf', 'dsfdsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '004', NULL, 'kades', NULL, 'QR4.png', 'DKI_proposal4', '2022-09-07', '2022-09-07 16:48:59', NULL, NULL, NULL, 'admin', NULL, NULL, NULL, 1),
+(5, 'sadsad', 'sadsad', 'sads', 'sadsd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '100/005/pem/IX/2022', 'kades', 'jabir', 1, 'QR5.png', 'DKI_proposal5', '2022-09-07', '2022-09-08 06:44:58', NULL, NULL, '2022-09-08 06:48:22', 'admin', NULL, NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ttd`
+--
+
+CREATE TABLE `ttd` (
+  `tt_id` int(5) NOT NULL,
+  `tt_jabatan` varchar(50) DEFAULT NULL,
+  `tt_nama` varchar(50) DEFAULT NULL,
+  `tt_ket` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ttd`
+--
+
+INSERT INTO `ttd` (`tt_id`, `tt_jabatan`, `tt_nama`, `tt_ket`) VALUES
+(1, 'kepala desa', 'jabir', 1),
+(2, 'sekretaris desa', 'udin', 2);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `daftar_pelayanan`
+--
+ALTER TABLE `daftar_pelayanan`
+  ADD PRIMARY KEY (`da_id`);
 
 --
 -- Indexes for table `nama_desa`
@@ -267,8 +334,20 @@ ALTER TABLE `surat`
   ADD PRIMARY KEY (`s_id`);
 
 --
+-- Indexes for table `ttd`
+--
+ALTER TABLE `ttd`
+  ADD PRIMARY KEY (`tt_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `daftar_pelayanan`
+--
+ALTER TABLE `daftar_pelayanan`
+  MODIFY `da_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `nama_desa`
@@ -292,13 +371,19 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `permohonan`
 --
 ALTER TABLE `permohonan`
-  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `ttd`
+--
+ALTER TABLE `ttd`
+  MODIFY `tt_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

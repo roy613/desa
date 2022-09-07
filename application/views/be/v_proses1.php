@@ -225,15 +225,7 @@
 
     <!-- /.content -->
 </div>
-<script>
-    function ambil_nomor(a, b, c) {
-        $('#id').val(a);
-        $('#kode').val(b);
-        $('#jenis').val(c);
-        $('#m_nomor').modal('show');
 
-    }
-</script>
 
 <div class="modal fade" id="m_nomor" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
@@ -256,11 +248,14 @@
                     </div>
                     <div class="form-group">
                         <label>Penandatangan</label>
-                        <select name="ttd" id="ttd" class="form-control" required>
+                        <select name="ttd" id="ttd" class="form-control" onchange="ttd_fungsi()" required>
                             <option selected disabled>-- Pilih Penandatangan --</option>
-                            <option>kades</option>
-                            <option>sekdes</option>
+                            <?php foreach ($ttd as $a) { ?>
+                                <option value="<?php echo $a->tt_nama; ?>"><?php echo Ucwords($a->tt_jabatan); ?> - <?php echo Ucwords($a->tt_nama); ?></option>
+                            <?php } ?>
                         </select>
+                        <input type="hidden" class="form-control" id="jabttd" name="jabttd">
+                        <input type="hidden" class="form-control" id="kodettd" name="kodettd">
                     </div>
             </div>
             <div class="modal-footer">

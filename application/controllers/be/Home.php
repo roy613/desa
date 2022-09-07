@@ -39,6 +39,7 @@ class Home extends CI_Controller
     public function lihat_surat($a)
     {
         $b = base64_decode($a);
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
         $data['surat'] = $this->db->query("SELECT * FROM permohonan INNER JOIN surat ON permohonan.pe_kode=surat.s_kodepelayanan WHERE pe_kode='$b'")->result();
         $this->load->view('be/v_header');
         $this->load->view('be/v_sidebar');

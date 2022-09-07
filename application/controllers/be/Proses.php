@@ -11,6 +11,14 @@ class Proses extends CI_Controller
             redirect(base_url() . 'login?alert=belum_login');
         }
     }
+    public function ttd_periksa()
+	{
+		$peg = $this->input->post('peg');
+		$data = $this->db->query("SELECT * FROM ttd WHERE tt_nama='" . $peg . "'")->result();
+		// var_dump($data);
+		$myJSON = json_encode($data);
+		echo $myJSON;
+	}
 
     public function tanggal()
     {
@@ -21,6 +29,8 @@ class Proses extends CI_Controller
         $tglbuat = date('Y-m-d H-i-s');
         $tgl = $this->input->post('tglsurat');
         $ttd = $this->input->post('ttd');
+        $jabttd = $this->input->post('jabttd');
+        $kodettd = $this->input->post('kodettd');
         $buat = $this->session->userdata('username');
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
@@ -105,6 +115,8 @@ class Proses extends CI_Controller
             's_tglbuat' => $tglbuat,
             's_tglsurat' => $tgl,
             's_ttd' => $ttd,
+            's_jabatan' => $jabttd,
+            's_kodettd' => $kodettd,
             's_proses' => $buat,
         );
         $this->m_data->update_data($where, $data, 'surat');
