@@ -39,16 +39,19 @@
                                     <?php } ?>
                                 </ul>
 
-
-                                <a href="#" onclick="ambil_nomor(
+                                <?php if ($k->s_tglsurat == null) { ?>
+                                    <a href="#" onclick="ambil_nomor(
                                     '<?php echo $k->s_id; ?>',
                                     '<?php echo $k->pe_kode; ?>'
                                     )" class="btn btn-outline-primary btn-block"><b>Buat Surat</b></a>
+                                <?php } ?>
 
                                 <a target="_blank" href="<?php echo base_url('cetak_surat/' . base64_encode($k->pe_kode)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
 
-                                <a target="_blank" href="https://kirimwa.id/petok/<?php echo $k->pe_handphone; ?>:(uji_coba)_Mohon_Maaf_Syarat_Anda_tidak_lengkap,_Silahkan_lengkapi_lagi!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" class="btn btn-outline-danger btn-block"><b>Syarat Tidak Lengkap</b></a>
-                                <a target="_blank" href="https://kirimwa.id/petok/<?php echo $k->pe_handphone; ?>:(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Camat!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" class="btn btn-outline-success btn-block"><b>Surat Selesai</b></a>
+                                <a target=_blank onclick="tolak_berkas(
+                                    '<?php echo $k->s_id; ?>',
+                                '<?php echo $k->pe_handphone; ?>')" class="btn btn-outline-danger btn-block"><b>Syarat Tidak Lengkap</b></a>
+                                <a onclick="berkas_selesai('<?php echo $k->pe_handphone; ?>')" class="btn btn-outline-success btn-block"><b>Surat Selesai</b></a>
 
                             </div>
                             <!-- /.card-body -->
@@ -60,68 +63,154 @@
                     <!-- /.col -->
                     <div class="col-md-8">
                         <div class="card">
-                            <!-- <div class="card-header p-2">
+                            <div class="card-header p-2">
                                 <ul class="nav nav-pills">
                                     <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Kelengkapan</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
 
                                 </ul>
-                            </div> -->
+                            </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <!-- <div class="tab-content">
-                                    <div class="active tab-pane" id="activity"> -->
-                                <!-- Post -->
-                                <div class="post">
-                                    <div class="user-block">
+                                <div class="tab-content">
+                                    <div class="active tab-pane" id="activity">
+                                        <!-- Post -->
+                                        <div class="post">
+                                            <div class="user-block">
 
-                                        <p class="username" style="margin-left: -10px;">Dokumen Kelengkapan</p>
-
-                                    </div>
-                                    <!-- /.user-block -->
-                                    <div class="row mb-3">
-                                        <!-- /.col -->
-                                        <div class="col-sm-6">
-                                            <div class="row">
-                                                <?php if ($k->pe_syarat != null) { ?>
-                                                    <div class="col-sm-6">
-                                                        <a href="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat; ?>" alt=""></a>
-                                                    </div><?php } ?>
-                                                <!-- <?php if ($k->s_prt != null) { ?>
-                                                            <div class="col-sm-6">
-                                                                <a href="<?php echo base_url(); ?>dasar/<?php echo $k->s_prt; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>dasar/<?php echo $k->s_prt; ?>" alt=""></a>
-                                                            </div><?php } ?>
-                                                        <?php if ($k->s_pdesa != null) { ?>
-                                                            <div class="col-sm-6">
-                                                                <a href="<?php echo base_url(); ?>dasar/<?php echo $k->s_pdesa; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>dasar/<?php echo $k->s_pdesa; ?>" alt=""></a>
-                                                            </div><?php } ?>
-                                                        <?php if ($k->s_s1 != null) { ?>
-                                                            <div class="col-sm-6">
-                                                                <a href="<?php echo base_url(); ?>dasar/<?php echo $k->s_s1; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>dasar/<?php echo $k->s_s1; ?>" alt=""></a>
-                                                            </div><?php } ?>
-                                                        <?php if ($k->s_s2 != null) { ?>
-                                                            <div class="col-sm-6">
-                                                                <a href="<?php echo base_url(); ?>dasar/<?php echo $k->s_s2; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>dasar/<?php echo $k->s_s2; ?>" alt=""></a>
-                                                            </div><?php } ?>
- -->
+                                                <p class="username" style="margin-left: -10px;">Dokumen Persyaratan</p>
 
                                             </div>
+                                            <!-- /.user-block -->
+                                            <div class="row mb-3">
+                                                <!-- /.col -->
+                                                <div class="col-sm-6">
+                                                    <div class="row">
+                                                        <?php if ($k->pe_syarat != null) { ?>
+                                                            <div class="col-sm-6">
+                                                                <a href="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat; ?>" alt=""></a>
+                                                            </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                    <!-- /.row -->
+                                                </div>
+                                                <!-- /.col -->
+                                            </div>
                                             <!-- /.row -->
-                                        </div>
-                                        <!-- /.col -->
-                                    </div>
-                                    <!-- /.row -->
 
+                                        </div>
+                                    </div><!-- /.card-body -->
+                                    <div class="tab-pane" id="timeline">
+                                        <!-- The timeline -->
+                                        <div class="timeline timeline-inverse">
+                                            <!-- timeline time label -->
+                                            <div class="time-label">
+                                                <span class="bg-danger">
+                                                    <?php echo tgl_indojam1($k->pe_tgl); ?>
+                                                </span>
+                                            </div>
+                                            <!-- /.timeline-label -->
+                                            <!-- timeline item -->
+                                            <div>
+                                                <i class="fas fa-envelope bg-secondary"></i>
+
+                                                <div class="timeline-item">
+
+                                                    <h3 class="timeline-header">Permohonan Di Terima</h3>
+
+                                                </div>
+                                            </div>
+                                            <!-- END timeline item -->
+                                            <!-- timeline item -->
+                                            <?php if (($k->s_tglselesai !== null) && ($k->s_kodeproses == 2)) { ?> 
+                                                <!-- kode proses 1 artinya diproses kalau 2 di tolak berkas kurang -->
+                                                <div class="time-label">
+                                                    <span class="bg-success">
+                                                        <?php echo tgl_indojam1($k->s_tglselesai); ?>
+                                                    </span>
+                                                </div>
+
+                                                <div>
+                                                    <i class="fas fa-envelope bg-primary"></i>
+
+                                                    <div class="timeline-item">
+
+                                                        <h3 class="timeline-header">Permohonan di Tolak, Berkas Tidak Lengkap</h3>
+
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+
+                                            <?php if (($k->s_tglbuat !== null)  && ($k->s_kodeproses == 1)) { ?>
+                                                <div class="time-label">
+                                                    <span class="bg-info">
+                                                        <?php echo tgl_indojam1($k->s_tglbuat); ?>
+                                                    </span>
+                                                </div>
+
+                                                <div>
+                                                    <i class="fas fa-envelope bg-secondary"></i>
+
+                                                    <div class="timeline-item">
+
+                                                        <h3 class="timeline-header">Dokumen di Buat</h3>
+
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            <?php if (($k->s_tgledit !== null) && ($k->s_kodeproses == 1) ) { ?>
+                                                <div class="time-label">
+                                                    <span class="bg-warning">
+                                                        <?php echo tgl_indojam1($k->s_tgledit); ?>
+                                                    </span>
+                                                </div>
+
+                                                <div>
+                                                    <i class="fas fa-envelope bg-secondary"></i>
+
+                                                    <div class="timeline-item">
+
+                                                        <h3 class="timeline-header">Dokumen di Edit</h3>
+
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            <?php if (($k->s_tglselesai !== null) && ($k->s_kodeproses == 1)) { ?> 
+                                                <!-- kode proses 1 artinya diproses kalau 2 di tolak berkas kurang -->
+                                                <div class="time-label">
+                                                    <span class="bg-success">
+                                                        <?php echo tgl_indojam1($k->s_tglselesai); ?>
+                                                    </span>
+                                                </div>
+
+                                                <div>
+                                                    <i class="fas fa-envelope bg-primary"></i>
+
+                                                    <div class="timeline-item">
+
+                                                        <h3 class="timeline-header">Dokumen Selesai</h3>
+
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            <!-- END timeline item -->
+                                            <!-- timeline item -->
+
+                                            <?php if ($k->s_tglselesai == null ) { ?>
+                                            <div>
+                                                <i class="far fa-clock bg-gray"></i>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div><!-- /.card-body -->
+                                <!-- /.card -->
+                            </div>
+                            <!-- /.col -->
                         </div>
-                        <!-- /.card -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        <?php } ?>
+                        <!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                <?php } ?>
     </section>
 
     <!-- /.content -->

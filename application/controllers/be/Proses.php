@@ -78,4 +78,19 @@ class Proses extends CI_Controller
         $this->session->set_flashdata($swal_test);
         redirect(base_url('lihat_surat/'.base64_encode($kode)));
     }
+
+    public function tolak_berkas(){
+        $a = $this->input->post('a');
+        $b = 2;
+
+        $where = array(
+            's_id' => $a
+        );
+
+        $data = array(
+            // 's_nomor' => $nosurat,
+            's_kodeproses' => $b,
+        );
+        $this->m_data->update_data($where, $data, 'surat');
+    }
 }

@@ -44,6 +44,7 @@ class Home extends CI_Controller
         $this->load->view('be/v_sidebar');
         $this->load->view('be/v_proses1',$data);
         $this->load->view('be/v_footer');
+        $this->load->view('be/f_proses');
     }
     public function lihat_suratnikah($a)
     {
