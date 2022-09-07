@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	function __construct()
+    {
+        parent::__construct();
+        date_default_timezone_set('Asia/Makassar');
+        $this->load->model('m_data');
+    }
 
 	/**
 	 * Index Page for this controller.

@@ -42,16 +42,26 @@
                                 <?php if ($k->s_tglsurat == null) { ?>
                                     <a href="#" onclick="ambil_nomor(
                                     '<?php echo $k->s_id; ?>',
-                                    '<?php echo $k->pe_kode; ?>'
+                                    '<?php echo $k->pe_kode; ?>',
+                                    '<?php echo $k->pe_jenispermohonan; ?>',
                                     )" class="btn btn-outline-primary btn-block"><b>Buat Surat</b></a>
                                 <?php } ?>
 
-                                <a target="_blank" href="<?php echo base_url('cetak_surat/' . base64_encode($k->pe_kode)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                <?php if ($k->s_tglsurat !== null) { ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat rekomendasi proposal") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_rekom_proposal/' . base64_encode($k->pe_kode)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                <?php } ?>
 
                                 <a target=_blank onclick="tolak_berkas(
                                     '<?php echo $k->s_id; ?>',
-                                '<?php echo $k->pe_handphone; ?>')" class="btn btn-outline-danger btn-block"><b>Syarat Tidak Lengkap</b></a>
-                                <a onclick="berkas_selesai('<?php echo $k->pe_handphone; ?>')" class="btn btn-outline-success btn-block"><b>Surat Selesai</b></a>
+                                '<?php echo $k->pe_handphone; ?>'
+                                )" class="btn btn-outline-danger btn-block"><b>Syarat Tidak Lengkap</b></a>
+
+                                <a onclick="berkas_selesai( 
+                                    '<?php echo $k->s_id; ?>',
+                                '<?php echo $k->pe_handphone; ?>'
+                                )" class="btn btn-outline-success btn-block"><b>Surat Selesai</b></a>
 
                             </div>
                             <!-- /.card-body -->
@@ -122,7 +132,7 @@
                                             </div>
                                             <!-- END timeline item -->
                                             <!-- timeline item -->
-                                            <?php if (($k->s_tglselesai !== null) && ($k->s_kodeproses == 2)) { ?> 
+                                            <?php if (($k->s_tglselesai !== null) && ($k->s_kodeproses == 2)) { ?>
                                                 <!-- kode proses 1 artinya diproses kalau 2 di tolak berkas kurang -->
                                                 <div class="time-label">
                                                     <span class="bg-success">
@@ -153,12 +163,12 @@
 
                                                     <div class="timeline-item">
 
-                                                        <h3 class="timeline-header">Dokumen di Buat</h3>
+                                                        <h3 class="timeline-header">Dokumen di Buat Oleh <?php echo Ucwords($k->s_proses); ?></h3>
 
                                                     </div>
                                                 </div>
                                             <?php } ?>
-                                            <?php if (($k->s_tgledit !== null) && ($k->s_kodeproses == 1) ) { ?>
+                                            <?php if (($k->s_tgledit !== null) && ($k->s_kodeproses == 1)) { ?>
                                                 <div class="time-label">
                                                     <span class="bg-warning">
                                                         <?php echo tgl_indojam1($k->s_tgledit); ?>
@@ -175,7 +185,7 @@
                                                     </div>
                                                 </div>
                                             <?php } ?>
-                                            <?php if (($k->s_tglselesai !== null) && ($k->s_kodeproses == 1)) { ?> 
+                                            <?php if (($k->s_tglselesai !== null) && ($k->s_kodeproses == 1)) { ?>
                                                 <!-- kode proses 1 artinya diproses kalau 2 di tolak berkas kurang -->
                                                 <div class="time-label">
                                                     <span class="bg-success">
@@ -196,10 +206,10 @@
                                             <!-- END timeline item -->
                                             <!-- timeline item -->
 
-                                            <?php if ($k->s_tglselesai == null ) { ?>
-                                            <div>
-                                                <i class="far fa-clock bg-gray"></i>
-                                            </div>
+                                            <?php if ($k->s_tglselesai == null) { ?>
+                                                <div>
+                                                    <i class="far fa-clock bg-gray"></i>
+                                                </div>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -216,9 +226,10 @@
     <!-- /.content -->
 </div>
 <script>
-    function ambil_nomor(a, b) {
+    function ambil_nomor(a, b, c) {
         $('#id').val(a);
         $('#kode').val(b);
+        $('#jenis').val(c);
         $('#m_nomor').modal('show');
 
     }
@@ -241,6 +252,7 @@
                         <input type="date" name="tglsurat" id="tglsurat" class="form-control" required>
                         <input type="hidden" id="id" name="id" class="form-control">
                         <input type="hidden" id="kode" name="kode" class="form-control">
+                        <input type="hidden" id="jenis" name="jenis" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Penandatangan</label>

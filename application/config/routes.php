@@ -63,7 +63,7 @@ $route['dashboard'] = 'be/home';
 $route['pengguna'] = 'be/home/pengguna';
 $route['cek_permohonan'] = 'be/home/daftar_permohonan';
 $route['lihat_surat/(:any)'] = 'be/home/lihat_surat/$1';
-$route['cetak_surat/(:any)'] = 'be/cetak_be/proposal/$1';
+$route['cetak_rekom_proposal/(:any)'] = 'be/cetak_be/proposal/$1';
 
 
 $route['layanan'] = 'welcome/layanan';

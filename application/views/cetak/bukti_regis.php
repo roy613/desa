@@ -4,7 +4,8 @@
     }
 </style>
 
-<?php $this->load->view('kop_surat'); ?>
+<?php $this->load->view('cetak/fungsi'); ?>
+<?php $this->load->view('cetak/kop_surat'); ?>
 <html>
 <font face="arial">
 <?php foreach ($aaa as $a) { ?>
@@ -78,13 +79,13 @@
     </tr>
     <tr>
         <td>
-           Tanggal Permohonan
+           Waktu Permohonan
         </td>
         <td>
             :
         </td>
         <td>
-        <?php echo ucwords($a->pe_tgl); ?>
+        <?php echo tgl_indojam1($a->pe_tgl); ?>
         </td>
     </tr>
     <tr>

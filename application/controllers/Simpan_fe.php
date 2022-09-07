@@ -270,7 +270,7 @@ class Simpan_fe extends CI_Controller
         $jenis = "surat rekomendasi proposal";
         $no_hp = $this->input->post('proposal_nohp');
         $tglmohon = date('Y-m-d H-i-s');
-        $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 pemohon masyarakat dan sudah diproses, status 3 surat dibuat admin lewat be.
+        $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
 
         //save ditabel permohonan
         $config['upload_path'] = './syarat/';

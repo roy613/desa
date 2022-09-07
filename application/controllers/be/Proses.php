@@ -16,9 +16,45 @@ class Proses extends CI_Controller
     {
         $id = $this->input->post('id');
         $kode = $this->input->post('kode');
+        $jenis = $this->input->post('jenis');
+
         $tglbuat = date('Y-m-d H-i-s');
         $tgl = $this->input->post('tglsurat');
         $ttd = $this->input->post('ttd');
+        $buat = $this->session->userdata('username');
+
+        $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
+        $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
+        $n31 = date('m', strtotime($tgl));
+        if ($n31 == "01") {
+            $n311 = "I";
+        } else if ($n31 == "02") {
+            $n311 = "II";
+        } else if ($n31 == "03") {
+            $n311 = "III";
+        } else if ($n31 == "04") {
+            $n311 = "IV";
+        } else if ($n31 == "05") {
+            $n311 = "V";
+        } else if ($n31 == "06") {
+            $n311 = "VI";
+        } else if ($n31 == "07") {
+            $n311 = "VII";
+        } else if ($n31 == "08") {
+            $n311 = "VIII";
+        } else if ($n31 == "09") {
+            $n311 = "IX";
+        } else if ($n31 == "10") {
+            $n311 = "X";
+        } else if ($n31 == "11") {
+            $n311 = "XI";
+        } else if ($n31 == "12") {
+            $n311 = "XII";
+        }
+        $n32 = date('Y', strtotime($tgl));
+        $n3f = $n311 . "/" . $n32;
+        $nosurat = $nomor[0]["n_1"] . str_pad($nomor1 + 1, 3, '0', STR_PAD_LEFT) . $nomor[0]["n_2"].$n3f;
+
 
         include "phpqrcode/qrlib.php";
         $tempdir = "temp/"; //Nama folder tempat menyimpan file qrcode
@@ -28,15 +64,14 @@ class Proses extends CI_Controller
         $bu = base_url();
         $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
 
-        // $nomor2 = $this->db->query("SELECT * FROM surat WHERE k_jenis=4 ")->num_rows();
+        $nomor2 = $this->db->query("SELECT * FROM surat")->num_rows();
         // $nomor3 = $nomor2 + 1;
-        // $namaqr = 'qrkkm' . $nomor3 . '.png';
-        $namaqr = 'tets.png';
+        $namaqr = 'QR' . $nomor2 . '.png';
 
         // $maxid = $this->db->query("SELECT MAX(k_id) FROM sket")->result_array();
         // $ab = intval($maxid[0]["MAX(k_id)"]) + 1;
-        // $ac = base_url() . 'kcod';
-        $codeContents = "ini masih percobaan";
+        $codeContents = base_url('lihat_surat/' . base64_encode($kode));
+        // $codeContents = "ini masih percobaan";
 
         QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
 
@@ -65,31 +100,51 @@ class Proses extends CI_Controller
         );
 
         $data = array(
-            // 's_nomor' => $nosurat,
+            's_nosurat' => $nosurat,
+            's_qr' => $namaqr,
             's_tglbuat' => $tglbuat,
             's_tglsurat' => $tgl,
             's_ttd' => $ttd,
+            's_proses' => $buat,
         );
         $this->m_data->update_data($where, $data, 'surat');
         $swal_test = array(
             'tittle' => 'Berhasil !!!',
-            'text' => 'Surat Berhasil Di Buat',
+            'text' => 'Surat Berhasil Di Proses',
         );
         $this->session->set_flashdata($swal_test);
-        redirect(base_url('lihat_surat/'.base64_encode($kode)));
+        redirect(base_url('lihat_surat/' . base64_encode($kode)));
     }
 
-    public function tolak_berkas(){
+    public function tolak_berkas()
+    {
         $a = $this->input->post('a');
         $b = 2;
+        $tglselesai = date('Y-m-d H-i-s');
 
         $where = array(
             's_id' => $a
         );
 
         $data = array(
-            // 's_nomor' => $nosurat,
             's_kodeproses' => $b,
+            's_tglselesai' => $tglselesai,
+        );
+        $this->m_data->update_data($where, $data, 'surat');
+    }
+    public function selesai_berkas()
+    {
+        $a = $this->input->post('a');
+        $b = 1;
+        $tglselesai = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $a
+        );
+
+        $data = array(
+            's_kodeproses' => $b,
+            's_tglselesai' => $tglselesai,
         );
         $this->m_data->update_data($where, $data, 'surat');
     }
