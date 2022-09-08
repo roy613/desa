@@ -150,8 +150,8 @@
                                                 <p id="tgl_ketiga"></p>
                                                 <p>Dokumen Dapat di Ambil di Kantor Desa</p>
                                             </li>
-                                            <li class="event" data-date="8:30 - 9:30pm" id="status_keempat">
-                                                <h3>Permohonan di Tolak</h3>
+                                            <li class="event" data-date="" id="status_keempat">
+                                                <h3>Permohonan Tidak Bisa di Proses</h3>
                                                 <p id="tgl_keempat"></p>
                                                 <p>Persyaratan Tidak Lengkap/Tidak Sesuai</p>
                                             </li>
@@ -190,26 +190,34 @@
                 async: false,
                 dataType: 'json',
                 success: function(data) {
-                    document.getElementById("status").style.display = "block";
-                    document.getElementById("tgl_pertama").innerHTML= data[0].pe_tgl;
-                    document.getElementById("status_kedua").style.display = "none";
-                    document.getElementById("status_kedua").style.display = "none";
-                    document.getElementById("status_ketiga").style.display = "none";
-                    document.getElementById("status_keempat").style.display = "none";
-                    if (data[0].s_tglbuat !== null &&  data[0].s_kodeproses == 1){
-                        document.getElementById("status_kedua").style.display = "block";
-                        document.getElementById("tgl_kedua").innerHTML= data[0].s_tglbuat + " By. "+ data[0].s_proses ;
+                    // alert(data);
+                        if (data[0] !== null){
+                        document.getElementById("status").style.display = "block";
+                        document.getElementById("tgl_pertama").innerHTML= data[0].pe_tgl;
+                        // document.getElementById("status_kedua").style.display = "none";
+                        // document.getElementById("status_kedua").style.display = "none";
                         // document.getElementById("status_ketiga").style.display = "none";
                         // document.getElementById("status_keempat").style.display = "none";
-                    } else if (data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 1){
-                        document.getElementById("status_ketiga").style.display = "block";
-                        document.getElementById("tgl_ketiga").innerHTML= data[0].s_tglselesai;
-                        // document.getElementById("status_keempat").style.display = "none";
-                    } else if (data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 2){
-                        document.getElementById("status_keempat").style.display = "block";
-                        document.getElementById("tgl_keempat").innerHTML= data[0].s_tglselesai;
-                        document.getElementById("status_kedua").style.display = "none";
-                        document.getElementById("status_ketiga").style.display = "none";
+                        if (data[0].s_tglbuat !== null &&  data[0].s_kodeproses == 1 && data[0].s_tglselesai == null){
+                            document.getElementById("status_kedua").style.display = "block";
+                            document.getElementById("tgl_kedua").innerHTML= data[0].s_tglbuat + " By. "+ data[0].s_proses ;
+                            document.getElementById("status_ketiga").style.display = "none";
+                            document.getElementById("status_keempat").style.display = "none";
+                        }
+                         else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 1){
+                            document.getElementById("status_kedua").style.display = "block";
+                            document.getElementById("tgl_kedua").innerHTML= data[0].s_tglbuat + " By. "+ data[0].s_proses ;
+                            document.getElementById("status_ketiga").style.display = "block";
+                            document.getElementById("tgl_ketiga").innerHTML= data[0].s_tglselesai;
+                            document.getElementById("status_keempat").style.display = "none";
+                        } else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 2){
+                            document.getElementById("status_keempat").style.display = "block";
+                            document.getElementById("tgl_keempat").innerHTML= data[0].s_tglselesai;
+                            document.getElementById("status_kedua").style.display = "none";
+                            document.getElementById("status_ketiga").style.display = "none";
+                        }
+                    } else {
+                        alert("test");
                     }
                     // document.getElementById("jabttd").value = data[0].tt_jabatan;
                     // document.getElementById("kodettd").value = data[0].tt_ket;
