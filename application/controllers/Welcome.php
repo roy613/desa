@@ -31,6 +31,15 @@ class Welcome extends CI_Controller {
 		$this->load->view('fe/v_index_modal');
 		$this->load->view('fe/v_footer');
 	}
+	public function cek_resi()
+	{
+		// $peg = "dki_proposal5";
+		$peg = $this->input->post('peg');
+		$data = $this->db->query("SELECT pe_tgl, s_tglbuat, s_proses, s_kodeproses, s_tglselesai FROM surat INNER JOIN permohonan ON permohonan.pe_kode=surat.s_kodepelayanan WHERE s_kodepelayanan='" . $peg . "'")->result();
+		// var_dump($data);
+		$myJSON = json_encode($data);
+		echo $myJSON;
+	}
 	public function layanan()
 	{
 		$this->load->view('fe/v_header');

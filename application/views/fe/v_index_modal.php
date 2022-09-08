@@ -121,32 +121,43 @@
     <div class="modal-dialog modal-md">
         <div class="modal-content">
             <div class="modal-body">
-                <p>
-                    Silahkan masukkan kode pelayanan anda
-                </p>
-                <div class="container">
-                    <h4>------</h4>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="content">
-                                <ul class="timeline">
-                                    <li class="event" data-date="12:30 - 1:00pm">
-                                        <h3>Registration</h3>
-                                        <p>Get here on time</p>
-                                    </li>
-                                    <li class="event" data-date="2:30 - 4:00pm">
-                                        <h3>Opening Ceremony</h3>
-                                        <p>Get ready for </p>
-                                    </li>
-                                    <li class="event" data-date="5:00 - 8:00pm">
-                                        <h3>Main Event</h3>
-                                        <p>This is where </p>
-                                    </li>
-                                    <li class="event" data-date="8:30 - 9:30pm">
-                                        <h3>Closing Ceremony</h3>
-                                        <p>See how is the</p>
-                                    </li>
-                                </ul>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label for="proposal_halpermohonan">Silahkan Input Nomor Registrasi Pelayanan Anda</label>
+                        <input type="text" class="form-control" id="kode" name="kode">
+                        <p id="kode_notif"></p>
+                    </div>
+                    <!-- <div class="col-md-4 mb-3"> -->
+                    <button class="btn btn-outline-primary" onclick="cekresi()" style="float: right;">Proses</button>
+                    <!-- </div> -->
+                    <div class="col-md-12 mb-3">
+                        <div class="container" id="status" style="margin-top:15px">
+                            <h4>STATUS PERMOHONAN</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="content">
+                                        <ul class="timeline">
+                                            <li class="event" id="status_pertama">
+                                                <h3>Permohonan di Terima</h3>
+                                                <p id="tgl_pertama"></p>
+                                            </li>
+                                            <li class="event" data-date="" id="status_kedua">
+                                                <h3>Permohonan di Proses</h3>
+                                                <p id="tgl_kedua"> </p>
+                                            </li>
+                                            <li class="event" data-date="" id="status_ketiga">
+                                                <h3>Permohonan Selesai</h3>
+                                                <p id="tgl_ketiga"></p>
+                                                <p>Dokumen Dapat di Ambil di Kantor Desa</p>
+                                            </li>
+                                            <li class="event" data-date="8:30 - 9:30pm" id="status_keempat">
+                                                <h3>Permohonan di Tolak</h3>
+                                                <p id="tgl_keempat"></p>
+                                                <p>Persyaratan Tidak Lengkap/Tidak Sesuai</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -163,5 +174,50 @@
 <script>
     function ceksurat() {
         $('#ceksurat').modal('show');
+        document.getElementById("status").style.display = "none";
+    }
+
+    function cekresi() {
+        var peg = document.getElementById("kode").value;
+
+        if (peg !== (null || "")) {
+            $.ajax({
+                url: "<?php echo base_url('welcome/cek_resi') ?>",
+                method: "POST",
+                data: {
+                    peg: peg
+                },
+                async: false,
+                dataType: 'json',
+                success: function(data) {
+                    document.getElementById("status").style.display = "block";
+                    document.getElementById("tgl_pertama").innerHTML= data[0].pe_tgl;
+                    document.getElementById("status_kedua").style.display = "none";
+                    document.getElementById("status_kedua").style.display = "none";
+                    document.getElementById("status_ketiga").style.display = "none";
+                    document.getElementById("status_keempat").style.display = "none";
+                    if (data[0].s_tglbuat !== null &&  data[0].s_kodeproses == 1){
+                        document.getElementById("status_kedua").style.display = "block";
+                        document.getElementById("tgl_kedua").innerHTML= data[0].s_tglbuat + " By. "+ data[0].s_proses ;
+                        // document.getElementById("status_ketiga").style.display = "none";
+                        // document.getElementById("status_keempat").style.display = "none";
+                    } else if (data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 1){
+                        document.getElementById("status_ketiga").style.display = "block";
+                        document.getElementById("tgl_ketiga").innerHTML= data[0].s_tglselesai;
+                        // document.getElementById("status_keempat").style.display = "none";
+                    } else if (data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 2){
+                        document.getElementById("status_keempat").style.display = "block";
+                        document.getElementById("tgl_keempat").innerHTML= data[0].s_tglselesai;
+                        document.getElementById("status_kedua").style.display = "none";
+                        document.getElementById("status_ketiga").style.display = "none";
+                    }
+                    // document.getElementById("jabttd").value = data[0].tt_jabatan;
+                    // document.getElementById("kodettd").value = data[0].tt_ket;
+                }
+            });
+        } else {
+            document.getElementById("kode_notif").style.color = "red";
+            document.getElementById("kode_notif").innerHTML = "Silahkan Input Kode Registrasi Pelayanan Anda";
+        }
     }
 </script>

@@ -20,6 +20,39 @@ class Proses extends CI_Controller
 		echo $myJSON;
 	}
 
+    public function tolak_berkas()
+    {
+        $a = $this->input->post('a');
+        $b = 2;
+        $tglselesai = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $a
+        );
+
+        $data = array(
+            's_kodeproses' => $b,
+            's_tglselesai' => $tglselesai,
+        );
+        $this->m_data->update_data($where, $data, 'surat');
+    }
+    public function selesai_berkas()
+    {
+        $a = $this->input->post('a');
+        $b = 1;
+        $tglselesai = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $a
+        );
+
+        $data = array(
+            's_kodeproses' => $b,
+            's_tglselesai' => $tglselesai,
+        );
+        $this->m_data->update_data($where, $data, 'surat');
+    }
+
     public function tanggal()
     {
         $id = $this->input->post('id');
@@ -126,38 +159,5 @@ class Proses extends CI_Controller
         );
         $this->session->set_flashdata($swal_test);
         redirect(base_url('lihat_surat/' . base64_encode($kode)));
-    }
-
-    public function tolak_berkas()
-    {
-        $a = $this->input->post('a');
-        $b = 2;
-        $tglselesai = date('Y-m-d H-i-s');
-
-        $where = array(
-            's_id' => $a
-        );
-
-        $data = array(
-            's_kodeproses' => $b,
-            's_tglselesai' => $tglselesai,
-        );
-        $this->m_data->update_data($where, $data, 'surat');
-    }
-    public function selesai_berkas()
-    {
-        $a = $this->input->post('a');
-        $b = 1;
-        $tglselesai = date('Y-m-d H-i-s');
-
-        $where = array(
-            's_id' => $a
-        );
-
-        $data = array(
-            's_kodeproses' => $b,
-            's_tglselesai' => $tglselesai,
-        );
-        $this->m_data->update_data($where, $data, 'surat');
     }
 }

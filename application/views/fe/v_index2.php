@@ -87,7 +87,7 @@
       <span>Login</span>
     </button>
   </a>
-  <a href="javascript:;" onclick="ceksurat()">
+  <a href="#" onclick="ceksurat()">
     <button class="btn-floating home">
     <i class="bi bi-search"></i>
       <span>Cek Surat</span>
