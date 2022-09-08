@@ -36,7 +36,7 @@
 
     .timeline .event {
         border-bottom: 1px dashed #e8ebf1;
-        padding-top: 22px;
+        padding-top:5px;
         padding-bottom: 10px;
         margin-bottom: 5px;
         position: relative;
@@ -44,7 +44,7 @@
 
     @media (max-width: 767px) {
         .timeline .event {
-            padding-top: 30px;
+            padding-top: 5px;
         }
     }
 
@@ -123,12 +123,19 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12 mb-3">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="kode" name="kode">
+                            <label for="floatingInput">Input Nomor Registrasi Pelayanan</label>
+                            <p id="kode_notif"></p>
+                            <button class="btn btn-outline-primary" onclick="cekresi()" style="float: right;">Proses</button>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12 mb-3">
                         <label for="proposal_halpermohonan">Silahkan Input Nomor Registrasi Pelayanan Anda</label>
                         <input type="text" class="form-control" id="kode" name="kode">
-                        <p id="kode_notif"></p>
-                    </div>
+                    </div> -->
                     <!-- <div class="col-md-4 mb-3"> -->
-                    <button class="btn btn-outline-primary" onclick="cekresi()" style="float: right;">Proses</button>
+                    
                     <!-- </div> -->
                     <div class="col-md-12 mb-3">
                         <div class="container" id="status" style="margin-top:15px">
@@ -182,7 +189,7 @@
 
         if (peg !== (null || "")) {
             $.ajax({
-                url: "<?php echo base_url('welcome/cek_resi') ?>",
+                url: "<?php echo base_url('welcome/cek_resi1') ?>",
                 method: "POST",
                 data: {
                     peg: peg
@@ -190,35 +197,52 @@
                 async: false,
                 dataType: 'json',
                 success: function(data) {
-                    // alert(data);
-                        if (data[0] !== null){
-                        document.getElementById("status").style.display = "block";
-                        document.getElementById("tgl_pertama").innerHTML= data[0].pe_tgl;
-                        // document.getElementById("status_kedua").style.display = "none";
-                        // document.getElementById("status_kedua").style.display = "none";
-                        // document.getElementById("status_ketiga").style.display = "none";
-                        // document.getElementById("status_keempat").style.display = "none";
-                        if (data[0].s_tglbuat !== null &&  data[0].s_kodeproses == 1 && data[0].s_tglselesai == null){
-                            document.getElementById("status_kedua").style.display = "block";
-                            document.getElementById("tgl_kedua").innerHTML= data[0].s_tglbuat + " By. "+ data[0].s_proses ;
-                            document.getElementById("status_ketiga").style.display = "none";
-                            document.getElementById("status_keempat").style.display = "none";
-                        }
-                         else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 1){
-                            document.getElementById("status_kedua").style.display = "block";
-                            document.getElementById("tgl_kedua").innerHTML= data[0].s_tglbuat + " By. "+ data[0].s_proses ;
-                            document.getElementById("status_ketiga").style.display = "block";
-                            document.getElementById("tgl_ketiga").innerHTML= data[0].s_tglselesai;
-                            document.getElementById("status_keempat").style.display = "none";
-                        } else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null  &&  data[0].s_kodeproses == 2){
-                            document.getElementById("status_keempat").style.display = "block";
-                            document.getElementById("tgl_keempat").innerHTML= data[0].s_tglselesai;
-                            document.getElementById("status_kedua").style.display = "none";
-                            document.getElementById("status_ketiga").style.display = "none";
-                        }
+
+                    if (data.kode == 1) {
+                        // alert("tampil");
+                        $.ajax({
+                            url: "<?php echo base_url('welcome/cek_resi2') ?>",
+                            method: "POST",
+                            data: {
+                                peg: peg
+                            },
+                            async: false,
+                            dataType: 'json',
+                            success: function(data) {
+                                document.getElementById("kode_notif").innerHTML = "";
+                                document.getElementById("status").style.display = "block";
+                                document.getElementById("tgl_pertama").innerHTML = data[0].pe_tgl;
+                                // document.getElementById("status_kedua").style.display = "none";
+                                // document.getElementById("status_kedua").style.display = "none";
+                                // document.getElementById("status_ketiga").style.display = "none";
+                                // document.getElementById("status_keempat").style.display = "none";
+                                if (data[0].s_tglbuat !== null && data[0].s_kodeproses == 1 && data[0].s_tglselesai == null) {
+                                    document.getElementById("status_kedua").style.display = "block";
+                                    document.getElementById("tgl_kedua").innerHTML = data[0].s_tglbuat + " By. " + data[0].s_proses;
+                                    document.getElementById("status_ketiga").style.display = "none";
+                                    document.getElementById("status_keempat").style.display = "none";
+                                } else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null && data[0].s_kodeproses == 1) {
+                                    document.getElementById("status_kedua").style.display = "block";
+                                    document.getElementById("tgl_kedua").innerHTML = data[0].s_tglbuat + " By. " + data[0].s_proses;
+                                    document.getElementById("status_ketiga").style.display = "block";
+                                    document.getElementById("tgl_ketiga").innerHTML = data[0].s_tglselesai;
+                                    document.getElementById("status_keempat").style.display = "none";
+                                } else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null && data[0].s_kodeproses == 2) {
+                                    document.getElementById("status_keempat").style.display = "block";
+                                    document.getElementById("tgl_keempat").innerHTML = data[0].s_tglselesai;
+                                    document.getElementById("status_kedua").style.display = "none";
+                                    document.getElementById("status_ketiga").style.display = "none";
+                                }
+                            }
+                        });
                     } else {
-                        alert("test");
+                        // alert("tidak tampil");
+                        document.getElementById("kode_notif").style.color = "red";
+                        document.getElementById("kode_notif").innerHTML = "Kode Registrasi Pelayanan Anda Tidak Terdaftar";
+                        document.getElementById("status").style.display = "none";
                     }
+
+                    // }
                     // document.getElementById("jabttd").value = data[0].tt_jabatan;
                     // document.getElementById("kodettd").value = data[0].tt_ket;
                 }
@@ -226,6 +250,7 @@
         } else {
             document.getElementById("kode_notif").style.color = "red";
             document.getElementById("kode_notif").innerHTML = "Silahkan Input Kode Registrasi Pelayanan Anda";
+            ocument.getElementById("status").style.display = "none";
         }
     }
 </script>
