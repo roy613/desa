@@ -16,13 +16,12 @@
           <div class="card">
             <!-- title row -->
             <div class="card-header">
-              <!-- <a data-toggle="modal" data-target="#background" class="btn btn-sm btn-primary" style="float:right">Upload Gambar</a> -->
-              <a data-toggle="modal" data-target="#m_ttd" class="btn btn-sm btn-outline-primary" style="float:right" onclick="empty1()">Tambah Akun Pengguna</a>
+              <a data-toggle="modal" data-target="#m_ttd" class="btn btn-sm btn-outline-primary" style="float:right" onclick="empty1()">Tambah Penandatangan</a>
               <h5 style="color: dimgrey;">
                 PENANDATANGANAN
               </h5>
               <h6 style="color: dimgrey;">
-                APLIKASI LAYANAN ONLINE DESA XXXXXXX
+                APLIKASI LAYANAN ONLINE DESA KARANGAN HILIR
               </h6>
               <!-- /.col -->
             </div>
@@ -51,13 +50,27 @@
                           <td><?php echo ucwords($p->tt_jabatan); ?></td>
                           <td><?php if ($p->tt_ket == 1) {
                                 echo "Penandatangan Utama";
-                              } else if ($p->tt_ket == 2){
+                              } else if ($p->tt_ket == 2) {
                                 echo "Penandatangan Atas Nama";
                               } ?></td>
 
                           <td style="text-align: center; width:10%">
-                            <a href="#" onclick="hapust('<?php echo $p->tt_id; ?>')" class="btn btn-outline-danger" style="font-size: 10pt !important; padding:4px !important">
-                              <i class="fa fa-trash" title="Hapus"></i></a>
+                            <table border="0">
+                              <tr>
+                                <td>
+                                  <a href="javascript:;" onclick="ettd(
+                                  '<?php echo $p->tt_id; ?>',
+                                  '<?php echo $p->tt_nama; ?>',
+                                  '<?php echo $p->tt_jabatan; ?>',                                                             
+                                  '<?php echo $p->tt_ket; ?>',                                                             
+                              )" class="btn btn-outline-warning" style="font-size: 10pt !important; padding:4px !important" title="edit"><i class="fa fa-edit"></i></a>
+                                </td>
+                                <td>
+                                  <a href="#" onclick="hapust('<?php echo $p->tt_id; ?>')" class="btn btn-outline-danger" style="font-size: 10pt !important; padding:4px !important">
+                                    <i class="fa fa-trash" title="Hapus"></i></a>
+                                </td>
+                              </tr>
+                            </table>
                           </td>
                         </tr>
                       <?php } ?>
@@ -84,11 +97,12 @@
 
           <div class="modal-body">
 
-            <form method="post" action="<?php echo base_url('be/simpan_be') ?>" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url('be/simpan_be/ttd') ?>" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
                   <label>Nama</label>
                   <input type="text" name="nama" id="nama" class="form-control" required autofocus placeholder="Masukkan username pengguna..">
+                  <input type="hidden" name="id" id="id" class="form-control">
                 </div>
                 <div class="form-group">
                   <label>Jabatan</label>
@@ -104,7 +118,7 @@
                 </div>
               </div>
               <div class="box-footer">
-                <input type="submit" style="float:right" id="tombol1" class="btn btn-sm btn-outline-primary" value="Simpan" disabled>
+                <input type="submit" style="float:right" id="tombol1" class="btn btn-sm btn-outline-primary" value="Simpan">
               </div>
             </form>
           </div>

@@ -66,4 +66,13 @@ class Home extends CI_Controller
         $this->load->view('be/v_footer');
         $this->load->view('be/f_ttd');
     }
+    public function nomor ()
+    {
+        $data['nomor'] = $this->db->query("SELECT * FROM daftar_pelayanan")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_nomor',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_nomor');
+    }
 }

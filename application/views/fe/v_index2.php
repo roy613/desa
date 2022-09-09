@@ -64,9 +64,9 @@
         <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
           <div class="content px-xl-5">
-            <h3><strong>Selamat Datang</strong> di Layanan Online Kantor Desa xxxxxxx</h3>
+            <h3><strong>Selamat Datang</strong> di Layanan Online Kantor Desa Karangan Hilir</h3>
             <p>
-              fdgefg efqgfegfe efgeegef efgefgfeg efgeegfefvdfgfevefg dfbddvffd dfvffdvdd dfvvfdfv dfddfdff dddfddv ddf dffdff dffdfdfv dffddf dfv dddfvddv ddvddf ddf dddffssvdddfdfv dff dddfdddfvddv dffddv dddfff
+              Pelayanan administrasi bisa dari rumah, biaya jadi murah tanpa antri yang bikin gerah ... 
             </p>
             <div class="d-flex">
               <a href="<?php echo base_url('layanan'); ?>" class="btn-get-started scrollto">Pilih Pelayanan</a>
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("<?php echo base_url(); ?>assets/img/laki.png");'>&nbsp;</div>
+        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("<?php echo base_url(); ?>assets/img/kades.png");'>&nbsp;</div>
       </div>
 
     </div>

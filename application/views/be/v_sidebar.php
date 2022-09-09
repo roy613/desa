@@ -3,7 +3,7 @@
    <!-- Brand Logo -->
    <a href="<?php echo base_url('dashboard'); ?>" class="brand-link">
      <img src="<?php echo base_url(); ?>assets/img/logokutim.png" class="brand-image" style="width:25px">
-     <span class="brand-text font-weight-light"> Desa XXXXXX</span>
+     <span class="brand-text font-weight-light"> Desa Karangan Hilir</span>
    </a>
 
    <!-- Sidebar -->
@@ -17,19 +17,19 @@
          <li class="nav-item">
            <a href="<?php echo base_url('arsip'); ?>" class="nav-link">
            <i class="nav-icon fas fa-file-medical text-info"></i>             
-             <p>Input Arsip</p>
+             <p>Buat Surat</p>
            </a>
          </li>
         
          <li class="nav-item">
-           <a href="<?php echo base_url('kategori'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-database text-info"></i>             
+           <a href="<?php echo base_url('nomor'); ?>" class="nav-link">
+             <i class="nav-icon fas fa-list-ol text-info"></i>       
              <p>Pengaturan Nomor Surat</p>
            </a>
          </li>
          <li class="nav-item">
-           <a href="<?php echo base_url('jenis'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-server text-info"></i>
+           <a href="<?php echo base_url('ttd'); ?>" class="nav-link">
+           <i class="nav-icon fas fa-signature text-info"></i>
              <p>Penandatangan</p>
            </a>
          </li>         

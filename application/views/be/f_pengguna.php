@@ -48,7 +48,7 @@
       confirmButtonText: 'Hapus'
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "<?php echo base_url() . 'hapus/pengguna'; ?>/" + a;
+        window.location.href = "<?php echo base_url() . 'be/hapus/pengguna'; ?>/" + a;
       }
     });
   }

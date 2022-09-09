@@ -104,7 +104,7 @@
                 <td style=" text-align:center;">Karangan Hilir, <?php echo tgl_indo($k->s_tglsurat); ?></td>
             </tr>
             <tr>
-                <td rowspan="5" style="width:30%; text-align:left; font-size:8pt"><img src="<?php echo base_url(); ?>temp/<?php echo $k->s_qr; ?>" style="height:110px"><br> Keterangan : QRCODE yang ada pada surat ini bukan Tanda Tangan Digital, melainkan hanya digunakan untuk pelacakan arsip.</td>
+                <td rowspan="5" style="width:30%; text-align:justify; font-size:8pt"><img src="<?php echo base_url(); ?>temp/<?php echo $k->s_qr; ?>" style="height:110px"><br> Keterangan : QRCODE yang ada pada surat ini bukan Tanda Tangan Digital, melainkan hanya digunakan untuk pelacakan arsip.</td>
                 <td style="width:30%;"></td>
                 <td style=" text-align:center; vertical-align:top"><b><?php if ($k->s_kodettd == 1) {
                                                             echo ucwords($k->s_jabatan);

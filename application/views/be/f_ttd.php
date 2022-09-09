@@ -1,4 +1,3 @@
-
 <script>
   function hapust(a) {
     //  alert(a);
@@ -17,13 +16,20 @@
     });
   }
 
+  function ettd(a, b, c, d) {
+    $('#id').val(a);
+    $('#nama').val(b);
+    $('#jab').val(c);
+    $('#status').val(d);
+
+    $('#m_ttd').modal('show');
+  }
+
   function empty1() {
-   
-    $('#username').val("");
-    $('#pass1').val("");
-    $('#password').val("");
+
+    $('#id').val("");
+    $('#nama').val("");
+    $('#jab').val("");
     $('#status').val("");
-    document.getElementById("password").disabled = true;
-    document.getElementById("status").disabled = true;
   }
 </script>

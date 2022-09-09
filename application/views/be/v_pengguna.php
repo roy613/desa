@@ -22,7 +22,7 @@
                 PENGGUNA
               </h5>
               <h6 style="color: dimgrey;">
-                APLIKASI LAYANAN ONLINE DESA XXXXXXX
+                APLIKASI LAYANAN ONLINE DESA KARANGAN HILIR
               </h6>
               <!-- /.col -->
             </div>
@@ -47,9 +47,9 @@
                         <tr>
                           <td><?php echo $no++; ?></td>
                           <td><?php echo $p->username; ?></td>
-                          <td><?php if ($p->ket == 1) {
+                          <td><?php if ($p->status == 1) {
                                 echo "Administrator";
-                              } else {
+                              } else if ($p->status == 2) {
                                 echo "Operator";
                               } ?></td>
 
@@ -82,7 +82,7 @@
 
           <div class="modal-body">
 
-            <form method="post" action="<?php echo base_url('simpan/pengguna') ?>" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url('be/simpan_be/pengguna') ?>" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
                   <label>Username</label>
@@ -103,7 +103,7 @@
                   <select class="form-control" id="status" name="status" required>
                     <option selected disabled value="">- Pilih Status -</option>
                     <option value="1">Administrator</option>
-                    <option value="0">Operator</option>
+                    <option value="2">Operator</option>
                   </select>
                 </div>
               </div>
@@ -117,38 +117,6 @@
     </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="mpejabat" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
-      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header bg-dark">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Pejabat</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-
-            <form method="post" action="<?php echo base_url('simpan/pejabat') ?>" enctype="multipart/form-data">
-              <div class="box-body">
-                <div class="form-group">
-                  <label>Nama Pejabat</label>
-                  <input type="text" name="nama" id="nama" class="form-control" required autofocus placeholder="Masukkan nama pejabat..">
-                </div>
-                <div class="form-group">
-                  <label>Jabatan</label>
-                  <input type="text" name="jabatan" id="jabatan" class="form-control" placeholder="Masukkan nama jabatan.." required>
-                </div>
-              </div>
-              <div class="box-footer">
-                <input type="submit" style="float:right" id="tombol2" class="btn btn-sm btn-outline-primary" value="Simpan">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </section>
 </div>

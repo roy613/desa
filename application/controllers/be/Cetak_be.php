@@ -7,7 +7,11 @@ class Cetak_be extends CI_Controller
 	{
 		parent::__construct();
 		date_default_timezone_set('Asia/Makassar');
+
 		$this->load->model('m_data');
+		if ($this->session->userdata('status') != "telah_login") {
+			redirect(base_url() . 'login?alert=belum_login');
+		}
 	}
 	public function proposal($a)
 	{
