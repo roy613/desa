@@ -20,7 +20,7 @@
         Swal.fire({
             title: 'Berkas di Tolak Persyaratan Tidak Lengkap!',
             text: "Apakah Anda Ingin Mengirim Pemberitahuan Via Whatsapp kepada Pemohon ?",
-            icon: 'warning',
+            icon: 'question',
             showCancelButton: true,
             confirmButtonColor: 'green',
             cancelButtonColor: '#3085d6',

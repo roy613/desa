@@ -33,7 +33,7 @@
                                                 <li><i class="bi bi-check-circle-fill"></i> Foto KTP / Kartu Keluarga (Format jpeg/jpg/png)</li>
                                                 <!-- <li><i class="bi bi-check-circle-fill"></i> Surat Pengantar RT</li> -->
                                             </ul>
-                                            <p style="text-align: justify;">
+                                            <p style="text-align: justify; color:red">
                                                 Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                             </p>
                                             <p style="text-align: justify;">

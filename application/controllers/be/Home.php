@@ -57,4 +57,13 @@ class Home extends CI_Controller
         $this->load->view('be/v_footer');
     }
     
+    public function ttd ()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_ttd',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_ttd');
+    }
 }
