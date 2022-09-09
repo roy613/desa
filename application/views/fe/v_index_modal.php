@@ -126,9 +126,10 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="kode" name="kode">
                             <label for="floatingInput">Input Nomor Registrasi Pelayanan</label>
+                            <button class="btn btn-outline-primary" onclick="cekresi()" style="float: right; margin-top:15px">Proses</button>
                             <p id="kode_notif"></p>
-                            <button class="btn btn-outline-primary" onclick="cekresi()" style="float: right;">Proses</button>
                         </div>
+                        
                     </div>
                     <!-- <div class="col-md-12 mb-3">
                         <label for="proposal_halpermohonan">Silahkan Input Nomor Registrasi Pelayanan Anda</label>
@@ -180,8 +181,10 @@
 
 <script>
     function ceksurat() {
-        $('#ceksurat').modal('show');
+        $('#kode').val("");
         document.getElementById("status").style.display = "none";
+        document.getElementById("kode_notif").innerHTML = "";
+        $('#ceksurat').modal('show');
     }
 
     function cekresi() {
@@ -241,16 +244,12 @@
                         document.getElementById("kode_notif").innerHTML = "Kode Registrasi Pelayanan Anda Tidak Terdaftar";
                         document.getElementById("status").style.display = "none";
                     }
-
-                    // }
-                    // document.getElementById("jabttd").value = data[0].tt_jabatan;
-                    // document.getElementById("kodettd").value = data[0].tt_ket;
                 }
             });
         } else {
             document.getElementById("kode_notif").style.color = "red";
             document.getElementById("kode_notif").innerHTML = "Silahkan Input Kode Registrasi Pelayanan Anda";
-            ocument.getElementById("status").style.display = "none";
+            document.getElementById("status").style.display = "none";
         }
     }
 </script>

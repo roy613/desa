@@ -37,7 +37,7 @@ class Welcome extends CI_Controller
 		// $peg = "dki_proposal5";
 		$peg = $this->input->post('peg');
 		$a = $this->db->query("SELECT s_tglbuat FROM surat WHERE s_kodepelayanan='" . $peg . "'")->num_rows();
-		// $b = $this->db->query("SELECT pe_tgl, s_tglbuat, s_proses, s_kodeproses, s_tglselesai FROM surat INNER JOIN permohonan ON permohonan.pe_kode=surat.s_kodepelayanan WHERE s_kodepelayanan='" . $peg . "'")->result();
+
 		if ($a == 1) {
 			$data = array(
 				"kode" => 1,
@@ -65,7 +65,6 @@ class Welcome extends CI_Controller
 	public function layanan()
 	{
 		$this->load->view('fe/v_header');
-		$this->load->view('fe/v_layanan');
 		$this->load->view('fe/v_layanan_kerja');
 		$this->load->view('fe/v_layanan_kdomisili');
 		$this->load->view('fe/v_layanan_kkelahiran');
@@ -77,6 +76,7 @@ class Welcome extends CI_Controller
 		$this->load->view('fe/v_layanan_proposal');
 		$this->load->view('fe/v_layanan_pskck');
 		$this->load->view('fe/v_layanan_ktmampu');
+		$this->load->view('fe/v_layanan');
 		$this->load->view('fe/v_footer');
 		$this->load->view('fe/f_layanan');
 		$this->load->view('fe/f_layanan_nikah');
