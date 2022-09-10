@@ -103,9 +103,9 @@
             <!-- title row -->
             <div class="col-md-12">
               <h6 style="color: dimgrey;">DAFTAR AKTIFITAS TERAKHIR</h6>
-              <table class="table table-bordered table-striped" style="margin-top: 10px;">
+              <table class="table table-responsive" style="margin-top: 10px;">
                 <thead>
-                  <tr style="background:#1D87E4 !important;font-size:9pt">
+                  <tr style="background-color:transparent !important;font-size:9pt">
                     <th style="width:2%">No</th>
                     <th>Pemohon</th>
                     <th>Jenis Permohonan</th>

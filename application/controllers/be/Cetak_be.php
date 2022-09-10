@@ -18,7 +18,7 @@ class Cetak_be extends CI_Controller
 		$b= base64_decode($a);
 		require_once './vendor/autoload.php';
 		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
-		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_kodepelayanan='$b'")->result();
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
 		$html = $this->load->view('cetak/r_proposal', $data, true);
 		$mpdf->AddPage('P','','','','',
 		12,//ml

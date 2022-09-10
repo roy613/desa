@@ -6,6 +6,47 @@ class Proses extends CI_Controller
     {
         parent::__construct();
         date_default_timezone_set('Asia/Makassar');
+        function getRomawi($bln)
+        {
+            switch ($bln) {
+                case 1:
+                    return "I";
+                    break;
+                case 2:
+                    return "II";
+                    break;
+                case 3:
+                    return "III";
+                    break;
+                case 4:
+                    return "IV";
+                    break;
+                case 5:
+                    return "V";
+                    break;
+                case 6:
+                    return "VI";
+                    break;
+                case 7:
+                    return "VII";
+                    break;
+                case 8:
+                    return "VIII";
+                    break;
+                case 9:
+                    return "IX";
+                    break;
+                case 10:
+                    return "X";
+                    break;
+                case 11:
+                    return "XI";
+                    break;
+                case 12:
+                    return "XII";
+                    break;
+            }
+        }
         $this->load->model('m_data');
         if ($this->session->userdata('status') != "telah_login") {
             redirect(base_url() . 'login?alert=belum_login');
@@ -68,32 +109,7 @@ class Proses extends CI_Controller
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
-        $n31 = date('m', strtotime($tgl));
-        if ($n31 == "01") {
-            $n311 = "I";
-        } else if ($n31 == "02") {
-            $n311 = "II";
-        } else if ($n31 == "03") {
-            $n311 = "III";
-        } else if ($n31 == "04") {
-            $n311 = "IV";
-        } else if ($n31 == "05") {
-            $n311 = "V";
-        } else if ($n31 == "06") {
-            $n311 = "VI";
-        } else if ($n31 == "07") {
-            $n311 = "VII";
-        } else if ($n31 == "08") {
-            $n311 = "VIII";
-        } else if ($n31 == "09") {
-            $n311 = "IX";
-        } else if ($n31 == "10") {
-            $n311 = "X";
-        } else if ($n31 == "11") {
-            $n311 = "XI";
-        } else if ($n31 == "12") {
-            $n311 = "XII";
-        }
+        $n311 = getRomawi(date('m', strtotime($tgl)));
         $n32 = date('Y', strtotime($tgl));
         $n3f = $n311 . "/" . $n32;
         $nosurat = $nomor[0]["n_1"] . str_pad($nomor1 + 1, 3, '0', STR_PAD_LEFT) . $nomor[0]["n_2"].$n3f;

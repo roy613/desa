@@ -49,7 +49,10 @@
 
                                 <?php if ($k->s_tglsurat !== null) { ?>
                                     <?php if ($k->pe_jenispermohonan == "surat rekomendasi proposal") { ?>
-                                        <a target="_blank" href="<?php echo base_url('cetak_rekom_proposal/' . base64_encode($k->pe_kode)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                        <a target="_blank" href="<?php echo base_url('cetak_rekom_proposal/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat rekomendasi kerja") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_rekom_proposal/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
                                 <?php } ?>
 

@@ -42,4 +42,25 @@ class Hapus extends CI_Controller
         $this->session->set_flashdata($swal_test);
         redirect(base_url('pengguna'));
     }
+	public function rekomproposal($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('rekomproposal'));
+    }
 }

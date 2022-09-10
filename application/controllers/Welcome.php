@@ -66,6 +66,7 @@ class Welcome extends CI_Controller
 	{
 		$this->load->view('fe/v_header');
 		$this->load->view('fe/v_layanan_kerja');
+		$this->load->view('fe/v_layanan_pkerja');
 		$this->load->view('fe/v_layanan_kdomisili');
 		$this->load->view('fe/v_layanan_kkelahiran');
 		$this->load->view('fe/v_layanan_kkematian');

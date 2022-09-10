@@ -13,12 +13,12 @@
     }
 </style>
 
-    <div class="modal fade" id="r_kerja" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="r_pkerja" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
                     <img src="<?php echo base_url(); ?>assets/img/logokutim.png" width="auto" alt="" height="30px" class="mr-2">
-                    <h5 class="modal-title" style="color: white; margin-left:10px"> SURAT REKOMENDASI KERJA</h5>
+                    <h5 class="modal-title" style="color: white; margin-left:10px"> SURAT Pengantar REKOM KERJA</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -26,17 +26,17 @@
 
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#kerja-1" style="cursor: pointer;">Persyaratan</a>
+                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#pkerja-1" style="cursor: pointer;">Persyaratan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#kerja-2" style="cursor: pointer;">Formulir</a>
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#pkerja-2" style="cursor: pointer;">Formulir</a>
                         </li>
                     </ul>
                     <section id="features" class="features" style="padding-top: 5px;">
                         <div class="container" data-aos="fade-up">
                             <div class="tab-content">
 
-                                <div class="tab-pane active show" id="kerja-1">
+                                <div class="tab-pane active show" id="pkerja-1">
                                     <div class="row gy-4">
                                     <div class="col-lg-12 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                                             <h3>Persyaratan</h3>
@@ -57,40 +57,40 @@
                                     </div>
                                 </div><!-- End Tab Content 1 -->
 
-                                <div class="tab-pane" id="kerja-2">
+                                <div class="tab-pane" id="pkerja-2">
                                     <div class="row gy-4">
                                         <div class="col-lg-12 order-2 order-lg-1">
                                             <h3>Formulir</h3>
-                                            <form method="post" action="<?php echo base_url('simpan_fe/kerja') ?>" enctype="multipart/form-data">
+                                            <form method="post" action="<?php echo base_url('simpan_fe/pkerja') ?>" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_nama">Nama Lengkap</label>
-                                                    <input type="text" class="form-control" id="kerja_nama" name="kerja_nama" placeholder="Input Nama Anda .." required>
+                                                    <label for="pkerja_nama">Nama Lengkap</label>
+                                                    <input type="text" class="form-control" id="pkerja_nama" name="pkerja_nama" placeholder="Input Nama Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_nik">NIK</label>
-                                                    <input type="number" onkeyup="kerja_ceknik()" class="form-control" id="kerja_nik" name="kerja_nik" placeholder="Input NIK Anda .."  required>
-                                                    <div id="kerja_notifnik"></div>
+                                                    <label for="pkerja_nik">NIK</label>
+                                                    <input type="number" onkeyup="pkerja_ceknik()" class="form-control" id="pkerja_nik" name="pkerja_nik" placeholder="Input NIK Anda .."  required>
+                                                    <div id="pkerja_notifnik"></div>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_jk">Jenis Kelamin</label>
-                                                    <select class="form-control" id="kerja_jk" name="kerja_jk" disabled required>
+                                                    <label for="pkerja_jk">Jenis Kelamin</label>
+                                                    <select class="form-control" id="pkerja_jk" name="pkerja_jk" disabled required>
                                                         <option selected disabled value="">--Pilih Jenis Kelamin--</option>
                                                         <option>Laki-Laki</option>
                                                         <option>Perempuan</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_tptlahir">Tempat Lahir</label>
-                                                    <input type="text" class="form-control" id="kerja_tptlahir" name="kerja_tptlahir" placeholder="Input Tempat Lahir Anda .." required>
+                                                    <label for="pkerja_tptlahir">Tempat Lahir</label>
+                                                    <input type="text" class="form-control" id="pkerja_tptlahir" name="pkerja_tptlahir" placeholder="Input Tempat Lahir Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_tgllahir">Tanggal Lahir</label>
-                                                    <input type="date" class="form-control" id="kerja_tgllahir" name="kerja_tgllahir" required>
+                                                    <label for="pkerja_tgllahir">Tanggal Lahir</label>
+                                                    <input type="date" class="form-control" id="pkerja_tgllahir" name="pkerja_tgllahir" required>
                                                 </div>                                                
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_agama">Agama</label>
-                                                    <select class="form-control" id="kerja_agama" name="kerja_agama" required>
+                                                    <label for="pkerja_agama">Agama</label>
+                                                    <select class="form-control" id="pkerja_agama" name="pkerja_agama" required>
                                                         <option selected disabled value="">-- Pilih Agama --</option>
                                                         <option>Islam</option>
                                                         <option>Kristen</option>
@@ -101,27 +101,27 @@
                                                     </select>
                                                 </div> 
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_pekerjaan">Pekerjaan</label>
-                                                    <input type="text" class="form-control" id="kerja_pekerjaan" name="kerja_pekerjaan" placeholder="Input Pekerjaan Anda .." required>
+                                                    <label for="pkerja_pekerjaan">Pekerjaan</label>
+                                                    <input type="text" class="form-control" id="pkerja_pekerjaan" name="pkerja_pekerjaan" placeholder="Input Pekerjaan Anda .." required>
                                                 </div>                                       
 
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_alamat">Alamat</label>
-                                                    <input type="text" class="form-control" id="kerja_alamat" name="kerja_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
+                                                    <label for="pkerja_alamat">Alamat</label>
+                                                    <input type="text" class="form-control" id="pkerja_alamat" name="pkerja_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_perusahaan">Perusahaan Tujuan</label>
-                                                    <input type="text" class="form-control" id="kerja_perusahaan" name="kerja_perusahaan" placeholder="Input Perusahaan Tujuan Anda .." required>
+                                                    <label for="pkerja_perusahaan">Perusahaan Tujuan</label>
+                                                    <input type="text" class="form-control" id="pkerja_perusahaan" name="pkerja_perusahaan" placeholder="Input Perusahaan Tujuan Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="kerja_nohp">Nomor Whatsapp Pemohon</label>
-                                                    <input type="number" class="form-control" id="kerja_nohp" name="kerja_nohp" placeholder="Input WA Anda .." required>
+                                                    <label for="pkerja_nohp">Nomor Whatsapp Pemohon</label>
+                                                    <input type="number" class="form-control" id="pkerja_nohp" name="pkerja_nohp" placeholder="Input WA Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <div class="custom-file">
-                                                        <label for="kerja_filegambar">Upload Foto Identitas (KTP atau KK)</label>
-                                                        <input type="file" class="custom-file-input form-control" name="kerja_filegambar" id="kerja_filegambar" required onchange="kerja_validasi()">
-                                                        <div id="kerja_notif"></div>
+                                                        <label for="pkerja_filegambar">Upload Foto Identitas (KTP atau KK)</label>
+                                                        <input type="file" class="custom-file-input form-control" name="pkerja_filegambar" id="pkerja_filegambar" required onchange="pkerja_validasi()">
+                                                        <div id="pkerja_notif"></div>
                                                     </div>
                                                 </div>
                                             </div>

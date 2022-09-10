@@ -13,26 +13,103 @@
      <nav class="mt-2">
        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->        
+               with font-awesome or any other icon font library -->
          <li class="nav-item">
-           <a href="<?php echo base_url('arsip'); ?>" class="nav-link">
-           <i class="nav-icon fas fa-file-medical text-info"></i>             
-             <p>Buat Surat</p>
+           <a href="#" class="nav-link">
+             <i class="nav-icon fas fa-file-medical text-info"></i>
+             <p>
+               Buat Surat
+               <i class="fas fa-angle-left right"></i>
+               <span class="badge badge-info right">12</span>
+             </p>
            </a>
+           <ul class="nav nav-treeview">
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Rekom Kerja</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="<?php echo base_url('rekomproposal'); ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Rekom Proposal</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Pengantar Rekom</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Pengantar Nikah</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Pengantar hilang</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Pengantar SKCK</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Ket. Usaha</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Ket. Domisili</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Ket. Pindah</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Ket. Kematian</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Ket. Kelahiran</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="pages/layout/top-nav.html" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Ket. Tidak Mampu</p>
+               </a>
+             </li>
+           </ul>
          </li>
-        
          <li class="nav-item">
            <a href="<?php echo base_url('nomor'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-list-ol text-info"></i>       
-             <p>Pengaturan Nomor Surat</p>
+             <i class="nav-icon fas fa-list-ol text-info"></i>
+             <p>Pengaturan No. Surat</p>
            </a>
          </li>
          <li class="nav-item">
            <a href="<?php echo base_url('ttd'); ?>" class="nav-link">
-           <i class="nav-icon fas fa-signature text-info"></i>
+             <i class="nav-icon fas fa-signature text-info"></i>
              <p>Penandatangan</p>
            </a>
-         </li>         
+         </li>
          <li class="nav-item">
            <a href="<?php echo base_url('pengguna'); ?>" class="nav-link">
              <i class="nav-icon fas fa-users text-info"></i>

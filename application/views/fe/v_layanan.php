@@ -51,7 +51,7 @@
 
  
     <div class="section-header">
-      <h2>Layanan Kantor Desa xxxxxxxxx</h2>
+      <h2>Layanan Kantor Desa Karangan Hilir</h2>
       <p>Silahkan Pilih Layanan Yang Anda Butuhkan</p>
     </div>
 
@@ -100,7 +100,7 @@
             <div class="icon">
             <i class="bi bi-box-arrow-in-up-left"></i>
             </div>
-            <a href="#" onclick="prekom_kerja()" class="stretched-link">
+            <a href="#" onclick="pkerja()" class="stretched-link">
               <h3>Pengantar Rekom <br> Kerja Ke Kecamatan</h3>
             </a>
             

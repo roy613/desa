@@ -36,7 +36,7 @@
 
     .timeline .event {
         border-bottom: 1px dashed #e8ebf1;
-        padding-top:5px;
+        padding-top: 5px;
         padding-bottom: 10px;
         margin-bottom: 5px;
         position: relative;
@@ -129,14 +129,14 @@
                             <button class="btn btn-outline-primary" onclick="cekresi()" style="float: right; margin-top:15px">Proses</button>
                             <p id="kode_notif"></p>
                         </div>
-                        
+
                     </div>
                     <!-- <div class="col-md-12 mb-3">
                         <label for="proposal_halpermohonan">Silahkan Input Nomor Registrasi Pelayanan Anda</label>
                         <input type="text" class="form-control" id="kode" name="kode">
                     </div> -->
                     <!-- <div class="col-md-4 mb-3"> -->
-                    
+
                     <!-- </div> -->
                     <div class="col-md-12 mb-3">
                         <div class="container" id="status" style="margin-top:15px">
@@ -160,10 +160,10 @@
                                                 <table border="0">
                                                     <tr>
                                                         <td>
-                                                        <button class="btn btn-outline-success" style="float: right; margin-top:15px">Puas</button>
+                                                            <button class="btn btn-outline-success" style="float: right; margin-top:15px">Puas</button>
                                                         </td>
                                                         <td>
-                                                        <button class="btn btn-outline-danger" style="float: right; margin-top:15px">Tidak Puas</button>
+                                                            <button class="btn btn-outline-danger" style="float: right; margin-top:15px">Tidak Puas</button>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -222,25 +222,42 @@
                             async: false,
                             dataType: 'json',
                             success: function(data) {
-                                document.getElementById("kode_notif").innerHTML = "";
-                                document.getElementById("status").style.display = "block";
-                                document.getElementById("tgl_pertama").innerHTML = data[0].pe_tgl;
-                                // document.getElementById("status_kedua").style.display = "none";
-                                // document.getElementById("status_kedua").style.display = "none";
-                                // document.getElementById("status_ketiga").style.display = "none";
-                                // document.getElementById("status_keempat").style.display = "none";
-                                if (data[0].s_tglbuat !== null && data[0].s_kodeproses == 1 && data[0].s_tglselesai == null) {
+                                // document.getElementById("kode_notif").innerHTML = "";
+                                // document.getElementById("status_pertama").style.display = "block";
+                                // document.getElementById("tgl_pertama").innerHTML = data[0].pe_tgl;
+                                // // document.getElementById("status_kedua").style.display = "none";
+                                // // document.getElementById("status_kedua").style.display = "none";
+                                // // document.getElementById("status_ketiga").style.display = "none";
+                                // // document.getElementById("status_keempat").style.display = "none";
+                                if (data[0].s_tglbuat == null && data[0].s_kodeproses == 1 && data[0].s_tglselesai == null) {
+                                    document.getElementById("kode_notif").innerHTML = "";
+                                    document.getElementById("status").style.display = "block";
+                                    document.getElementById("tgl_pertama").innerHTML = data[0].pe_tgl;
+                                    document.getElementById("status_kedua").style.display = "none";
+                                    document.getElementById("status_kedua").style.display = "none";
+                                    document.getElementById("status_ketiga").style.display = "none";
+                                    document.getElementById("status_keempat").style.display = "none";
+                                } else if (data[0].s_tglbuat !== null && data[0].s_kodeproses == 1 && data[0].s_tglselesai == null) {
+                                    document.getElementById("kode_notif").innerHTML = "";
+                                    document.getElementById("status").style.display = "block";
+                                    document.getElementById("tgl_pertama").innerHTML = data[0].pe_tgl;
                                     document.getElementById("status_kedua").style.display = "block";
                                     document.getElementById("tgl_kedua").innerHTML = data[0].s_tglbuat + " By. " + data[0].s_proses;
                                     document.getElementById("status_ketiga").style.display = "none";
                                     document.getElementById("status_keempat").style.display = "none";
                                 } else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null && data[0].s_kodeproses == 1) {
+                                    document.getElementById("kode_notif").innerHTML = "";
+                                    document.getElementById("status").style.display = "block";
+                                    document.getElementById("tgl_pertama").innerHTML = data[0].pe_tgl;
                                     document.getElementById("status_kedua").style.display = "block";
                                     document.getElementById("tgl_kedua").innerHTML = data[0].s_tglbuat + " By. " + data[0].s_proses;
                                     document.getElementById("status_ketiga").style.display = "block";
                                     document.getElementById("tgl_ketiga").innerHTML = data[0].s_tglselesai;
                                     document.getElementById("status_keempat").style.display = "none";
                                 } else if (data[0].s_tglbuat !== null && data[0].s_tglselesai !== null && data[0].s_kodeproses == 2) {
+                                    document.getElementById("kode_notif").innerHTML = "";
+                                    document.getElementById("status").style.display = "block";
+                                    document.getElementById("tgl_pertama").innerHTML = data[0].pe_tgl;
                                     document.getElementById("status_keempat").style.display = "block";
                                     document.getElementById("tgl_keempat").innerHTML = data[0].s_tglselesai;
                                     document.getElementById("status_kedua").style.display = "none";

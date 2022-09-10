@@ -34,7 +34,7 @@
                         <th style="width:3%">NO</th>
                         <th>NAMA</th>
                         <th>JABATAN</th>
-                        <th>STATUS PENANDATANGANN</th>
+                        <th>STATUS PENANDATANGAN</th>
                         <th style="width:7%">OPSI</th>
                       </tr>
 
@@ -101,12 +101,12 @@
               <div class="box-body">
                 <div class="form-group">
                   <label>Nama</label>
-                  <input type="text" name="nama" id="nama" class="form-control" required autofocus placeholder="Masukkan username pengguna..">
+                  <input type="text" name="nama" id="nama" class="form-control" required autofocus placeholder="Masukkan Nama Penandatangan..">
                   <input type="hidden" name="id" id="id" class="form-control">
                 </div>
                 <div class="form-group">
                   <label>Jabatan</label>
-                  <input type="text" name="jab" id="jab" class="form-control" placeholder="Masukkan password anda.." required>
+                  <input type="text" name="jab" id="jab" class="form-control" placeholder="Masukkan Jabatan Penandatangan.." required>
                 </div>
                 <div class="form-group">
                   <label>Status Penandatangan</label>

@@ -50,23 +50,23 @@
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_nama">Nama Lengkap</label>
-                                                    <input type="text" class="form-control" id="proposal_nama" name="proposal_nama" required>
+                                                    <input type="text" class="form-control" id="proposal_nama" name="proposal_nama" placeholder="Input Nama Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_perusahaan">Perusahaan yang Di Tuju</label>
-                                                    <input type="text" class="form-control" id="proposal_perusahaan" name="proposal_perusahaan" required>
+                                                    <input type="text" class="form-control" id="proposal_perusahaan" name="proposal_perusahaan" placeholder="Input Nama Perusahaan .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_nosuratpemohon">Nomor Surat Permohonan</label>
-                                                    <input type="text" class="form-control" id="proposal_nosuratpemohon" name="proposal_nosuratpemohon" required>
+                                                    <input type="text" class="form-control" id="proposal_nosuratpemohon" name="proposal_nosuratpemohon" placeholder="Input No Surat Permohonan .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_halpermohonan">Perihal Surat Permohonan</label>
-                                                    <input type="text" class="form-control" id="proposal_halpermohonan" name="proposal_halpermohonan" required>
+                                                    <input type="text" class="form-control" id="proposal_halpermohonan" name="proposal_halpermohonan" placeholder="Input Perihal Permohonan .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_nohp">Nomor Whatsapp Pemohon</label>
-                                                    <input type="number" class="form-control" id="proposal_nohp" name="proposal_nohp" required>
+                                                    <input type="number" class="form-control" id="proposal_nohp" name="proposal_nohp" placeholder="Input No Whatsapp .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <div class="custom-file">
