@@ -67,6 +67,10 @@ $route['rekomproposal'] = 'be/home/rekomproposal';
 $route['cek_permohonan'] = 'be/home/daftar_permohonan';
 $route['lihat_surat/(:any)'] = 'be/home/lihat_surat/$1';
 $route['cetak_rekom_proposal/(:any)'] = 'be/cetak_be/proposal/$1';
+$route['cetak_rekom_kerja/(:any)'] = 'be/cetak_be/kerja/$1';
+$route['cetak_pengantar_rkerja/(:any)'] = 'be/cetak_be/rkerja/$1';
+$route['cetak_ket_domisili/(:any)'] = 'be/cetak_be/domisili/$1';
+$route['cetak_ket_lahir/(:any)'] = 'be/cetak_be/lahir/$1';
 
 
 $route['layanan'] = 'welcome/layanan';

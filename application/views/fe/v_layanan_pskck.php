@@ -46,21 +46,87 @@
                                 <div class="row gy-4">
                                     <div class="col-lg-12 order-2 order-lg-1">
                                         <h3>Formulir</h3>
-                                        <p>
-                                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum
-                                        </p>
-                                        <p class="fst-italic">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                            magna aliqua.
-                                        </p>
-                                        <ul>
-                                            <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                                            <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                                            <li><i class="bi bi-check-circle-fill"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                                            <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                                        </ul>
+                                        <form method="post" action="<?php echo base_url('simpan_fe/skck') ?>" enctype="multipart/form-data">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_nama">Nama Lengkap</label>
+                                                    <input type="text" class="form-control" id="skck_nama" name="skck_nama" placeholder="Input Nama Anda .." required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_nik">NIK</label>
+                                                    <input type="number" onkeyup="skck_ceknik()" class="form-control" id="skck_nik" name="skck_nik" placeholder="Input NIK Anda .."  required>
+                                                    <div id="skck_notifnik"></div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_jk">Jenis Kelamin</label>
+                                                    <select class="form-control" id="skck_jk" name="skck_jk" disabled required>
+                                                        <option selected disabled value="">--Pilih Jenis Kelamin--</option>
+                                                        <option>Laki-Laki</option>
+                                                        <option>Perempuan</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_tptlahir">Tempat Lahir</label>
+                                                    <input type="text" class="form-control" id="skck_tptlahir" name="skck_tptlahir" placeholder="Input Tempat Lahir Anda .." required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_tgllahir">Tanggal Lahir</label>
+                                                    <input type="date" class="form-control" id="skck_tgllahir" name="skck_tgllahir" required>
+                                                </div> 
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_rt">kewarganegaraan</label>
+                                                    <input type="text" class="form-control" id="skck_kwn" name="skck_kwn" placeholder="Input Kewarganegaraan Anda .." required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_agama">Agama</label>
+                                                    <select class="form-control" id="skck_agama" name="skck_agama" required>
+                                                        <option selected disabled value="">-- Pilih Agama --</option>
+                                                        <option>Islam</option>
+                                                        <option>Kristen</option>
+                                                        <option>Katolik</option>
+                                                        <option>Hindu</option>
+                                                        <option>Budha</option>
+                                                        <option>Konghucu</option>
+                                                    </select>
+                                                </div>                                             
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_statuskwn">Status Perkawinan</label>
+                                                    <select class="form-control" id="skck_statuskwn" name="skck_statuskwn" required>
+                                                        <option selected disabled value="">-- Pilih Status --</option>
+                                                        <option>Belum Menikah</option>
+                                                        <option>Menikah</option>
+                                                        <option>Janda</option>
+                                                        <option>Duda</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_pekerjaan">Pekerjaan</label>
+                                                    <input type="text" class="form-control" id="skck_pekerjaan" name="skck_pekerjaan" placeholder="Input Pekerjaan Anda .." required>
+                                                </div>                                       
+
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_alamat">Alamat</label>
+                                                    <input type="text" class="form-control" id="skck_alamat" name="skck_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
+                                                </div>
+                                               
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_Urus">Mengurus SKCK di</label>
+                                                    <input type="text" class="form-control" id="skck_urus" name="skck_urus" placeholder="Contoh : Polres Kutai Timur" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="skck_nohp">Nomor Whatsapp Pemohon</label>
+                                                    <input type="number" class="form-control" id="skck_nohp" name="skck_nohp" placeholder="Input WA Anda .." required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="custom-file">
+                                                        <label for="skck_filegambar">Upload Foto Identitas (KTP atau KK)</label>
+                                                        <input type="file" class="custom-file-input form-control" name="skck_filegambar" id="skck_filegambar" required onchange="skck_validasi()">
+                                                        <div id="skck_notif"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" style="float: right;">Proses</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div><!-- End Tab Content 2 -->

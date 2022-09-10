@@ -110,7 +110,7 @@
                                                             echo ucwords($k->s_jabatan);
                                                         } else if ($k->s_kodettd == 2) {
                                                             echo "an. Kepala Desa <br>".$k->s_jabatan;
-                                                        } ?>,</b><br><br><br><br><br>
+                                                        } ?>,</b><br><br><br><br>
                                                         <b><u><?php echo Ucwords($k->s_ttd); ?></u></b>
                                                         </td>
             </tr>

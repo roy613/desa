@@ -52,7 +52,16 @@
                                         <a target="_blank" href="<?php echo base_url('cetak_rekom_proposal/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
                                     <?php if ($k->pe_jenispermohonan == "surat rekomendasi kerja") { ?>
-                                        <a target="_blank" href="<?php echo base_url('cetak_rekom_proposal/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                        <a target="_blank" href="<?php echo base_url('cetak_rekom_kerja/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat keterangan domisili") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_ket_domisili/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar rekom kerja") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_pengantar_rkerja/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat keterangan kelahiran") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_ket_lahir/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
                                 <?php } ?>
 

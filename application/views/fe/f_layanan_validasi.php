@@ -18,6 +18,63 @@
             document.getElementById("kerja_notifnik").innerHTML = "";
         }
     }
+    function usaha_ceknik() {
+        var target = document.getElementById("usaha_nik");
+        var batas_karakter = 16;
+        var a = target.value.length;
+        var b = "NIK Harus 16 Digit! Anda menginput ";
+        var d = " karakter"
+        var c = b + a + d;
+
+
+        if (target.value.length !== batas_karakter) {
+            document.getElementById("usaha_notifnik").style.color = "red";
+            document.getElementById("usaha_notifnik").innerHTML = c;
+            document.getElementById("usaha_jk").disabled = true;
+
+        } else {
+            document.getElementById("usaha_jk").disabled = false;
+            document.getElementById("usaha_notifnik").innerHTML = "";
+        }
+    }
+    function skck_ceknik() {
+        var target = document.getElementById("skck_nik");
+        var batas_karakter = 16;
+        var a = target.value.length;
+        var b = "NIK Harus 16 Digit! Anda menginput ";
+        var d = " karakter"
+        var c = b + a + d;
+
+
+        if (target.value.length !== batas_karakter) {
+            document.getElementById("skck_notifnik").style.color = "red";
+            document.getElementById("skck_notifnik").innerHTML = c;
+            document.getElementById("skck_jk").disabled = true;
+
+        } else {
+            document.getElementById("skck_jk").disabled = false;
+            document.getElementById("skck_notifnik").innerHTML = "";
+        }
+    }
+    function tmampu_ceknik() {
+        var target = document.getElementById("tmampu_nik");
+        var batas_karakter = 16;
+        var a = target.value.length;
+        var b = "NIK Harus 16 Digit! Anda menginput ";
+        var d = " karakter"
+        var c = b + a + d;
+
+
+        if (target.value.length !== batas_karakter) {
+            document.getElementById("tmampu_notifnik").style.color = "red";
+            document.getElementById("tmampu_notifnik").innerHTML = c;
+            document.getElementById("tmampu_jk").disabled = true;
+
+        } else {
+            document.getElementById("tmampu_jk").disabled = false;
+            document.getElementById("tmampu_notifnik").innerHTML = "";
+        }
+    }
     function pkerja_ceknik() {
         var target = document.getElementById("pkerja_nik");
         var batas_karakter = 16;
@@ -131,6 +188,51 @@
         } else {
             // document.getElementById("lahir_notif").style.color = "red";
             document.getElementById("lahir_notif").innerHTML = "";
+        }
+    }
+    function usaha_validasi() {
+        var inputFile = document.getElementById('usaha_filegambar');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("usaha_notif").style.color = "red";
+            document.getElementById("usaha_notif").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("usaha_notif").innerHTML = "";
+        }
+    }
+    function skck_validasi() {
+        var inputFile = document.getElementById('skck_filegambar');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("skck_notif").style.color = "red";
+            document.getElementById("skck_notif").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("skck_notif").innerHTML = "";
+        }
+    }
+    function tmampu_validasi() {
+        var inputFile = document.getElementById('tmampu_filegambar');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("tmampu_notif").style.color = "red";
+            document.getElementById("tmampu_notif").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("tmampu_notif").innerHTML = "";
         }
     }
 </script>

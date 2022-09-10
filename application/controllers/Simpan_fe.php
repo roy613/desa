@@ -672,6 +672,315 @@ class Simpan_fe extends CI_Controller
         $this->m_data->save_data($data, 'surat');
         redirect(base_url("sukses/".base64_encode($koderegistrasi)));
     }
+    public function usaha()
+    {
+        $nomor2 = $this->db->query("SELECT * FROM permohonan WHERE pe_jenispermohonan='surat keterangan usaha'")->num_rows();
+        $nomor3 = $nomor2 + 1;
+        $namaqr = 'DKI_usaha' . $nomor3 . '.png';
+        $koderegistrasi = 'DKI_usaha' . $nomor3;
+
+        $s1 = $this->input->post('usaha_nama');
+        $s2 = $this->input->post('usaha_nik');
+        $s3 = $this->input->post('usaha_jk');
+        $s4 = $this->input->post('usaha_tptlahir');
+        $sd1 = $this->input->post('usaha_tgllahir');
+        $s5 = $this->input->post('usaha_pekerjaan');
+        $s6 = $this->input->post('usaha_alamat');
+        $s7 = $this->input->post('usaha_rt');
+        $s8 = $this->input->post('usaha_usaha');
+        
+        
+        $jenis = "surat keterangan usaha";
+        $no_hp = $this->input->post('usaha_nohp');
+        $tglmohon = date('Y-m-d H-i-s');
+        $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+
+        //save ditabel permohonan
+        $config['upload_path'] = './syarat/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('usaha_filegambar')) {
+
+            $gambar = $this->upload->data();
+
+            $syarat = $gambar['file_name'];
+        }
+
+        include "phpqrcode/qrlib.php";
+        $tempdir = "permohonan/";
+        if (!file_exists($tempdir))
+            mkdir($tempdir);
+
+        $bu = base_url();
+        $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
+
+
+        $ab = base64_encode($koderegistrasi);
+        $ac = base_url() . 'periksa';
+        $codeContents = "$ac/$ab";
+
+        QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
+
+        $QR = imagecreatefrompng($tempdir . $namaqr);
+
+        $logo = imagecreatefromstring(file_get_contents($logopath));
+
+        imagecolortransparent($logo, imagecolorallocatealpha($logo, 127, 127, 127, 127));
+        imagealphablending($logo, true);
+        imagesavealpha($logo, true);
+
+        $QR_width = imagesx($QR);
+        $QR_height = imagesy($QR);
+
+        $logo_width = imagesx($logo);
+        $logo_height = imagesy($logo);
+
+        $logo_qr_width = $QR_width / 4;
+        $scale = $logo_width / $logo_qr_width;
+        $logo_qr_height = $logo_height / $scale;
+        imagecopyresampled($QR, $logo, $QR_width / 2.7, $QR_height / 2.9, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+        imagepng($QR, $tempdir . $namaqr);
+
+        $data1 = array(
+            'pe_kode' => $koderegistrasi,
+            'pe_nama' => $s1,
+            'pe_qr' => $namaqr,
+            'pe_tgl' => $tglmohon,
+            'pe_handphone' => $no_hp,
+            'pe_jenispermohonan' => $jenis,
+            'pe_syarat' => $syarat,
+        );
+
+        $this->m_data->save_data($data1, 'permohonan');
+        
+        //save di tabel surat
+        $data = array(
+            's_1' => $s1,
+            's_2' => $s2,
+            's_3' => $s3,
+            'sd_1' => $sd1,
+            's_4' => $s4,
+            's_5' => $s5,
+            's_6' => $s6,
+            's_7' => $s7,
+            's_8' => $s8,
+            's_kodeproses' => $kode_proses,
+            's_kodepelayanan' => $koderegistrasi,
+            's_jenispelayanan' => $jenis,
+        );
+
+        $this->m_data->save_data($data, 'surat');
+        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+    }
+    public function skck()
+    {
+        $nomor2 = $this->db->query("SELECT * FROM permohonan WHERE pe_jenispermohonan='surat pengantar skck'")->num_rows();
+        $nomor3 = $nomor2 + 1;
+        $namaqr = 'DKI_pskck' . $nomor3 . '.png';
+        $koderegistrasi = 'DKI_pskck' . $nomor3;
+
+        $s1 = $this->input->post('skck_nama');
+        $s2 = $this->input->post('skck_nik');
+        $s3 = $this->input->post('skck_jk');
+        $s4 = $this->input->post('skck_tptlahir');
+        $sd1 = $this->input->post('skck_tgllahir');
+        $s5 = $this->input->post('skck_kwn');
+        $s6 = $this->input->post('skck_agama');
+        $s7 = $this->input->post('skck_statuskwn');
+        $s8 = $this->input->post('skck_pekerjaan');
+        $s9 = $this->input->post('skck_alamat');
+        $s10 = $this->input->post('skck_urus');
+        
+        
+        $jenis = "surat pengantar skck";
+        $no_hp = $this->input->post('skck_nohp');
+        $tglmohon = date('Y-m-d H-i-s');
+        $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+
+        //save ditabel permohonan
+        $config['upload_path'] = './syarat/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('skck_filegambar')) {
+
+            $gambar = $this->upload->data();
+
+            $syarat = $gambar['file_name'];
+        }
+
+        include "phpqrcode/qrlib.php";
+        $tempdir = "permohonan/";
+        if (!file_exists($tempdir))
+            mkdir($tempdir);
+
+        $bu = base_url();
+        $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
+
+
+        $ab = base64_encode($koderegistrasi);
+        $ac = base_url() . 'periksa';
+        $codeContents = "$ac/$ab";
+
+        QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
+
+        $QR = imagecreatefrompng($tempdir . $namaqr);
+
+        $logo = imagecreatefromstring(file_get_contents($logopath));
+
+        imagecolortransparent($logo, imagecolorallocatealpha($logo, 127, 127, 127, 127));
+        imagealphablending($logo, true);
+        imagesavealpha($logo, true);
+
+        $QR_width = imagesx($QR);
+        $QR_height = imagesy($QR);
+
+        $logo_width = imagesx($logo);
+        $logo_height = imagesy($logo);
+
+        $logo_qr_width = $QR_width / 4;
+        $scale = $logo_width / $logo_qr_width;
+        $logo_qr_height = $logo_height / $scale;
+        imagecopyresampled($QR, $logo, $QR_width / 2.7, $QR_height / 2.9, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+        imagepng($QR, $tempdir . $namaqr);
+
+        $data1 = array(
+            'pe_kode' => $koderegistrasi,
+            'pe_nama' => $s1,
+            'pe_qr' => $namaqr,
+            'pe_tgl' => $tglmohon,
+            'pe_handphone' => $no_hp,
+            'pe_jenispermohonan' => $jenis,
+            'pe_syarat' => $syarat,
+        );
+
+        $this->m_data->save_data($data1, 'permohonan');
+        
+        //save di tabel surat
+        $data = array(
+            's_1' => $s1,
+            's_2' => $s2,
+            's_3' => $s3,
+            'sd_1' => $sd1,
+            's_4' => $s4,
+            's_5' => $s5,
+            's_6' => $s6,
+            's_7' => $s7,
+            's_8' => $s8,
+            's_9' => $s9,
+            's_10' => $s10,
+            's_kodeproses' => $kode_proses,
+            's_kodepelayanan' => $koderegistrasi,
+            's_jenispelayanan' => $jenis,
+        );
+
+        $this->m_data->save_data($data, 'surat');
+        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+    }
+    public function tmampu()
+    {
+        $nomor2 = $this->db->query("SELECT * FROM permohonan WHERE pe_jenispermohonan='surat keterangan tidak mampu'")->num_rows();
+        $nomor3 = $nomor2 + 1;
+        $namaqr = 'DKI_sktm' . $nomor3 . '.png';
+        $koderegistrasi = 'DKI_sktm' . $nomor3;
+
+        $s1 = $this->input->post('tmampu_nama');
+        $s2 = $this->input->post('tmampu_nik');
+        $s3 = $this->input->post('tmampu_jk');
+        $s4 = $this->input->post('tmampu_tptlahir');
+        $sd1 = $this->input->post('tmampu_tgllahir');
+        $s5 = $this->input->post('tmampu_agama');
+        $s6 = $this->input->post('tmampu_kwn');
+        $s7 = $this->input->post('tmampu_statuskwn');
+        $s8 = $this->input->post('tmampu_pekerjaan');
+        $s9 = $this->input->post('tmampu_alamat');
+        
+        
+        $jenis = "surat keterangan tidak mampu";
+        $no_hp = $this->input->post('tmampu_nohp');
+        $tglmohon = date('Y-m-d H-i-s');
+        $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+
+        //save ditabel permohonan
+        $config['upload_path'] = './syarat/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('tmampu_filegambar')) {
+
+            $gambar = $this->upload->data();
+
+            $syarat = $gambar['file_name'];
+        }
+
+        include "phpqrcode/qrlib.php";
+        $tempdir = "permohonan/";
+        if (!file_exists($tempdir))
+            mkdir($tempdir);
+
+        $bu = base_url();
+        $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
+
+
+        $ab = base64_encode($koderegistrasi);
+        $ac = base_url() . 'periksa';
+        $codeContents = "$ac/$ab";
+
+        QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
+
+        $QR = imagecreatefrompng($tempdir . $namaqr);
+
+        $logo = imagecreatefromstring(file_get_contents($logopath));
+
+        imagecolortransparent($logo, imagecolorallocatealpha($logo, 127, 127, 127, 127));
+        imagealphablending($logo, true);
+        imagesavealpha($logo, true);
+
+        $QR_width = imagesx($QR);
+        $QR_height = imagesy($QR);
+
+        $logo_width = imagesx($logo);
+        $logo_height = imagesy($logo);
+
+        $logo_qr_width = $QR_width / 4;
+        $scale = $logo_width / $logo_qr_width;
+        $logo_qr_height = $logo_height / $scale;
+        imagecopyresampled($QR, $logo, $QR_width / 2.7, $QR_height / 2.9, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+        imagepng($QR, $tempdir . $namaqr);
+
+        $data1 = array(
+            'pe_kode' => $koderegistrasi,
+            'pe_nama' => $s1,
+            'pe_qr' => $namaqr,
+            'pe_tgl' => $tglmohon,
+            'pe_handphone' => $no_hp,
+            'pe_jenispermohonan' => $jenis,
+            'pe_syarat' => $syarat,
+        );
+
+        $this->m_data->save_data($data1, 'permohonan');
+        
+        //save di tabel surat
+        $data = array(
+            's_1' => $s1,
+            's_2' => $s2,
+            's_3' => $s3,
+            'sd_1' => $sd1,
+            's_4' => $s4,
+            's_5' => $s5,
+            's_6' => $s6,
+            's_7' => $s7,
+            's_8' => $s8,
+            's_9' => $s9,
+            's_kodeproses' => $kode_proses,
+            's_kodepelayanan' => $koderegistrasi,
+            's_jenispelayanan' => $jenis,
+        );
+
+        $this->m_data->save_data($data, 'surat');
+        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+    }
     public function lahir()
     {
         $nomor2 = $this->db->query("SELECT * FROM permohonan WHERE pe_jenispermohonan='surat keterangan kelahiran'")->num_rows();
