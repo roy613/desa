@@ -98,4 +98,106 @@ class Cetak_be extends CI_Controller
 		$mpdf->WriteHTML($html);
 		$mpdf->Output('keterangankelahiran.pdf', 'I');
 	}
+	public function mati($a)
+	{
+		$b= base64_decode($a);
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html = $this->load->view('cetak/k_kematian', $data, true);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('keterangankematian.pdf', 'I');
+	}
+	public function pindah($a)
+	{
+		$b= base64_decode($a);
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html = $this->load->view('cetak/k_pindahpenduduk', $data, true);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('keteranganpindah.pdf', 'I');
+	}
+	public function sktm($a)
+	{
+		$b= base64_decode($a);
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html = $this->load->view('cetak/k_tidakmampu', $data, true);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('sktm.pdf', 'I');
+	}
+	public function skck($a)
+	{
+		$b= base64_decode($a);
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html = $this->load->view('cetak/p_skck', $data, true);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('pskck.pdf', 'I');
+	}
+	public function hilang($a)
+	{
+		$b= base64_decode($a);
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html = $this->load->view('cetak/p_kehilangan', $data, true);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('philang.pdf', 'I');
+	}
+	public function usaha($a)
+	{
+		$b= base64_decode($a);
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html = $this->load->view('cetak/k_usaha', $data, true);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('philang.pdf', 'I');
+	}
 }

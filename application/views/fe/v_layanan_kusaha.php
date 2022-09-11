@@ -77,9 +77,12 @@
                                                     <label for="usaha_pekerjaan">Pekerjaan</label>
                                                     <input type="text" class="form-control" id="usaha_pekerjaan" name="usaha_pekerjaan" placeholder="Input Pekerjaan Anda .." required>
                                                 </div>
-
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="usaha_alamat">Alamat (Jalan)</label>
+                                                    <label for="usaha_alamat1">Alamat Pemohon</label>
+                                                    <input type="text" class="form-control" id="usaha_alamat1" name="usaha_alamat1" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="usaha_alamat">Alamat Usaha (Jalan)</label>
                                                     <input type="text" class="form-control" id="usaha_alamat" name="usaha_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">

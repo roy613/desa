@@ -84,6 +84,10 @@
                                                     <input type="text" class="form-control" id="hilang_pekerjaan" name="hilang_pekerjaan" placeholder="Input Pekerjaan Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
+                                                    <label for="hilang_kwn">Kewarganegaraan</label>
+                                                    <input type="text" class="form-control" id="hilang_kwn" name="hilang_kwn" placeholder="Input Kewarganegaraan Anda .." required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
                                                     <label for="hilang_alamat">Alamat</label>
                                                     <input type="text" class="form-control" id="hilang_alamat" name="hilang_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
                                                 </div>

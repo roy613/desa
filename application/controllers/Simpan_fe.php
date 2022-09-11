@@ -688,6 +688,7 @@ class Simpan_fe extends CI_Controller
         $s6 = $this->input->post('usaha_alamat');
         $s7 = $this->input->post('usaha_rt');
         $s8 = $this->input->post('usaha_usaha');
+        $s9 = $this->input->post('usaha_alamat1');
         
         
         $jenis = "surat keterangan usaha";
@@ -765,6 +766,7 @@ class Simpan_fe extends CI_Controller
             's_6' => $s6,
             's_7' => $s7,
             's_8' => $s8,
+            's_9' => $s9,
             's_kodeproses' => $kode_proses,
             's_kodepelayanan' => $koderegistrasi,
             's_jenispelayanan' => $jenis,
@@ -997,6 +999,7 @@ class Simpan_fe extends CI_Controller
         $s6 = $this->input->post('hilang_alamat');
         $s7 = $this->input->post('hilang_barang');
         $sd2 = $this->input->post('hilang_tglhilang');
+        $s8 = $this->input->post('hilang_kwn');
         
         
         $jenis = "surat pengantar kehilangan";
@@ -1074,6 +1077,7 @@ class Simpan_fe extends CI_Controller
             's_6' => $s6,
             's_7' => $s7,
             'sd_2' => $sd2,
+            's_8' => $s8,
             's_kodeproses' => $kode_proses,
             's_kodepelayanan' => $koderegistrasi,
             's_jenispelayanan' => $jenis,

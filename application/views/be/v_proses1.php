@@ -63,6 +63,24 @@
                                     <?php if ($k->pe_jenispermohonan == "surat keterangan kelahiran") { ?>
                                         <a target="_blank" href="<?php echo base_url('cetak_ket_lahir/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat keterangan kematian") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_ket_mati/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat keterangan pindah") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_ket_pindah/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat keterangan tidak mampu") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_ket_sktm/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar skck") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_p_skck/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar kehilangan") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_p_hilang/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat keterangan usaha") { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_ket_usaha/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
                                 <?php } ?>
 
                                 <a target=_blank onclick="tolak_berkas(

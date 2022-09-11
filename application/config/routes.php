@@ -71,6 +71,12 @@ $route['cetak_rekom_kerja/(:any)'] = 'be/cetak_be/kerja/$1';
 $route['cetak_pengantar_rkerja/(:any)'] = 'be/cetak_be/rkerja/$1';
 $route['cetak_ket_domisili/(:any)'] = 'be/cetak_be/domisili/$1';
 $route['cetak_ket_lahir/(:any)'] = 'be/cetak_be/lahir/$1';
+$route['cetak_ket_mati/(:any)'] = 'be/cetak_be/mati/$1';
+$route['cetak_ket_pindah/(:any)'] = 'be/cetak_be/pindah/$1';
+$route['cetak_ket_usaha/(:any)'] = 'be/cetak_be/usaha/$1';
+$route['cetak_ket_sktm/(:any)'] = 'be/cetak_be/sktm/$1';
+$route['cetak_p_skck/(:any)'] = 'be/cetak_be/skck/$1';
+$route['cetak_p_hilang/(:any)'] = 'be/cetak_be/hilang/$1';
 
 
 $route['layanan'] = 'welcome/layanan';
