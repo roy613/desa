@@ -185,6 +185,112 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="ceksurat1" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-dialog-centered">
+    <div class="modal-content">
+      <?php
+      foreach ($status as $p) {
+      ?>
+        <div class="modal-body">
+          <div class="row">
+
+            <div class="col-md-12 mb-3">
+              <div class="container" id="status" style="margin-top:15px">
+                <h4><u>STATUS PERMOHONAN</u></h4>
+                <div class="row">
+                  <div class="col-md-12">
+                    <?php if ($row == 0) { ?>
+                      <p id="kode_notif" style="color: red;">Kode Registrasi Pelayanan Anda Tidak Terdaftar</p>
+                    <?php } else { ?>
+                      <table border="0" style="margin-left:0px;color: dimgrey;">
+                        <tr>
+                          <td>
+                            Kode Pelayanan
+                          </td>
+                          <td>
+                            :
+                          </td>
+                          <td>
+                          <?php echo ($p->pe_kode); ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Nama Pemohon
+                          </td>
+                          <td>
+                            :
+                          </td>
+                          <td>
+                          <?php echo ($p->pe_nama); ?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Jenis Permohonan
+                          </td>
+                          <td>
+                            :
+                          </td>
+                          <td>
+                          <?php echo ($p->pe_jenispermohonan); ?>
+                          </td>
+                        </tr>
+                      </table>
+                    <?php } ?>
+                  </div>
+                  <div class="col-md-12">
+                    <div id="content">
+                      <?php if ($row !== 0) { ?>
+                        <ul class="timeline">
+                          <li class="event" id="status_pertama">
+                            <h3>Permohonan di Terima</h3>
+                            <p id="tgl_pertama"><?php echo tgl_indojam1($p->pe_tgl); ?></p>
+                          </li>
+                          <?php if ($p->s_tglbuat !== null && $p->s_kodeproses == 1) { ?>
+                            <li class="event" data-date="" id="status_kedua">
+                              <h3>Permohonan di Proses</h3>
+                              <p id="tgl_kedua"><?php echo tgl_indojam1($p->s_tglbuat); ?></p>
+                            </li>
+                          <?php } ?>
+                          <?php if ($p->s_tglselesai !== null && $p->s_kodeproses == 1) { ?>
+                            <li class="event" data-date="" id="status_ketiga">
+                              <h3>Permohonan Selesai</h3>
+                              <p id="tgl_ketiga"><?php echo tgl_indojam1($p->s_tglselesai); ?></p>
+                              <p>Dokumen Dapat di Ambil di Kantor Desa</p>
+                              <table border="0">
+                                <tr>
+                                  <td>
+                                    <button class="btn btn-outline-success" style="float: right; margin-top:15px">Puas</button>
+                                  </td>
+                                  <td>
+                                    <button class="btn btn-outline-danger" style="float: right; margin-top:15px">Tidak Puas</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </li>
+                          <?php } ?>
+                          <?php if ($p->s_tglselesai !== null && $p->s_kodeproses == 2) { ?>
+                            <li class="event" data-date="" id="status_keempat">
+                              <h3>Permohonan Tidak Bisa di Proses</h3>
+                              <p id="tgl_keempat"><?php echo tgl_indojam1($p->s_tglselesai); ?></p>
+                              <p>Persyaratan Tidak Lengkap/Tidak Sesuai</p>
+                            </li>
+                        </ul>
+                      <?php } ?>
+                    <?php } ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+      <!-- /.tab-pane -->
+    </div>
+  </div>
 </div>
 
 

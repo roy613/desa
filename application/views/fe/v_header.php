@@ -68,6 +68,22 @@
 
     return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
   }
+  function tgl_indojam1($string)
+  {
+    $bulanIndo = ['', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+    $date = explode(" ", $string)[0];
+    $time = explode(" ", $string)[1];
+
+    $tanggal = explode("-", $date)[2];
+    $bulan = explode("-", $date)[1];
+    $tahun = explode("-", $date)[0];
+
+
+
+    return $tanggal . " " . $bulanIndo[abs($bulan)] . " " . $tahun . " Pukul " . $time . " ";
+  }
+
   ?>
 
   <!-- ======= Header ======= -->

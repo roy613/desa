@@ -91,13 +91,5 @@ class Welcome extends CI_Controller
 		$this->load->view('fe/v_sukses', $data);
 		$this->load->view('fe/v_footer');
 	}
-	public function periksa($a)
-	{
-		$b = base64_decode($a);
-		$data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$b'")->result();
-		$this->load->view('fe/v_header');
-		$this->load->view('fe/v_index2');
-		$this->load->view('fe/v_periksa_modal');
-		$this->load->view('fe/v_footer_periksa');
-	}
+	
 }

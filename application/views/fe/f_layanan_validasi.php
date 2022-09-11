@@ -75,6 +75,44 @@
             document.getElementById("tmampu_notifnik").innerHTML = "";
         }
     }
+    function hilang_ceknik() {
+        var target = document.getElementById("hilang_nik");
+        var batas_karakter = 16;
+        var a = target.value.length;
+        var b = "NIK Harus 16 Digit! Anda menginput ";
+        var d = " karakter"
+        var c = b + a + d;
+
+
+        if (target.value.length !== batas_karakter) {
+            document.getElementById("hilang_notifnik").style.color = "red";
+            document.getElementById("hilang_notifnik").innerHTML = c;
+            document.getElementById("hilang_tptlahir").disabled = true;
+
+        } else {
+            document.getElementById("hilang_tptlahir").disabled = false;
+            document.getElementById("hilang_notifnik").innerHTML = "";
+        }
+    }
+    function pindah_ceknik() {
+        var target = document.getElementById("pindah_nik");
+        var batas_karakter = 16;
+        var a = target.value.length;
+        var b = "NIK Harus 16 Digit! Anda menginput ";
+        var d = " karakter"
+        var c = b + a + d;
+
+
+        if (target.value.length !== batas_karakter) {
+            document.getElementById("pindah_notifnik").style.color = "red";
+            document.getElementById("pindah_notifnik").innerHTML = c;
+            document.getElementById("pindah_jk").disabled = true;
+
+        } else {
+            document.getElementById("pindah_jk").disabled = false;
+            document.getElementById("pindah_notifnik").innerHTML = "";
+        }
+    }
     function pkerja_ceknik() {
         var target = document.getElementById("pkerja_nik");
         var batas_karakter = 16;
@@ -233,6 +271,51 @@
         } else {
             // document.getElementById("lahir_notif").style.color = "red";
             document.getElementById("tmampu_notif").innerHTML = "";
+        }
+    }
+    function hilang_validasi() {
+        var inputFile = document.getElementById('hilang_filegambar');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("hilang_notif").style.color = "red";
+            document.getElementById("hilang_notif").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("hilang_notif").innerHTML = "";
+        }
+    }
+    function pindah_validasi() {
+        var inputFile = document.getElementById('pindah_filegambar');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("pindah_notif").style.color = "red";
+            document.getElementById("pindah_notif").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("pindah_notif").innerHTML = "";
+        }
+    }
+    function mati_validasi() {
+        var inputFile = document.getElementById('mati_filegambar');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("mati_notif").style.color = "red";
+            document.getElementById("mati_notif").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("mati_notif").innerHTML = "";
         }
     }
 </script>
