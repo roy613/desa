@@ -26,8 +26,11 @@
             <div class="card-header">
 
               <!-- <a href="<?php echo base_url() . 'cetak/register'; ?>" target="_blank" class="btn btn-sm btn-primary" style="float:right">Cetak Buku</a> -->
+              <h5 style="color: dimgrey;">
+                DAFTAR PERMOHONAN YANG BELUM DI PROSES
+              </h5>
               <h6 style="color: dimgrey;">
-                Daftar Permohonan Yang Belum di Proses
+                APLIKASI LAYANAN ONLINE DESA KARANGAN HILIR
               </h6>
 
               <!-- /.col -->

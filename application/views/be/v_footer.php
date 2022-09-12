@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <strong>Aplikasi Layanan Online Desa XXXXXXX</strong>
+    <strong>Aplikasi Layanan Online Desa Karangan Hilir</strong>
     | PetokSangkulirang
     <!-- <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved. -->

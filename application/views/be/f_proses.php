@@ -28,7 +28,7 @@
             cancelButtonText: 'Tidak'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.open("https://kirimwa.id/petok/"+b+":(uji_coba)_Mohon_Maaf_Syarat_Anda_tidak_lengkap,_Silahkan_lengkapi_lagi!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!", '_blank');
+                window.open("https://kirimwa.id/petok/"+b+":(uji_coba)_Mohon_Maaf_Syarat_Anda_tidak_lengkap,_Silahkan_lengkapi_lagi!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_Aplikasi_Layanan_Online_milik_Desa_Karangan_Hilir._Anda_tidak_perlu_membalasnya._Terima_kasih!!!", '_blank');
                 // window.location.href="https://kirimwa.id/petok/"+a+":(uji_coba)_Mohon_Maaf_Syarat_Anda_tidak_lengkap,_Silahkan_lengkapi_lagi!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!";
             }
         });
@@ -54,7 +54,7 @@
             cancelButtonText: 'Tidak'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.open("https://kirimwa.id/petok/"+b+":(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Camat!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!", '_blank');
+                window.open("https://kirimwa.id/petok/"+b+":(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Desa_Karangan_Hilir!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_Aplikasi_Layanan_Online_milik_Desa_Karangan_Hilir._Anda_tidak_perlu_membalasnya._Terima_kasih!!!", '_blank');
                 // window.location.href="https://kirimwa.id/petok/"+a+":(uji_coba)Surat_anda_sudah_selesai_dan_bisa_diambil_di_Kantor_Camat!_pesan_ini_dikirim_secara_otomatis_dengan_menggunakan_petokapps._Anda_tidak_perlu_membalasnya._Terima_kasih!!!" ;
             }
         });
