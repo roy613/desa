@@ -51,7 +51,7 @@
             <div class="info-box-content" style="color: #5f4b66;">
               <span class="info-box-text"><b>Total Permohonan</b></span>
               <span class="info-box-number">
-                43543
+                0
                 <small>Dokumen</small>
               </span>
             </div>
@@ -64,7 +64,7 @@
             <div class="info-box-content" style="color: #5f4b66;">
               <span class="info-box-text"><b>Selesai</b></span>
               <span class="info-box-number">
-                43543
+                0
                 <small>Dokumen</small>
               </span>
             </div>
@@ -77,7 +77,7 @@
             <div class="info-box-content" style="color: #5f4b66">
               <span class="info-box-text"><b>On Proses</b></span>
               <span class="info-box-number">
-                43543
+                0
                 <small>Dokumen</small>
               </span>
             </div>
@@ -90,7 +90,7 @@
             <div class="info-box-content" style="color: #5f4b66;">
               <span class="info-box-text"><b>Di Tolak</b></span>
               <span class="info-box-number">
-                43543
+                0
                 <small>Dokumen</small>
               </span>
             </div>
@@ -102,17 +102,31 @@
           <div class="invoice p-3 mb-3" style="min-height: 250px !important ;">
             <!-- title row -->
             <div class="col-md-12">
-              <h6 style="color: dimgrey;">DAFTAR AKTIFITAS TERAKHIR</h6>
-              <table class="table table-responsive" style="margin-top: 10px;">
+              <h6 style="color: dimgrey;">PERMOHONAN YANG TERAKHIR DI PROSES</h6>
+              <table class="table table-responsive table-striped" style="margin-top: 10px;">
                 <thead>
-                  <tr style="background-color:transparent !important;font-size:9pt">
-                    <th style="width:2%">No</th>
-                    <th>Pemohon</th>
-                    <th>Jenis Permohonan</th>
-                    <th>Proses</th>
+                  <tr>
+                    <th style="width:2%;background-color:transparent !important;font-size:11pt; color:dimgray">No</th>
+                    <th style="background-color:transparent !important;font-size:11pt; color:dimgray">Pemohon</th>
+                    <th style="background-color:transparent !important;font-size:11pt; color:dimgray">Jenis Permohonan</th>
+                    <th style="background-color:transparent !important;font-size:11pt; color:dimgray">Proses</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      jhvjhv
+                    </td>
+                    <td>
+                      jhjhvhkj
+                    </td>
+                    <td>
+                      jhgfjhgv
+                    </td>
+                  </tr>
                   <tr>
                     <td>
                       1

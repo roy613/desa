@@ -85,4 +85,24 @@ class Home extends CI_Controller
         $this->load->view('be/v_footer');
         $this->load->view('be/f_rekomproposal');
     }
+    public function rekomkerja ()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat rekomendasi proposal' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_rekomkerja',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_rekomkerja');
+    }
+    public function pengantar_rkerja ()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat rekomendasi proposal' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_prkerja',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_prkerja');
+    }
 }

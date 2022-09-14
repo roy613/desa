@@ -25,7 +25,7 @@
            </a>
            <ul class="nav nav-treeview">
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('rekomkerja'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Rekom Kerja</p>
                </a>
@@ -37,7 +37,7 @@
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('prekomkerja'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Pengantar Rekom</p>
                </a>

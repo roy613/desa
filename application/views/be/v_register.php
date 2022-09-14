@@ -53,7 +53,7 @@
                   $no = 1;
                   foreach ($daftar as $k) { ?>
                    
-                      <tr class='clickable-row' data-href="<?php echo base_url('lihat_surat/'.base64_encode($k->pe_kode)); ?>" style="cursor:pointer">
+                      <tr class='clickable-row' data-href="<?php echo base_url('lihat_surat/'.base64_encode($k->pe_kode)); ?>" style="cursor:pointer; line-height:30px;">
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $k->pe_nama; ?></td>
                         <td><?php echo $k->pe_jenispermohonan; ?></td>
