@@ -87,7 +87,7 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="usaha_rt">Alamat (RT)</label>
-                                                    <input type="number" class="form-control" id="usaha_rt" name="usaha_rt" placeholder="Input RT Tempat Tinggal Anda .." required>
+                                                    <input type="number" class="form-control" id="usaha_rt" name="usaha_rt" placeholder="Input RT Tempat Usaha Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="usaha_Usaha">Jenis Usaha</label>

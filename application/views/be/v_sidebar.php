@@ -49,49 +49,49 @@
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('kehilangan'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Pengantar hilang</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('skck'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Pengantar SKCK</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('usaha'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Ket. Usaha</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('domisili'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Ket. Domisili</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('pindah'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Ket. Pindah</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('kematian'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Ket. Kematian</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('kelahiran'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Ket. Kelahiran</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="pages/layout/top-nav.html" class="nav-link">
+               <a href="<?php echo base_url('tidak_mampu'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon text-secondary"></i>
                  <p>Ket. Tidak Mampu</p>
                </a>

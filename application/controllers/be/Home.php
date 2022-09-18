@@ -78,7 +78,7 @@ class Home extends CI_Controller
     public function rekomproposal ()
     {
         $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat rekomendasi proposal' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat rekomendasi proposal' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
         $this->load->view('be/v_header');
         $this->load->view('be/v_sidebar');
         $this->load->view('be/v_rekomproposal',$data);
@@ -88,7 +88,7 @@ class Home extends CI_Controller
     public function rekomkerja ()
     {
         $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat rekomendasi proposal' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat rekomendasi kerja' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
         $this->load->view('be/v_header');
         $this->load->view('be/v_sidebar');
         $this->load->view('be/v_rekomkerja',$data);
@@ -98,11 +98,91 @@ class Home extends CI_Controller
     public function pengantar_rkerja ()
     {
         $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat rekomendasi proposal' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar rekom kerja' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
         $this->load->view('be/v_header');
         $this->load->view('be/v_sidebar');
         $this->load->view('be/v_prkerja',$data);
         $this->load->view('be/v_footer');
         $this->load->view('be/f_prkerja');
+    }
+    public function pengantar_hilang()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar kehilangan' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_philang',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_philang');
+    }
+    public function skck()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar skck' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_skck',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_skck');
+    }
+    public function usaha()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan usaha' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_kusaha',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_kusaha');
+    }
+    public function domisili()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan domisili' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_domisili',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_domisili');
+    }
+    public function pindah()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan pindah' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_pindah',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_pindah');
+    }
+    public function mati()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan kematian' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_mati',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_mati');
+    }
+    public function lahir()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan kelahiran' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_lahir',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_lahir');
+    }
+    public function tmampu()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan tidak mampu' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL ORDER BY s_id DESC")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_tmampu',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_tmampu');
     }
 }

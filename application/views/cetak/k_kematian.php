@@ -100,7 +100,7 @@
             <tr>
                 <td style="text-align: justify;">
                     Adalah benar warga Desa Karangan Hilir Kecamatan Karangan Kabupaten Kutai Timur dan telah
-                    Meninggal Dunia pada hari <?php echo hariIndo(date('D', strtotime($k->sd_2))); ?> Tanggal <?php echo tgl_indo($k->sd_2); ?> Pukul <?php echo $k->s_7; ?> WITA bertempat di <?php echo $k->s_10; ?> Desa Karangan Hilir Kecamatan Karangan Kabupaten Kutai Timur.
+                    Meninggal Dunia pada hari <?php echo hariIndo(date('D', strtotime($k->sd_2))); ?> Tanggal <?php echo tgl_indo($k->sd_2); ?> Pukul <?php echo $k->s_7; ?> WITA bertempat di <?php echo $k->s_8; ?> Desa Karangan Hilir Kecamatan Karangan Kabupaten Kutai Timur.
                 </td>
             </tr>
             <tr>

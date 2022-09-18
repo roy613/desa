@@ -46,6 +46,7 @@
         $('#hilang_tgllahir').val('');
         $('#hilang_agama').val('');
         $('#hilang_pekerjaan').val('');
+        $('#hilang_kwn').val('');
         $('#hilang_alamat').val('');
         $('#hilang_barang').val('');
         $('#hilang_tglhilang').val('');

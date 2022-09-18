@@ -50,11 +50,11 @@
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_nama">Nama Lengkap</label>
-                                                    <input type="text" class="form-control" id="mati_nama" name="mati_nama" placeholder="Input Nama Anda .." required>
+                                                    <input type="text" class="form-control" id="mati_nama" name="mati_nama" placeholder="Input Nama Alm .." required>
                                                 </div>                                               
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_tptlahir">Tempat Lahir</label>
-                                                    <input type="text" class="form-control" id="mati_tptlahir" name="mati_tptlahir" placeholder="Input Tempat Lahir Anda .." required>
+                                                    <input type="text" class="form-control" id="mati_tptlahir" name="mati_tptlahir" placeholder="Input Tempat Lahir Alm .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_tgllahir">Tanggal Lahir</label>
@@ -62,7 +62,7 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_rt">kewarganegaraan</label>
-                                                    <input type="text" class="form-control" id="mati_kwn" name="mati_kwn" placeholder="Input Kewarganegaraan Anda .." required>
+                                                    <input type="text" class="form-control" id="mati_kwn" name="mati_kwn" placeholder="Input Kewarganegaraan Alm .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_agama">Agama</label>
@@ -78,7 +78,7 @@
                                                 </div>      
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_pekerjaan">Pekerjaan</label>
-                                                    <input type="text" class="form-control" id="mati_pekerjaan" name="mati_pekerjaan" placeholder="Input Pekerjaan Anda .." required>
+                                                    <input type="text" class="form-control" id="mati_pekerjaan" name="mati_pekerjaan" placeholder="Input Pekerjaan Alm .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_alamat">Tempat Tinggal Terakhir</label>

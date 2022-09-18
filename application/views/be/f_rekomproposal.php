@@ -37,4 +37,22 @@
     $('#jab').val("");
     $('#status').val("");
   }
+  function ttd_fungsi() {
+        var peg = document.getElementById("ttd").value;
+
+        $.ajax({
+            url: "<?php echo base_url('be/proses/ttd_periksa') ?>",
+            method: "POST",
+            data: {
+                peg: peg
+            },
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                // alert(data[0].mp_nip);
+                document.getElementById("jabttd").value = data[0].tt_jabatan;
+                document.getElementById("kodettd").value = data[0].tt_ket;
+            }
+        });
+    }
 </script>

@@ -36,6 +36,7 @@
                         <th>NO SURAT</th>
                         <th>TANGGAL SURAT</th>
                         <th>PERUSAHAAN</th>
+                        <th>KET</th>
                         <th style="width:7%">OPSI</th>
                       </tr>
 
@@ -51,6 +52,11 @@
                           <td><?php echo $p->s_nosurat; ?></td>
                           <td><?php echo tgl_indo($p->s_tglsurat); ?></td>
                           <td><?php echo ucwords($p->s_2); ?></td>
+                          <td><?php if ($p->s_kodeproses == 1){
+                            echo "Permohonan";
+                          } else if ($p->s_kodeproses == 2){
+                            echo "Manual";
+                          }; ?></td>
                           <td style="text-align: center; width:10%">
                             <table border="0">
                               <tr>
@@ -140,7 +146,7 @@
                     <div class="form-group">
                       <label>Penandatangan</label>
                       <select name="ttd" id="ttd" class="form-control" onchange="ttd_fungsi()" required>
-                        <option selected disabled>-- Pilih Penandatangan --</option>
+                        <option selected disabled value="">-- Pilih Penandatangan --</option>
                         <?php foreach ($ttd as $a) { ?>
                           <option value="<?php echo $a->tt_nama; ?>"><?php echo Ucwords($a->tt_jabatan); ?> - <?php echo Ucwords($a->tt_nama); ?></option>
                         <?php } ?>

@@ -18,7 +18,7 @@
             <div class="card-header">
               <a data-toggle="modal" data-target="#m_surat" class="btn btn-sm btn-outline-primary" style="float:right" onclick="empty1()">Buat Surat</a>
               <h5 style="color: dimgrey;">
-                PENGANTAR REKOMENDASI KERJA
+                KETERANGAN USAHA
               </h5>
               <h6 style="color: dimgrey;">
                 APLIKASI LAYANAN ONLINE DESA KARANGAN HILIR
@@ -35,7 +35,7 @@
                         <th>NAMA</th>
                         <th>NO SURAT</th>
                         <th>TANGGAL SURAT</th>
-                        <th>ALAMAT</th>
+                        <th>ALAMAT PEMOHON</th>
                         <th>KET</th>
                         <th style="width:7%">OPSI</th>
                       </tr>
@@ -51,7 +51,7 @@
                           <td><?php echo ucwords($p->s_1); ?></td>
                           <td><?php echo $p->s_nosurat; ?></td>
                           <td><?php echo tgl_indo($p->s_tglsurat); ?></td>
-                          <td><?php echo $p->s_7; ?></td>
+                          <td><?php echo $p->s_9; ?></td>
                           <td><?php if ($p->s_kodeproses == 1){
                             echo "Permohonan";
                           } else if ($p->s_kodeproses == 2){
@@ -61,24 +61,27 @@
                             <table border="0">
                               <tr>
                                 <td>
-                                  <a target="_blank" class="btn btn-outline-success" href="<?php echo base_url('cetak_pengantar_rkerja/' . base64_encode($p->s_id)) ?>" style="font-size: 10pt !important; padding:4px !important" title="Cetak"><i class="fa fa-print"></i></a>
+                                  <a target="_blank" class="btn btn-outline-success" href="<?php echo base_url('cetak_ket_usaha/' . base64_encode($p->s_id)) ?>" style="font-size: 10pt !important; padding:4px !important" title="Cetak"><i class="fa fa-print"></i></a>
                                 </td>
                                 <td>
                                   <a href="#" onclick="edit(
                                   '<?php echo $p->s_id; ?>',
+                                  '<?php echo $p->s_tglsurat; ?>',
+                                  '<?php echo $p->s_ttd; ?>',
+                                  '<?php echo $p->s_jabatan; ?>',
+                                  '<?php echo $p->s_kodettd; ?>',  
+
                                   '<?php echo $p->s_1; ?>',
                                   '<?php echo $p->s_2; ?>',
                                   '<?php echo $p->s_3; ?>',
                                   '<?php echo $p->s_4; ?>',
                                   '<?php echo $p->sd_1; ?>',
                                   '<?php echo $p->s_5; ?>',
+                                  '<?php echo $p->s_9; ?>',
                                   '<?php echo $p->s_6; ?>',
                                   '<?php echo $p->s_7; ?>',
                                   '<?php echo $p->s_8; ?>',
-                                  '<?php echo $p->s_tglsurat; ?>',
-                                  '<?php echo $p->s_ttd; ?>',
-                                  '<?php echo $p->s_jabatan; ?>',
-                                  '<?php echo $p->s_kodettd; ?>',                                                                                           
+
                               )" class="btn btn-outline-warning" style="font-size: 10pt !important; padding:4px !important" title="edit"><i class="fa fa-edit"></i></a>
                                 </td>
                                 <td>
@@ -113,27 +116,27 @@
 
           <div class="modal-body">
 
-            <form method="post" action="<?php echo base_url('be/simpan_be/prekomkerja') ?>" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url('be/simpan_be/usaha') ?>" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_nama">Nama Lengkap</label>
-                      <input type="text" class="form-control" id="kerja_nama" name="kerja_nama" autofocus placeholder="Input Nama Pemohon .." required>
+                      <label for="hilang_nama">Nama Lengkap</label>
+                      <input type="text" class="form-control" id="usaha_nama" name="usaha_nama" placeholder="Input Nama Pemohon .." required>
                       <input type="hidden" name="id" id="id" class="form-control">
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_nik">NIK</label>
-                      <input type="number" onkeyup="kerja_ceknik()" class="form-control" id="kerja_nik" name="kerja_nik" placeholder="Input NIK Pemohon .." required>
-                      <div id="kerja_notifnik"></div>
+                      <label for="usaha_nik">NIK</label>
+                      <input type="number" onkeyup="usaha_ceknik()" class="form-control" id="usaha_nik" name="usaha_nik" placeholder="Input NIK Pemohon .." required>
+                      <div id="usaha_notifnik"></div>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_jk">Jenis Kelamin</label>
-                      <select class="form-control" id="kerja_jk" name="kerja_jk" disabled required>
+                      <label for="usaha_jk">Jenis Kelamin</label>
+                      <select class="form-control" id="usaha_jk" name="usaha_jk" disabled required>
                         <option selected disabled value="">--Pilih Jenis Kelamin--</option>
                         <option>Laki-Laki</option>
                         <option>Perempuan</option>
@@ -142,46 +145,44 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_tptlahir">Tempat Lahir</label>
-                      <input type="text" class="form-control" id="kerja_tptlahir" name="kerja_tptlahir" placeholder="Input Tempat Lahir Pemohon .." required>
+                      <label for="usaha_tptlahir">Tempat Lahir</label>
+                      <input type="text" class="form-control" id="usaha_tptlahir" name="usaha_tptlahir" placeholder="Input Tempat Lahir Pemohon .." required>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_tgllahir">Tanggal Lahir</label>
-                      <input type="date" class="form-control" id="kerja_tgllahir" name="kerja_tgllahir" required>
+                      <label for="usaha_tgllahir">Tanggal Lahir</label>
+                      <input type="date" class="form-control" id="usaha_tgllahir" name="usaha_tgllahir" required>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_agama">Agama</label>
-                      <select class="form-control" id="kerja_agama" name="kerja_agama" required>
-                        <option selected disabled value="">-- Pilih Agama --</option>
-                        <option>Islam</option>
-                        <option>Kristen</option>
-                        <option>Katolik</option>
-                        <option>Hindu</option>
-                        <option>Budha</option>
-                        <option>Konghucu</option>
-                      </select>
+                      <label for="usaha_pekerjaan">Pekerjaan</label>
+                      <input type="text" class="form-control" id="usaha_pekerjaan" name="usaha_pekerjaan" placeholder="Input Pekerjaan Pemohon .." required>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_pekerjaan">Pekerjaan</label>
-                      <input type="text" class="form-control" id="kerja_pekerjaan" name="kerja_pekerjaan" placeholder="Input Pekerjaan Pemohon .." required>
+                      <label for="usaha_alamat1">Alamat Pemohon</label>
+                      <input type="text" class="form-control" id="usaha_alamat1" name="usaha_alamat1" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_alamat">Alamat</label>
-                      <input type="text" class="form-control" id="kerja_alamat" name="kerja_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
+                      <label for="usaha_alamat">Alamat Usaha (Jalan)</label>
+                      <input type="text" class="form-control" id="usaha_alamat" name="usaha_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="kerja_perusahaan">Perusahaan Tujuan</label>
-                      <input type="text" class="form-control" id="kerja_perusahaan" name="kerja_perusahaan" placeholder="Input Perusahaan Tujuan Pemohon .." required>
+                      <label for="usaha_rt">Alamat (RT)</label>
+                      <input type="number" class="form-control" id="usaha_rt" name="usaha_rt" placeholder="Input RT Tempat Usaha Pemohon .." required>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="usaha_Usaha">Jenis Usaha</label>
+                      <input type="text" class="form-control" id="usaha_usaha" name="usaha_usaha" placeholder="Input Jenis Usaha Pemohon .." required>
                     </div>
                   </div>
                   <div class="col-md-5">

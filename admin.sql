@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2022 at 01:24 PM
+-- Generation Time: Sep 19, 2022 at 01:07 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -40,17 +40,17 @@ CREATE TABLE `daftar_pelayanan` (
 
 INSERT INTO `daftar_pelayanan` (`da_id`, `da_pelayanan`, `n_1`, `n_2`) VALUES
 (1, 'surat rekomendasi proposal', '100/', '/pem/'),
-(2, ' surat pengantar rekomendasi kerja', NULL, NULL),
-(3, 'surat rekomendasi kerja', NULL, NULL),
-(4, 'Surat Keterangan Usaha', '1', '2'),
-(5, 'Surat Keterangan Domisili', NULL, NULL),
-(6, 'Surat Keterangan Kematian', NULL, NULL),
-(7, 'Surat Keterangan Kelahiran', NULL, NULL),
-(8, 'Surat keterangan Pindah Penduduk', NULL, NULL),
-(9, 'Surat keterangan Usaha', NULL, NULL),
-(10, 'Surat Pengantar Kehilangan', NULL, NULL),
-(11, 'Surat Pengantar Pembuatan SKCK', NULL, NULL),
-(12, 'Surat Pengantar Menikah', NULL, NULL);
+(2, 'surat pengantar rekom kerja', '101/', '/pem/'),
+(3, 'surat rekomendasi kerja', '102/', '/pem/'),
+(4, 'surat keterangan usaha', '103/', '/pem/'),
+(5, 'surat keterangan domisili', '104/', '/pem/'),
+(6, 'surat keterangan kematian', '105/', '/pem/'),
+(7, 'surat keterangan kelahiran', '106/', '/pem/'),
+(8, 'Surat keterangan Pindah Penduduk', '107/', '/pem/'),
+(9, 'surat keterangan tidak mampu', '108/', '/pem/'),
+(10, 'surat pengantar kehilangan', '109/', '/pem/'),
+(11, 'surat pengantar skck', '110/', '/pem/'),
+(12, 'Surat Pengantar Menikah', '101/', '/pem/');
 
 -- --------------------------------------------------------
 
@@ -251,6 +251,27 @@ CREATE TABLE `surat` (
   `s_kodeproses` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `surat`
+--
+
+INSERT INTO `surat` (`s_id`, `s_1`, `s_2`, `s_3`, `s_4`, `s_5`, `s_6`, `s_7`, `s_8`, `s_9`, `s_10`, `s_11`, `s_12`, `s_13`, `s_14`, `s_15`, `s_16`, `s_17`, `sd_1`, `sd_2`, `sd_3`, `sd_4`, `s_nosurat`, `s_jabatan`, `s_ttd`, `s_kodettd`, `s_qr`, `s_kodepelayanan`, `s_tglsurat`, `s_tglbuat`, `s_tgledit`, `s_tglhapus`, `s_tglselesai`, `s_proses`, `s_edit`, `s_hapus`, `s_jenispelayanan`, `s_ket`, `s_kodeproses`) VALUES
+(1, 'rtrdeyty', 'trytry', 'trytry', 'trytry', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '100/001/pem/IX/2022', '', 'jabir', 0, 'QR0.png', NULL, '2022-09-17', '2022-09-17 12:23:52', NULL, '2022-09-17 13:24:33', NULL, 'admin', NULL, 'admin', 'surat rekomendasi proposal', NULL, 2),
+(2, 'w3erwerwer', '3243432443343444', 'Laki-Laki', 'sadsad', 'Islam', 'sadsd', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '002IX/2022', '', 'jabir', 0, 'QR1.png', NULL, '2022-09-17', '2022-09-17 12:51:32', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat rekomendasi kerja', NULL, 2),
+(3, 'wertrt', '4354354354354354', 'Laki-Laki', 'dfg', 'Kristen', 'sadsd', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '003IX/2022', '', 'jabir', 0, 'QR2.png', NULL, '2022-09-16', '2022-09-17 12:54:08', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat rekomendasi kerja', NULL, 2),
+(4, 'jundan', '1919191919191919', 'Laki-Laki', 'demak', 'Islam', 'aa', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '004IX/2022', 'kepala desa', 'jabir', 1, 'QR3.png', NULL, '2022-09-17', '2022-09-17 12:59:13', NULL, '2022-09-17 13:59:33', NULL, 'admin', NULL, 'admin', 'surat rekomendasi kerja', NULL, 2),
+(5, 'jundan', '1212121212121212', 'Laki-Laki', 'demak', 'Islam', 'sd', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '005IX/2022', 'kepala desa', 'jabir', 1, 'QR4.png', NULL, '2022-09-17', '2022-09-17 13:17:03', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar rekom kerja', NULL, 2),
+(6, 'jundan', '1212121212121212', 'dsf', 'Islam', 'we', 'sangkulirang', 'ktp', 'Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', '2022-09-17', NULL, NULL, '006IX/2022', 'kepala desa', 'jabir', 1, 'QR5.png', NULL, '2022-09-17', '2022-09-17 20:10:17', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar kehilangan', NULL, 2),
+(7, 'jundan', '1212121221212121', 'Laki-Laki', 'ewrwer', 'Indonesia', 'Islam', 'Belum Menikah', 'ertret', 'sangkulirang', 'ertretert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '109/007/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR6.png', NULL, '2022-09-17', '2022-09-17 20:34:15', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar kehilangan', NULL, 2),
+(8, 'jundan', '9898989898999898', 'Laki-Laki', 'ewrwer', 'Indonesia', 'Islam', 'Belum Menikah', 'ertret', 'sangkulirang', 'ertretert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '008IX/2022', 'kepala desa', 'jabir', 1, 'QR7.png', NULL, '2022-09-17', '2022-09-17 20:36:58', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar skck', NULL, 2),
+(9, 'jundan', '6565465465465465', 'Laki-Laki', 'ewrwer', 'Indonesia', 'Islam', 'Belum Menikah', 'dfgdfgdf', 'sangkulirang', 'ertretert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '110/009/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR8.png', NULL, '2022-09-17', '2022-09-17 20:43:29', '2022-09-17 20:47:06', NULL, NULL, 'admin', 'admin', NULL, 'surat pengantar skck', NULL, 2),
+(10, 'jundan', '1212121212121212', 'Laki-Laki', 'sadsad', 'asdsad', 'Jl. Aji Suryanata', '12', 'Dagang', 'sangkulirang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-18', NULL, NULL, NULL, '103/010/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR9.png', NULL, '2022-09-18', '2022-09-18 13:39:00', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan usaha', NULL, 2),
+(11, 'jundan', 'Laki-Laki', 'demak', 'Indonesia', 'Islam', '1212121212121212', 'Menikah', 'pns', 'sangkulirang', 'Melamar Kerja', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-18', NULL, NULL, NULL, '104/011/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR10.png', NULL, '2022-09-18', '2022-09-18 14:08:38', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan domisili', NULL, 2),
+(12, 'jundan', '1221212121212121', 'Laki-Laki', 'demak', 'Indonesia', 'Islam', 'Menikah', 'pns', 'Diploma IV / S1', 'sangkulirang', 'JL. APT Pranoto', 'Sangatta Utara', 'Sangatta Utara', 'kutai timur', 'Kalimantan Timur', NULL, NULL, '2022-09-18', '2022-09-18', NULL, NULL, '104/012/pem/IX/2022', 'sekretaris desa', 'udin', 2, 'QR11.png', NULL, '2022-09-18', '2022-09-18 15:39:55', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan pindah', NULL, 2),
+(13, 'udin', 'sasa', 'Indonesia', 'Islam', 'asasas', 'Jl. Pattimura', '20:00', 'Puskesmas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-18', '2022-09-18', NULL, NULL, '105/013/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR12.png', NULL, '2022-09-18', '2022-09-18 15:57:01', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan kematian', NULL, 2),
+(14, 'yahya', 'Laki-Laki', 'Samarinda', 'Islam', 'sangkulirang', '1', 'Jundan', 'Demak', 'Islam', 'PNS', 'sangkulirang', 'Yuniarti', 'Balikpapan', 'Islam', 'TK2D', 'sangkulirang', NULL, '2022-09-19', '2022-09-19', '2022-09-19', NULL, '106/014/pem/IX/2022', 'sekretaris desa', 'udin', 2, 'QR13.png', NULL, '2022-09-19', '2022-09-19 05:42:08', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan kelahiran', NULL, 2),
+(15, 'udin', '1212121212121212', 'Laki-Laki', 'peridan', 'Islam', 'Indonesia', 'Belum Menikah', 'swasta', 'sangkulirang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-19', NULL, NULL, NULL, '108/015/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR14.png', NULL, '2022-09-19', '2022-09-19 06:05:40', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan tidak mampu', NULL, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -356,7 +377,7 @@ ALTER TABLE `permohonan`
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `ttd`

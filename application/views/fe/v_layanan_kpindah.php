@@ -50,7 +50,7 @@
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="pindah_nama">Nama</label>
-                                                    <input type="text" class="form-control" id="pindah_nama" name="pindah_nama" placeholder="Input Nama .." required>
+                                                    <input type="text" class="form-control" id="pindah_nama" name="pindah_nama" placeholder="Input Nama Anda .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="pindah_nik">NIK</label>

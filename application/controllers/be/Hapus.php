@@ -63,4 +63,214 @@ class Hapus extends CI_Controller
             $this->session->set_flashdata($swal_test);
             redirect(base_url('rekomproposal'));
     }
+	public function rekomkerja($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('rekomkerja'));
+    }
+	public function prekomkerja($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('prekomkerja'));
+    }
+	public function philang($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('kehilangan'));
+    }
+	public function skck($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('skck'));
+    }
+	public function usaha($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('usaha'));
+    }
+	public function domisili($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('domisili'));
+    }
+	public function pindah($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('pindah'));
+    }
+	public function mati($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('kematian'));
+    }
+	public function lahir($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('kelahiran'));
+    }
+	public function tmampu($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('tidak_mampu'));
+    }
 }
