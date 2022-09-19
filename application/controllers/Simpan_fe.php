@@ -226,30 +226,36 @@ class Simpan_fe extends CI_Controller
         //cetak registrasi
 
         require_once './vendor/autoload.php';
-		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,165]]);
-		$data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$koderegistrasi'")->result();
-		$html = $this->load->view('bukti_regis', "$data", true);
-		// $mpdf->SetHTMLFooter('
-		// <table width="100%" style="font-size:10pt">
-		// <tr>
-		// <td colspan=2>
-		// <hr style="margin-bottom:-3px; height:2px; width:100%; color:black">
-		// </td>
-		// </tr>
-		// <tr>
-		// <td width="80%" align="left">Created By. Petok APPs For Pemerintah Desa Mandu Dalam Kecamatan Sangkulirang</td>
-		// <td width="20%" style="text-align: left;"></td>			
-		// </tr>
-		// </table>');
-		$mpdf->AddPage('P','','','','',
-		12,//ml
-		13,//mr
-		10,//mt
-		15,//mb
-		1,//mh
-		4);//mf
-		$mpdf->WriteHTML($html);
-		$mpdf->Output('spt.pdf', 'I');
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210, 165]]);
+        $data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$koderegistrasi'")->result();
+        $html = $this->load->view('bukti_regis', "$data", true);
+        // $mpdf->SetHTMLFooter('
+        // <table width="100%" style="font-size:10pt">
+        // <tr>
+        // <td colspan=2>
+        // <hr style="margin-bottom:-3px; height:2px; width:100%; color:black">
+        // </td>
+        // </tr>
+        // <tr>
+        // <td width="80%" align="left">Created By. Petok APPs For Pemerintah Desa Mandu Dalam Kecamatan Sangkulirang</td>
+        // <td width="20%" style="text-align: left;"></td>			
+        // </tr>
+        // </table>');
+        $mpdf->AddPage(
+            'P',
+            '',
+            '',
+            '',
+            '',
+            12, //ml
+            13, //mr
+            10, //mt
+            15, //mb
+            1, //mh
+            4
+        ); //mf
+        $mpdf->WriteHTML($html);
+        $mpdf->Output('spt.pdf', 'I');
         force_download('spt.pdf', NULL);
 
         redirect(base_url('sukses'));
@@ -266,7 +272,7 @@ class Simpan_fe extends CI_Controller
         $s2 = $this->input->post('proposal_perusahaan');
         $s3 = $this->input->post('proposal_nosuratpemohon');
         $s4 = $this->input->post('proposal_halpermohonan');
-        
+
         $jenis = "surat rekomendasi proposal";
         $no_hp = $this->input->post('proposal_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -330,7 +336,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -344,8 +350,26 @@ class Simpan_fe extends CI_Controller
 
         $this->m_data->save_data($data, 'surat');
 
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         //cetak registrasi
-        
+
         // require_once './vendor/autoload.php';
         // $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,165]]);
         // $data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$koderegistrasi'")->result();
@@ -360,7 +384,7 @@ class Simpan_fe extends CI_Controller
         // $mpdf->WriteHTML($html);
         // //  $mpdf->Output('spt.pdf', 'I');//inline
         // $mpdf->Output('bukti_registrasi.pdf', 'D'); //download
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 
     public function domisili()
@@ -382,7 +406,7 @@ class Simpan_fe extends CI_Controller
         $s9 = $this->input->post('domisili_alamat');
         $s10 = $this->input->post('domisili_guna');
 
-        
+
         $jenis = "surat keterangan domisili";
         $no_hp = $this->input->post('domisili_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -446,7 +470,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -466,7 +490,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 
     public function kerja()
@@ -485,8 +509,8 @@ class Simpan_fe extends CI_Controller
         $s6 = $this->input->post('kerja_pekerjaan');
         $s7 = $this->input->post('kerja_alamat');
         $s8 = $this->input->post('kerja_perusahaan');
-        
-        
+
+
         $jenis = "surat rekomendasi kerja";
         $no_hp = $this->input->post('kerja_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -550,7 +574,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -568,7 +592,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 
     public function pkerja()
@@ -587,8 +611,8 @@ class Simpan_fe extends CI_Controller
         $s6 = $this->input->post('pkerja_pekerjaan');
         $s7 = $this->input->post('pkerja_alamat');
         $s8 = $this->input->post('pkerja_perusahaan');
-        
-        
+
+
         $jenis = "surat pengantar rekom kerja";
         $no_hp = $this->input->post('pkerja_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -652,7 +676,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -670,7 +694,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function usaha()
     {
@@ -689,8 +713,8 @@ class Simpan_fe extends CI_Controller
         $s7 = $this->input->post('usaha_rt');
         $s8 = $this->input->post('usaha_usaha');
         $s9 = $this->input->post('usaha_alamat1');
-        
-        
+
+
         $jenis = "surat keterangan usaha";
         $no_hp = $this->input->post('usaha_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -754,7 +778,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -773,7 +797,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function skck()
     {
@@ -793,8 +817,8 @@ class Simpan_fe extends CI_Controller
         $s8 = $this->input->post('skck_pekerjaan');
         $s9 = $this->input->post('skck_alamat');
         $s10 = $this->input->post('skck_urus');
-        
-        
+
+
         $jenis = "surat pengantar skck";
         $no_hp = $this->input->post('skck_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -858,7 +882,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -878,7 +902,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function tmampu()
     {
@@ -897,8 +921,8 @@ class Simpan_fe extends CI_Controller
         $s7 = $this->input->post('tmampu_statuskwn');
         $s8 = $this->input->post('tmampu_pekerjaan');
         $s9 = $this->input->post('tmampu_alamat');
-        
-        
+
+
         $jenis = "surat keterangan tidak mampu";
         $no_hp = $this->input->post('tmampu_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -962,7 +986,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -981,7 +1005,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function hilang()
     {
@@ -1000,8 +1024,8 @@ class Simpan_fe extends CI_Controller
         $s7 = $this->input->post('hilang_barang');
         $sd2 = $this->input->post('hilang_tglhilang');
         $s8 = $this->input->post('hilang_kwn');
-        
-        
+
+
         $jenis = "surat pengantar kehilangan";
         $no_hp = $this->input->post('hilang_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -1065,7 +1089,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -1084,7 +1108,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function lahir()
     {
@@ -1114,8 +1138,8 @@ class Simpan_fe extends CI_Controller
         $s14 = $this->input->post('lahir_agama_b');
         $s15 = $this->input->post('lahir_pekerjaan_b');
         $s16 = $this->input->post('lahir_alamat_b');
-        
-        
+
+
         $jenis = "surat keterangan kelahiran";
         $no_hp = $this->input->post('lahir_nohp');
         $tglmohon = date('Y-m-d H-i-s');
@@ -1179,7 +1203,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -1207,7 +1231,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function pindah()
     {
@@ -1298,7 +1322,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -1318,14 +1342,14 @@ class Simpan_fe extends CI_Controller
             's_14' => $s14,
             's_15' => $s15,
             'sd_2' => $sd2,
-        
+
             's_kodeproses' => $kode_proses,
             's_kodepelayanan' => $koderegistrasi,
             's_jenispelayanan' => $jenis,
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function mati()
     {
@@ -1409,7 +1433,7 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data1, 'permohonan');
-        
+
         //save di tabel surat
         $data = array(
             's_1' => $s1,
@@ -1422,13 +1446,13 @@ class Simpan_fe extends CI_Controller
             'sd_2' => $sd2,
             's_7' => $s7,
             's_8' => $s8,
-        
+
             's_kodeproses' => $kode_proses,
             's_kodepelayanan' => $koderegistrasi,
             's_jenispelayanan' => $jenis,
         );
 
         $this->m_data->save_data($data, 'surat');
-        redirect(base_url("sukses/".base64_encode($koderegistrasi)));
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 }

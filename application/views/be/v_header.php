@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/be1/plugins/summernote/summernote-bs4.min.css">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/be1/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/be1/plugins/toastr/toastr.min.css">
 
   <link href="<?php echo base_url(); ?>assets/be1/pertama.css" rel="stylesheet">
 
@@ -120,6 +121,12 @@
     return $tanggal . " " . $bulanIndo[abs($bulan)] . " " . $tahun . " Pukul " . $time . " ";
   }
   ?>
+  <style>
+    .notif:hover {
+  background-color: #A9A9A9;
+}
+    </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini sidebar-collapse">
@@ -141,13 +148,14 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
+          <!-- <a class="nav-link" data-toggle="dropdown" onclick="permohonan()" href="#"> -->
             <i class="fa fa-envelope" aria-hidden="true"></i>
-            <span class="badge badge-danger navbar-badge">3</span>
+            <span class="badge badge-danger navbar-badge"><p id="jumlah_notif"></p></span>
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <!-- <a href="#" class="dropdown-item">
-              <div class="media">
-                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+            <div id="test"></div>
+            <!-- <a href="#" class="dropdown-item notif">
+              <div class="media">                
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     Brad Diesel
@@ -157,36 +165,8 @@
                   <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                 </div>
               </div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <div class="media">
-                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    John Pierce
-                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">I got your message bro</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <div class="media">
-                <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                <div class="media-body">
-                  <h3 class="dropdown-item-title">
-                    Nora Silvester
-                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                  </h3>
-                  <p class="text-sm">The subject goes here</p>
-                  <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                </div>
-              </div>
-            </a> -->
-            <div class="dropdown-divider"></div>
+            </a>             -->
+            
             <a href="<?php echo base_url('cek_permohonan'); ?>" class="dropdown-item dropdown-footer">Lihat Semua Permohonan</a>
           </div>
         </li>

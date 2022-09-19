@@ -19,6 +19,22 @@ class Home extends CI_Controller
         $this->load->view('be/v_body');
         $this->load->view('be/v_footer');
     }
+    public function periksa_permohonan()
+	{
+		// $peg = $this->input->post('peg');
+		$data = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL")->result();
+		// var_dump($data);
+		$myJSON = json_encode($data);
+		echo $myJSON;
+	}
+    public function periksa_jumlah()
+	{
+		// $peg = $this->input->post('peg');
+		$data["jumlah"]= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL")->num_rows();
+		// var_dump($data);
+		$myJSON = json_encode($data);
+		echo $myJSON;
+	}
     public function pengguna()
     {
         $data['guna'] = $this->db->query('SELECT * FROM pengguna')->result();

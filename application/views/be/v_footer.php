@@ -122,6 +122,8 @@
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>assets/be1/dist/js/adminlte.js"></script>
 <script src="<?php echo base_url(); ?>assets/be1/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- Toastr -->
+<script src="<?php echo base_url(); ?>assets/be1/plugins/toastr/toastr.min.js"></script>
 <script>
     $(function() {
         bsCustomFileInput.init();
@@ -281,6 +283,86 @@
             window.location = $(this).data("href");
         });
     });
+</script>
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+
+<script>
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('a6102b946dc5ba9a26c7', {
+        cluster: 'ap1'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(kata) {
+        // alert(JSON.stringify(kata));
+        // Toast.fire({
+        // icon: 'success',
+        // title: 'Permohonan Baru Diterima.'
+        //   })
+        Swal.fire({
+            icon: 'success',
+            title: "Perhatian!!",
+            text: "Permohonan Baru Diterima, Silahkan Proses Segera ..",
+        });
+        //     $(document).Toasts('create', {
+        //     title: 'Toast Title',
+        //     autohide: true,
+        //     delay: 750,
+        //     body: 'Permohonan Baru Diterima, Silahkan Proses segera...'
+        //   })
+
+        $.ajax({
+            url: "<?php echo base_url('be/home/periksa_jumlah') ?>",
+            method: "POST",
+            data: {},
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                // alert(data);
+                document.getElementById("jumlah_notif").innerHTML = data[0].jumlah;
+                
+            }
+        });
+    });
+</script>
+<script>
+    // function permohonan() {        
+    //         $.ajax({
+    //             url: "<?php echo base_url('be/home/periksa_permohonan') ?>",
+    //             method: "POST",
+    //             data: {
+
+    //             },
+    //             async: false,
+    //             dataType: 'json',
+    //             success: function(data) {
+    //                 var html = '';
+
+    //                 var i;
+    //                 for (i = 0; i < data.length; i++) {
+    //                     html += '<a href="<?php echo base_url() . "be/home/lihat_surat/" . base64_encode("data[i].pe_kode"); ?>" class="dropdown-item notif">'+
+    //           '<div class="media">'+                
+    //             '<div class="media-body">'+
+    //               '<h3 class="dropdown-item-title">'+
+    //               data[i].s_1 +
+    //                 '<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>'+
+    //               '</h3>'+
+    //               '<p class="text-sm">'+data[i].s_jenispelayanan+'</p>'+
+    //               '<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>'+data[i].pe_tgl+'</p>'+
+    //             '</div>'+
+    //           '</div>'+
+    //         '</a>'+
+    //         '<div class="dropdown-divider"></div>';            
+
+    //                 }
+
+    //                 document.getElementById("test").innerHTML = html;
+
+    //             }
+    //         });
+    // }
 </script>
 </body>
 
