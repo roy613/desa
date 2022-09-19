@@ -490,6 +490,25 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 
@@ -592,6 +611,24 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 
@@ -694,6 +731,25 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function usaha()
@@ -797,6 +853,24 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function skck()
@@ -902,6 +976,24 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function tmampu()
@@ -1005,6 +1097,24 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function hilang()
@@ -1108,6 +1218,25 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function lahir()
@@ -1231,6 +1360,26 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function pindah()
@@ -1349,6 +1498,26 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
     public function mati()
@@ -1453,6 +1622,25 @@ class Simpan_fe extends CI_Controller
         );
 
         $this->m_data->save_data($data, 'surat');
+
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+        
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 }
