@@ -96,7 +96,19 @@
                  <p>Ket. Tidak Mampu</p>
                </a>
              </li>
+             <li class="nav-item">
+               <a href="<?php echo base_url('buku_reg'); ?>" target="_blank" class="nav-link">
+                 <i class="far fa-circle nav-icon text-secondary"></i>
+                 <p>Cetak Buku Reg.</p>
+               </a>
+             </li>
            </ul>
+         </li>
+         <li class="nav-item">
+           <a href="<?php echo base_url('tolak'); ?>" class="nav-link">
+             <i class="nav-icon fas fa-file-excel text-info"></i>
+             <p>Dokumen di Tolak</p>
+           </a>
          </li>
          <li class="nav-item">
            <a href="<?php echo base_url('nomor'); ?>" class="nav-link">

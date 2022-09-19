@@ -28,7 +28,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-12 table-responsive" style="overflow-x:auto">
-                  <table id="" class="table table-bordered table-striped">
+                  <table id="table2" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th style="width:3%">NO</th>
@@ -54,7 +54,7 @@
                           <td><?php echo $p->s_6; ?></td>
                           <td><?php if ($p->s_kodeproses == 1) {
                                 echo "Permohonan";
-                              } else if ($p->s_kodeproses == 2) {
+                              } else if ($p->s_kodeproses == 3) {
                                 echo "Manual";
                               }; ?></td>
                           <td style="text-align: center; width:10%">

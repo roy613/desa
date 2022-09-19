@@ -154,7 +154,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat rekomendasi proposal";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -271,7 +271,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat rekomendasi kerja";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -398,7 +398,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat pengantar rekom kerja";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -526,7 +526,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat pengantar kehilangan";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -657,7 +657,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat pengantar skck";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -791,8 +791,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat keterangan usaha";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
-
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
         $n311 = getRomawi(date('m', strtotime($tglsurat)));
@@ -926,7 +925,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat keterangan domisili";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -1070,7 +1069,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat keterangan pindah";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -1219,7 +1218,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat keterangan kematian";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -1364,7 +1363,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat keterangan kelahiran";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
@@ -1516,7 +1515,7 @@ class Simpan_be extends CI_Controller
         $buat = $this->session->userdata('username');
         $tglbuat = date('Y-m-d H-i-s');
         $jenis = "surat keterangan tidak mampu";
-        $kode_proses = 2; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
 
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
         $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();

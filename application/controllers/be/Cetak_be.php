@@ -200,4 +200,21 @@ class Cetak_be extends CI_Controller
 		$mpdf->WriteHTML($html);
 		$mpdf->Output('philang.pdf', 'I');
 	}
+	public function buku()
+	{
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_tglsurat ASC")->result();
+		$data['ttd'] = $this->db->query("SELECT * FROM ttd WHERE tt_id=1")->result();
+		$html = $this->load->view('cetak/buku_reg', $data, true);
+		$mpdf->AddPage('L','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('register.pdf', 'I');
+	}
 }

@@ -74,6 +74,7 @@ $route['pindah'] = 'be/home/pindah';
 $route['kematian'] = 'be/home/mati';
 $route['kelahiran'] = 'be/home/lahir';
 $route['tidak_mampu'] = 'be/home/tmampu';
+$route['tolak'] = 'be/home/tolak';
 $route['cek_permohonan'] = 'be/home/daftar_permohonan';
 $route['lihat_surat/(:any)'] = 'be/home/lihat_surat/$1';
 $route['cetak_rekom_proposal/(:any)'] = 'be/cetak_be/proposal/$1';
@@ -87,6 +88,7 @@ $route['cetak_ket_usaha/(:any)'] = 'be/cetak_be/usaha/$1';
 $route['cetak_ket_sktm/(:any)'] = 'be/cetak_be/sktm/$1';
 $route['cetak_p_skck/(:any)'] = 'be/cetak_be/skck/$1';
 $route['cetak_p_hilang/(:any)'] = 'be/cetak_be/hilang/$1';
+$route['buku_reg'] = 'be/cetak_be/buku';
 
 
 $route['layanan'] = 'welcome/layanan';

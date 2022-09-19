@@ -70,8 +70,8 @@
         $('#table2').DataTable({
             "paging": true,
             "lengthChange": false,
-            "searching": false,
-            "ordering": true,
+            "searching": true,
+            "ordering": false,
             "info": true,
             "autoWidth": false,
             "responsive": true,
@@ -304,7 +304,7 @@
         Swal.fire({
             icon: 'success',
             title: "Perhatian!!",
-            text: "Permohonan Baru Diterima, Silahkan Proses Segera ..",
+            text: "Permohonan Baru Telah Diterima, Silahkan Proses Segera ..",
         });
         //     $(document).Toasts('create', {
         //     title: 'Toast Title',
@@ -312,7 +312,7 @@
         //     delay: 750,
         //     body: 'Permohonan Baru Diterima, Silahkan Proses segera...'
         //   })
-
+        
         $.ajax({
             url: "<?php echo base_url('be/home/periksa_jumlah') ?>",
             method: "POST",
@@ -321,47 +321,48 @@
             dataType: 'json',
             success: function(data) {
                 // alert(data);
-                document.getElementById("jumlah_notif").innerHTML = data[0].jumlah;
-                
+                document.getElementById("jumlah_notif").innerHTML = data;
+                document.getElementById("jumlah_notif1").style.display = "none";
+
             }
         });
     });
 </script>
 <script>
-    function permohonan() {        
-            $.ajax({
-                url: "<?php echo base_url('be/home/periksa_permohonan') ?>",
-                method: "POST",
-                data: {
+    function permohonan() {
+        $.ajax({
+            url: "<?php echo base_url('be/home/periksa_permohonan') ?>",
+            method: "POST",
+            data: {
 
-                },
-                async: false,
-                dataType: 'json',
-                success: function(data) {
-                    var html = '';
+            },
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                var html = '';
 
-                    var i;
-                    for (i = 0; i < data.length; i++) {
-                        html += '<a href="<?php echo base_url() . "be/home/lihat_surat1/"; ?>'+data[i].pe_kode+'"'+' class="dropdown-item notif">'+
-              '<div class="media">'+                
-                '<div class="media-body">'+
-                  '<h3 class="dropdown-item-title">'+
-                  data[i].s_1 +
-                    '<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>'+
-                  '</h3>'+
-                  '<p class="text-sm">'+data[i].s_jenispelayanan+'</p>'+
-                  '<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>'+data[i].pe_tgl+'</p>'+
-                '</div>'+
-              '</div>'+
-            '</a>'+
-            '<div class="dropdown-divider"></div>';            
-
-                    }
-
-                    document.getElementById("test").innerHTML = html;
+                var i;
+                for (i = 0; i < data.length; i++) {
+                    html += '<a href="<?php echo base_url() . "be/home/lihat_surat1/"; ?>' + data[i].pe_kode + '"' + ' class="dropdown-item notif">' +
+                        '<div class="media">' +
+                        '<div class="media-body">' +
+                        '<h3 class="dropdown-item-title">' +
+                        data[i].s_1 +
+                        '<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>' +
+                        '</h3>' +
+                        '<p class="text-sm">' + data[i].s_jenispelayanan + '</p>' +
+                        '<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>' + data[i].pe_tgl + '</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</a>' +
+                        '<div class="dropdown-divider"></div>';
 
                 }
-            });
+
+                document.getElementById("test").innerHTML = html;
+
+            }
+        });
     }
 </script>
 </body>

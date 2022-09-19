@@ -51,7 +51,7 @@
             <div class="info-box-content" style="color: #5f4b66;">
               <span class="info-box-text"><b>Total Permohonan</b></span>
               <span class="info-box-number">
-                0
+                <?php echo number_format($total); ?>
                 <small>Dokumen</small>
               </span>
             </div>
@@ -64,7 +64,7 @@
             <div class="info-box-content" style="color: #5f4b66;">
               <span class="info-box-text"><b>Selesai</b></span>
               <span class="info-box-number">
-                0
+              <?php echo number_format($selesai); ?>
                 <small>Dokumen</small>
               </span>
             </div>
@@ -77,7 +77,7 @@
             <div class="info-box-content" style="color: #5f4b66">
               <span class="info-box-text"><b>On Proses</b></span>
               <span class="info-box-number">
-                0
+              <?php echo number_format($proses); ?>
                 <small>Dokumen</small>
               </span>
             </div>
@@ -90,7 +90,7 @@
             <div class="info-box-content" style="color: #5f4b66;">
               <span class="info-box-text"><b>Di Tolak</b></span>
               <span class="info-box-number">
-                0
+              <?php echo number_format($ditolak); ?>
                 <small>Dokumen</small>
               </span>
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2022 at 03:15 PM
+-- Generation Time: Sep 19, 2022 at 08:12 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -50,7 +50,7 @@ INSERT INTO `daftar_pelayanan` (`da_id`, `da_pelayanan`, `n_1`, `n_2`) VALUES
 (9, 'surat keterangan tidak mampu', '108/', '/pem/'),
 (10, 'surat pengantar kehilangan', '109/', '/pem/'),
 (11, 'surat pengantar skck', '110/', '/pem/'),
-(12, 'surat pengantar menikah', '101/', '/pem/');
+(12, 'Surat Pengantar Menikah', '101/', '/pem/');
 
 -- --------------------------------------------------------
 
@@ -203,6 +203,26 @@ CREATE TABLE `permohonan` (
   `pe_syarat` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `permohonan`
+--
+
+INSERT INTO `permohonan` (`pe_id`, `pe_kode`, `pe_nama`, `pe_alamat`, `pe_handphone`, `pe_tgl`, `pe_qr`, `pe_jenispermohonan`, `pe_syarat`) VALUES
+(1, 'DKI_proposal1', 'jundan', NULL, '0811595952', '2022-09-19 11:41:39', 'DKI_proposal1.png', 'surat rekomendasi proposal', 'ktp.jpeg'),
+(2, 'DKI_proposal2', 'sdfdsf', NULL, '0811595952', '2022-09-19 13:38:29', 'DKI_proposal2.png', 'surat rekomendasi proposal', 'ktp1.jpeg'),
+(3, 'DKI_proposal3', 'sdfdsf', NULL, '0811595952', '2022-09-19 13:39:34', 'DKI_proposal3.png', 'surat rekomendasi proposal', 'ktp2.jpeg'),
+(4, 'DKI_proposal4', 'sdfdsf', NULL, '0811595952', '2022-09-19 13:40:27', 'DKI_proposal4.png', 'surat rekomendasi proposal', 'ktp3.jpeg'),
+(5, 'DKI_proposal5', 'testing', NULL, '0811595952', '2022-09-19 13:45:14', 'DKI_proposal5.png', 'surat rekomendasi proposal', 'ktp4.jpeg'),
+(6, 'DKI_proposal6', 'test2', NULL, '0811595952', '2022-09-19 13:47:42', 'DKI_proposal6.png', 'surat rekomendasi proposal', 'ktp5.jpeg'),
+(7, 'DKI_proposal7', 'test3', NULL, '0811595952', '2022-09-19 13:52:45', 'DKI_proposal7.png', 'surat rekomendasi proposal', 'ktp6.jpeg'),
+(8, 'DKI_proposal8', 'test 4', NULL, '0811595952', '2022-09-19 13:54:49', 'DKI_proposal8.png', 'surat rekomendasi proposal', 'ktp7.jpeg'),
+(9, 'DKI_proposal9', 'asdsad', NULL, '0811595952', '2022-09-19 13:57:16', 'DKI_proposal9.png', 'surat rekomendasi proposal', 'ktp8.jpeg'),
+(10, 'DKI_proposal10', 'testing', NULL, '0811595952', '2022-09-19 13:59:02', 'DKI_proposal10.png', 'surat rekomendasi proposal', 'ktp9.jpeg'),
+(11, 'DKI_proposal11', 'testing', NULL, '0811595952', '2022-09-19 14:00:28', 'DKI_proposal11.png', 'surat rekomendasi proposal', 'ktp10.jpeg'),
+(12, 'DKI_proposal12', 'testing', NULL, '0811595952', '2022-09-19 14:02:22', 'DKI_proposal12.png', 'surat rekomendasi proposal', 'ktp11.jpeg'),
+(13, 'DKI_proposal13', 'rstrt', NULL, '0811595952', '2022-09-19 14:10:25', 'DKI_proposal13.png', 'surat rekomendasi proposal', 'ktp12.jpeg'),
+(14, 'DKI_proposal14', 'sadsad', NULL, '0811595952', '2022-09-19 14:11:27', 'DKI_proposal14.png', 'surat rekomendasi proposal', 'ktp13.jpeg');
+
 -- --------------------------------------------------------
 
 --
@@ -250,6 +270,41 @@ CREATE TABLE `surat` (
   `s_ket` int(1) DEFAULT NULL,
   `s_kodeproses` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `surat`
+--
+
+INSERT INTO `surat` (`s_id`, `s_1`, `s_2`, `s_3`, `s_4`, `s_5`, `s_6`, `s_7`, `s_8`, `s_9`, `s_10`, `s_11`, `s_12`, `s_13`, `s_14`, `s_15`, `s_16`, `s_17`, `sd_1`, `sd_2`, `sd_3`, `sd_4`, `s_nosurat`, `s_jabatan`, `s_ttd`, `s_kodettd`, `s_qr`, `s_kodepelayanan`, `s_tglsurat`, `s_tglbuat`, `s_tgledit`, `s_tglhapus`, `s_tglselesai`, `s_proses`, `s_edit`, `s_hapus`, `s_jenispelayanan`, `s_ket`, `s_kodeproses`) VALUES
+(1, 'rtrdeyty', 'trytry', 'trytry', 'trytry', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '100/001/pem/IX/2022', '', 'jabir', 0, 'QR0.png', NULL, NULL, '2022-09-17 12:23:52', NULL, '2022-09-17 13:24:33', NULL, 'admin', NULL, 'admin', 'surat rekomendasi proposal', NULL, 2),
+(2, 'w3erwerwer', '3243432443343444', 'Laki-Laki', 'sadsad', 'Islam', 'sadsd', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '002IX/2022', '', 'jabir', 0, 'QR1.png', NULL, NULL, '2022-09-17 12:51:32', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat rekomendasi kerja', NULL, 2),
+(3, 'wertrt', '4354354354354354', 'Laki-Laki', 'dfg', 'Kristen', 'sadsd', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '003IX/2022', '', 'jabir', 0, 'QR2.png', NULL, '2022-09-16', '2022-09-17 12:54:08', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat rekomendasi kerja', NULL, 2),
+(4, 'jundan', '1919191919191919', 'Laki-Laki', 'demak', 'Islam', 'aa', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '004IX/2022', 'kepala desa', 'jabir', 1, 'QR3.png', NULL, '2022-09-17', '2022-09-17 12:59:13', NULL, '2022-09-17 13:59:33', NULL, 'admin', NULL, 'admin', 'surat rekomendasi kerja', NULL, 2),
+(5, 'jundan', '1212121212121212', 'Laki-Laki', 'demak', 'Islam', 'sd', 'sangkulirang', 'qwerty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '005IX/2022', 'kepala desa', 'jabir', 1, 'QR4.png', NULL, '2022-09-17', '2022-09-17 13:17:03', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar rekom kerja', NULL, 2),
+(6, 'jundan', '1212121212121212', 'dsf', 'Islam', 'we', 'sangkulirang', 'ktp', 'Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', '2022-09-17', NULL, NULL, '006IX/2022', 'kepala desa', 'jabir', 1, 'QR5.png', NULL, '2022-09-17', '2022-09-17 20:10:17', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar kehilangan', NULL, 2),
+(7, 'jundan', '1212121221212121', 'Laki-Laki', 'ewrwer', 'Indonesia', 'Islam', 'Belum Menikah', 'ertret', 'sangkulirang', 'ertretert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '109/007/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR6.png', NULL, '2022-09-17', '2022-09-17 20:34:15', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar kehilangan', NULL, 2),
+(8, 'jundan', '9898989898999898', 'Laki-Laki', 'ewrwer', 'Indonesia', 'Islam', 'Belum Menikah', 'ertret', 'sangkulirang', 'ertretert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '008IX/2022', 'kepala desa', 'jabir', 1, 'QR7.png', NULL, '2022-09-17', '2022-09-17 20:36:58', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat pengantar skck', NULL, 2),
+(9, 'jundan', '6565465465465465', 'Laki-Laki', 'ewrwer', 'Indonesia', 'Islam', 'Belum Menikah', 'dfgdfgdf', 'sangkulirang', 'ertretert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-17', NULL, NULL, NULL, '110/009/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR8.png', NULL, '2022-09-17', '2022-09-17 20:43:29', '2022-09-17 20:47:06', NULL, NULL, 'admin', 'admin', NULL, 'surat pengantar skck', NULL, 2),
+(10, 'jundan', '1212121212121212', 'Laki-Laki', 'sadsad', 'asdsad', 'Jl. Aji Suryanata', '12', 'Dagang', 'sangkulirang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-18', NULL, NULL, NULL, '103/010/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR9.png', NULL, '2022-09-18', '2022-09-18 13:39:00', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan usaha', NULL, 2),
+(11, 'jundan', 'Laki-Laki', 'demak', 'Indonesia', 'Islam', '1212121212121212', 'Menikah', 'pns', 'sangkulirang', 'Melamar Kerja', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-18', NULL, NULL, NULL, '104/011/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR10.png', NULL, '2022-09-18', '2022-09-18 14:08:38', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan domisili', NULL, 2),
+(12, 'jundan', '1221212121212121', 'Laki-Laki', 'demak', 'Indonesia', 'Islam', 'Menikah', 'pns', 'Diploma IV / S1', 'sangkulirang', 'JL. APT Pranoto', 'Sangatta Utara', 'Sangatta Utara', 'kutai timur', 'Kalimantan Timur', NULL, NULL, '2022-09-18', '2022-09-18', NULL, NULL, '104/012/pem/IX/2022', 'sekretaris desa', 'udin', 2, 'QR11.png', NULL, '2022-09-18', '2022-09-18 15:39:55', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan pindah', NULL, 2),
+(13, 'udin', 'sasa', 'Indonesia', 'Islam', 'asasas', 'Jl. Pattimura', '20:00', 'Puskesmas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-18', '2022-09-18', NULL, NULL, '105/013/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR12.png', NULL, '2022-09-18', '2022-09-18 15:57:01', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan kematian', NULL, 2),
+(14, 'yahya', 'Laki-Laki', 'Samarinda', 'Islam', 'sangkulirang', '1', 'Jundan', 'Demak', 'Islam', 'PNS', 'sangkulirang', 'Yuniarti', 'Balikpapan', 'Islam', 'TK2D', 'sangkulirang', NULL, '2022-09-19', '2022-09-19', '2022-09-19', NULL, '106/014/pem/IX/2022', 'sekretaris desa', 'udin', 2, 'QR13.png', NULL, '2022-09-19', '2022-09-19 05:42:08', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan kelahiran', NULL, 2),
+(15, 'udin', '1212121212121212', 'Laki-Laki', 'peridan', 'Islam', 'Indonesia', 'Belum Menikah', 'swasta', 'sangkulirang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-09-19', NULL, NULL, NULL, '108/015/pem/IX/2022', 'kepala desa', 'jabir', 1, 'QR14.png', NULL, '2022-09-19', '2022-09-19 06:05:40', NULL, NULL, NULL, 'admin', NULL, NULL, 'surat keterangan tidak mampu', NULL, 2),
+(16, 'jundan', 'kpc', '1212', 'permohonan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(17, 'sdfdsf', 'sdfdsf', 'sdfdsf', 'sdfsdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(18, 'sdfdsf', 'sdfdsf', 'sdfdsf', 'sdfsdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(19, 'sdfdsf', 'sdfdsf', 'sdfdsf', 'sdfsdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(20, 'testing', 'erewr', 'werewr', 'wer', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal5', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(21, 'test2', 'asdsad', 'asdsad', 'sad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(22, 'test3', 'sadfdf', 'sads', 'asd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal7', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(23, 'test 4', 'sdfdsf', 'dsfdsf', 'sdfdsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal8', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(24, 'asdsad', 'qwerty', 'asdsa', 'sad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal9', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(25, 'testing', 'qwerty', 'ardewqr', 'ewrewr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(26, 'testing', 'qwerty', 'dsfsdf', 'qwewqe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(27, 'testing', 'qwerty', 'awe', 'awe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal12', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(28, 'rstrt', 'ertret', 'retret', 'retert', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal13', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1),
+(29, 'sadsad', 'qwerty', 'wqewq', 'wqe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DKI_proposal14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'surat rekomendasi proposal', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -350,13 +405,13 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `permohonan`
 --
 ALTER TABLE `permohonan`
-  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `s_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `ttd`

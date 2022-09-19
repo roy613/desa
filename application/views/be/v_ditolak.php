@@ -27,7 +27,7 @@
 
               <!-- <a href="<?php echo base_url() . 'cetak/register'; ?>" target="_blank" class="btn btn-sm btn-primary" style="float:right">Cetak Buku</a> -->
               <h5 style="color: dimgrey;">
-                DAFTAR PERMOHONAN YANG BELUM DI PROSES
+                DAFTAR PERMOHONAN YANG DI TOLAK
               </h5>
               <h6 style="color: dimgrey;">
                 APLIKASI LAYANAN ONLINE DESA KARANGAN HILIR

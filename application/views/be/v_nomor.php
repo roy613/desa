@@ -28,13 +28,13 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-12 table-responsive" style="overflow-x:auto">
-                  <table id="" class="table table-bordered table-striped">
+                  <table id="table2" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th style="width:3%">NO</th>
                         <th>JENIS SURAT</th>
                         <th>NOMOR DEPAN</th>
-                        <th>NOMOR BELAKANG</th>
+                        <th>NOMOR TENGAH</th>
                         <th>PREVIEW</th>
                         <th style="width:7%">OPSI</th>
                       </tr>
@@ -98,7 +98,7 @@
                   <input type="text" name="n_1" id="n_1" class="form-control" required>
                 </div>
                 <div class="form-group">
-                  <label>Nomor Belakang</label>
+                  <label>Nomor Tengah</label>
                   <input type="text" name="n_2" id="n_2" class="form-control" required>
                 </div>
               </div>
