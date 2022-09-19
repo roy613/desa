@@ -255,6 +255,21 @@
           </div>
         </div>
       </div><!-- End Service Item -->
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="service-item">
+          <!-- <div class="img">
+                <img src="assets/img/services-3.jpg" class="img-fluid" alt="">
+              </div> -->
+          <div class="details position-relative">
+            <div class="icon">
+            <i class="bi bi-file-earmark-arrow-up"></i>
+            </div>
+            <a href="https://sites.google.com/view/disdukcapilkutaitimur/home" target="_blank" class="stretched-link">
+              <h3>Link Layanan <br>Dukcapil Kutim</h3>
+            </a>
+          </div>
+        </div>
+      </div><!-- End Service Item -->
     </div>
 
   </div>
