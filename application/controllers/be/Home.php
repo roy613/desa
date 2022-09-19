@@ -14,15 +14,16 @@ class Home extends CI_Controller
 
     public function index()
     {
+        $data['surat'] = $this->db->query("SELECT s_1, s_jenispelayanan, s_proses FROM surat ORDER BY s_tglsurat DESC LIMIT 5")->result();
         $this->load->view('be/v_header');
         $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_body');
+        $this->load->view('be/v_body', $data);
         $this->load->view('be/v_footer');
     }
     public function periksa_permohonan()
 	{
 		// $peg = $this->input->post('peg');
-		$data = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL")->result();
+		$data = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL ORDER BY pe_tgl DESC LIMIT 3")->result();
 		// var_dump($data);
 		$myJSON = json_encode($data);
 		echo $myJSON;
@@ -57,6 +58,17 @@ class Home extends CI_Controller
         $b = base64_decode($a);
         $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
         $data['surat'] = $this->db->query("SELECT * FROM permohonan INNER JOIN surat ON permohonan.pe_kode=surat.s_kodepelayanan WHERE pe_kode='$b'")->result();
+        $this->load->view('be/v_header');
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_proses1',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_proses');
+    }
+    public function lihat_surat1($a)
+    {
+        // $b = base64_decode($a);
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['surat'] = $this->db->query("SELECT * FROM permohonan INNER JOIN surat ON permohonan.pe_kode=surat.s_kodepelayanan WHERE pe_kode='$a'")->result();
         $this->load->view('be/v_header');
         $this->load->view('be/v_sidebar');
         $this->load->view('be/v_proses1',$data);

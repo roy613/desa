@@ -113,35 +113,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      1
-                    </td>
-                    <td>
-                      jhvjhv
-                    </td>
-                    <td>
-                      jhjhvhkj
-                    </td>
-                    <td>
-                      jhgfjhgv
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      1
-                    </td>
-                    <td>
-                      jhvjhv
-                    </td>
-                    <td>
-                      jhjhvhkj
-                    </td>
-                    <td>
-                      jhgfjhgv
-                    </td>
-                  </tr>
-
+                <?php
+                      $no = 1;
+                      foreach ($surat as $p) {
+                      ?>
+                        <tr>
+                          <td><?php echo $no++; ?></td>
+                          <td><?php echo ucwords($p->s_1); ?></td>
+                          <td><?php echo ucwords($p->s_jenispelayanan); ?></td>
+                          <td><?php echo ucwords($p->s_proses); ?></td>
+                        </tr>
+                        <?php } ?>
                 </tbody>
               </table>
             </div>

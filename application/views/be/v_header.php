@@ -147,8 +147,8 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-          <!-- <a class="nav-link" data-toggle="dropdown" onclick="permohonan()" href="#"> -->
+          <!-- <a class="nav-link" data-toggle="dropdown" href="#"> -->
+          <a class="nav-link" data-toggle="dropdown" onclick="permohonan()" href="#">
             <i class="fa fa-envelope" aria-hidden="true"></i>
             <span class="badge badge-danger navbar-badge"><p id="jumlah_notif"></p></span>
           </a>
