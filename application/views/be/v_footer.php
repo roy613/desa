@@ -74,7 +74,7 @@
             "ordering": false,
             "info": true,
             "autoWidth": false,
-            "responsive": true,
+            "responsive": false,
         });
         $('#table3').DataTable({
             "paging": false,
