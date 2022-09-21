@@ -105,6 +105,12 @@
            </ul>
          </li>
          <li class="nav-item">
+           <a href="<?php echo base_url('proses'); ?>" class="nav-link">
+             <i class="nav-icon fas fa-file-powerpoint text-info"></i>
+             <p>Dokumen on Proses</p>
+           </a>
+         </li>
+         <li class="nav-item">
            <a href="<?php echo base_url('tolak'); ?>" class="nav-link">
              <i class="nav-icon fas fa-file-excel text-info"></i>
              <p>Dokumen di Tolak</p>

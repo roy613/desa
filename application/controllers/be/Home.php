@@ -14,7 +14,7 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['surat'] = $this->db->query("SELECT s_1, s_jenispelayanan, s_proses FROM surat ORDER BY s_tglsurat DESC LIMIT 5")->result();
+        $data['surat'] = $this->db->query("SELECT s_1, s_jenispelayanan, s_proses, s_tglselesai, s_tglsurat, s_kodeproses FROM surat ORDER BY s_tglsurat DESC LIMIT 5")->result();
         $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL   AND s_kodeproses=1")->num_rows();
         
         $data['total'] = $this->db->query("SELECT * FROM  permohonan")->num_rows();
@@ -71,6 +71,16 @@ class Home extends CI_Controller
         $this->load->view('be/v_header', $jumlah);
         $this->load->view('be/v_sidebar');
         $this->load->view('be/v_ditolak', $data);
+        $this->load->view('be/v_footer');
+    }
+    public function proses()
+    {
+        $data['daftar'] = $this->db->query('SELECT * FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_kodeproses=1 AND s_tglsurat IS NOT NULL AND s_tglselesai IS NULL')->result();
+        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+        
+        $this->load->view('be/v_header', $jumlah);
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_proses', $data);
         $this->load->view('be/v_footer');
     }
     public function lihat_surat($a)
