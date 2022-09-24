@@ -57,6 +57,7 @@ $route['login'] = 'login';
 $route['proses'] = 'login/aksi';
 $route['logout'] = 'login/keluar';
 $route['manual/(:any)'] = 'cetak/permohonan/$1';
+$route['registrasi/(:any)'] = 'cetak/permohonan1/$1';
 
 
 $route['dashboard'] = 'be/home';
@@ -94,4 +95,4 @@ $route['buku_reg'] = 'be/cetak_be/buku';
 
 $route['layanan'] = 'welcome/layanan';
 $route['sukses/(:any)'] = 'welcome/sukses/$1';
-$route['periksa/(:any)'] = 'welcome/periksa/$1';
+// $route['periksa/(:any)'] = 'welcome/periksa/$1';

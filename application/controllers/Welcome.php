@@ -89,7 +89,7 @@ class Welcome extends CI_Controller
 		$data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$b'")->result();
 		$this->load->view('fe/v_header');
 		$this->load->view('fe/v_sukses', $data);
-		$this->load->view('fe/v_footer');
+		$this->load->view('fe/v_footer_sukses');
 	}
 	
 }

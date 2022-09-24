@@ -26,6 +26,7 @@
             Terima kasih sudah menggunakan layanan kami. Dokumen tanda terima akan didownload secara otomatis, apabila dalam beberapa detik belum terdownload, maka anda dapat mendownload secara manual dengan klik <a href="<?php echo base_url('manual'); ?>"><u>disini</u></a>. <br><br>
             Simpan dokumen tanda terima yang anda peroleh untuk menjadi bukti permohonan anda dengan cara mencetaknya atau screenshot. Apabila anda ingin melakukan permohonan layanan lainnya klik <a href="<?php echo base_url('layanan'); ?>"><u>disini</u></a>.
         </p>
+        
             <a class="cta-btn align-self-start" href="<?php echo base_url(); ?>">Home</a>
           </div>
 

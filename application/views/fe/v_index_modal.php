@@ -259,7 +259,7 @@
                               <h3>Permohonan Selesai</h3>
                               <p id="tgl_ketiga"><?php echo tgl_indojam1($p->s_tglselesai); ?></p>
                               <p>Dokumen Dapat di Ambil di Kantor Desa</p>
-                              <table border="0">
+                              <!-- <table border="0">
                                 <tr>
                                   <td>
                                     <button class="btn btn-outline-success" style="float: right; margin-top:15px">Puas</button>
@@ -268,7 +268,7 @@
                                     <button class="btn btn-outline-danger" style="float: right; margin-top:15px">Tidak Puas</button>
                                   </td>
                                 </tr>
-                              </table>
+                              </table> -->
                             </li>
                           <?php } ?>
                           <?php if ($p->s_tglselesai !== null && $p->s_kodeproses == 2) { ?>
