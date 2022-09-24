@@ -105,7 +105,7 @@
            </ul>
          </li>
          <li class="nav-item">
-           <a href="<?php echo base_url('proses'); ?>" class="nav-link">
+           <a href="<?php echo base_url('onproses'); ?>" class="nav-link">
              <i class="nav-icon fas fa-file-powerpoint text-info"></i>
              <p>Dokumen on Proses</p>
            </a>

@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-3">
-          <a href="<?php echo base_url('proses'); ?>">
+          <a href="<?php echo base_url('onproses'); ?>">
             <div class="info-box" style="background-color: #caa7b4;">
               <span class="info-box-icon elevation-1" style="background-color: #BD473C;"><i style="color: white;" class="fas fa-dna"></i></span>
 

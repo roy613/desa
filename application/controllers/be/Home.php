@@ -14,7 +14,7 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['surat'] = $this->db->query("SELECT s_1, s_jenispelayanan, s_proses, s_tglselesai, s_tglsurat, s_kodeproses FROM surat ORDER BY s_tglsurat DESC LIMIT 5")->result();
+        $data['surat'] = $this->db->query("SELECT s_1, s_jenispelayanan, s_proses, s_tglselesai, s_tglsurat, s_kodeproses FROM surat WHERE s_kodeproses!=3 ORDER BY s_tglsurat DESC LIMIT 5")->result();
         $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL   AND s_kodeproses=1")->num_rows();
         
         $data['total'] = $this->db->query("SELECT * FROM  permohonan")->num_rows();
