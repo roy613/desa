@@ -12,6 +12,12 @@ class Simpan_fe extends CI_Controller
 
     public function nikah()
     {
+        $nomor2 = $this->db->query("SELECT * FROM permohonan WHERE pe_jenispermohonan='surat pengantar menikah'")->num_rows();
+        $nomor3 = $nomor2 + 1;
+        $namaqr = 'DKI_nikah' . $nomor3 . '.png';
+        $koderegistrasi = 'DKI_nikah' . $nomor3;
+
+
         $nama1 = $this->input->post('nikah_nama1');
         $nik1 = $this->input->post('nikah_nik1');
         $job1 = $this->input->post('nikah_job1');
@@ -76,9 +82,16 @@ class Simpan_fe extends CI_Controller
         $bin21 = $this->input->post('nikah_bin21');
         $binti12 = $this->input->post('nikah_binti12');
         $binti22 = $this->input->post('nikah_binti22');
+        
+        $stal1 = $this->input->post('stal1');
+        $stal2 = $this->input->post('stal2');
+        $stal3 = $this->input->post('stal3');
+        $stal4 = $this->input->post('stal4');
 
-        $status = 1; //status 1 pemohon masyarakat belum diproses, status 2 surat dibuat admin lewat be.
         $jenis = "surat pengantar menikah";
+        $no_hp = $this->input->post('nikah_nohp');
+        $tglmohon = date('Y-m-d H-i-s');
+        $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 3 surat dibuat admin lewat be.
         // $tglsurat = $this->input->post('tglsrt');
         // $ttd = $this->input->post('ttd');
         // $jabttd = $this->input->post('jabttd');
@@ -86,110 +99,36 @@ class Simpan_fe extends CI_Controller
         // $golttd = $this->input->post('golttd');
         // $mpket = $this->input->post('mpket');
 
-        $tglmohon = date('Y-m-d H-i-s');
+        //save ditabel permohonan
+        $config['upload_path'] = './syarat/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
 
-        $data = array(
-            'n_nama_1' => $nama1,
-            'n_nik_1' => $nik1,
-            'n_job_1' => $job1,
-            'n_tptlahir_1' => $tempat1,
-            'n_tgllahir_1' => $tgl1,
-            'n_agama_1' => $agama1,
-            'n_kwn_1' => $kwn1,
-            'n_status_1' => $status1,
-            'n_alamat_1' => $alamat1,
-            // 'n_rt_1' => $rt1,
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('nikah_filegambar')) {
 
-            'n_nama_11' => $nama11,
-            'n_nik_11' => $nik11,
-            'n_agama_11' => $agama11,
-            'n_tptlahir_11' => $tempat11,
-            'n_tgllahir_11' => $tgl11,
-            'n_kwn_11' => $kwn11,
-            'n_job_11' => $job11,
-            'n_alamat_11' => $alamat11,
+            $gambar = $this->upload->data();
 
-            'n_nama_12' => $nama12,
-            'n_nik_12' => $nik12,
-            'n_agama_12' => $agama12,
-            'n_tptlahir_12' => $tempat12,
-            'n_tgllahir_12' => $tgl12,
-            'n_kwn_12' => $kwn12,
-            'n_job_12' => $job12,
-            'n_alamat_12' => $alamat12,
+            $syarat = $gambar['file_name'];
+        }
+        if ($this->upload->do_upload('nikah_filegambar1')) {
 
-            'n_nama_2' => $nama2,
-            'n_nik_2' => $nik2,
-            'n_job_2' => $job2,
-            'n_tptlahir_2' => $tempat2,
-            'n_tgllahir_2' => $tgl2,
-            'n_agama_2' => $agama2,
-            'n_kwn_2' => $kwn2,
-            'n_status_2' => $status2,
-            'n_alamat_2' => $alamat2,
-            // 'n_rt_2' => $rt2,
+            $gambar1 = $this->upload->data();
 
-            'n_nama_21' => $nama21,
-            'n_nik_21' => $nik21,
-            'n_agama_21' => $agama21,
-            'n_tptlahir_21' => $tempat21,
-            'n_tgllahir_21' => $tgl21,
-            'n_kwn_21' => $kwn21,
-            'n_job_21' => $job21,
-            'n_alamat_21' => $alamat21,
-
-            'n_nama_22' => $nama22,
-            'n_nik_22' => $nik22,
-            'n_agama_22' => $agama22,
-            'n_tptlahir_22' => $tempat22,
-            'n_tgllahir_22' => $tgl22,
-            'n_kwn_22' => $kwn22,
-            'n_job_22' => $job22,
-            'n_alamat_22' => $alamat22,
-
-            'n_lokasi' => $lokasi,
-            'n_waktu' => $waktu,
-            // 'n_tglsurat' => $tglsurat,
-            'n_bin_11' => $bin11,
-            'n_bin_21' => $bin21,
-            'n_binti_12' => $binti12,
-            'n_binti_22' => $binti22,
-
-            // 'n_ttd' => $ttd,
-            // 'n_nipttd' => $nipttd,
-            // 'n_jabttd' => $jabttd,
-            // 'n_golttd' => $golttd,
-            // 'n_mpket' => $mpket,
-
-            // 'n_buat' => $buat,
-            // 'n_qr' => $namaqr,
-            // 'n_nojenis' => $no_jenis,
-            // 'n_nomor' => $nosurat,
-            'n_tglmohon' => $tglmohon,
-            'n_status' => $status,
-        );
-
-        $this->m_data->save_data($data, 'nikah');
-
-        //untuk save di tabel permohonan
+            $syarat1 = $gambar1['file_name'];
+        }
 
         include "phpqrcode/qrlib.php";
-        $tempdir = "permohonan/"; //Nama folder tempat menyimpan file qrcode
-        if (!file_exists($tempdir)) //Buat folder bername temp
+        $tempdir = "permohonan/";
+        if (!file_exists($tempdir))
             mkdir($tempdir);
 
         $bu = base_url();
         $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
 
-        $nomor2 = $this->db->query("SELECT * FROM nikah")->num_rows();
-        $nomor3 = $nomor2 + 1;
-        $namaqr = 'DKI_nikah' . $nomor3 . '.png';
-        $koderegistrasi = 'DKI_nikah' . $nomor3;
 
-        $ab = base64_encode($nomor3);
+        $ab = base64_encode($koderegistrasi);
         $ac = base_url() . 'periksa/cek';
         $codeContents = "$ac/$ab";
-        // $codeContents = "dfgdfgfdgdf df gfd hdfgh gdfh ";
 
         QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
 
@@ -216,49 +155,97 @@ class Simpan_fe extends CI_Controller
 
         $data1 = array(
             'pe_kode' => $koderegistrasi,
-            'pe_nama' => $nama1,
+            'pe_nama' => "$nama1, $nama2",
             'pe_qr' => $namaqr,
             'pe_tgl' => $tglmohon,
+            'pe_handphone' => $no_hp,
+            'pe_jenispermohonan' => $jenis,
+            'pe_syarat' => $syarat,
+            'pe_syarat1' => $syarat1,
         );
 
         $this->m_data->save_data($data1, 'permohonan');
 
-        //cetak registrasi
+        // save tabel surat
+        $data = array(
+            's_1' => $nama1,
+            's_2' => $nik1,
+            's_3' => $job1,
+            's_4' => $tempat1,
+            'sd_1' => $tgl1,
+            's_5' => $agama1,
+            's_6' => $kwn1,
+            's_7' => $status1,
+            's_8' => $alamat1,
+            // 'n_rt_1' => $rt1,
 
-        // require_once './vendor/autoload.php';
-        // $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210, 165]]);
-        // $data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$koderegistrasi'")->result();
-        // $html = $this->load->view('bukti_regis', "$data", true);
-        // $mpdf->SetHTMLFooter('
-        // <table width="100%" style="font-size:10pt">
-        // <tr>
-        // <td colspan=2>
-        // <hr style="margin-bottom:-3px; height:2px; width:100%; color:black">
-        // </td>
-        // </tr>
-        // <tr>
-        // <td width="80%" align="left">Created By. Petok APPs For Pemerintah Desa Mandu Dalam Kecamatan Sangkulirang</td>
-        // <td width="20%" style="text-align: left;"></td>			
-        // </tr>
-        // </table>');
-        // $mpdf->AddPage(
-        //     'P',
-        //     '',
-        //     '',
-        //     '',
-        //     '',
-        //     12, //ml
-        //     13, //mr
-        //     10, //mt
-        //     15, //mb
-        //     1, //mh
-        //     4
-        // ); //mf
-        // $mpdf->WriteHTML($html);
-        // $mpdf->Output('spt.pdf', 'I');
-        // force_download('spt.pdf', NULL);
+            's_9' => $nama11,
+            's_10' => $nik11,
+            's_11' => $agama11,
+            's_12' => $tempat11,
+            'sd_2' => $tgl11,
+            's_13' => $kwn11,
+            's_14' => $job11,
+            's_15' => $alamat11,
+            's_16' => $bin11,
 
-        redirect(base_url('sukses'));
+            's_17' => $nama12,
+            's_18' => $nik12,
+            's_19' => $agama12,
+            's_20' => $tempat12,
+            'sd_3' => $tgl12,
+            's_21' => $kwn12,
+            's_22' => $job12,
+            's_23' => $alamat12,
+            's_24' => $binti12,
+
+            's_25' => $nama2,
+            's_26' => $nik2,
+            's_27' => $job2,
+            's_28' => $tempat2,
+            'sd_4' => $tgl2,
+            's_29' => $agama2,
+            's_30' => $kwn2,
+            's_31' => $status2,
+            's_32' => $alamat2,
+            // 'n_rt_2' => $rt2,
+
+            's_33' => $nama21,
+            's_34' => $nik21,
+            's_35' => $agama21,
+            's_36' => $tempat21,
+            'sd_5' => $tgl21,
+            's_37' => $kwn21,
+            's_38' => $job21,
+            's_39' => $alamat21,
+            's_40' => $bin21,
+
+            's_41' => $nama22,
+            's_42' => $nik22,
+            's_43' => $agama22,
+            's_44' => $tempat22,
+            'sd_6' => $tgl22,
+            's_45' => $kwn22,
+            's_46' => $job22,
+            's_47' => $alamat22,
+            's_48' => $binti22,
+            
+            's_stal1' => $stal1,
+            's_stal2' => $stal2,
+            's_stal3' => $stal3,
+            's_stal4' => $stal4,
+
+            's_49' => $lokasi,
+            'sd_7' => $waktu,
+          
+            's_kodeproses' => $kode_proses,
+            's_kodepelayanan' => $koderegistrasi,
+            's_jenispelayanan' => $jenis,
+        );
+
+        $this->m_data->save_data($data, 'surat');
+
+        redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 
     public function proposal()
@@ -1640,7 +1627,7 @@ class Simpan_fe extends CI_Controller
 
         $kata['message'] = 'Permohonan Baru Diterima';
         $pusher->trigger('my-channel', 'my-event', $kata);
-        
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 }

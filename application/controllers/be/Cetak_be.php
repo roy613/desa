@@ -217,4 +217,64 @@ class Cetak_be extends CI_Controller
 		$mpdf->WriteHTML($html);
 		$mpdf->Output('register.pdf', 'I');
 	}
+	public function nikah1($a)
+	{
+		$b= base64_decode($a);
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html = $this->load->view('cetak/ppn11', $data, true);
+		$html1 = $this->load->view('cetak/ppn21', $data, true);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html1);
+		$mpdf->Output('register.pdf', 'I');
+	}
+	public function nikah2()
+	{
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_tglsurat ASC")->result();
+		$data['ttd'] = $this->db->query("SELECT * FROM ttd WHERE tt_id=1")->result();
+		$html = $this->load->view('cetak/k_usaha', $data, true);
+		$mpdf->AddPage('L','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('register.pdf', 'I');
+	}
+	public function nikah3()
+	{
+		require_once './vendor/autoload.php';
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
+		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_tglsurat ASC")->result();
+		$data['ttd'] = $this->db->query("SELECT * FROM ttd WHERE tt_id=1")->result();
+		$html = $this->load->view('cetak/p_kehilangan', $data, true);
+		$mpdf->AddPage('L','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html);
+		$mpdf->Output('register.pdf', 'I');
+	}
 }

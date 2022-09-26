@@ -90,6 +90,9 @@ $route['cetak_ket_usaha/(:any)'] = 'be/cetak_be/usaha/$1';
 $route['cetak_ket_sktm/(:any)'] = 'be/cetak_be/sktm/$1';
 $route['cetak_p_skck/(:any)'] = 'be/cetak_be/skck/$1';
 $route['cetak_p_hilang/(:any)'] = 'be/cetak_be/hilang/$1';
+$route['cetak_nikah_1/(:any)'] = 'be/cetak_be/nikah1/$1';
+$route['cetak_nikah_2/(:any)'] = 'be/cetak_be/nikah2/$1';
+$route['cetak_nikah_3/(:any)'] = 'be/cetak_be/nikah3/$1';
 $route['buku_reg'] = 'be/cetak_be/buku';
 
 

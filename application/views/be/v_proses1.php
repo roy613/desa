@@ -81,6 +81,15 @@
                                     <?php if ($k->pe_jenispermohonan == "surat keterangan usaha") { ?>
                                         <a target="_blank" href="<?php echo base_url('cetak_ket_usaha/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 !== ""  && $k->s_41 !== "" ) { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_nikah_1/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 !== ""  && $k->s_41 == "" ) { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_nikah_2/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 == ""  && $k->s_41 !== "" ) { ?>
+                                        <a target="_blank" href="<?php echo base_url('cetak_nikah_3/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
+                                    <?php } ?>
                                 <?php } ?>
 
                                 <a target=_blank onclick="tolak_berkas(
@@ -129,6 +138,11 @@
                                                         <?php if ($k->pe_syarat != null) { ?>
                                                             <div class="col-sm-6">
                                                                 <a href="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat; ?>" alt=""></a>
+                                                            </div>
+                                                        <?php } ?>
+                                                        <?php if ($k->pe_syarat1 != null) { ?>
+                                                            <div class="col-sm-6">
+                                                                <a href="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat1; ?>" target="_blank"><img class="img-fluid mb-3" src="<?php echo base_url(); ?>syarat/<?php echo $k->pe_syarat1; ?>" alt=""></a>
                                                             </div>
                                                         <?php } ?>
                                                     </div>

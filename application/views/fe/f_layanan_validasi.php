@@ -318,4 +318,34 @@
             document.getElementById("mati_notif").innerHTML = "";
         }
     }
+    function nikah_validasi() {
+        var inputFile = document.getElementById('nikah_filegambar');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("nikah_notif").style.color = "red";
+            document.getElementById("nikah_notif").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("nikah_notif").innerHTML = "";
+        }
+    }
+    function nikah_validasi1() {
+        var inputFile = document.getElementById('nikah_filegambar1');
+        var pathFile = inputFile.value;
+        var ekstensiOk = /(\.jpg|\.jpeg|\.png)$/i;
+
+        if (!ekstensiOk.exec(pathFile)) {
+            document.getElementById("nikah_notif1").style.color = "red";
+            document.getElementById("nikah_notif1").innerHTML = "Silahkan Upload File dengan format jpeg atau jpg atau png";
+            inputFile.value = '';
+            return false;
+        } else {
+            // document.getElementById("lahir_notif").style.color = "red";
+            document.getElementById("nikah_notif1").innerHTML = "";
+        }
+    }
 </script>

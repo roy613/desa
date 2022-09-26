@@ -111,7 +111,7 @@
                                                     <div class="form-group">
                                                         <label for="nikah_nama1">Nama Catin Pria</label>
                                                         <input type="text" class="form-control" id="nikah_nama1" name="nikah_nama1" placeholder="Input Nama Catin Pria ..." required>
-                                                        <input type="hidden" class="form-control" id="nikah_id" name="nikah_id">
+                                                        <input type="hidden" class="form-control" id="nikah_kode" name="nikah_kode">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
@@ -165,11 +165,11 @@
                                                         <label for="nikah_status1">Status Catin Pria</label>
                                                         <select class="form-control" name="nikah_status1" id="nikah_status1" required>
                                                             <option selected disabled value="">-- Pilih Status --</option>
-                                                            <option value="1">Jejaka</option>
-                                                            <option value="2">Duda</option>
-                                                            <option value="3">Beristri ke 2</option>
-                                                            <option value="4">Beristri ke 3</option>
-                                                            <option value="5">Beristri ke 4</option>
+                                                            <option>Jejaka</option>
+                                                            <option>Duda</option>
+                                                            <option>Beristri ke 2</option>
+                                                            <option>Beristri ke 3</option>
+                                                            <option>Beristri ke 4</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -190,8 +190,9 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label for="nikah_nama11">Nama Ayah</label>
+                                                        <label for="nikah_nama11">Nama Ayah</label><input type="checkbox" id="a1" onclick="alm1()" style="margin-left: 30px;"> Alm.
                                                         <input type="text" class="form-control" id="nikah_nama11" name="nikah_nama11" placeholder="Input Nama Ayah Catin Pria ..." required>
+                                                        <input type="hidden" class="form-control" id="stal1" name="stal1">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik11">
@@ -259,8 +260,9 @@
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnama12">
                                                     <div class="form-group">
-                                                        <label for="nikah_nama12">Nama Ibu</label>
+                                                        <label for="nikah_nama12">Nama Ibu</label><input type="checkbox" id="ah1" onclick="almh1()" style="margin-left: 30px;"> Almh.
                                                         <input type="text" class="form-control" id="nikah_nama12" name="nikah_nama12" placeholder="Input Nama Ibu Catin Pria ..." required>
+                                                        <input type="hidden" class="form-control" id="stal2" name="stal2">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik12">
@@ -387,8 +389,8 @@
                                                         <label for="nikah_status2">Status Catin Wanita</label>
                                                         <select class="form-control" name="nikah_status2" id="nikah_status2" required>
                                                             <option selected disabled value="">-- Pilih Status --</option>
-                                                            <option value="1">Perawan</option>
-                                                            <option value="2">Janda</option>
+                                                            <option>Perawan</option>
+                                                            <option>Janda</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -409,8 +411,9 @@
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
-                                                        <label for="nikah_nama21">Nama Ayah</label>
+                                                        <label for="nikah_nama21">Nama Ayah</label><input type="checkbox" id="a2" onclick="alm2()" style="margin-left: 30px;"> Alm.
                                                         <input type="text" class="form-control" id="nikah_nama21" name="nikah_nama21" placeholder="Input Nama Ayah Catin wanita ..." required>
+                                                        <input type="hidden" class="form-control" id="stal3" name="stal3">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik21">
@@ -478,8 +481,9 @@
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnama22">
                                                     <div class="form-group">
-                                                        <label for="nikah_nama22">Nama Ibu</label>
+                                                        <label for="nikah_nama22">Nama Ibu</label><input type="checkbox" id="ah2" onclick="almh2()" style="margin-left: 30px;"> Almh.
                                                         <input type="text" class="form-control" id="nikah_nama22" name="nikah_nama22" placeholder="Input Nama Ibu Catin wanita ..." required>
+                                                        <input type="hidden" class="form-control" id="stal4" name="stal4">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik22">
@@ -559,6 +563,24 @@
                                                     <div class="form-group">
                                                         <label for="nikah_waktu">Rencana Waktu Menikah</label>
                                                         <input type="datetime-local" class="form-control" id="nikah_waktu" name="nikah_waktu" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="nikah_nohp">Nomor Whatsapp Pemohon</label>
+                                                    <input type="number" class="form-control" id="nikah_nohp" name="nikah_nohp" placeholder="Input No Whatsapp .." required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="custom-file">
+                                                        <label for="nikah_filegambar">Upload Foto Identitas (KTP atau KK) Pria</label>
+                                                        <input type="file" class="custom-file-input form-control" name="nikah_filegambar" id="nikah_filegambar" required onchange="nikah_validasi()">
+                                                        <div id="nikah_notif"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="custom-file">
+                                                        <label for="nikah_filegambar1">Upload Foto Identitas (KTP atau KK) Wanita</label>
+                                                        <input type="file" class="custom-file-input form-control" name="nikah_filegambar1" id="nikah_filegambar1" required onchange="nikah_validasi1()">
+                                                        <div id="nikah_notif1"></div>
                                                     </div>
                                                 </div>
                                                 <!-- <div class="col-sm-6">

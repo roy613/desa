@@ -3,6 +3,8 @@
         var pilih = document.getElementById("pilih_nikah").value;
         if (pilih != "") {
             document.getElementById("tombol_nikah").disabled = false;
+        } else {
+            document.getElementById("tombol_nikah").disabled = true;
         }
     }
 
@@ -14,7 +16,7 @@
     function pilih_nikah() {
         var pilih = document.getElementById("pilih_nikah").value;
         if (pilih == 1) {
-            $('#nikah_id').val("");
+            $('#nikah_kode').val(1);
             $('#nikah_nama1').val("");
             $('#nikah_nik1').val("");
             $('#nikah_job1').val("");
@@ -168,8 +170,9 @@
             document.getElementById("nikah_alamat22").required = true;
 
             $('#p_nikah1').modal('show');
+
         } else if (pilih == 2) {
-            $('#nikah_id').val("");
+            $('#nikah_kode').val(2);
             $('#nikah_nama1').val("");
             $('#nikah_nik1').val("");
             $('#nikah_job1').val("");
@@ -242,87 +245,88 @@
             $('#nikah_binti12').val("");
             $('#nikah_binti22').val("");
 
-        document.getElementById("nikah_job1").disabled = true;
-        document.getElementById("nikah_agama11").disabled = true;
-        document.getElementById("nikah_agama12").disabled = true;
-        document.getElementById("nikah_job2").disabled = true;
+            document.getElementById("nikah_job1").disabled = true;
+            document.getElementById("nikah_agama11").disabled = true;
+            document.getElementById("nikah_agama12").disabled = true;
+            document.getElementById("nikah_job2").disabled = true;
 
-        document.getElementById("nikah_bnik11").style.display = "block";
-        document.getElementById("nikah_nik11").required = true;
-        document.getElementById("nikah_bagama11").style.display = "block";
-        document.getElementById("nikah_agama11").required = true;
-        document.getElementById("nikah_btempat11").style.display = "block";
-        document.getElementById("nikah_tempat11").required = true;
-        document.getElementById("nikah_btgl11").style.display = "block";
-        document.getElementById("nikah_tgl11").required = true;
-        document.getElementById("nikah_bkwn11").style.display = "block";
-        document.getElementById("nikah_kwn11").required = true;
-        document.getElementById("nikah_bjob11").style.display = "block";
-        document.getElementById("nikah_job11").required = true;
-        document.getElementById("nikah_balamat11").style.display = "block";
-        document.getElementById("nikah_alamat11").required = true;
+            document.getElementById("nikah_bnik11").style.display = "block";
+            document.getElementById("nikah_nik11").required = true;
+            document.getElementById("nikah_bagama11").style.display = "block";
+            document.getElementById("nikah_agama11").required = true;
+            document.getElementById("nikah_btempat11").style.display = "block";
+            document.getElementById("nikah_tempat11").required = true;
+            document.getElementById("nikah_btgl11").style.display = "block";
+            document.getElementById("nikah_tgl11").required = true;
+            document.getElementById("nikah_bkwn11").style.display = "block";
+            document.getElementById("nikah_kwn11").required = true;
+            document.getElementById("nikah_bjob11").style.display = "block";
+            document.getElementById("nikah_job11").required = true;
+            document.getElementById("nikah_balamat11").style.display = "block";
+            document.getElementById("nikah_alamat11").required = true;
 
-        document.getElementById("nikah_garis1").style.display = "block";
-        document.getElementById("nikah_bbinti12").style.display = "block";
-        document.getElementById("nikah_binti12").required = true;
+            document.getElementById("nikah_garis1").style.display = "block";
+            document.getElementById("nikah_bbinti12").style.display = "block";
+            document.getElementById("nikah_binti12").required = true;
 
-        document.getElementById("nikah_bnama12").style.display = "block";
-        document.getElementById("nikah_nama12").required = true;
-        document.getElementById("nikah_bnik12").style.display = "block";
-        document.getElementById("nikah_nik12").required = true;
-        document.getElementById("nikah_bagama12").style.display = "block";
-        document.getElementById("nikah_agama12").required = true;
-        document.getElementById("nikah_btempat12").style.display = "block";
-        document.getElementById("nikah_tempat12").required = true;
-        document.getElementById("nikah_btgl12").style.display = "block";
-        document.getElementById("nikah_tgl12").required = true;
-        document.getElementById("nikah_bkwn12").style.display = "block";
-        document.getElementById("nikah_kwn12").required = true;
-        document.getElementById("nikah_bjob12").style.display = "block";
-        document.getElementById("nikah_job12").required = true;
-        document.getElementById("nikah_balamat12").style.display = "block";
-        document.getElementById("nikah_alamat12").required = true;
+            document.getElementById("nikah_bnama12").style.display = "block";
+            document.getElementById("nikah_nama12").required = true;
+            document.getElementById("nikah_bnik12").style.display = "block";
+            document.getElementById("nikah_nik12").required = true;
+            document.getElementById("nikah_bagama12").style.display = "block";
+            document.getElementById("nikah_agama12").required = true;
+            document.getElementById("nikah_btempat12").style.display = "block";
+            document.getElementById("nikah_tempat12").required = true;
+            document.getElementById("nikah_btgl12").style.display = "block";
+            document.getElementById("nikah_tgl12").required = true;
+            document.getElementById("nikah_bkwn12").style.display = "block";
+            document.getElementById("nikah_kwn12").required = true;
+            document.getElementById("nikah_bjob12").style.display = "block";
+            document.getElementById("nikah_job12").required = true;
+            document.getElementById("nikah_balamat12").style.display = "block";
+            document.getElementById("nikah_alamat12").required = true;
 
 
-        document.getElementById("nikah_bnik21").style.display = "none";
-        document.getElementById("nikah_nik21").required = false;
-        document.getElementById("nikah_bagama21").style.display = "none";
-        document.getElementById("nikah_agama21").required = false;
-        document.getElementById("nikah_btempat21").style.display = "none";
-        document.getElementById("nikah_tempat21").required = false;
-        document.getElementById("nikah_btgl21").style.display = "none";
-        document.getElementById("nikah_tgl21").required = false;
-        document.getElementById("nikah_bkwn21").style.display = "none";
-        document.getElementById("nikah_kwn21").required = false;
-        document.getElementById("nikah_bjob21").style.display = "none";
-        document.getElementById("nikah_job21").required = false;
-        document.getElementById("nikah_balamat21").style.display = "none";
-        document.getElementById("nikah_alamat21").required = false;
+            document.getElementById("nikah_bnik21").style.display = "none";
+            document.getElementById("nikah_nik21").required = false;
+            document.getElementById("nikah_bagama21").style.display = "none";
+            document.getElementById("nikah_agama21").required = false;
+            document.getElementById("nikah_btempat21").style.display = "none";
+            document.getElementById("nikah_tempat21").required = false;
+            document.getElementById("nikah_btgl21").style.display = "none";
+            document.getElementById("nikah_tgl21").required = false;
+            document.getElementById("nikah_bkwn21").style.display = "none";
+            document.getElementById("nikah_kwn21").required = false;
+            document.getElementById("nikah_bjob21").style.display = "none";
+            document.getElementById("nikah_job21").required = false;
+            document.getElementById("nikah_balamat21").style.display = "none";
+            document.getElementById("nikah_alamat21").required = false;
 
-        document.getElementById("nikah_garis2").style.display = "none";
-        document.getElementById("nikah_bbinti22").style.display = "none";
-        document.getElementById("nikah_binti22").required = false;
+            document.getElementById("nikah_garis2").style.display = "none";
+            document.getElementById("nikah_bbinti22").style.display = "none";
+            document.getElementById("nikah_binti22").required = false;
 
-        document.getElementById("nikah_bnama22").style.display = "none";
-        document.getElementById("nikah_nama22").required = false;
-        document.getElementById("nikah_bnik22").style.display = "none";
-        document.getElementById("nikah_nik22").required = false;
-        document.getElementById("nikah_bagama22").style.display = "none";
-        document.getElementById("nikah_agama22").required = false;
-        document.getElementById("nikah_btempat22").style.display = "none";
-        document.getElementById("nikah_tempat22").required = false;
-        document.getElementById("nikah_btgl22").style.display = "none";
-        document.getElementById("nikah_tgl22").required = false;
-        document.getElementById("nikah_bkwn22").style.display = "none";
-        document.getElementById("nikah_kwn22").required = false;
-        document.getElementById("nikah_bjob22").style.display = "none";
-        document.getElementById("nikah_job22").required = false;
-        document.getElementById("nikah_balamat22").style.display = "none";
-        document.getElementById("nikah_alamat22").required = false;
+            document.getElementById("nikah_bnama22").style.display = "none";
+            document.getElementById("nikah_nama22").required = false;
+            document.getElementById("nikah_bnik22").style.display = "none";
+            document.getElementById("nikah_nik22").required = false;
+            document.getElementById("nikah_bagama22").style.display = "none";
+            document.getElementById("nikah_agama22").required = false;
+            document.getElementById("nikah_btempat22").style.display = "none";
+            document.getElementById("nikah_tempat22").required = false;
+            document.getElementById("nikah_btgl22").style.display = "none";
+            document.getElementById("nikah_tgl22").required = false;
+            document.getElementById("nikah_bkwn22").style.display = "none";
+            document.getElementById("nikah_kwn22").required = false;
+            document.getElementById("nikah_bjob22").style.display = "none";
+            document.getElementById("nikah_job22").required = false;
+            document.getElementById("nikah_balamat22").style.display = "none";
+            document.getElementById("nikah_alamat22").required = false;
 
-        $('#p_nikah1').modal('show');
+            $('#p_nikah1').modal('show');
+
         } else if (pilih == 3) {
-            $('#nikah_id').val("");
+            $('#nikah_kode').val(3);
             $('#nikah_nama1').val("");
             $('#nikah_nik1').val("");
             $('#nikah_job1').val("");
@@ -395,87 +399,87 @@
             $('#nikah_binti12').val("");
             $('#nikah_binti22').val("");
 
-            
-        document.getElementById("nikah_job1").disabled = true;
-        document.getElementById("nikah_job2").disabled = true;
-        document.getElementById("nikah_agama21").disabled = true;
-        document.getElementById("nikah_agama22").disabled = true;
+
+            document.getElementById("nikah_job1").disabled = true;
+            document.getElementById("nikah_job2").disabled = true;
+            document.getElementById("nikah_agama21").disabled = true;
+            document.getElementById("nikah_agama22").disabled = true;
 
 
-        document.getElementById("nikah_bnik11").style.display = "none";
-        document.getElementById("nikah_nik11").required = false;
-        document.getElementById("nikah_bagama11").style.display = "none";
-        document.getElementById("nikah_agama11").required = false;
-        document.getElementById("nikah_btempat11").style.display = "none";
-        document.getElementById("nikah_tempat11").required = false;
-        document.getElementById("nikah_btgl11").style.display = "none";
-        document.getElementById("nikah_tgl11").required = false;
-        document.getElementById("nikah_bkwn11").style.display = "none";
-        document.getElementById("nikah_kwn11").required = false;
-        document.getElementById("nikah_bjob11").style.display = "none";
-        document.getElementById("nikah_job11").required = false;
-        document.getElementById("nikah_balamat11").style.display = "none";
-        document.getElementById("nikah_alamat11").required = false;
+            document.getElementById("nikah_bnik11").style.display = "none";
+            document.getElementById("nikah_nik11").required = false;
+            document.getElementById("nikah_bagama11").style.display = "none";
+            document.getElementById("nikah_agama11").required = false;
+            document.getElementById("nikah_btempat11").style.display = "none";
+            document.getElementById("nikah_tempat11").required = false;
+            document.getElementById("nikah_btgl11").style.display = "none";
+            document.getElementById("nikah_tgl11").required = false;
+            document.getElementById("nikah_bkwn11").style.display = "none";
+            document.getElementById("nikah_kwn11").required = false;
+            document.getElementById("nikah_bjob11").style.display = "none";
+            document.getElementById("nikah_job11").required = false;
+            document.getElementById("nikah_balamat11").style.display = "none";
+            document.getElementById("nikah_alamat11").required = false;
 
-        document.getElementById("nikah_garis1").style.display = "none";
-        document.getElementById("nikah_bbinti12").style.display = "none";
-        document.getElementById("nikah_binti12").required = false;
+            document.getElementById("nikah_garis1").style.display = "none";
+            document.getElementById("nikah_bbinti12").style.display = "none";
+            document.getElementById("nikah_binti12").required = false;
 
-        document.getElementById("nikah_bnama12").style.display = "none";
-        document.getElementById("nikah_nama12").required = false;
-        document.getElementById("nikah_bnik12").style.display = "none";
-        document.getElementById("nikah_nik12").required = false;
-        document.getElementById("nikah_bagama12").style.display = "none";
-        document.getElementById("nikah_agama12").required = false;
-        document.getElementById("nikah_btempat12").style.display = "none";
-        document.getElementById("nikah_tempat12").required = false;
-        document.getElementById("nikah_btgl12").style.display = "none";
-        document.getElementById("nikah_tgl12").required = false;
-        document.getElementById("nikah_bkwn12").style.display = "none";
-        document.getElementById("nikah_kwn12").required = false;
-        document.getElementById("nikah_bjob12").style.display = "none";
-        document.getElementById("nikah_job12").required = false;
-        document.getElementById("nikah_balamat12").style.display = "none";
-        document.getElementById("nikah_alamat12").required = false;
+            document.getElementById("nikah_bnama12").style.display = "none";
+            document.getElementById("nikah_nama12").required = false;
+            document.getElementById("nikah_bnik12").style.display = "none";
+            document.getElementById("nikah_nik12").required = false;
+            document.getElementById("nikah_bagama12").style.display = "none";
+            document.getElementById("nikah_agama12").required = false;
+            document.getElementById("nikah_btempat12").style.display = "none";
+            document.getElementById("nikah_tempat12").required = false;
+            document.getElementById("nikah_btgl12").style.display = "none";
+            document.getElementById("nikah_tgl12").required = false;
+            document.getElementById("nikah_bkwn12").style.display = "none";
+            document.getElementById("nikah_kwn12").required = false;
+            document.getElementById("nikah_bjob12").style.display = "none";
+            document.getElementById("nikah_job12").required = false;
+            document.getElementById("nikah_balamat12").style.display = "none";
+            document.getElementById("nikah_alamat12").required = false;
 
 
-        document.getElementById("nikah_bnik21").style.display = "block";
-        document.getElementById("nikah_nik21").required = true;
-        document.getElementById("nikah_bagama21").style.display = "block";
-        document.getElementById("nikah_agama21").required = true;
-        document.getElementById("nikah_btempat21").style.display = "block";
-        document.getElementById("nikah_tempat21").required = true;
-        document.getElementById("nikah_btgl21").style.display = "block";
-        document.getElementById("nikah_tgl21").required = true;
-        document.getElementById("nikah_bkwn21").style.display = "block";
-        document.getElementById("nikah_kwn21").required = true;
-        document.getElementById("nikah_bjob21").style.display = "block";
-        document.getElementById("nikah_job21").required = true;
-        document.getElementById("nikah_balamat21").style.display = "block";
-        document.getElementById("nikah_alamat21").required = true;
+            document.getElementById("nikah_bnik21").style.display = "block";
+            document.getElementById("nikah_nik21").required = true;
+            document.getElementById("nikah_bagama21").style.display = "block";
+            document.getElementById("nikah_agama21").required = true;
+            document.getElementById("nikah_btempat21").style.display = "block";
+            document.getElementById("nikah_tempat21").required = true;
+            document.getElementById("nikah_btgl21").style.display = "block";
+            document.getElementById("nikah_tgl21").required = true;
+            document.getElementById("nikah_bkwn21").style.display = "block";
+            document.getElementById("nikah_kwn21").required = true;
+            document.getElementById("nikah_bjob21").style.display = "block";
+            document.getElementById("nikah_job21").required = true;
+            document.getElementById("nikah_balamat21").style.display = "block";
+            document.getElementById("nikah_alamat21").required = true;
 
-        document.getElementById("nikah_garis2").style.display = "block";
-        document.getElementById("nikah_bbinti22").style.display = "block";
-        document.getElementById("nikah_binti22").required = true;
+            document.getElementById("nikah_garis2").style.display = "block";
+            document.getElementById("nikah_bbinti22").style.display = "block";
+            document.getElementById("nikah_binti22").required = true;
 
-        document.getElementById("nikah_bnama22").style.display = "block";
-        document.getElementById("nikah_nama22").required = true;
-        document.getElementById("nikah_bnik22").style.display = "block";
-        document.getElementById("nikah_nik22").required = true;
-        document.getElementById("nikah_bagama22").style.display = "block";
-        document.getElementById("nikah_agama22").required = true;
-        document.getElementById("nikah_btempat22").style.display = "block";
-        document.getElementById("nikah_tempat22").required = true;
-        document.getElementById("nikah_btgl22").style.display = "block";
-        document.getElementById("nikah_tgl22").required = true;
-        document.getElementById("nikah_bkwn22").style.display = "block";
-        document.getElementById("nikah_kwn22").required = true;
-        document.getElementById("nikah_bjob22").style.display = "block";
-        document.getElementById("nikah_job22").required = true;
-        document.getElementById("nikah_balamat22").style.display = "block";
-        document.getElementById("nikah_alamat22").required = true;
+            document.getElementById("nikah_bnama22").style.display = "block";
+            document.getElementById("nikah_nama22").required = true;
+            document.getElementById("nikah_bnik22").style.display = "block";
+            document.getElementById("nikah_nik22").required = true;
+            document.getElementById("nikah_bagama22").style.display = "block";
+            document.getElementById("nikah_agama22").required = true;
+            document.getElementById("nikah_btempat22").style.display = "block";
+            document.getElementById("nikah_tempat22").required = true;
+            document.getElementById("nikah_btgl22").style.display = "block";
+            document.getElementById("nikah_tgl22").required = true;
+            document.getElementById("nikah_bkwn22").style.display = "block";
+            document.getElementById("nikah_kwn22").required = true;
+            document.getElementById("nikah_bjob22").style.display = "block";
+            document.getElementById("nikah_job22").required = true;
+            document.getElementById("nikah_balamat22").style.display = "block";
+            document.getElementById("nikah_alamat22").required = true;
 
-        $('#p_nikah1').modal('show');
+            $('#p_nikah1').modal('show');
         }
         // $('#p_nikah1').modal('show');
     }
@@ -560,7 +564,7 @@
         }
     }
 
-    function nikah_ceknik21() {       
+    function nikah_ceknik21() {
         var target = document.getElementById("nikah_nik21");
         var batas_karakter = 16;
         var a = target.value.length;
@@ -622,4 +626,189 @@
 
     }
 
+    function alm1() {
+        var checkBox = document.getElementById("a1");
+        var s1 = document.getElementById("nikah_kode").value;
+        if (checkBox.checked == true) {
+            document.getElementById("nikah_bnik11").style.display = "none";
+            document.getElementById("nikah_nik11").required = false;
+            document.getElementById("nikah_nik11").value = "";
+            document.getElementById("nikah_bagama11").style.display = "none";
+            document.getElementById("nikah_agama11").required = false;
+            document.getElementById("nikah_agama11").value = "";
+            document.getElementById("nikah_btempat11").style.display = "none";
+            document.getElementById("nikah_tempat11").required = false;
+            document.getElementById("nikah_tempat11").value = "";
+            document.getElementById("nikah_btgl11").style.display = "none";
+            document.getElementById("nikah_tgl11").required = false;
+            document.getElementById("nikah_tgl11").value = "";
+            document.getElementById("nikah_bkwn11").style.display = "none";
+            document.getElementById("nikah_kwn11").required = false;
+            document.getElementById("nikah_kwn11").value = "";
+            document.getElementById("nikah_bjob11").style.display = "none";
+            document.getElementById("nikah_job11").required = false;
+            document.getElementById("nikah_job11").value = "";
+            document.getElementById("nikah_balamat11").style.display = "none";
+            document.getElementById("nikah_alamat11").required = false;
+            document.getElementById("nikah_alamat11").value = "";
+            document.getElementById("stal1").value = 1;
+        } else {
+            if (s1 != 3) {
+                document.getElementById("stal1").value = 0;
+                document.getElementById("nikah_bnik11").style.display = "block";
+                document.getElementById("nikah_nik11").required = true;
+                document.getElementById("nikah_bagama11").style.display = "block";
+                document.getElementById("nikah_agama11").required = true;
+                document.getElementById("nikah_btempat11").style.display = "block";
+                document.getElementById("nikah_tempat11").required = true;
+                document.getElementById("nikah_btgl11").style.display = "block";
+                document.getElementById("nikah_tgl11").required = true;
+                document.getElementById("nikah_bkwn11").style.display = "block";
+                document.getElementById("nikah_kwn11").required = true;
+                document.getElementById("nikah_bjob11").style.display = "block";
+                document.getElementById("nikah_job11").required = true;
+                document.getElementById("nikah_balamat11").style.display = "block";
+                document.getElementById("nikah_alamat11").required = true;
+            } else {
+                document.getElementById("stal1").value = 0;
+            }
+        }
+    }
+
+    function almh1() {
+        var checkBox = document.getElementById("ah1");
+        if (checkBox.checked == true) {
+            document.getElementById("nikah_bnik12").style.display = "none";
+            document.getElementById("nikah_nik12").required = false;
+            document.getElementById("nikah_nik12").value = "";
+            document.getElementById("nikah_bagama12").style.display = "none";
+            document.getElementById("nikah_agama12").required = false;
+            document.getElementById("nikah_agama12").value = "";
+            document.getElementById("nikah_btempat12").style.display = "none";
+            document.getElementById("nikah_tempat12").required = false;
+            document.getElementById("nikah_tempat12").value = "";
+            document.getElementById("nikah_btgl12").style.display = "none";
+            document.getElementById("nikah_tgl12").required = false;
+            document.getElementById("nikah_tgl12").value = "";
+            document.getElementById("nikah_bkwn12").style.display = "none";
+            document.getElementById("nikah_kwn12").required = false;
+            document.getElementById("nikah_kwn12").value = "";
+            document.getElementById("nikah_bjob12").style.display = "none";
+            document.getElementById("nikah_job12").required = false;
+            document.getElementById("nikah_job12").value = "";
+            document.getElementById("nikah_balamat12").style.display = "none";
+            document.getElementById("nikah_alamat12").required = false;
+            document.getElementById("nikah_alamat12").value = "";
+            document.getElementById("stal2").value = 1;
+        } else {
+            document.getElementById("stal2").value = 0;
+            document.getElementById("nikah_bnik12").style.display = "block";
+            document.getElementById("nikah_nik12").required = true;
+            document.getElementById("nikah_bagama12").style.display = "block";
+            document.getElementById("nikah_agama12").required = true;
+            document.getElementById("nikah_btempat12").style.display = "block";
+            document.getElementById("nikah_tempat12").required = true;
+            document.getElementById("nikah_btgl12").style.display = "block";
+            document.getElementById("nikah_tgl12").required = true;
+            document.getElementById("nikah_bkwn12").style.display = "block";
+            document.getElementById("nikah_kwn12").required = true;
+            document.getElementById("nikah_bjob12").style.display = "block";
+            document.getElementById("nikah_job12").required = true;
+            document.getElementById("nikah_balamat12").style.display = "block";
+            document.getElementById("nikah_alamat12").required = true;
+        }
+    }
+
+    function alm2() {
+        var checkBox = document.getElementById("a2");
+        var s1 = document.getElementById("nikah_kode").value;
+        if (checkBox.checked == true) {
+            document.getElementById("nikah_bnik21").style.display = "none";
+            document.getElementById("nikah_nik21").required = false;
+            document.getElementById("nikah_nik21").value = "";
+            document.getElementById("nikah_bagama21").style.display = "none";
+            document.getElementById("nikah_agama21").required = false;
+            document.getElementById("nikah_agama21").value = "";
+            document.getElementById("nikah_btempat21").style.display = "none";
+            document.getElementById("nikah_tempat21").required = false;
+            document.getElementById("nikah_tempat21").value = "";
+            document.getElementById("nikah_btgl21").style.display = "none";
+            document.getElementById("nikah_tgl21").required = false;
+            document.getElementById("nikah_tgl21").value = "";
+            document.getElementById("nikah_bkwn21").style.display = "none";
+            document.getElementById("nikah_kwn21").required = false;
+            document.getElementById("nikah_kwn21").value = "";
+            document.getElementById("nikah_bjob21").style.display = "none";
+            document.getElementById("nikah_job21").required = false;
+            document.getElementById("nikah_job21").value = "";
+            document.getElementById("nikah_balamat21").style.display = "none";
+            document.getElementById("nikah_alamat21").required = false;
+            document.getElementById("nikah_alamat21").value = "";
+            document.getElementById("stal3").value = 1;
+        } else {
+            if (s1 != 2) {
+                document.getElementById("stal3").value = 0;
+                document.getElementById("nikah_bnik21").style.display = "block";
+                document.getElementById("nikah_nik21").required = true;
+                document.getElementById("nikah_bagama21").style.display = "block";
+                document.getElementById("nikah_agama21").required = true;
+                document.getElementById("nikah_btempat21").style.display = "block";
+                document.getElementById("nikah_tempat21").required = true;
+                document.getElementById("nikah_btgl21").style.display = "block";
+                document.getElementById("nikah_tgl21").required = true;
+                document.getElementById("nikah_bkwn21").style.display = "block";
+                document.getElementById("nikah_kwn21").required = true;
+                document.getElementById("nikah_bjob21").style.display = "block";
+                document.getElementById("nikah_job21").required = true;
+                document.getElementById("nikah_balamat21").style.display = "block";
+                document.getElementById("nikah_alamat21").required = true;
+            } else {
+                document.getElementById("stal3").value = 0;
+            }
+        }
+    }
+
+    function almh2() {
+        var checkBox = document.getElementById("ah2");
+        if (checkBox.checked == true) {
+            document.getElementById("nikah_bnik22").style.display = "none";
+            document.getElementById("nikah_nik22").required = false;
+            document.getElementById("nikah_nik22").value = "";
+            document.getElementById("nikah_bagama22").style.display = "none";
+            document.getElementById("nikah_agama22").required = false;
+            document.getElementById("nikah_agama22").value = "";
+            document.getElementById("nikah_btempat22").style.display = "none";
+            document.getElementById("nikah_tempat22").required = false;
+            document.getElementById("nikah_tempat22").value = "";
+            document.getElementById("nikah_btgl22").style.display = "none";
+            document.getElementById("nikah_tgl22").required = false;
+            document.getElementById("nikah_tgl22").value = "";
+            document.getElementById("nikah_bkwn22").style.display = "none";
+            document.getElementById("nikah_kwn22").required = false;
+            document.getElementById("nikah_kwn22").value = "";
+            document.getElementById("nikah_bjob22").style.display = "none";
+            document.getElementById("nikah_job22").required = false;
+            document.getElementById("nikah_job22").value = "";
+            document.getElementById("nikah_balamat22").style.display = "none";
+            document.getElementById("nikah_alamat22").required = false;
+            document.getElementById("nikah_alamat22").value = "";
+            document.getElementById("stal4").value = 1;
+        } else {
+            document.getElementById("stal4").value = 0;
+            document.getElementById("nikah_bnik22").style.display = "block";
+            document.getElementById("nikah_nik22").required = true;
+            document.getElementById("nikah_bagama22").style.display = "block";
+            document.getElementById("nikah_agama22").required = true;
+            document.getElementById("nikah_btempat22").style.display = "block";
+            document.getElementById("nikah_tempat22").required = true;
+            document.getElementById("nikah_btgl22").style.display = "block";
+            document.getElementById("nikah_tgl22").required = true;
+            document.getElementById("nikah_bkwn22").style.display = "block";
+            document.getElementById("nikah_kwn22").required = true;
+            document.getElementById("nikah_bjob22").style.display = "block";
+            document.getElementById("nikah_job22").required = true;
+            document.getElementById("nikah_balamat22").style.display = "block";
+            document.getElementById("nikah_alamat22").required = true;
+        }
+    }
 </script>
