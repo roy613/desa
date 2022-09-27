@@ -3,7 +3,6 @@
         sheet-size: A4-L;
     }
 </style>
-<?php $this->load->view('fungsi'); ?>
 <?php foreach ($aaa as $k) { ?>
     <div>
         <html>
@@ -43,7 +42,7 @@
                         :
                     </td>
                     <td>
-                        PERIDAN
+                        KARANGAN HILIR
                     </td>
                 </tr>
                 <tr>
@@ -54,7 +53,7 @@
                         :
                     </td>
                     <td>
-                        SANGKULIRANG
+                        KARANGAN
                     </td>
                 </tr>
                 <tr>
@@ -77,7 +76,7 @@
                 </tr>
                 <tr>
                     <td style="text-align: center; padding-top:-6px">
-                        Nomor : <?php echo $k->n_nomor; ?>
+                        Nomor : <?php echo $k->s_nosurat; ?>
                     </td>
                 </tr>
                 <tr>
@@ -103,7 +102,7 @@
                         :
                     </td>
                     <td>
-                        <?php echo ucwords($k->n_nama_2); ?>
+                        <?php echo ucwords($k->s_25); ?>
                     </td>
                 </tr>
                 <tr>
@@ -117,7 +116,7 @@
                         :
                     </td>
                     <td>
-                        <?php echo $k->n_nik_2; ?>
+                        <?php echo $k->s_26; ?>
                     </td>
                 </tr>
                 <tr>
@@ -145,7 +144,7 @@
                         :
                     </td>
                     <td>
-                        <?php echo Ucwords($k->n_tptlahir_2); ?>, <?php echo tgl_indo($k->n_tgllahir_2); ?>
+                        <?php echo Ucwords($k->s_28); ?>, <?php echo tgl_indo($k->sd_4); ?>
                     </td>
                 </tr>
                 <tr>
@@ -159,7 +158,7 @@
                         :
                     </td>
                     <td>
-                        <?php echo ucwords($k->n_kwn_2); ?>
+                        <?php echo ucwords($k->s_30); ?>
                     </td>
                 </tr>
                 <tr>
@@ -173,7 +172,7 @@
                         :
                     </td>
                     <td>
-                        <?php echo ucwords($k->n_agama_2); ?>
+                        <?php echo ucwords($k->s_29); ?>
                     </td>
                 </tr>
                 <tr>
@@ -187,7 +186,7 @@
                         :
                     </td>
                     <td>
-                        <?php echo ucwords($k->n_job_2); ?>
+                        <?php echo ucwords($k->s_27); ?>
                     </td>
                 </tr>
                 <tr>
@@ -201,7 +200,7 @@
                         :
                     </td>
                     <td>
-                        <?php echo ucwords($k->n_alamat_2); ?>
+                        <?php echo ucwords($k->s_32); ?>
                     </td>
                 </tr>
                 <tr>
@@ -257,12 +256,7 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_status_2 == 1) {
-                            echo "Perawan";
-                        } else {
-                            echo "Janda";
-                        };
-                        ?>
+                        <?php echo ucwords($k->s_31); ?>
                     </td>
                 </tr>
                 <tr>
@@ -283,10 +277,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal3 == 1) {
-                            echo Ucwords("Alm. " . $k->n_nama_21);
+                        <?php if ($k->s_stal3 == 1) {
+                            echo Ucwords("Alm. " . $k->s_33);
                         } else {
-                            echo ucwords($k->n_nama_21);
+                            echo ucwords($k->s_33);
                         } ?>
                     </td>
                 </tr>
@@ -298,10 +292,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal3 == 1) {
+                        <?php if ($k->s_stal3 == 1) {
                             echo "-";
                         } else {
-                            echo $k->n_nik_21;
+                            echo $k->s_34;
                         } ?>
                     </td>
                 </tr>
@@ -313,10 +307,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal3 == 1) {
+                        <?php if ($k->s_stal3 == 1) {
                             echo "-";
                         } else {
-                            echo Ucwords($k->n_tptlahir_21) . "," . tgl_indo($k->n_tgllahir_21);
+                            echo Ucwords($k->s_36) . ", " . tgl_indo($k->sd_5);
                         } ?>
                     </td>
                 </tr>
@@ -328,10 +322,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal3 == 1) {
+                        <?php if ($k->s_stal3 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_kwn_21);
+                            echo ucwords($k->s_37);
                         } ?>
                     </td>
                 </tr>
@@ -343,10 +337,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal3 == 1) {
+                        <?php if ($k->s_stal3 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_agama_21);
+                            echo ucwords($k->s_35);
                         } ?>
                     </td>
                 </tr>
@@ -358,10 +352,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal3 == 1) {
+                        <?php if ($k->s_stal3 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_job_21);
+                            echo ucwords($k->s_38);
                         } ?>
                     </td>
                 </tr>
@@ -373,10 +367,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal3 == 1) {
+                        <?php if ($k->s_stal3 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_alamat_21);
+                            echo ucwords($k->s_39);
                         } ?>
                     </td>
                 </tr>
@@ -387,7 +381,7 @@
                 </tr>
                 <tr>
                     <td colspan="5">
-                        dengan seorang Pria :
+                        dengan seorang wanita :
                     </td>
                 </tr>
                 <tr>
@@ -398,10 +392,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal4 == 1) {
-                            echo Ucwords("Almh. " . $k->n_nama_22);
+                        <?php if ($k->s_stal4 == 1) {
+                            echo Ucwords("Almh. " . $k->s_41);
                         } else {
-                            echo ucwords($k->n_nama_22);
+                            echo ucwords($k->s_41);
                         } ?>
                     </td>
                 </tr>
@@ -413,10 +407,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal4 == 1) {
+                        <?php if ($k->s_stal4 == 1) {
                             echo "-";
                         } else {
-                            echo $k->n_nik_22;
+                            echo $k->s_42;
                         } ?>
                     </td>
                 </tr>
@@ -428,10 +422,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal4 == 1) {
+                        <?php if ($k->s_stal4 == 1) {
                             echo "-";
                         } else {
-                            echo Ucwords($k->n_tptlahir_22) . "," . tgl_indo($k->n_tgllahir_22);
+                            echo Ucwords($k->s_44) . ", " . tgl_indo($k->sd_6);
                         } ?>
                     </td>
                 </tr>
@@ -443,10 +437,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal4 == 1) {
+                        <?php if ($k->s_stal4 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_kwn_22);
+                            echo ucwords($k->s_45);
                         } ?>
                     </td>
                 </tr>
@@ -458,10 +452,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal4 == 1) {
+                        <?php if ($k->s_stal4 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_agama_22);
+                            echo ucwords($k->s_43);
                         } ?>
                     </td>
                 </tr>
@@ -473,10 +467,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal4 == 1) {
+                        <?php if ($k->s_stal4 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_job_22);
+                            echo ucwords($k->s_46);
                         } ?>
                     </td>
                 </tr>
@@ -488,10 +482,10 @@
                         :
                     </td>
                     <td>
-                        <?php if ($k->n_stal4 == 1) {
+                        <?php if ($k->s_stal4 == 1) {
                             echo "-";
                         } else {
-                            echo ucwords($k->n_alamat_22);
+                            echo ucwords($k->s_47);
                         } ?>
                     </td>
                 </tr>

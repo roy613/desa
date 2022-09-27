@@ -225,6 +225,10 @@ class Cetak_be extends CI_Controller
 		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
 		$html = $this->load->view('cetak/ppn11', $data, true);
 		$html1 = $this->load->view('cetak/ppn21', $data, true);
+		$html2 = $this->load->view('cetak/ppn12', $data, true);
+		$html3 = $this->load->view('cetak/ppn22', $data, true);
+		$html4 = $this->load->view('cetak/pkn', $data, true);
+		$html5 = $this->load->view('cetak/ppc', $data, true);
 		$mpdf->AddPage('P','','','','',
 		12,//ml
 		13,//mr
@@ -241,6 +245,38 @@ class Cetak_be extends CI_Controller
 		1,//mh
 		4);//mf
 		$mpdf->WriteHTML($html1);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html2);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html3);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html4);
+		$mpdf->AddPage('P','','','','',
+		12,//ml
+		13,//mr
+		10,//mt
+		15,//mb
+		1,//mh
+		4);//mf
+		$mpdf->WriteHTML($html5);
 		$mpdf->Output('register.pdf', 'I');
 	}
 	public function nikah2()

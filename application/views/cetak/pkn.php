@@ -3,7 +3,7 @@
         sheet-size: A4-L;
     }
 </style>
-<?php $this->load->view('fungsi'); ?>
+
 <?php foreach ($aaa as $k) { ?>
 <div>
     <html>
@@ -46,14 +46,14 @@
                     Permohonan Kehendak Nikah
                 </td>
                 <td style="text-align: right;">
-                Peridan, <?php echo tgl_indo($k->n_tglsurat); ?>
+                Karangan Hilir, <?php echo tgl_indo($k->s_tglsurat); ?>
                 </td>
             </tr>
             <tr>
                 <td colspan="4" style="text-align: left;">
                     Kepada Yth. <br>
                     Kepala KUA Kecamatan<br>
-                    di Sangkulirang
+                    di Karangan
                 </td>
             </tr>
         </table>
@@ -76,7 +76,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_1); ?>
+                <?php echo ucwords($k->s_1); ?>
                 </td>
             </tr>
             <tr>
@@ -87,7 +87,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_2); ?>
+                <?php echo ucwords($k->s_25); ?>
                 </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@
                     :
                 </td>
                 <td>
-                <?php echo hariIndo(date("D", strtotime($k->n_waktu))); ?>, <?php echo tgl_indojam1($k->n_waktu); ?>
+                <?php echo hariIndo(date("D", strtotime($k->sd_7))); ?>, <?php echo tgl_indojam1($k->sd_7); ?>
                 </td>
             </tr>
             <tr>
@@ -109,7 +109,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_lokasi); ?>
+                <?php echo ucwords($k->s_49); ?>
                 </td>
             </tr>
             <tr>
