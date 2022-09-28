@@ -3,7 +3,7 @@
         sheet-size: A4-L;
     }
 </style>
-<?php $this->load->view('fungsi'); ?>
+
 <?php foreach ($aaa as $k) { ?>
 <div>
     <html>
@@ -64,7 +64,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_11); ?>
+                <?php echo ucwords($k->s_9); ?>
                 </td>
             </tr>
             <tr>
@@ -78,7 +78,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_bin_11); ?>
+                <?php echo ucwords($k->s_16); ?>
                 </td>
             </tr>
             <tr>
@@ -92,7 +92,7 @@
                     :
                 </td>
                 <td>
-                <?php echo $k->n_nik_11; ?>
+                <?php echo $k->s_10; ?>
                 </td>
             </tr>
             <tr>
@@ -106,7 +106,7 @@
                     :
                 </td>
                 <td>
-                <?php echo Ucwords($k->n_tptlahir_11); ?>, <?php echo tgl_indo($k->n_tgllahir_11); ?>
+                <?php echo Ucwords($k->s_12); ?>, <?php echo tgl_indo($k->sd_2); ?>
                 </td>
             </tr>
             <tr>
@@ -120,7 +120,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_kwn_11); ?>
+                <?php echo ucwords($k->s_13); ?>
                 </td>
             </tr>
             <tr>
@@ -134,7 +134,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_agama_11); ?>
+                <?php echo ucwords($k->s_11); ?>
                 </td>
             </tr>
             <tr>
@@ -148,7 +148,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_job_11); ?>
+                <?php echo ucwords($k->s_14); ?>
                 </td>
             </tr>
             <tr>
@@ -162,7 +162,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_alamat_11); ?>
+                <?php echo ucwords($k->s_15); ?>
                 </td>
             </tr>
             <tr>
@@ -184,7 +184,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_12); ?>
+                <?php echo ucwords($k->s_17); ?>
                 </td>
             </tr>
             <tr>
@@ -198,7 +198,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_binti_12); ?>
+                <?php echo ucwords($k->s_24); ?>
                 </td>
             </tr>
             <tr>
@@ -212,7 +212,7 @@
                     :
                 </td>
                 <td>
-                <?php echo Ucwords($k->n_tptlahir_12); ?>, <?php echo tgl_indo($k->n_tgllahir_12); ?>
+                <?php echo Ucwords($k->s_20); ?>, <?php echo tgl_indo($k->sd_3); ?>
                 </td>
             </tr>
             <tr>
@@ -226,7 +226,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_kwn_12); ?>
+                <?php echo ucwords($k->s_21); ?>
                 </td>
             </tr>
             <tr>
@@ -240,7 +240,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_agama_12); ?>
+                <?php echo ucwords($k->s_19); ?>
                 </td>
             </tr>
             <tr>
@@ -254,7 +254,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_job_12); ?>
+                <?php echo ucwords($k->s_22); ?>
                 </td>
             </tr>
             <tr>
@@ -268,7 +268,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_alamat_12); ?>
+                <?php echo ucwords($k->s_23); ?>
                 </td>
             </tr>
         </table>
@@ -292,7 +292,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_1); ?>
+                <?php echo ucwords($k->s_1); ?>
                 </td>
             </tr>
             <tr>
@@ -306,7 +306,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_11); ?>
+                <?php echo ucwords($k->s_9); ?>
                 </td>
             </tr>
             <tr>
@@ -320,7 +320,7 @@
                     :
                 </td>
                 <td>
-                <?php echo $k->n_nik_1; ?>
+                <?php echo $k->s_2; ?>
                 </td>
             </tr>
             <tr>
@@ -334,7 +334,7 @@
                     :
                 </td>
                 <td>
-                <?php echo Ucwords($k->n_tptlahir_1); ?>, <?php echo tgl_indo($k->n_tgllahir_1); ?>
+                <?php echo Ucwords($k->s_4); ?>, <?php echo tgl_indo($k->sd_1); ?>
                 </td>
             </tr>
             <tr>
@@ -348,7 +348,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_kwn_1); ?>
+                <?php echo ucwords($k->s_6); ?>
                 </td>
             </tr>
             <tr>
@@ -362,7 +362,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_agama_1); ?>
+                <?php echo ucwords($k->s_5); ?>
                 </td>
             </tr>
             <tr>
@@ -376,7 +376,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_job_1); ?>
+                <?php echo ucwords($k->s_3); ?>
                 </td>
             </tr>
             <tr>
@@ -390,7 +390,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_alamat_1); ?>
+                <?php echo ucwords($k->s_8); ?>
                 </td>
             </tr>
         </table>
@@ -414,7 +414,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_2); ?>
+                <?php echo ucwords($k->s_25); ?>
                 </td>
             </tr>
             <tr>
@@ -428,7 +428,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_nama_21); ?>
+                <?php echo ucwords($k->s_33); ?>
                 </td>
             </tr>
             <tr>
@@ -442,7 +442,7 @@
                     :
                 </td>
                 <td>
-                <?php echo $k->n_nik_2; ?>
+                <?php echo $k->s_26; ?>
                 </td>
             </tr>
             <tr>
@@ -456,7 +456,7 @@
                     :
                 </td>
                 <td>
-                <?php echo Ucwords($k->n_tptlahir_2); ?>, <?php echo tgl_indo($k->n_tgllahir_2); ?>
+                <?php echo Ucwords($k->s_28); ?>, <?php echo tgl_indo($k->sd_4); ?>
                 </td>
             </tr>
             <tr>
@@ -470,7 +470,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_kwn_2); ?>
+                <?php echo ucwords($k->s_30); ?>
                 </td>
             </tr>
             <tr>
@@ -484,7 +484,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_agama_2); ?>
+                <?php echo ucwords($k->s_29); ?>
                 </td>
             </tr>
             <tr>
@@ -498,7 +498,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_job_2); ?>
+                <?php echo ucwords($k->s_27); ?>
                 </td>
             </tr>
             <tr>
@@ -512,7 +512,7 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->n_alamat_2); ?>
+                <?php echo ucwords($k->s_32); ?>
                 </td>
             </tr>
         </table>

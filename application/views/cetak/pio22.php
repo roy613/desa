@@ -23,7 +23,7 @@
 
                 </td>
                 <td style="text-align: center;">
-                Peridan, <?php echo tgl_indo($k->n_tglsurat); ?>
+                Karangan Hilir, <?php echo tgl_indo($k->s_tglsurat); ?>
                 </td>
             </tr>
             <tr>
@@ -33,14 +33,14 @@
             <tr>
                 <td style="width: 45%; text-align:center">
                     Ayah/Wali/Pengampu,<br><br><br>
-                    <?php echo ucwords($k->n_nama_21); ?>
+                    <?php echo ucwords($k->s_33); ?>
                 </td>
                 <td>
 
                 </td>
                 <td style="width: 45%; text-align:center">
                     Ibu/Wali/Pengampu,<br><br><br>
-                    <?php echo ucwords($k->n_nama_22); ?>
+                    <?php echo ucwords($k->s_41); ?>
                 </td>
             </tr>
         </table>
