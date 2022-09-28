@@ -190,6 +190,18 @@ class Home extends CI_Controller
         $this->load->view('be/v_footer');
         $this->load->view('be/f_prkerja');
     }
+    public function pengantar_nikah ()
+    {
+        $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar menikah' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+        
+        $this->load->view('be/v_header', $jumlah);
+        $this->load->view('be/v_sidebar');
+        $this->load->view('be/v_nikah',$data);
+        $this->load->view('be/v_footer');
+        $this->load->view('be/f_nikah');
+    }
     public function pengantar_hilang()
     {
         $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();

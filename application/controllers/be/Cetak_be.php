@@ -223,6 +223,7 @@ class Cetak_be extends CI_Controller
 		require_once './vendor/autoload.php';
 		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
 		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html0 = $this->load->view('cetak/fungsi', $data, true);
 		$html = $this->load->view('cetak/ppn11', $data, true);
 		$html1 = $this->load->view('cetak/ppn21', $data, true);
 		$html2 = $this->load->view('cetak/ppn12', $data, true);
@@ -321,6 +322,7 @@ class Cetak_be extends CI_Controller
 		require_once './vendor/autoload.php';
 		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
 		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html0 = $this->load->view('cetak/fungsi', $data, true);
 		$html = $this->load->view('cetak/ppn11', $data, true);
 		$html1 = $this->load->view('cetak/ppn21', $data, true);
 		$html4 = $this->load->view('cetak/pkn', $data, true);
@@ -385,6 +387,7 @@ class Cetak_be extends CI_Controller
 		require_once './vendor/autoload.php';
 		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,330]]);
 		$data['aaa'] = $this->db->query("SELECT * FROM surat WHERE s_id='$b'")->result();
+		$html0 = $this->load->view('cetak/fungsi', $data, true);
 		$html2 = $this->load->view('cetak/ppn12', $data, true);
 		$html3 = $this->load->view('cetak/ppn22', $data, true);
 		$html4 = $this->load->view('cetak/pkn', $data, true);

@@ -715,7 +715,7 @@ class Simpan_be extends CI_Controller
                 's_9' => $s9,
                 's_10' => $s10,
                 'sd_1' => $sd1,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -752,7 +752,7 @@ class Simpan_be extends CI_Controller
                 's_9' => $s9,
                 's_10' => $s10,
                 'sd_1' => $sd1,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -846,9 +846,9 @@ class Simpan_be extends CI_Controller
                 's_7' => $s7,
                 's_8' => $s8,
                 's_9' => $s9,
-          
+
                 'sd_1' => $sd1,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -885,7 +885,7 @@ class Simpan_be extends CI_Controller
                 's_9' => $s9,
 
                 'sd_1' => $sd1,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -982,9 +982,9 @@ class Simpan_be extends CI_Controller
                 's_8' => $s8,
                 's_9' => $s9,
                 's_10' => $s10,
-          
+
                 'sd_1' => $sd1,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1022,7 +1022,7 @@ class Simpan_be extends CI_Controller
                 's_10' => $s10,
 
                 'sd_1' => $sd1,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1131,10 +1131,10 @@ class Simpan_be extends CI_Controller
                 's_13' => $s13,
                 's_14' => $s14,
                 's_15' => $s15,
-          
+
                 'sd_1' => $sd1,
                 'sd_2' => $sd2,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1175,10 +1175,10 @@ class Simpan_be extends CI_Controller
                 's_13' => $s13,
                 's_14' => $s14,
                 's_15' => $s15,
-          
+
                 'sd_1' => $sd1,
                 'sd_2' => $sd2,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1273,10 +1273,10 @@ class Simpan_be extends CI_Controller
                 's_6' => $s6,
                 's_7' => $s7,
                 's_8' => $s8,
-                          
+
                 'sd_1' => $sd1,
                 'sd_2' => $sd2,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1310,10 +1310,10 @@ class Simpan_be extends CI_Controller
                 's_6' => $s6,
                 's_7' => $s7,
                 's_8' => $s8,
-                          
+
                 'sd_1' => $sd1,
                 'sd_2' => $sd2,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1426,11 +1426,11 @@ class Simpan_be extends CI_Controller
                 's_14' => $s14,
                 's_15' => $s15,
                 's_16' => $s16,
-                          
+
                 'sd_1' => $sd1,
                 'sd_2' => $sd2,
                 'sd_3' => $sd3,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1472,11 +1472,11 @@ class Simpan_be extends CI_Controller
                 's_14' => $s14,
                 's_15' => $s15,
                 's_16' => $s16,
-                          
+
                 'sd_1' => $sd1,
                 'sd_2' => $sd2,
                 'sd_3' => $sd3,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1571,9 +1571,9 @@ class Simpan_be extends CI_Controller
                 's_7' => $s7,
                 's_8' => $s8,
                 's_9' => $s9,
-                          
+
                 'sd_1' => $sd1,
-                
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,
@@ -1608,9 +1608,318 @@ class Simpan_be extends CI_Controller
                 's_7' => $s7,
                 's_8' => $s8,
                 's_9' => $s9,
-                          
+
                 'sd_1' => $sd1,
-                
+
+                's_tglsurat' => $tglsurat,
+                's_ttd' => $ttd,
+                's_jabatan' => $jabttd,
+                's_kodettd' => $kodettd,
+                's_edit' => $buat,
+                's_tgledit' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Edit',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('tidak_mampu'));
+        }
+    }
+    public function nikah()
+    {
+        $id = $this->input->post('nikah_id');
+
+        $nama1 = $this->input->post('nikah_nama1');
+        $nik1 = $this->input->post('nikah_nik1');
+        $job1 = $this->input->post('nikah_job1');
+        $tempat1 = $this->input->post('nikah_tempat1');
+        $tgl1 = $this->input->post('nikah_tgl1');
+        $agama1 = $this->input->post('nikah_agama1');
+        $kwn1 = $this->input->post('nikah_kwn1');
+        $status1 = $this->input->post('nikah_status1');
+        $alamat1 = $this->input->post('nikah_alamat1');
+        // $rt1 = $this->input->post('rt1');
+
+        $nama11 = $this->input->post('nikah_nama11');
+        $nik11 = $this->input->post('nikah_nik11');
+        $agama11 = $this->input->post('nikah_agama11');
+        $tempat11 = $this->input->post('nikah_tempat11');
+        $tgl11 = $this->input->post('nikah_tgl11');
+        $kwn11 = $this->input->post('nikah_kwn11');
+        $job11 = $this->input->post('nikah_job11');
+        $alamat11 = $this->input->post('nikah_alamat11');
+
+        $nama12 = $this->input->post('nikah_nama12');
+        $nik12 = $this->input->post('nikah_nik12');
+        $agama12 = $this->input->post('nikah_agama12');
+        $tempat12 = $this->input->post('nikah_tempat12');
+        $tgl12 = $this->input->post('nikah_tgl12');
+        $kwn12 = $this->input->post('nikah_kwn12');
+        $job12 = $this->input->post('nikah_job12');
+        $alamat12 = $this->input->post('nikah_alamat12');
+
+        $nama2 = $this->input->post('nikah_nama2');
+        $nik2 = $this->input->post('nikah_nik2');
+        $job2 = $this->input->post('nikah_job2');
+        $tempat2 = $this->input->post('nikah_tempat2');
+        $tgl2 = $this->input->post('nikah_tgl2');
+        $agama2 = $this->input->post('nikah_agama2');
+        $kwn2 = $this->input->post('nikah_kwn2');
+        $status2 = $this->input->post('nikah_status2');
+        $alamat2 = $this->input->post('nikah_alamat2');
+        // $rt2 = $this->input->post('rt2');
+
+        $nama21 = $this->input->post('nikah_nama21');
+        $nik21 = $this->input->post('nikah_nik21');
+        $agama21 = $this->input->post('nikah_agama21');
+        $tempat21 = $this->input->post('nikah_tempat21');
+        $tgl21 = $this->input->post('nikah_tgl21');
+        $kwn21 = $this->input->post('nikah_kwn21');
+        $job21 = $this->input->post('nikah_job21');
+        $alamat21 = $this->input->post('nikah_alamat21');
+
+        $nama22 = $this->input->post('nikah_nama22');
+        $nik22 = $this->input->post('nikah_nik22');
+        $agama22 = $this->input->post('nikah_agama22');
+        $tempat22 = $this->input->post('nikah_tempat22');
+        $tgl22 = $this->input->post('nikah_tgl22');
+        $kwn22 = $this->input->post('nikah_kwn22');
+        $job22 = $this->input->post('nikah_job22');
+        $alamat22 = $this->input->post('nikah_alamat22');
+
+        $lokasi = $this->input->post('nikah_lokasi');
+        $waktu = $this->input->post('nikah_waktu');
+        $bin11 = $this->input->post('nikah_bin11');
+        $bin21 = $this->input->post('nikah_bin21');
+        $binti12 = $this->input->post('nikah_binti12');
+        $binti22 = $this->input->post('nikah_binti22');
+
+        $stal1 = $this->input->post('stal1');
+        $stal2 = $this->input->post('stal2');
+        $stal3 = $this->input->post('stal3');
+        $stal4 = $this->input->post('stal4');
+
+        $tglsurat = $this->input->post('tgl_surat');
+        $ttd = $this->input->post('ttd');
+        $jabttd = $this->input->post('jabttd');
+        $kodettd = $this->input->post('kodettd');
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+        $jenis = "surat pengantar menikah";
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
+
+        $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
+        $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
+        $n311 = getRomawi(date('m', strtotime($tglsurat)));
+
+        $n32 = date('Y', strtotime($tglsurat));
+        $n3f = $n311 . "/" . $n32;
+        $nosurat = $nomor[0]["n_1"] . str_pad($nomor1 + 1, 3, '0', STR_PAD_LEFT) . $nomor[0]["n_2"] . $n3f;
+
+        if ($id == 0) {
+            include "phpqrcode/qrlib.php";
+            $tempdir = "temp/"; //Nama folder tempat menyimpan file qrcode
+            if (!file_exists($tempdir)) //Buat folder bername temp
+                mkdir($tempdir);
+
+            $bu = base_url();
+            $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
+
+            $nomor2 = $this->db->query("SELECT * FROM surat")->num_rows();
+            $namaqr = 'QR' . $nomor2 . '.png';
+
+            $codeContents = base_url('lihat_surat/' . base64_encode($nomor2));
+
+            QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
+
+            $QR = imagecreatefrompng($tempdir . $namaqr);
+
+            $logo = imagecreatefromstring(file_get_contents($logopath));
+
+            imagecolortransparent($logo, imagecolorallocatealpha($logo, 127, 127, 127, 127));
+            imagealphablending($logo, true);
+            imagesavealpha($logo, true);
+
+            $QR_width = imagesx($QR);
+            $QR_height = imagesy($QR);
+
+            $logo_width = imagesx($logo);
+            $logo_height = imagesy($logo);
+
+            $logo_qr_width = $QR_width / 4;
+            $scale = $logo_width / $logo_qr_width;
+            $logo_qr_height = $logo_height / $scale;
+            imagecopyresampled($QR, $logo, $QR_width / 2.7, $QR_height / 2.9, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+            imagepng($QR, $tempdir . $namaqr);
+
+            $data = array(
+                's_1' => $nama1,
+                's_2' => $nik1,
+                's_3' => $job1,
+                's_4' => $tempat1,
+                'sd_1' => $tgl1,
+                's_5' => $agama1,
+                's_6' => $kwn1,
+                's_7' => $status1,
+                's_8' => $alamat1,
+                // 'n_rt_1' => $rt1,
+
+                's_9' => $nama11,
+                's_10' => $nik11,
+                's_11' => $agama11,
+                's_12' => $tempat11,
+                'sd_2' => $tgl11,
+                's_13' => $kwn11,
+                's_14' => $job11,
+                's_15' => $alamat11,
+                's_16' => $bin11,
+
+                's_17' => $nama12,
+                's_18' => $nik12,
+                's_19' => $agama12,
+                's_20' => $tempat12,
+                'sd_3' => $tgl12,
+                's_21' => $kwn12,
+                's_22' => $job12,
+                's_23' => $alamat12,
+                's_24' => $binti12,
+
+                's_25' => $nama2,
+                's_26' => $nik2,
+                's_27' => $job2,
+                's_28' => $tempat2,
+                'sd_4' => $tgl2,
+                's_29' => $agama2,
+                's_30' => $kwn2,
+                's_31' => $status2,
+                's_32' => $alamat2,
+                // 'n_rt_2' => $rt2,
+
+                's_33' => $nama21,
+                's_34' => $nik21,
+                's_35' => $agama21,
+                's_36' => $tempat21,
+                'sd_5' => $tgl21,
+                's_37' => $kwn21,
+                's_38' => $job21,
+                's_39' => $alamat21,
+                's_40' => $bin21,
+
+                's_41' => $nama22,
+                's_42' => $nik22,
+                's_43' => $agama22,
+                's_44' => $tempat22,
+                'sd_6' => $tgl22,
+                's_45' => $kwn22,
+                's_46' => $job22,
+                's_47' => $alamat22,
+                's_48' => $binti22,
+
+                's_stal1' => $stal1,
+                's_stal2' => $stal2,
+                's_stal3' => $stal3,
+                's_stal4' => $stal4,
+
+                's_49' => $lokasi,
+                'sd_7' => $waktu,
+
+                's_tglsurat' => $tglsurat,
+                's_ttd' => $ttd,
+                's_jabatan' => $jabttd,
+                's_kodettd' => $kodettd,
+                's_proses' => $buat,
+                's_tglbuat' => $tglbuat,
+                's_jenispelayanan' => $jenis,
+                's_kodeproses' => $kode_proses,
+                's_nosurat' => $nosurat,
+                's_qr' => $namaqr,
+            );
+
+            $this->m_data->save_data($data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Buat',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('tidak_mampu'));
+        } else {
+            $where = array(
+                's_id' => $id
+            );
+
+            $data = array(
+                's_1' => $nama1,
+                's_2' => $nik1,
+                's_3' => $job1,
+                's_4' => $tempat1,
+                'sd_1' => $tgl1,
+                's_5' => $agama1,
+                's_6' => $kwn1,
+                's_7' => $status1,
+                's_8' => $alamat1,
+                // 'n_rt_1' => $rt1,
+
+                's_9' => $nama11,
+                's_10' => $nik11,
+                's_11' => $agama11,
+                's_12' => $tempat11,
+                'sd_2' => $tgl11,
+                's_13' => $kwn11,
+                's_14' => $job11,
+                's_15' => $alamat11,
+                's_16' => $bin11,
+
+                's_17' => $nama12,
+                's_18' => $nik12,
+                's_19' => $agama12,
+                's_20' => $tempat12,
+                'sd_3' => $tgl12,
+                's_21' => $kwn12,
+                's_22' => $job12,
+                's_23' => $alamat12,
+                's_24' => $binti12,
+
+                's_25' => $nama2,
+                's_26' => $nik2,
+                's_27' => $job2,
+                's_28' => $tempat2,
+                'sd_4' => $tgl2,
+                's_29' => $agama2,
+                's_30' => $kwn2,
+                's_31' => $status2,
+                's_32' => $alamat2,
+                // 'n_rt_2' => $rt2,
+
+                's_33' => $nama21,
+                's_34' => $nik21,
+                's_35' => $agama21,
+                's_36' => $tempat21,
+                'sd_5' => $tgl21,
+                's_37' => $kwn21,
+                's_38' => $job21,
+                's_39' => $alamat21,
+                's_40' => $bin21,
+
+                's_41' => $nama22,
+                's_42' => $nik22,
+                's_43' => $agama22,
+                's_44' => $tempat22,
+                'sd_6' => $tgl22,
+                's_45' => $kwn22,
+                's_46' => $job22,
+                's_47' => $alamat22,
+                's_48' => $binti22,
+
+                's_stal1' => $stal1,
+                's_stal2' => $stal2,
+                's_stal3' => $stal3,
+                's_stal4' => $stal4,
+
+                's_49' => $lokasi,
+                'sd_7' => $waktu,
+
                 's_tglsurat' => $tglsurat,
                 's_ttd' => $ttd,
                 's_jabatan' => $jabttd,

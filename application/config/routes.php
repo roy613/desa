@@ -72,6 +72,7 @@ $route['skck'] = 'be/home/skck';
 $route['usaha'] = 'be/home/usaha';
 $route['domisili'] = 'be/home/domisili';
 $route['pindah'] = 'be/home/pindah';
+$route['menikah'] = 'be/home/pengantar_nikah';
 $route['kematian'] = 'be/home/mati';
 $route['kelahiran'] = 'be/home/lahir';
 $route['tidak_mampu'] = 'be/home/tmampu';

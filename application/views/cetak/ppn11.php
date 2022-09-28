@@ -3,7 +3,7 @@
         sheet-size: A4-L;
     }
 </style>
-<?php $this->load->view('cetak/fungsi'); ?>
+
 <?php foreach ($aaa as $k) { ?>
     <div>
         <html>
