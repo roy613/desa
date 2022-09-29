@@ -1765,26 +1765,28 @@ class Simpan_be extends CI_Controller
                 's_7' => $status1,
                 's_8' => $alamat1,
                 // 'n_rt_1' => $rt1,
-
+                
                 's_9' => $nama11,
+                's_stal1' => $stal1,
                 's_10' => $nik11,
                 's_11' => $agama11,
+                's_16' => $bin11,
                 's_12' => $tempat11,
                 'sd_2' => $tgl11,
                 's_13' => $kwn11,
                 's_14' => $job11,
                 's_15' => $alamat11,
-                's_16' => $bin11,
-
+                
                 's_17' => $nama12,
+                's_stal2' => $stal2,
                 's_18' => $nik12,
                 's_19' => $agama12,
+                's_24' => $binti12,
                 's_20' => $tempat12,
                 'sd_3' => $tgl12,
                 's_21' => $kwn12,
                 's_22' => $job12,
                 's_23' => $alamat12,
-                's_24' => $binti12,
 
                 's_25' => $nama2,
                 's_26' => $nik2,
@@ -1798,30 +1800,28 @@ class Simpan_be extends CI_Controller
                 // 'n_rt_2' => $rt2,
 
                 's_33' => $nama21,
+                's_stal3' => $stal3,
                 's_34' => $nik21,
                 's_35' => $agama21,
+                's_40' => $bin21,
                 's_36' => $tempat21,
                 'sd_5' => $tgl21,
                 's_37' => $kwn21,
                 's_38' => $job21,
                 's_39' => $alamat21,
-                's_40' => $bin21,
 
                 's_41' => $nama22,
+                's_stal4' => $stal4,
                 's_42' => $nik22,
                 's_43' => $agama22,
+                's_48' => $binti22,
                 's_44' => $tempat22,
                 'sd_6' => $tgl22,
                 's_45' => $kwn22,
                 's_46' => $job22,
                 's_47' => $alamat22,
-                's_48' => $binti22,
 
-                's_stal1' => $stal1,
-                's_stal2' => $stal2,
-                's_stal3' => $stal3,
-                's_stal4' => $stal4,
-
+                
                 's_49' => $lokasi,
                 'sd_7' => $waktu,
 
