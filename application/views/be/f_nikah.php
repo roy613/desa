@@ -16,24 +16,85 @@
     });
   }
 
-  function edit(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p) {
+  function edit(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, an, ao, ap, aq, ar, as, at, au, av, aw, ax, ay, az) {
     $('#id').val(a);
     $('#tgl_surat').val(b);
     $('#ttd').val(c);
     $('#jabttd').val(d);
     $('#kodettd').val(e);
 
-    $('#domisili_nama').val(f);
-    $('#domisili_jk').val(g);
-    $('#domisili_tptlahir').val(h);
-    $('#domisili_tgllahir').val(i);
-    $('#domisili_kewarganegaraan').val(j);
-    $('#domisili_agama').val(k);
-    $('#domisili_nik').val(l);
-    $('#domisili_statuskwn').val(m);
-    $('#domisili_pekerjaan').val(n);
-    $('#domisili_alamat').val(o);
-    $('#domisili_guna').val(p);
+    $('#nikah_kode').val(1);
+    $('#nikah_nama1').val("");
+    $('#nikah_nik1').val("");
+    $('#nikah_job1').val("");
+    $('#nikah_tempat1').val("");
+    $('#nikah_tgl1').val("");
+    $('#nikah_agama1').val("");
+    $('#nikah_kwn1').val("");
+    $('#nikah_status1').val("");
+    $('#nikah_alamat1').val("");
+    // $('#nikah_rt1').val("");
+
+    $('#nikah_nama11').val("");
+    $('#nikah_nik11').val("");
+    $('#nikah_agama11').val("");
+    $('#nikah_tempat11').val("");
+    $('#nikah_tgl11').val("");
+    $('#nikah_kwn11').val("");
+    $('#nikah_job11').val("");
+    $('#nikah_alamat11').val("");
+
+    $('#nikah_nama12').val("");
+    $('#nikah_nik12').val("");
+    $('#nikah_agama12').val("");
+    $('#nikah_tempat12').val("");
+    $('#nikah_tgl12').val("");
+    $('#nikah_kwn12').val("");
+    $('#nikah_job12').val("");
+    $('#nikah_alamat12').val("");
+
+    $('#nikah_nama2').val("");
+    $('#nikah_nik2').val("");
+    $('#nikah_job2').val("");
+    $('#nikah_tempat2').val("");
+    $('#nikah_tgl2').val("");
+    $('#nikah_agama2').val("");
+    $('#nikah_kwn2').val("");
+    $('#nikah_status2').val("");
+    $('#nikah_alamat2').val("");
+    // $('#nikah_rt2').val("");
+
+    $('#nikah_nama21').val("");
+    $('#nikah_nik21').val("");
+    $('#nikah_agama21').val("");
+    $('#nikah_tempat21').val("");
+    $('#nikah_tgl21').val("");
+    $('#nikah_kwn21').val("");
+    $('#nikah_job21').val("");
+    $('#nikah_alamat21').val("");
+
+    $('#nikah_nama22').val("");
+    $('#nikah_nik22').val("");
+    $('#nikah_agama22').val("");
+    $('#nikah_tempat22').val("");
+    $('#nikah_tgl22').val("");
+    $('#nikah_kwn22').val("");
+    $('#nikah_job22').val("");
+    $('#nikah_alamat22').val("");
+
+    $('#nikah_tglsrt').val("");
+    $('#nikah_ttd').val("");
+    $('#nikah_nipttd').val("");
+    $('#nikah_jabttd').val("");
+    $('#nikah_golttd').val("");
+    $('#nikah_mpket').val("");
+
+    $('#nikah_lokasi').val("");
+    $('#nikah_waktu').val("");
+    $('#nikah_bin11').val("");
+    $('#nikah_bin21').val("");
+    $('#nikah_binti12').val("");
+    $('#nikah_binti22').val("");
 
     document.getElementById("domisili_statuskwn").disabled = false;
 
