@@ -65,7 +65,7 @@ class Home extends CI_Controller
     }
     public function tolak()
     {
-        $data['daftar'] = $this->db->query('SELECT * FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_kodeproses=2')->result();
+        $data['daftar'] = $this->db->query('SELECT * FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglselesai IS NOT NULL AND s_kodeproses = 2')->result();
         $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
         
         $this->load->view('be/v_header', $jumlah);
@@ -298,4 +298,5 @@ class Home extends CI_Controller
         $this->load->view('be/v_footer');
         $this->load->view('be/f_tmampu');
     }
+  
 }

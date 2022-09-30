@@ -53,13 +53,13 @@ class Proses extends CI_Controller
         }
     }
     public function ttd_periksa()
-	{
-		$peg = $this->input->post('peg');
-		$data = $this->db->query("SELECT * FROM ttd WHERE tt_nama='" . $peg . "'")->result();
-		// var_dump($data);
-		$myJSON = json_encode($data);
-		echo $myJSON;
-	}
+    {
+        $peg = $this->input->post('peg');
+        $data = $this->db->query("SELECT * FROM ttd WHERE tt_nama='" . $peg . "'")->result();
+        // var_dump($data);
+        $myJSON = json_encode($data);
+        echo $myJSON;
+    }
 
     public function tolak_berkas()
     {
@@ -107,12 +107,13 @@ class Proses extends CI_Controller
         $kodettd = $this->input->post('kodettd');
         $buat = $this->session->userdata('username');
 
+        $no_jenis = 1; //no jenis 1 otomatis, 2 manual atau offline
         $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
-        $nomor1 = $this->db->query("SELECT * FROM surat WHERE YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
+        $nomor1 = $this->db->query("SELECT * FROM surat WHERE s_nojenis=1 AND YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
         $n311 = getRomawi(date('m', strtotime($tgl)));
         $n32 = date('Y', strtotime($tgl));
         $n3f = $n311 . "/" . $n32;
-        $nosurat = $nomor[0]["n_1"] . str_pad($nomor1 + 1, 3, '0', STR_PAD_LEFT) . $nomor[0]["n_2"].$n3f;
+        $nosurat = $nomor[0]["n_1"] . str_pad($nomor1 + 1, 3, '0', STR_PAD_LEFT) . $nomor[0]["n_2"] . $n3f;
 
 
         include "phpqrcode/qrlib.php";
@@ -167,6 +168,7 @@ class Proses extends CI_Controller
             's_jabatan' => $jabttd,
             's_kodettd' => $kodettd,
             's_proses' => $buat,
+            's_nojenis' => $no_jenis,
         );
         $this->m_data->update_data($where, $data, 'surat');
         $swal_test = array(

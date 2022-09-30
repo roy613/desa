@@ -157,7 +157,7 @@
                                                 <h3>Permohonan Selesai</h3>
                                                 <p id="tgl_ketiga"></p>
                                                 <p>Dokumen Dapat di Ambil di Kantor Desa</p>
-                                                <table border="0">
+                                                <!-- <table border="0">
                                                     <tr>
                                                         <td>
                                                             <button class="btn btn-outline-success" style="float: right; margin-top:15px">Puas</button>
@@ -166,7 +166,7 @@
                                                             <button class="btn btn-outline-danger" style="float: right; margin-top:15px">Tidak Puas</button>
                                                         </td>
                                                     </tr>
-                                                </table>
+                                                </table> -->
                                             </li>
                                             <li class="event" data-date="" id="status_keempat">
                                                 <h3>Permohonan Tidak Bisa di Proses</h3>

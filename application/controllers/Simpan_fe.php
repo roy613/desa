@@ -92,12 +92,7 @@ class Simpan_fe extends CI_Controller
         $no_hp = $this->input->post('nikah_nohp');
         $tglmohon = date('Y-m-d H-i-s');
         $kode_proses = 1; //status 1 pemohon masyarakat belum diproses, status 3 surat dibuat admin lewat be.
-        // $tglsurat = $this->input->post('tglsrt');
-        // $ttd = $this->input->post('ttd');
-        // $jabttd = $this->input->post('jabttd');
-        // $nipttd = $this->input->post('nipttd');
-        // $golttd = $this->input->post('golttd');
-        // $mpket = $this->input->post('mpket');
+
 
         //save ditabel permohonan
         $config['upload_path'] = './syarat/';
@@ -245,6 +240,24 @@ class Simpan_fe extends CI_Controller
 
         $this->m_data->save_data($data, 'surat');
 
+        //pusher notifikasi
+
+        require_once './vendor/autoload.php';
+
+        $options = array(
+            'cluster' => 'ap1',
+            'useTLS' => true
+        );
+        $pusher = new Pusher\Pusher(
+            'a6102b946dc5ba9a26c7',
+            '852bfbbfca9ec5b1e9d2',
+            '1479096',
+            $options
+        );
+
+        $kata['message'] = 'Permohonan Baru Diterima';
+        $pusher->trigger('my-channel', 'my-event', $kata);
+
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 
@@ -355,22 +368,6 @@ class Simpan_fe extends CI_Controller
         $kata['message'] = 'Permohonan Baru Diterima';
         $pusher->trigger('my-channel', 'my-event', $kata);
 
-        //cetak registrasi
-
-        // require_once './vendor/autoload.php';
-        // $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => [210,165]]);
-        // $data['aaa'] = $this->db->query("SELECT * FROM permohonan WHERE pe_kode='$koderegistrasi'")->result();
-        // $html = $this->load->view('bukti_regis', "$data", true);
-        // $mpdf->AddPage('P','','','','',
-        // 12,//ml
-        // 13,//mr
-        // 10,//mt
-        // 15,//mb
-        // 1,//mh
-        // 4);//mf
-        // $mpdf->WriteHTML($html);
-        // //  $mpdf->Output('spt.pdf', 'I');//inline
-        // $mpdf->Output('bukti_registrasi.pdf', 'D'); //download
         redirect(base_url("sukses/" . base64_encode($koderegistrasi)));
     }
 

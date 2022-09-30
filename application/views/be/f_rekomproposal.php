@@ -16,6 +16,11 @@
     });
   }
 
+  function arsip(a) {
+        $('#id_1').val(a);
+        $('#arsip').modal('show');
+    }
+
   function edit(a, b, c, d, e, f, g, h, i) {
     $('#id').val(a);
     $('#nama').val(b);
