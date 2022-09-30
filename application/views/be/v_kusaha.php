@@ -88,6 +88,17 @@
                                   <a href="#" onclick="hapus('<?php echo $p->s_id; ?>')" class="btn btn-outline-danger" style="font-size: 10pt !important; padding:4px !important">
                                     <i class="fa fa-trash" title="Hapus"></i></a>
                                 </td>
+                                <?php if ($p->s_arsip == null) { ?>
+                                  <td>
+                                    <a href="#" onclick="arsip('<?php echo $p->s_id; ?>')" class="btn btn-outline-info btn-block" style="font-size: 10pt !important; padding:4px !important">
+                                      <i class="fas fa-file-archive" title="arsipkan"></i> </a>
+                                  </td>
+                                <?php } else { ?>
+                                  <td>
+                                    <a target="_blank" href="<?php echo base_url('arsip/' . $p->s_arsip) ?>" class="btn btn-outline-secondary btn-block" style="font-size: 10pt !important; padding:4px !important">
+                                      <i class="fas fa-search" title="lihat arsip"></i> </a>
+                                  </td>
+                                <?php } ?>
                               </tr>
                             </table>
                           </td>
@@ -215,7 +226,47 @@
       </div>
     </div>
 
+    <div class="modal fade" id="arsip" tabindex="-3" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
+      <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header bg-info">
+            <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPAN ARSIP</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="<?php echo base_url() . 'be/simpan_be/arsip_usaha' ?>" enctype="multipart/form-data">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="filegambar">Upload Arsip</label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" name="filegambar" id="filegambar">
+                          <label class="custom-file-label" for="filegambar">Pilih File</label>
+                        </div>
+                      </div>
+                      <input type="hidden" class="form-control" id="id_1" name="id_1">
+                    </div>
+                  </div>
+                  <div>
+                    <p>
+                      Catatan : file yang diupload harus berformat Pdf.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+                <button type="submit" id="save" class="btn btn-primary">Proses</button>
+            </form>
 
+          </div>
+        </div>
+      </div>
+    </div>
 
   </section>
 </div>

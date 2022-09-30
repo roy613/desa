@@ -16,6 +16,11 @@
     });
   }
 
+  function arsip(a) {
+        $('#id_1').val(a);
+        $('#arsip').modal('show');
+    }
+    
   function edit(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, aa, ab, ac, ad, ae, af, ag, ah, ai, aj, ak, al, am, an, ao, ap, aq, ar, as, at, au, av, aw, ax, ay, az, ba, bb, bc, bd, be, bf, bg, bh, bi, bj, bk, bl, bm) {
     $('#id').val(a);
     $('#tgl_surat').val(b);
