@@ -6,6 +6,11 @@
         $('#m_nomor').modal('show');
 
     }
+    function arsip_proses(a, b) {
+        $('#id_1').val(a);
+        $('#kode_1').val(b);
+        $('#arsip').modal('show');
+    }
 
     function tolak_berkas(a,b) {
         var a= a;

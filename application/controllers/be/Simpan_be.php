@@ -252,6 +252,114 @@ class Simpan_be extends CI_Controller
             redirect(base_url('rekomproposal'));
         }
     }
+    public function catat_surat()
+    {
+        $id = $this->input->post('id');
+        $s1 = $this->input->post('csurat_nama');
+        $nosurat = $this->input->post('csurat_no');
+        $jenis = $this->input->post('csurat_jenis');
+
+        $tglsurat = $this->input->post('tgl_surat');
+        $ttd = $this->input->post('ttd');
+        $jabttd = $this->input->post('jabttd');
+        $kodettd = $this->input->post('kodettd');
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+        $kode_proses = 3; //status 1 pemohon masyarakat belum diproses, status 2 ditolak, status 3 surat dibuat admin lewat be.
+
+        $no_jenis = 2; //no jenis 1 otomatis, 2 manual atau offline
+        // $nomor =  $this->db->query("SELECT * FROM daftar_pelayanan WHERE da_pelayanan='$jenis'")->result_array();
+        // $nomor1 = $this->db->query("SELECT * FROM surat WHERE s_nojenis=1 AND YEAR(s_tglsurat) = YEAR(NOW())")->num_rows();
+        // $n311 = getRomawi(date('m', strtotime($tglsurat)));
+
+        // $n32 = date('Y', strtotime($tglsurat));
+        // $n3f = $n311 . "/" . $n32;
+        // $nosurat = $nomor[0]["n_1"] . str_pad($nomor1 + 1, 3, '0', STR_PAD_LEFT) . $nomor[0]["n_2"] . $n3f;
+
+        if ($id == 0) {
+            // include "phpqrcode/qrlib.php";
+            // $tempdir = "temp/"; //Nama folder tempat menyimpan file qrcode
+            // if (!file_exists($tempdir)) //Buat folder bername temp
+            //     mkdir($tempdir);
+
+            // $bu = base_url();
+            // $logopath = isset($_GET['logo']) ? $_GET['logo'] : "$bu/assets/img/logokutim.png";
+
+            // $nomor2 = $this->db->query("SELECT * FROM surat")->num_rows();
+            // $namaqr = 'QR' . $nomor2 . '.png';
+
+            // $codeContents = base_url('lihat_surat/' . base64_encode($nomor2));
+
+            // QRcode::png($codeContents, $tempdir . $namaqr, QR_ECLEVEL_H, 7, 4);
+
+            // $QR = imagecreatefrompng($tempdir . $namaqr);
+
+            // $logo = imagecreatefromstring(file_get_contents($logopath));
+
+            // imagecolortransparent($logo, imagecolorallocatealpha($logo, 127, 127, 127, 127));
+            // imagealphablending($logo, true);
+            // imagesavealpha($logo, true);
+
+            // $QR_width = imagesx($QR);
+            // $QR_height = imagesy($QR);
+
+            // $logo_width = imagesx($logo);
+            // $logo_height = imagesy($logo);
+
+            // $logo_qr_width = $QR_width / 4;
+            // $scale = $logo_width / $logo_qr_width;
+            // $logo_qr_height = $logo_height / $scale;
+            // imagecopyresampled($QR, $logo, $QR_width / 2.7, $QR_height / 2.9, 0, 0, $logo_qr_width, $logo_qr_height, $logo_width, $logo_height);
+            // imagepng($QR, $tempdir . $namaqr);
+
+            $data = array(
+                's_1' => $s1,
+                's_nosurat' => $nosurat,
+                's_jenispelayanan' => $jenis,
+
+                's_tglsurat' => $tglsurat,
+                's_ttd' => $ttd,
+                's_jabatan' => $jabttd,
+                's_kodettd' => $kodettd,
+                's_proses' => $buat,
+                's_tglbuat' => $tglbuat,
+                's_kodeproses' => $kode_proses,
+                's_nojenis' => $no_jenis,
+            );
+
+            $this->m_data->save_data($data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Buat',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('catat_surat'));
+        } else {
+            $where = array(
+                's_id' => $id
+            );
+
+            $data = array(
+                's_1' => $s1,
+                's_nosurat' => $nosurat,
+                's_jenispelayanan' => $jenis,
+
+                's_tglsurat' => $tglsurat,
+                's_ttd' => $ttd,
+                's_jabatan' => $jabttd,
+                's_kodettd' => $kodettd,
+                's_edit' => $buat,
+                's_tgledit' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Edit',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('catat_surat'));
+        }
+    }
     public function rekomkerja()
     {
         $id = $this->input->post('id');
@@ -2107,14 +2215,14 @@ class Simpan_be extends CI_Controller
         } else {
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar kehilangan' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-        
-        $this->load->view('be/v_header', $jumlah);
-        $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_philang',$data);
-        $this->load->view('be/v_footer');
-        $this->load->view('be/f_philang');
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar kehilangan' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_philang', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_philang');
         }
     }
     public function arsip_skck()
@@ -2146,14 +2254,14 @@ class Simpan_be extends CI_Controller
         } else {
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar skck' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-        
-        $this->load->view('be/v_header', $jumlah);
-        $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_skck',$data);
-        $this->load->view('be/v_footer');
-        $this->load->view('be/f_skck');
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar skck' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_skck', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_skck');
         }
     }
     public function arsip_usaha()
@@ -2185,14 +2293,14 @@ class Simpan_be extends CI_Controller
         } else {
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan usaha' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-        
-        $this->load->view('be/v_header', $jumlah);
-        $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_kusaha',$data);
-        $this->load->view('be/v_footer');
-        $this->load->view('be/f_kusaha');
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan usaha' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_kusaha', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_kusaha');
         }
     }
     public function arsip_domisili()
@@ -2224,14 +2332,14 @@ class Simpan_be extends CI_Controller
         } else {
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan domisili' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-        
-        $this->load->view('be/v_header', $jumlah);
-        $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_domisili',$data);
-        $this->load->view('be/v_footer');
-        $this->load->view('be/f_domisili');
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan domisili' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_domisili', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_domisili');
         }
     }
     public function arsip_pindah()
@@ -2264,11 +2372,11 @@ class Simpan_be extends CI_Controller
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
             $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan pindah' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-            $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-            
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
             $this->load->view('be/v_header', $jumlah);
             $this->load->view('be/v_sidebar');
-            $this->load->view('be/v_pindah',$data);
+            $this->load->view('be/v_pindah', $data);
             $this->load->view('be/v_footer');
             $this->load->view('be/f_pindah');
         }
@@ -2302,14 +2410,14 @@ class Simpan_be extends CI_Controller
         } else {
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan kematian' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-        
-        $this->load->view('be/v_header', $jumlah);
-        $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_mati',$data);
-        $this->load->view('be/v_footer');
-        $this->load->view('be/f_mati');
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan kematian' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_mati', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_mati');
         }
     }
     public function arsip_lahir()
@@ -2341,14 +2449,14 @@ class Simpan_be extends CI_Controller
         } else {
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan kelahiran' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-        
-        $this->load->view('be/v_header', $jumlah);
-        $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_lahir',$data);
-        $this->load->view('be/v_footer');
-        $this->load->view('be/f_lahir');
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan kelahiran' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_lahir', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_lahir');
         }
     }
     public function arsip_tmampu()
@@ -2380,14 +2488,14 @@ class Simpan_be extends CI_Controller
         } else {
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
-        $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan tidak mampu' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-        $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-        
-        $this->load->view('be/v_header', $jumlah);
-        $this->load->view('be/v_sidebar');
-        $this->load->view('be/v_tmampu',$data);
-        $this->load->view('be/v_footer');
-        $this->load->view('be/f_tmampu');
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat keterangan tidak mampu' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_tmampu', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_tmampu');
         }
     }
     public function arsip_nikah()
@@ -2420,13 +2528,181 @@ class Simpan_be extends CI_Controller
             $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
             $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
             $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_jenispelayanan='surat pengantar menikah' AND s_tglhapus IS NULL AND s_tglsurat IS NOT NULL AND s_kodeproses != 2 ORDER BY s_id DESC")->result();
-            $jumlah ['a']= $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
-            
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
             $this->load->view('be/v_header', $jumlah);
             $this->load->view('be/v_sidebar');
-            $this->load->view('be/v_nikah',$data);
+            $this->load->view('be/v_nikah', $data);
             $this->load->view('be/v_footer');
             $this->load->view('be/f_nikah');
+        }
+    }
+    public function arsip_csurat()
+    {
+        $config['upload_path'] = './arsip/';
+        $config['allowed_types'] = 'pdf';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('filegambar')) {
+
+            $arsip = $this->upload->data();
+            $id = $this->input->post('id_1');
+
+            $gambar = $arsip['file_name'];
+
+            $where = array(
+                's_id' => $id
+            );
+            $data = array(
+                's_arsip' => $gambar,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Arsip Berhasil Di Simpan',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('catat_surat'));
+        } else {
+            $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
+            $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+            $data['rekom'] = $this->db->query("SELECT * FROM surat WHERE s_tglhapus IS NULL AND s_nojenis=2 ORDER BY s_id DESC")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_csurat', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_csurat');
+        }
+    }
+    public function arsip_proses()
+    {
+        $kode = $this->input->post('kode_1');
+        $config['upload_path'] = './arsip/';
+        $config['allowed_types'] = 'pdf';
+
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('filegambar')) {
+
+            $arsip = $this->upload->data();
+            $id = $this->input->post('id_1');
+
+            $gambar = $arsip['file_name'];
+
+            $where = array(
+                's_id' => $id
+            );
+            $data = array(
+                's_arsip' => $gambar,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Arsip Berhasil Di Simpan',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('lihat_surat/' . base64_encode($kode)));
+        } else {
+            $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
+            // $b = base64_decode($kode);
+            $data['ttd'] = $this->db->query("SELECT * FROM ttd")->result();
+            $data['surat'] = $this->db->query("SELECT * FROM permohonan INNER JOIN surat ON permohonan.pe_kode=surat.s_kodepelayanan WHERE pe_kode='$kode'")->result();
+            $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+            $this->load->view('be/v_header', $jumlah);
+            $this->load->view('be/v_sidebar');
+            $this->load->view('be/v_proses1', $data);
+            $this->load->view('be/v_footer');
+            $this->load->view('be/f_proses');
+        }
+    }
+    public function arsip_manual()
+    {
+        $id = $this->input->post('id');
+        $nama = $this->input->post('nama');
+        $tglarsip = date('Y-m-d H-i-s');
+
+        if (empty($_FILES['filegambar']['name'])) {
+            if ($id == 0) {
+                $data = array(
+                    'a_nama' => $nama,
+                    'a_tgl' => $tglarsip,
+                );
+                $this->m_data->save_data($data, 'arsip_manual');
+                $swal_test = array(
+                    'tittle' => 'Berhasil !!!',
+                    'text' => 'Nama Arsip Berhasil Disimpan, Arsip Belum diUpload',
+                );
+                $this->session->set_flashdata($swal_test);
+                redirect(base_url('arsip_manual'));
+            } else {
+                $where = array(
+                    'a_id' => $id
+                );
+                $data = array(
+                    'a_nama' => $nama,
+                    'a_tgl' => $tglarsip,
+                );
+                $this->m_data->update_data($data, 'arsip_manual');
+                $swal_test = array(
+                    'tittle' => 'Berhasil !!!',
+                    'text' => 'Arsip Berhasil Di Edit',
+                );
+                $this->session->set_flashdata($swal_test);
+                redirect(base_url('arsip_manual'));
+            }
+        } else {
+            $config['upload_path'] = './arsip/';
+            $config['allowed_types'] = 'pdf';
+
+
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('filegambar')) {
+                $arsip = $this->upload->data();
+
+                $gambar = $arsip['file_name'];
+                if ($id == 0) {
+                    $data = array(
+                        'a_nama' => $nama,
+                        'a_tgl' => $tglarsip,
+                        'a_arsip' => $gambar,
+                    );
+                    $this->m_data->save_data($data, 'arsip_manual');
+                    $swal_test = array(
+                        'tittle' => 'Berhasil !!!',
+                        'text' => 'Nama Arsip Berhasil Disimpan',
+                    );
+                    $this->session->set_flashdata($swal_test);
+                    redirect(base_url('arsip_manual'));
+                } else {
+                    $where = array(
+                        'a_id' => $id
+                    );
+                    $data = array(
+                        'a_nama' => $nama,
+                        'a_tgl' => $tglarsip,
+                        'a_arsip' => $gambar,
+                    );
+                    $this->m_data->update_data($data, 'arsip_manual');
+                    $swal_test = array(
+                        'tittle' => 'Berhasil !!!',
+                        'text' => 'Arsip Berhasil Di Edit',
+                    );
+                    $this->session->set_flashdata($swal_test);
+                    redirect(base_url('arsip_manual'));
+                }
+            } else {
+                $this->form_validation->set_message('filegambar', $data['gambar_error'] = $this->upload->display_errors());
+                $data['rekom'] = $this->db->query("SELECT * FROM arsip_manual ORDER BY a_id DESC")->result();
+                $jumlah['a'] = $this->db->query("SELECT s_1, pe_tgl, pe_kode, s_jenispelayanan FROM surat INNER JOIN permohonan ON surat.s_kodepelayanan=permohonan.pe_kode WHERE s_tglsurat IS NULL  AND s_kodeproses=1")->num_rows();
+
+                $this->load->view('be/v_header', $jumlah);
+                $this->load->view('be/v_sidebar');
+                $this->load->view('be/v_arsipm', $data);
+                $this->load->view('be/v_footer');
+                $this->load->view('be/f_arsipm');
+            }
         }
     }
 }

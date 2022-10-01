@@ -95,6 +95,8 @@ $route['cetak_nikah_1/(:any)'] = 'be/cetak_be/nikah1/$1';
 $route['cetak_nikah_2/(:any)'] = 'be/cetak_be/nikah2/$1';
 $route['cetak_nikah_3/(:any)'] = 'be/cetak_be/nikah3/$1';
 $route['buku_reg'] = 'be/cetak_be/buku';
+$route['catat_surat'] = 'be/home/catat_surat';
+$route['arsip_manual'] = 'be/home/arsip_manual';
 
 
 $route['layanan'] = 'welcome/layanan';

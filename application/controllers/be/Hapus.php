@@ -294,4 +294,39 @@ class Hapus extends CI_Controller
             $this->session->set_flashdata($swal_test);
             redirect(base_url('menikah'));
     }
+	public function csurat($id)
+    {
+        $buat = $this->session->userdata('username');
+        $tglbuat = date('Y-m-d H-i-s');
+
+        $where = array(
+            's_id' => $id
+        );
+
+         $data = array(
+                's_hapus' => $buat,
+                's_tglhapus' => $tglbuat,
+            );
+            $this->m_data->update_data($where, $data, 'surat');
+            $swal_test = array(
+                'tittle' => 'Berhasil !!!',
+                'text' => 'Surat Berhasil Di Hapus',
+            );
+            $this->session->set_flashdata($swal_test);
+            redirect(base_url('catat_surat'));
+    }
+	public function arsipm($id)
+    {
+        $where = array(
+            'a_id' => $id
+        );
+
+        $this->m_data->delete_data($where, 'arsip_manual');
+		$swal_test = array(
+            'tittle' => 'SUKSES !',
+            'text' => 'Data Arsip Telah Berhasil diHapus',
+        );
+        $this->session->set_flashdata($swal_test);
+        redirect(base_url('arsip_manual'));
+    }
 }

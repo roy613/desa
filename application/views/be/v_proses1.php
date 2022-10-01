@@ -81,13 +81,13 @@
                                     <?php if ($k->pe_jenispermohonan == "surat keterangan usaha") { ?>
                                         <a target="_blank" href="<?php echo base_url('cetak_ket_usaha/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
-                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 !== ""  && $k->s_41 !== "" ) { ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 !== ""  && $k->s_41 !== "") { ?>
                                         <a target="_blank" href="<?php echo base_url('cetak_nikah_1/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
-                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 !== ""  && $k->s_41 == "" ) { ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 !== ""  && $k->s_41 == "") { ?>
                                         <a target="_blank" href="<?php echo base_url('cetak_nikah_2/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
-                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 == ""  && $k->s_41 !== "" ) { ?>
+                                    <?php if ($k->pe_jenispermohonan == "surat pengantar menikah" && $k->s_17 == ""  && $k->s_41 !== "") { ?>
                                         <a target="_blank" href="<?php echo base_url('cetak_nikah_3/' . base64_encode($k->s_id)); ?>" class="btn btn-outline-info btn-block"><b>Cetak</b></a>
                                     <?php } ?>
                                 <?php } ?>
@@ -101,7 +101,12 @@
                                     '<?php echo $k->s_id; ?>',
                                 '<?php echo $k->pe_handphone; ?>'
                                 )" class="btn btn-outline-success btn-block"><b>Surat Selesai</b></a>
-
+                                <?php if ($k->s_tglsurat !== null && $k->s_arsip == null && $k->s_kodeproses != 2) { ?>
+                                    <a href="#" onclick="arsip_proses(
+                                    '<?php echo $k->s_id; ?>',  
+                                    '<?php echo $k->pe_kode; ?>',                                  
+                                    )" class="btn btn-outline-warning btn-block"><b>Arsipkan Surat</b></a>
+                                <?php } ?>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -306,6 +311,49 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
                 <button type="submit" class="btn btn-primary" style="float: right;">Proses</button>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="arsip" tabindex="-3" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPAN ARSIP</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="<?php echo base_url() . 'be/simpan_be/arsip_proses' ?>" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="filegambar">Upload Arsip</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="filegambar" id="filegambar">
+                                            <label class="custom-file-label" for="filegambar">Pilih File</label>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" class="form-control" id="id_1" name="id_1">
+                                    <input type="hidden" id="kode_1" name="kode_1" class="form-control">
+                                </div>
+                            </div>
+                            <div>
+                                <p>
+                                    Catatan : file yang diupload harus berformat Pdf.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+                        <button type="submit" id="save" class="btn btn-primary">Proses</button>
+                </form>
+
             </div>
         </div>
     </div>

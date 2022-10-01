@@ -105,6 +105,18 @@
            </ul>
          </li>
          <li class="nav-item">
+           <a href="<?php echo base_url('catat_surat'); ?>" class="nav-link">
+             <i class="nav-icon fas fa-pencil-alt text-info"></i>
+             <p>Surat Manual</p>
+           </a>
+         </li>
+         <li class="nav-item">
+           <a href="<?php echo base_url('arsip_manual'); ?>" class="nav-link">
+             <i class="nav-icon fas fa-file-upload text-info"></i>
+             <p>Arsip Manual</p>
+           </a>
+         </li>
+         <li class="nav-item">
            <a href="<?php echo base_url('onproses'); ?>" class="nav-link">
              <i class="nav-icon fas fa-file-powerpoint text-info"></i>
              <p>Dokumen on Proses</p>
