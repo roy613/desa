@@ -51,7 +51,11 @@
                         <td style="text-align:center"><?php echo $no++; ?></td>
                         <td style="text-align:left"><?php echo $k->s_nosurat; ?></td>
                         <td style="text-align:left"><?php echo tgl_indo($k->s_tglsurat); ?></td>
-                        <td style="text-align:left"><?php echo ucwords($k->s_1); ?></td>
+                        <?php if ($k->s_jenispelayanan == "surat pengantar menikah") { ?>
+                            <td><?php echo ucwords($p->s_1); ?><br><?php echo ucwords($p->s_25); ?></td>
+                        <?php } else { ?>
+                            <td style="text-align:left"><?php echo ucwords($k->s_1); ?></td>
+                        <?php } ?>
                         <td style="text-align:left"><?php echo ucwords($k->s_jabatan); ?>-<?php echo ucwords($k->s_ttd); ?></td>
                         <td style="text-align:left"><?php echo ucwords($k->s_jenispelayanan); ?></td>
                     </tr>
@@ -61,10 +65,10 @@
         <table border=0 style="font-size: 12pt; border-collapse:collapse; width: 100%; margin-left:20px; margin-top:30px;">
             <tr>
                 <td style="text-align: center; width:55%">
-                    
+
                 </td>
                 <td style="text-align: center;">
-                   Karangan Hilir, <?php echo tgl_indo(date('Y-m-d')); ?><br>
+                    Karangan Hilir, <?php echo tgl_indo(date('Y-m-d')); ?><br>
                     <?php foreach ($ttd as $b) { ?>
                         <b><?php echo  Ucwords($b->tt_jabatan); ?></b><br><br>
 
