@@ -35,6 +35,9 @@
                                         <p style="text-align: justify;">
                                             Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                         </p>
+                                        <p style="text-align: justify;">
+                                           Dokumen anda akan diproses pada saat hari dan jam kerja (Senin - Sabtu Pukul 08.00-13.00)
+                                        </p>
                                         <p style="text-align: justify; color:red">
                                             Pastikan isi semua form yang ada dengan data yang sebenarnya. Apabila anda <b>tidak bisa</b> menekan tombol proses berarti ada form yang belum diisi.
                                         </p>
@@ -51,6 +54,7 @@
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_nama">Nama Lengkap</label>
                                                     <input type="text" class="form-control" id="mati_nama" name="mati_nama" placeholder="Input Nama Alm .." required>
+                                                    <div class="form-text">Input dengan data <b>Orang Yang Meninggal</b></div>
                                                 </div>                                               
                                                 <div class="col-md-6 mb-3">
                                                     <label for="mati_tptlahir">Tempat Lahir</label>

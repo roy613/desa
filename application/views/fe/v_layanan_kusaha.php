@@ -35,6 +35,9 @@
                                         <p style="text-align: justify;">
                                             Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                         </p>
+                                        <p style="text-align: justify;">
+                                           Dokumen anda akan diproses pada saat hari dan jam kerja (Senin - Sabtu Pukul 08.00-13.00)
+                                        </p>
                                         <p style="text-align: justify; color:red">
                                             Pastikan isi semua form yang ada dengan data yang sebenarnya. Apabila anda <b>tidak bisa</b> menekan tombol proses berarti ada form yang belum diisi.
                                         </p>
@@ -83,11 +86,26 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="usaha_alamat">Alamat Usaha (Jalan)</label>
-                                                    <input type="text" class="form-control" id="usaha_alamat" name="usaha_alamat" placeholder="Contoh : Jl. Pattimura RT.1 No. 2" required>
+                                                    <input type="text" class="form-control" id="usaha_alamat" name="usaha_alamat" placeholder="Contoh : Jl. Pattimura" required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="usaha_rt">Alamat (RT)</label>
-                                                    <input type="number" class="form-control" id="usaha_rt" name="usaha_rt" placeholder="Input RT Tempat Usaha Anda .." required>
+                                                    <select class="form-control" id="usaha_rt" name="usaha_rt" required>
+                                                        <option value="" selected disabled>-- Pilih RT --</option>
+                                                        <option value="1">RT - 1</option>
+                                                        <option value="2">RT - 2</option>
+                                                        <option value="3">RT - 3</option>
+                                                        <option value="4">RT - 4</option>
+                                                        <option value="5">RT - 5</option>
+                                                        <option value="6">RT - 6</option>
+                                                        <option value="7">RT - 7</option>
+                                                        <option value="8">RT - 8</option>
+                                                        <option value="9">RT - 9</option>
+                                                        <option value="10">RT - 10</option>
+                                                        <option value="11">RT - 11</option>
+                                                        <option value="12">RT - 12</option>
+                                                    </select>
+                                                    <!-- <input type="number" class="form-control" id="usaha_rt" name="usaha_rt" placeholder="Input RT Tempat Usaha Anda .." required> -->
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="usaha_Usaha">Jenis Usaha</label>

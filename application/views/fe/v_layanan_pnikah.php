@@ -63,6 +63,9 @@
                                             <p style="text-align: justify;">
                                                 Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                             </p>
+                                            <p style="text-align: justify;">
+                                           Dokumen anda akan diproses pada saat hari dan jam kerja (Senin - Sabtu Pukul 08.00-13.00)
+                                        </p>
                                             <p style="text-align: justify; color:red">
                                                 Pastikan isi semua form yang ada dengan data yang sebenarnya. Apabila anda <b>tidak bisa</b> menekan tombol proses berarti ada form yang belum diisi.
                                             </p>
@@ -193,6 +196,7 @@
                                                         <label for="nikah_nama11">Nama Ayah</label><input type="checkbox" id="a1" onclick="alm1()" style="margin-left: 30px;"> Alm.
                                                         <input type="text" class="form-control" id="nikah_nama11" name="nikah_nama11" placeholder="Input Nama Ayah Catin Pria ..." required>
                                                         <input type="hidden" class="form-control" id="stal1" name="stal1">
+                                                        <div class="form-text">Data yang diinput hanya <b>Orangtua Kandung</b></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik11">
@@ -263,6 +267,7 @@
                                                         <label for="nikah_nama12">Nama Ibu</label><input type="checkbox" id="ah1" onclick="almh1()" style="margin-left: 30px;"> Almh.
                                                         <input type="text" class="form-control" id="nikah_nama12" name="nikah_nama12" placeholder="Input Nama Ibu Catin Pria ..." required>
                                                         <input type="hidden" class="form-control" id="stal2" name="stal2">
+                                                        <div class="form-text">Data yang diinput hanya <b>Orangtua Kandung</b></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik12">
@@ -414,6 +419,7 @@
                                                         <label for="nikah_nama21">Nama Ayah</label><input type="checkbox" id="a2" onclick="alm2()" style="margin-left: 30px;"> Alm.
                                                         <input type="text" class="form-control" id="nikah_nama21" name="nikah_nama21" placeholder="Input Nama Ayah Catin wanita ..." required>
                                                         <input type="hidden" class="form-control" id="stal3" name="stal3">
+                                                        <div class="form-text">Data yang diinput hanya <b>Orangtua Kandung</b></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik21">
@@ -484,6 +490,7 @@
                                                         <label for="nikah_nama22">Nama Ibu</label><input type="checkbox" id="ah2" onclick="almh2()" style="margin-left: 30px;"> Almh.
                                                         <input type="text" class="form-control" id="nikah_nama22" name="nikah_nama22" placeholder="Input Nama Ibu Catin wanita ..." required>
                                                         <input type="hidden" class="form-control" id="stal4" name="stal4">
+                                                        <div class="form-text">Data yang diinput hanya <b>Orangtua Kandung</b></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4" id="nikah_bnik22">

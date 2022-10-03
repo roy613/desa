@@ -36,6 +36,9 @@
                                             Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                         </p>
                                         <p style="text-align: justify;">
+                                           Dokumen anda akan diproses pada saat hari dan jam kerja (Senin - Sabtu Pukul 08.00-13.00)
+                                        </p>
+                                        <p style="text-align: justify;">
                                             Pastikan isi semua form yang ada dengan data yang sebenarnya. Apabila anda <b>tidak bisa</b> menekan tombol proses berarti ada form yang belum diisi.
                                         </p>
                                     </div>

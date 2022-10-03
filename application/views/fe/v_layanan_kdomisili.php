@@ -35,6 +35,9 @@
                                         <p style="text-align: justify;">
                                             Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                         </p>
+                                        <p style="text-align: justify;">
+                                           Dokumen anda akan diproses pada saat hari dan jam kerja (Senin - Sabtu Pukul 08.00-13.00)
+                                        </p>
                                         <p style="text-align: justify; color:red">
                                             Pastikan isi semua form yang ada dengan data yang sebenarnya. Apabila anda <b>tidak bisa</b> menekan tombol proses berarti ada form yang belum diisi.
                                         </p>
@@ -95,8 +98,8 @@
                                                         <option selected disabled value="">-- Pilih Status --</option>
                                                         <option>Belum Menikah</option>
                                                         <option>Menikah</option>
-                                                        <option>Janda</option>
-                                                        <option>Duda</option>
+                                                        <option>Cerai Mati</option>
+                                                        <option>Cerai Hidup</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mb-3">

@@ -86,7 +86,7 @@
             <tr>
                 <td style="text-align: justify; line-height:23px">
                     Menindaklanjuti Surat Permohonan dari <?php echo Ucwords($k->s_1); ?> Desa Karangan Hilir Kecamatan Karangan,
-                    Nomor : <?php echo $k->s_3; ?> tentang Perihal <?php echo $k->s_4; ?> Maka dengan ini kami selaku Pemerintah Desa
+                    <?php if ($k->s_3 !== "") {echo "Nomor : ".$k->s_3;} ?> tentang Perihal <?php echo $k->s_4; ?> Maka dengan ini kami selaku Pemerintah Desa
                     Karangan Hilir Kecamatan Karangan memberikan Rekomendasi kepada <?php echo Ucwords($k->s_1); ?> untuk
                     mendapatkan bantuan tersebut di atas.
                 </td>

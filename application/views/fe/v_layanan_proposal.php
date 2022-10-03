@@ -35,6 +35,9 @@
                                         <p style="text-align: justify;">
                                             Apabila dokumen persyaratan anda telah lengkap, silahkan klik tab formulir (diatas) untuk mengisi formulir permohonan.
                                         </p>
+                                        <p style="text-align: justify;">
+                                           Dokumen anda akan diproses pada saat hari dan jam kerja (Senin - Sabtu Pukul 08.00-13.00)
+                                        </p>
                                         <p style="text-align: justify; color:red">
                                             Pastikan isi semua form yang ada dengan data yang sebenarnya. Apabila anda <b>tidak bisa</b> menekan tombol proses berarti ada form yang belum diisi.
                                         </p>
@@ -49,8 +52,8 @@
                                         <form method="post" action="<?php echo base_url('simpan_fe/proposal') ?>" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-md-6 mb-3">
-                                                    <label for="proposal_nama">Nama Lengkap</label>
-                                                    <input type="text" class="form-control" id="proposal_nama" name="proposal_nama" placeholder="Input Nama Anda .." required>
+                                                    <label for="proposal_nama">Nama Perorangan/ Badan/ Lembaga</label>
+                                                    <input type="text" class="form-control" id="proposal_nama" name="proposal_nama" placeholder="Input Nama Perorangan/ Badan / Lembaga .." required>
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_perusahaan">Perusahaan yang Di Tuju</label>
@@ -58,7 +61,7 @@
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_nosuratpemohon">Nomor Surat Permohonan</label>
-                                                    <input type="text" class="form-control" id="proposal_nosuratpemohon" name="proposal_nosuratpemohon" placeholder="Input No Surat Permohonan .." required>
+                                                    <input type="text" class="form-control" id="proposal_nosuratpemohon" name="proposal_nosuratpemohon" placeholder="Input No Surat Permohonan ..">
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="proposal_halpermohonan">Perihal Surat Permohonan</label>
