@@ -128,25 +128,26 @@
              <p>Dokumen di Tolak</p>
            </a>
          </li>
-         <li class="nav-item">
-           <a href="<?php echo base_url('nomor'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-list-ol text-info"></i>
-             <p>Pengaturan No. Surat</p>
-           </a>
-         </li>
-         <li class="nav-item">
-           <a href="<?php echo base_url('ttd'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-signature text-info"></i>
-             <p>Penandatangan</p>
-           </a>
-         </li>
-         <li class="nav-item">
-           <a href="<?php echo base_url('pengguna'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-users text-info"></i>
-             <p>Pengguna</p>
-           </a>
-         </li>
-
+         <?php if ($this->session->userdata('akses') == 1) { ?>
+           <li class="nav-item">
+             <a href="<?php echo base_url('nomor'); ?>" class="nav-link">
+               <i class="nav-icon fas fa-list-ol text-info"></i>
+               <p>Pengaturan No. Surat</p>
+             </a>
+           </li>
+           <li class="nav-item">
+             <a href="<?php echo base_url('ttd'); ?>" class="nav-link">
+               <i class="nav-icon fas fa-signature text-info"></i>
+               <p>Penandatangan</p>
+             </a>
+           </li>
+           <li class="nav-item">
+             <a href="<?php echo base_url('pengguna'); ?>" class="nav-link">
+               <i class="nav-icon fas fa-users text-info"></i>
+               <p>Pengguna</p>
+             </a>
+           </li>
+         <?php } ?>
          <li class="nav-item">
            <a href="<?php echo base_url('logout'); ?>" class="nav-link">
              <i class="nav-icon fas fa-power-off text-info"></i>

@@ -62,6 +62,7 @@ $route['registrasi/(:any)'] = 'cetak/permohonan1/$1';
 
 $route['dashboard'] = 'be/home';
 $route['pengguna'] = 'be/home/pengguna';
+$route['error'] = 'be/home/error';
 $route['nomor'] = 'be/home/nomor';
 $route['ttd'] = 'be/home/ttd';
 $route['rekomproposal'] = 'be/home/rekomproposal';

@@ -63,7 +63,7 @@ class Simpan_be extends CI_Controller
 
         $data = array(
             'username' => $username,
-            'pass' => $password,
+            'pass' => md5($password),
             'status' => $status,
         );
 

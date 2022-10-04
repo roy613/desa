@@ -51,7 +51,7 @@
   <!-- <section id="hero-animated" class="hero-animated d-flex align-items-center">
   
   </section> -->
-
+<!-- Background image by pixabay.com -->
   <!-- ======= F.A.Q Section ======= -->
   <section id="faq" class="faq">
     <div class="container-fluid" data-aos="fade-up">

@@ -64,7 +64,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_33); ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo Ucwords("Alm. " . $k->s_33);
+                        } else {
+                            echo ucwords($k->s_33);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -78,7 +82,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_40); ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo Ucwords("Alm. " . $k->s_40);
+                        } else {
+                            echo ucwords($k->s_40);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -92,7 +100,11 @@
                     :
                 </td>
                 <td>
-                <?php echo $k->s_34; ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo "-";
+                        } else {
+                            echo $k->s_34;
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -106,7 +118,11 @@
                     :
                 </td>
                 <td>
-                <?php echo Ucwords($k->s_36); ?>, <?php echo tgl_indo($k->sd_5); ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo "-";
+                        } else {
+                            echo Ucwords($k->s_36) . ", " . tgl_indo($k->sd_5);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -120,7 +136,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_37); ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_37);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -134,7 +154,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_35); ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_35);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -148,7 +172,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_38); ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_38);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -162,7 +190,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_39); ?>
+                <?php if ($k->s_stal3 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_39);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -171,7 +203,7 @@
                 </td>
             </tr>
             <tr>
-                <td rowspan="7" style="vertical-align: top;">
+                <td rowspan="8" style="vertical-align: top;">
                     B.
                 </td>
                 <td>
@@ -184,7 +216,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_41); ?>
+                <?php if ($k->s_stal4 == 1) {
+                            echo Ucwords("Almh. " . $k->s_41);
+                        } else {
+                            echo ucwords($k->s_41);
+                        } ?>
                 </td>
             </tr>
             <tr>
@@ -198,12 +234,34 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_48); ?>
+                <?php if ($k->s_stal4 == 1) {
+                            echo Ucwords("Alm. " . $k->s_48);
+                        } else {
+                            echo ucwords($k->s_48);
+                        } ?>
                 </td>
             </tr>
             <tr>
                 <td>
                     3.
+                </td>
+                <td>
+                Nomor Induk Kependudukan
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                <?php if ($k->s_stal4 == 1) {
+                            echo "-";
+                        } else {
+                            echo $k->s_42;
+                        } ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4.
                 </td>
                 <td>
                     Tempat dan Tanggal Lahir
@@ -212,12 +270,16 @@
                     :
                 </td>
                 <td>
-                <?php echo Ucwords($k->s_44); ?>, <?php echo tgl_indo($k->sd_6); ?>
+                <?php if ($k->s_stal4 == 1) {
+                            echo "-";
+                        } else {
+                            echo Ucwords($k->s_44) . ", " . tgl_indo($k->sd_6);
+                        } ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    4.
+                    5.
                 </td>
                 <td>
                     Kewarganegaraan
@@ -226,12 +288,16 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_45); ?>
+                <?php if ($k->s_stal4 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_45);
+                        } ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    5.
+                    6.
                 </td>
                 <td>
                     Agama
@@ -240,12 +306,16 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_43); ?>
+                <?php if ($k->s_stal4 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_43);
+                        } ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    6.
+                    7.
                 </td>
                 <td>
                     Pekerjaan
@@ -254,12 +324,16 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_46); ?>
+                <?php if ($k->s_stal4 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_46);
+                        } ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    7.
+                    8.
                 </td>
                 <td>
                     Alamat
@@ -268,7 +342,11 @@
                     :
                 </td>
                 <td>
-                <?php echo ucwords($k->s_47); ?>
+                <?php if ($k->s_stal4 == 1) {
+                            echo "-";
+                        } else {
+                            echo ucwords($k->s_47);
+                        } ?>
                 </td>
             </tr>
         </table>

@@ -133,7 +133,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Nomor Surat Pemohon</label>
-                      <input type="text" name="no_suratpemohon" id="no_suratpemohon" class="form-control" placeholder="Masukkan Nomor Surat.." required>
+                      <input type="text" name="no_suratpemohon" id="no_suratpemohon" class="form-control" placeholder="Masukkan Nomor Surat..">
                     </div>
                   </div>
                   <div class="col-md-12">
