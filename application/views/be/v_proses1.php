@@ -30,7 +30,7 @@
                                         <b>Jenis Surat</b> <a class="float-right"><?php echo ucwords($k->pe_jenispermohonan); ?></a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Pemohon</b> <a class="float-right"><?php echo Ucwords($k->pe_nama); ?></a>
+                                        <b>Pemohon</b> <a class="float-right"><?php echo Ucwords($k->s_1); ?></a>
                                     </li>
                                     <?php if ($k->pe_alamat !== null) { ?>
                                         <li class="list-group-item">

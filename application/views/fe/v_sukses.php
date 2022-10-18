@@ -20,7 +20,7 @@
 
     <div class="row g-5">
       <?php foreach ($aaa as $a) { ?>
-        <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
+        <div class="col-lg-12 col-md-12 content d-flex flex-column justify-content-center order-last order-md-first">
           <h3>PERMOHONAN ANDA TELAH DITERIMA!</h3>
           <p style="text-align: justify;">
           Terima kasih sudah menggunakan layanan kami. Dokumen tanda terima akan didownload secara otomatis, apabila dalam beberapa detik belum terdownload, maka anda dapat mendownload secara manual dengan klik <a href="<?php echo base_url('manual/' . base64_encode($a->pe_kode)); ?>"><u>disini</u></a>. <br><br>
@@ -30,11 +30,11 @@
           <a class="cta-btn align-self-start" href="<?php echo base_url(); ?>">Home</a>
         </div>
       <?php } ?>
-      <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
+      <!-- <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
         <div class="img">
           <img src="<?php echo base_url(); ?>assets/fe/assets/img/cta.jpg" alt="" class="img-fluid">
         </div>
-      </div>
+      </div> -->
 
     </div>
 

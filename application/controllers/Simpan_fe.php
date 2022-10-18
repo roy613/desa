@@ -18,70 +18,70 @@ class Simpan_fe extends CI_Controller
         $koderegistrasi = 'DKI_nikah' . $nomor3;
 
 
-        $nama1 = $this->input->post('nikah_nama1');
-        $nik1 = $this->input->post('nikah_nik1');
-        $job1 = $this->input->post('nikah_job1');
-        $tempat1 = $this->input->post('nikah_tempat1');
-        $tgl1 = $this->input->post('nikah_tgl1');
-        $agama1 = $this->input->post('nikah_agama1');
-        $kwn1 = $this->input->post('nikah_kwn1');
-        $status1 = $this->input->post('nikah_status1');
-        $alamat1 = $this->input->post('nikah_alamat1');
+        $nama1 = $this->input->post('nikah_nama1', TRUE);
+        $nik1 = $this->input->post('nikah_nik1', TRUE);
+        $job1 = $this->input->post('nikah_job1', TRUE);
+        $tempat1 = $this->input->post('nikah_tempat1', TRUE);
+        $tgl1 = $this->input->post('nikah_tgl1', TRUE);
+        $agama1 = $this->input->post('nikah_agama1', TRUE);
+        $kwn1 = $this->input->post('nikah_kwn1', TRUE);
+        $status1 = $this->input->post('nikah_status1', TRUE);
+        $alamat1 = $this->input->post('nikah_alamat1', TRUE);
         // $rt1 = $this->input->post('rt1');
 
-        $nama11 = $this->input->post('nikah_nama11');
-        $nik11 = $this->input->post('nikah_nik11');
-        $agama11 = $this->input->post('nikah_agama11');
-        $tempat11 = $this->input->post('nikah_tempat11');
-        $tgl11 = $this->input->post('nikah_tgl11');
-        $kwn11 = $this->input->post('nikah_kwn11');
-        $job11 = $this->input->post('nikah_job11');
-        $alamat11 = $this->input->post('nikah_alamat11');
+        $nama11 = $this->input->post('nikah_nama11', TRUE);
+        $nik11 = $this->input->post('nikah_nik11', TRUE);
+        $agama11 = $this->input->post('nikah_agama11', TRUE);
+        $tempat11 = $this->input->post('nikah_tempat11', TRUE);
+        $tgl11 = $this->input->post('nikah_tgl11', TRUE);
+        $kwn11 = $this->input->post('nikah_kwn11', TRUE);
+        $job11 = $this->input->post('nikah_job11', TRUE);
+        $alamat11 = $this->input->post('nikah_alamat11', TRUE);
 
-        $nama12 = $this->input->post('nikah_nama12');
-        $nik12 = $this->input->post('nikah_nik12');
-        $agama12 = $this->input->post('nikah_agama12');
-        $tempat12 = $this->input->post('nikah_tempat12');
-        $tgl12 = $this->input->post('nikah_tgl12');
-        $kwn12 = $this->input->post('nikah_kwn12');
-        $job12 = $this->input->post('nikah_job12');
-        $alamat12 = $this->input->post('nikah_alamat12');
+        $nama12 = $this->input->post('nikah_nama12', TRUE);
+        $nik12 = $this->input->post('nikah_nik12', TRUE);
+        $agama12 = $this->input->post('nikah_agama12', TRUE);
+        $tempat12 = $this->input->post('nikah_tempat12', TRUE);
+        $tgl12 = $this->input->post('nikah_tgl12', TRUE);
+        $kwn12 = $this->input->post('nikah_kwn12', TRUE);
+        $job12 = $this->input->post('nikah_job12', TRUE);
+        $alamat12 = $this->input->post('nikah_alamat12', TRUE);
 
-        $nama2 = $this->input->post('nikah_nama2');
-        $nik2 = $this->input->post('nikah_nik2');
-        $job2 = $this->input->post('nikah_job2');
-        $tempat2 = $this->input->post('nikah_tempat2');
-        $tgl2 = $this->input->post('nikah_tgl2');
-        $agama2 = $this->input->post('nikah_agama2');
-        $kwn2 = $this->input->post('nikah_kwn2');
-        $status2 = $this->input->post('nikah_status2');
-        $alamat2 = $this->input->post('nikah_alamat2');
+        $nama2 = $this->input->post('nikah_nama2', TRUE);
+        $nik2 = $this->input->post('nikah_nik2', TRUE);
+        $job2 = $this->input->post('nikah_job2', TRUE);
+        $tempat2 = $this->input->post('nikah_tempat2', TRUE);
+        $tgl2 = $this->input->post('nikah_tgl2', TRUE);
+        $agama2 = $this->input->post('nikah_agama2', TRUE);
+        $kwn2 = $this->input->post('nikah_kwn2', TRUE);
+        $status2 = $this->input->post('nikah_status2', TRUE);
+        $alamat2 = $this->input->post('nikah_alamat2', TRUE);
         // $rt2 = $this->input->post('rt2');
 
-        $nama21 = $this->input->post('nikah_nama21');
-        $nik21 = $this->input->post('nikah_nik21');
-        $agama21 = $this->input->post('nikah_agama21');
-        $tempat21 = $this->input->post('nikah_tempat21');
-        $tgl21 = $this->input->post('nikah_tgl21');
-        $kwn21 = $this->input->post('nikah_kwn21');
-        $job21 = $this->input->post('nikah_job21');
-        $alamat21 = $this->input->post('nikah_alamat21');
+        $nama21 = $this->input->post('nikah_nama21', TRUE);
+        $nik21 = $this->input->post('nikah_nik21', TRUE);
+        $agama21 = $this->input->post('nikah_agama21', TRUE);
+        $tempat21 = $this->input->post('nikah_tempat21', TRUE);
+        $tgl21 = $this->input->post('nikah_tgl21', TRUE);
+        $kwn21 = $this->input->post('nikah_kwn21', TRUE);
+        $job21 = $this->input->post('nikah_job21', TRUE);
+        $alamat21 = $this->input->post('nikah_alamat21', TRUE);
 
-        $nama22 = $this->input->post('nikah_nama22');
-        $nik22 = $this->input->post('nikah_nik22');
-        $agama22 = $this->input->post('nikah_agama22');
-        $tempat22 = $this->input->post('nikah_tempat22');
-        $tgl22 = $this->input->post('nikah_tgl22');
-        $kwn22 = $this->input->post('nikah_kwn22');
-        $job22 = $this->input->post('nikah_job22');
-        $alamat22 = $this->input->post('nikah_alamat22');
+        $nama22 = $this->input->post('nikah_nama22', TRUE);
+        $nik22 = $this->input->post('nikah_nik22', TRUE);
+        $agama22 = $this->input->post('nikah_agama22', TRUE);
+        $tempat22 = $this->input->post('nikah_tempat22', TRUE);
+        $tgl22 = $this->input->post('nikah_tgl22', TRUE);
+        $kwn22 = $this->input->post('nikah_kwn22', TRUE);
+        $job22 = $this->input->post('nikah_job22', TRUE);
+        $alamat22 = $this->input->post('nikah_alamat22', TRUE);
 
-        $lokasi = $this->input->post('nikah_lokasi');
-        $waktu = $this->input->post('nikah_waktu');
-        $bin11 = $this->input->post('nikah_bin11');
-        $bin21 = $this->input->post('nikah_bin21');
-        $binti12 = $this->input->post('nikah_binti12');
-        $binti22 = $this->input->post('nikah_binti22');
+        $lokasi = $this->input->post('nikah_lokasi', TRUE);
+        $waktu = $this->input->post('nikah_waktu', TRUE);
+        $bin11 = $this->input->post('nikah_bin11', TRUE);
+        $bin21 = $this->input->post('nikah_bin21', TRUE);
+        $binti12 = $this->input->post('nikah_binti12', TRUE);
+        $binti22 = $this->input->post('nikah_binti22', TRUE);
         
         $stal1 = $this->input->post('stal1');
         $stal2 = $this->input->post('stal2');
@@ -268,10 +268,10 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_proposal' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_proposal' . $nomor3;
 
-        $s1 = $this->input->post('proposal_nama');
-        $s2 = $this->input->post('proposal_perusahaan');
-        $s3 = $this->input->post('proposal_nosuratpemohon');
-        $s4 = $this->input->post('proposal_halpermohonan');
+        $s1 = $this->input->post('proposal_nama', TRUE);
+        $s2 = $this->input->post('proposal_perusahaan', TRUE);
+        $s3 = $this->input->post('proposal_nosuratpemohon', TRUE);
+        $s4 = $this->input->post('proposal_halpermohonan', TRUE);
 
         $jenis = "surat rekomendasi proposal";
         $no_hp = $this->input->post('proposal_nohp');
@@ -378,17 +378,17 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_domisili' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_domisili' . $nomor3;
 
-        $s1 = $this->input->post('domisili_nama');
-        $s2 = $this->input->post('domisili_jk');
-        $s3 = $this->input->post('domisili_tptlahir');
-        $sd1 = $this->input->post('domisili_tgllahir');
-        $s4 = $this->input->post('domisili_kewarganegaraan');
-        $s5 = $this->input->post('domisili_agama');
-        $s6 = $this->input->post('domisili_nik');
-        $s7 = $this->input->post('domisili_statuskwn');
-        $s8 = $this->input->post('domisili_pekerjaan');
-        $s9 = $this->input->post('domisili_alamat');
-        $s10 = $this->input->post('domisili_guna');
+        $s1 = $this->input->post('domisili_nama', TRUE);
+        $s2 = $this->input->post('domisili_jk', TRUE);
+        $s3 = $this->input->post('domisili_tptlahir', TRUE);
+        $sd1 = $this->input->post('domisili_tgllahir', TRUE);
+        $s4 = $this->input->post('domisili_kewarganegaraan', TRUE);
+        $s5 = $this->input->post('domisili_agama', TRUE);
+        $s6 = $this->input->post('domisili_nik', TRUE);
+        $s7 = $this->input->post('domisili_statuskwn', TRUE);
+        $s8 = $this->input->post('domisili_pekerjaan', TRUE);
+        $s9 = $this->input->post('domisili_alamat', TRUE);
+        $s10 = $this->input->post('domisili_guna', TRUE);
 
 
         $jenis = "surat keterangan domisili";
@@ -503,15 +503,15 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_kerja' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_kerja' . $nomor3;
 
-        $s1 = $this->input->post('kerja_nama');
-        $s2 = $this->input->post('kerja_nik');
-        $s3 = $this->input->post('kerja_jk');
-        $s4 = $this->input->post('kerja_tptlahir');
-        $sd1 = $this->input->post('kerja_tgllahir');
-        $s5 = $this->input->post('kerja_agama');
-        $s6 = $this->input->post('kerja_pekerjaan');
-        $s7 = $this->input->post('kerja_alamat');
-        $s8 = $this->input->post('kerja_perusahaan');
+        $s1 = $this->input->post('kerja_nama', TRUE);
+        $s2 = $this->input->post('kerja_nik', TRUE);
+        $s3 = $this->input->post('kerja_jk', TRUE);
+        $s4 = $this->input->post('kerja_tptlahir', TRUE);
+        $sd1 = $this->input->post('kerja_tgllahir', TRUE);
+        $s5 = $this->input->post('kerja_agama', TRUE);
+        $s6 = $this->input->post('kerja_pekerjaan', TRUE);
+        $s7 = $this->input->post('kerja_alamat', TRUE);
+        $s8 = $this->input->post('kerja_perusahaan', TRUE);
 
 
         $jenis = "surat rekomendasi kerja";
@@ -623,15 +623,15 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_pkerja' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_pkerja' . $nomor3;
 
-        $s1 = $this->input->post('pkerja_nama');
-        $s2 = $this->input->post('pkerja_nik');
-        $s3 = $this->input->post('pkerja_jk');
-        $s4 = $this->input->post('pkerja_tptlahir');
-        $sd1 = $this->input->post('pkerja_tgllahir');
-        $s5 = $this->input->post('pkerja_agama');
-        $s6 = $this->input->post('pkerja_pekerjaan');
-        $s7 = $this->input->post('pkerja_alamat');
-        $s8 = $this->input->post('pkerja_perusahaan');
+        $s1 = $this->input->post('pkerja_nama', TRUE);
+        $s2 = $this->input->post('pkerja_nik', TRUE);
+        $s3 = $this->input->post('pkerja_jk', TRUE);
+        $s4 = $this->input->post('pkerja_tptlahir', TRUE);
+        $sd1 = $this->input->post('pkerja_tgllahir', TRUE);
+        $s5 = $this->input->post('pkerja_agama', TRUE);
+        $s6 = $this->input->post('pkerja_pekerjaan', TRUE);
+        $s7 = $this->input->post('pkerja_alamat', TRUE);
+        $s8 = $this->input->post('pkerja_perusahaan', TRUE);
 
 
         $jenis = "surat pengantar rekom kerja";
@@ -743,16 +743,16 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_usaha' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_usaha' . $nomor3;
 
-        $s1 = $this->input->post('usaha_nama');
-        $s2 = $this->input->post('usaha_nik');
-        $s3 = $this->input->post('usaha_jk');
-        $s4 = $this->input->post('usaha_tptlahir');
-        $sd1 = $this->input->post('usaha_tgllahir');
-        $s5 = $this->input->post('usaha_pekerjaan');
-        $s6 = $this->input->post('usaha_alamat');
-        $s7 = $this->input->post('usaha_rt');
-        $s8 = $this->input->post('usaha_usaha');
-        $s9 = $this->input->post('usaha_alamat1');
+        $s1 = $this->input->post('usaha_nama', TRUE);
+        $s2 = $this->input->post('usaha_nik', TRUE);
+        $s3 = $this->input->post('usaha_jk', TRUE);
+        $s4 = $this->input->post('usaha_tptlahir', TRUE);
+        $sd1 = $this->input->post('usaha_tgllahir', TRUE);
+        $s5 = $this->input->post('usaha_pekerjaan', TRUE);
+        $s6 = $this->input->post('usaha_alamat', TRUE);
+        $s7 = $this->input->post('usaha_rt', TRUE);
+        $s8 = $this->input->post('usaha_usaha', TRUE);
+        $s9 = $this->input->post('usaha_alamat1', TRUE);
 
 
         $jenis = "surat keterangan usaha";
@@ -864,17 +864,17 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_pskck' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_pskck' . $nomor3;
 
-        $s1 = $this->input->post('skck_nama');
-        $s2 = $this->input->post('skck_nik');
-        $s3 = $this->input->post('skck_jk');
-        $s4 = $this->input->post('skck_tptlahir');
-        $sd1 = $this->input->post('skck_tgllahir');
-        $s5 = $this->input->post('skck_kwn');
-        $s6 = $this->input->post('skck_agama');
-        $s7 = $this->input->post('skck_statuskwn');
-        $s8 = $this->input->post('skck_pekerjaan');
-        $s9 = $this->input->post('skck_alamat');
-        $s10 = $this->input->post('skck_urus');
+        $s1 = $this->input->post('skck_nama', TRUE);
+        $s2 = $this->input->post('skck_nik', TRUE);
+        $s3 = $this->input->post('skck_jk', TRUE);
+        $s4 = $this->input->post('skck_tptlahir', TRUE);
+        $sd1 = $this->input->post('skck_tgllahir', TRUE);
+        $s5 = $this->input->post('skck_kwn', TRUE);
+        $s6 = $this->input->post('skck_agama', TRUE);
+        $s7 = $this->input->post('skck_statuskwn', TRUE);
+        $s8 = $this->input->post('skck_pekerjaan', TRUE);
+        $s9 = $this->input->post('skck_alamat', TRUE);
+        $s10 = $this->input->post('skck_urus', TRUE);
 
 
         $jenis = "surat pengantar skck";
@@ -987,16 +987,16 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_sktm' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_sktm' . $nomor3;
 
-        $s1 = $this->input->post('tmampu_nama');
-        $s2 = $this->input->post('tmampu_nik');
-        $s3 = $this->input->post('tmampu_jk');
-        $s4 = $this->input->post('tmampu_tptlahir');
-        $sd1 = $this->input->post('tmampu_tgllahir');
-        $s5 = $this->input->post('tmampu_agama');
-        $s6 = $this->input->post('tmampu_kwn');
-        $s7 = $this->input->post('tmampu_statuskwn');
-        $s8 = $this->input->post('tmampu_pekerjaan');
-        $s9 = $this->input->post('tmampu_alamat');
+        $s1 = $this->input->post('tmampu_nama', TRUE);
+        $s2 = $this->input->post('tmampu_nik', TRUE);
+        $s3 = $this->input->post('tmampu_jk', TRUE);
+        $s4 = $this->input->post('tmampu_tptlahir', TRUE);
+        $sd1 = $this->input->post('tmampu_tgllahir', TRUE);
+        $s5 = $this->input->post('tmampu_agama', TRUE);
+        $s6 = $this->input->post('tmampu_kwn', TRUE);
+        $s7 = $this->input->post('tmampu_statuskwn', TRUE);
+        $s8 = $this->input->post('tmampu_pekerjaan', TRUE);
+        $s9 = $this->input->post('tmampu_alamat', TRUE);
 
 
         $jenis = "surat keterangan tidak mampu";
@@ -1108,16 +1108,16 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_hilang' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_hilang' . $nomor3;
 
-        $s1 = $this->input->post('hilang_nama');
-        $s2 = $this->input->post('hilang_nik');
-        $s3 = $this->input->post('hilang_tptlahir');
-        $sd1 = $this->input->post('hilang_tgllahir');
-        $s4 = $this->input->post('hilang_agama');
-        $s5 = $this->input->post('hilang_pekerjaan');
-        $s6 = $this->input->post('hilang_alamat');
-        $s7 = $this->input->post('hilang_barang');
-        $sd2 = $this->input->post('hilang_tglhilang');
-        $s8 = $this->input->post('hilang_kwn');
+        $s1 = $this->input->post('hilang_nama', TRUE);
+        $s2 = $this->input->post('hilang_nik', TRUE);
+        $s3 = $this->input->post('hilang_tptlahir', TRUE);
+        $sd1 = $this->input->post('hilang_tgllahir', TRUE);
+        $s4 = $this->input->post('hilang_agama', TRUE);
+        $s5 = $this->input->post('hilang_pekerjaan', TRUE);
+        $s6 = $this->input->post('hilang_alamat', TRUE);
+        $s7 = $this->input->post('hilang_barang', TRUE);
+        $sd2 = $this->input->post('hilang_tglhilang', TRUE);
+        $s8 = $this->input->post('hilang_kwn', TRUE);
 
 
         $jenis = "surat pengantar kehilangan";
@@ -1230,27 +1230,27 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_lahir' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_lahir' . $nomor3;
 
-        $s1 = $this->input->post('lahir_nama');
-        $s2 = $this->input->post('lahir_jk');
-        $s3 = $this->input->post('lahir_tptlahir');
-        $sd1 = $this->input->post('lahir_tgllahir');
-        $s4 = $this->input->post('lahir_agama');
-        $s5 = $this->input->post('lahir_alamat');
-        $s6 = $this->input->post('lahir_anak_ke');
+        $s1 = $this->input->post('lahir_nama', TRUE);
+        $s2 = $this->input->post('lahir_jk', TRUE);
+        $s3 = $this->input->post('lahir_tptlahir', TRUE);
+        $sd1 = $this->input->post('lahir_tgllahir', TRUE);
+        $s4 = $this->input->post('lahir_agama', TRUE);
+        $s5 = $this->input->post('lahir_alamat', TRUE);
+        $s6 = $this->input->post('lahir_anak_ke', TRUE);
 
-        $s7 = $this->input->post('lahir_nama_a');
-        $s8 = $this->input->post('lahir_tptlahir_a');
-        $sd2 = $this->input->post('lahir_tgllahir_a');
-        $s9 = $this->input->post('lahir_agama_a');
-        $s10 = $this->input->post('lahir_pekerjaan_a');
-        $s11 = $this->input->post('lahir_alamat_a');
+        $s7 = $this->input->post('lahir_nama_a', TRUE);
+        $s8 = $this->input->post('lahir_tptlahir_a', TRUE);
+        $sd2 = $this->input->post('lahir_tgllahir_a', TRUE);
+        $s9 = $this->input->post('lahir_agama_a', TRUE);
+        $s10 = $this->input->post('lahir_pekerjaan_a', TRUE);
+        $s11 = $this->input->post('lahir_alamat_a', TRUE);
 
-        $s12 = $this->input->post('lahir_nama_b');
-        $s13 = $this->input->post('lahir_tptlahir_b');
-        $sd3 = $this->input->post('lahir_tgllahir_b');
-        $s14 = $this->input->post('lahir_agama_b');
-        $s15 = $this->input->post('lahir_pekerjaan_b');
-        $s16 = $this->input->post('lahir_alamat_b');
+        $s12 = $this->input->post('lahir_nama_b', TRUE);
+        $s13 = $this->input->post('lahir_tptlahir_b', TRUE);
+        $sd3 = $this->input->post('lahir_tgllahir_b', TRUE);
+        $s14 = $this->input->post('lahir_agama_b', TRUE);
+        $s15 = $this->input->post('lahir_pekerjaan_b', TRUE);
+        $s16 = $this->input->post('lahir_alamat_b', TRUE);
 
 
         $jenis = "surat keterangan kelahiran";
@@ -1373,24 +1373,24 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_pindah' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_pindah' . $nomor3;
 
-        $s1 = $this->input->post('pindah_nama');
-        $s2 = $this->input->post('pindah_nik');
-        $s3 = $this->input->post('pindah_jk');
-        $s4 = $this->input->post('pindah_tptlahir');
-        $sd1 = $this->input->post('pindah_tgllahir');
-        $s5 = $this->input->post('pindah_kwn');
-        $s6 = $this->input->post('pindah_agama');
-        $s7 = $this->input->post('pindah_statuskwn');
-        $s8 = $this->input->post('pindah_pekerjaan');
-        $s9 = $this->input->post('pindah_pendidikan');
-        $s10 = $this->input->post('pindah_alamat');
+        $s1 = $this->input->post('pindah_nama', TRUE);
+        $s2 = $this->input->post('pindah_nik', TRUE);
+        $s3 = $this->input->post('pindah_jk', TRUE);
+        $s4 = $this->input->post('pindah_tptlahir', TRUE);
+        $sd1 = $this->input->post('pindah_tgllahir', TRUE);
+        $s5 = $this->input->post('pindah_kwn', TRUE);
+        $s6 = $this->input->post('pindah_agama', TRUE);
+        $s7 = $this->input->post('pindah_statuskwn', TRUE);
+        $s8 = $this->input->post('pindah_pekerjaan', TRUE);
+        $s9 = $this->input->post('pindah_pendidikan', TRUE);
+        $s10 = $this->input->post('pindah_alamat', TRUE);
 
-        $s11 = $this->input->post('pindah_jalan');
-        $s12 = $this->input->post('pindah_desa');
-        $s13 = $this->input->post('pindah_camat');
-        $s14 = $this->input->post('pindah_kab');
-        $s15 = $this->input->post('pindah_provinsi');
-        $sd2 = $this->input->post('pindah_tglpindah');
+        $s11 = $this->input->post('pindah_jalan', TRUE);
+        $s12 = $this->input->post('pindah_desa', TRUE);
+        $s13 = $this->input->post('pindah_camat', TRUE);
+        $s14 = $this->input->post('pindah_kab', TRUE);
+        $s15 = $this->input->post('pindah_provinsi', TRUE);
+        $sd2 = $this->input->post('pindah_tglpindah', TRUE);
 
         $jenis = "surat keterangan pindah";
         $no_hp = $this->input->post('pindah_nohp');
@@ -1511,17 +1511,17 @@ class Simpan_fe extends CI_Controller
         $namaqr = 'DKI_kmtian' . $nomor3 . '.png';
         $koderegistrasi = 'DKI_kmtian' . $nomor3;
 
-        $s1 = $this->input->post('mati_nama');
-        $s2 = $this->input->post('mati_tptlahir');
-        $sd1 = $this->input->post('mati_tgllahir');
-        $s3 = $this->input->post('mati_kwn');
-        $s4 = $this->input->post('mati_agama');
-        $s5 = $this->input->post('mati_pekerjaan');
-        $s6 = $this->input->post('mati_alamat');
+        $s1 = $this->input->post('mati_nama', TRUE);
+        $s2 = $this->input->post('mati_tptlahir', TRUE);
+        $sd1 = $this->input->post('mati_tgllahir', TRUE);
+        $s3 = $this->input->post('mati_kwn', TRUE);
+        $s4 = $this->input->post('mati_agama', TRUE);
+        $s5 = $this->input->post('mati_pekerjaan', TRUE);
+        $s6 = $this->input->post('mati_alamat', TRUE);
 
-        $sd2 = $this->input->post('mati_tglmeninggal');
-        $s7 = $this->input->post('mati_pukul');
-        $s8 = $this->input->post('mati_tptmeninggal');
+        $sd2 = $this->input->post('mati_tglmeninggal', TRUE);
+        $s7 = $this->input->post('mati_pukul', TRUE);
+        $s8 = $this->input->post('mati_tptmeninggal', TRUE);
 
         $jenis = "surat keterangan kematian";
         $no_hp = $this->input->post('mati_nohp');
