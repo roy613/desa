@@ -52,7 +52,7 @@
                         <td style="text-align:left"><?php echo $k->s_nosurat; ?></td>
                         <td style="text-align:left"><?php echo tgl_indo($k->s_tglsurat); ?></td>
                         <?php if ($k->s_jenispelayanan == "surat pengantar menikah") { ?>
-                            <td><?php echo ucwords($p->s_1); ?><br><?php echo ucwords($p->s_25); ?></td>
+                            <td><?php echo ucwords($k->s_1); ?><br><?php echo ucwords($k->s_25); ?></td>
                         <?php } else { ?>
                             <td style="text-align:left"><?php echo ucwords($k->s_1); ?></td>
                         <?php } ?>
