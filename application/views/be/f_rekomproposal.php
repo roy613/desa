@@ -39,8 +39,13 @@
 
     $('#id').val("");
     $('#nama').val("");
-    $('#jab').val("");
-    $('#status').val("");
+    $('#no_suratpemohon').val("");
+    $('#perihal_suratpemohon').val("");
+    $('#perusahaan').val("");
+    $('#tgl_surat').val("");
+    $('#ttd').val("");
+    $('#jabttd').val("");
+    $('#kodettd').val("");
   }
   function ttd_fungsi() {
         var peg = document.getElementById("ttd").value;
