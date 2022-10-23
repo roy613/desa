@@ -1759,7 +1759,7 @@ class Simpan_be extends CI_Controller
     }
     public function nikah()
     {
-        $id = $this->input->post('nikah_id');
+        $id = $this->input->post('id');
 
         $nama1 = $this->input->post('nikah_nama1');
         $nik1 = $this->input->post('nikah_nik1');

@@ -27,10 +27,11 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('fe/v_header');
-		$this->load->view('fe/v_index2');
-		$this->load->view('fe/v_index_modal');
-		$this->load->view('fe/v_footer');
+		// $this->load->view('fe/v_header');
+		// $this->load->view('fe/v_index2');
+		// $this->load->view('fe/v_index_modal');
+		// $this->load->view('fe/v_footer');
+		$this->load->view('fe/v_tunggu');
 	}
 	public function cek_resi1()
 	{

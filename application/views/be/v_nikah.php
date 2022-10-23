@@ -234,7 +234,7 @@
                             <label for="nikah_nama1">Nama Catin Pria</label>
                             <input type="text" class="form-control" id="nikah_nama1" name="nikah_nama1" placeholder="Input Nama Catin Pria ..." required>
                             <input type="hidden" class="form-control" id="nikah_kode" name="nikah_kode">
-                            <input type="hidden" class="form-control" id="nikah_id" name="nikah_id">
+                            <input type="hidden" class="form-control" id="id" name="id">
                           </div>
                         </div>
                         <div class="col-sm-4">
